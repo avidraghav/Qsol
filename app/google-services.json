@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "612838664751",
+    "firebase_url": "https://previous-year-q-paper.firebaseio.com",
+    "project_id": "previous-year-q-paper",
+    "storage_bucket": "previous-year-q-paper.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612838664751:android:a7b5e2728c2649b821b4da",
+        "android_client_info": {
+          "package_name": "com.example.firebasetesting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612838664751:android:96ddc8a8520cf5aa21b4da",
+        "android_client_info": {
+          "package_name": "com.example.kurukshetrauniversitypapers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612838664751:android:7ad6b1dcd6d551b421b4da",
+        "android_client_info": {
+          "package_name": "com.example.pdfretrieve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612838664751:android:98ba406df5867ba821b4da",
+        "android_client_info": {
+          "package_name": "com.example.previousyearqpaper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
