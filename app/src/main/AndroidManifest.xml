@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kurukshetrauniversitypapers">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -10,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pdfviewer"></activity>
+        <activity android:name=".Cse_firstsem_subjectlist"></activity>
+        <activity android:name=".Pdfviewer" />
         <activity android:name=".Pdflist" />
         <activity android:name=".Btech_expendable_list" />
         <activity android:name=".MainActivity">
@@ -21,5 +21,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

@@ -40,25 +40,27 @@ public class Pdflist extends AppCompatActivity {
         //pdfView=findViewById(R.id.pdfView);
 
         Intent intent=getIntent();
-        key=intent.getStringExtra("key");
-        if(key.equals("first19")) {
-            viewAllFiles1();
-        }
-        if(key.equals("first18")) {
-            viewAllFiles2();
-        }
-        if(key.equals("first17")) {
-            viewAllFiles3();
-        }
-        if(key.equals("1")) {
-            viewAllFiles4();
-        }
-        if(key.equals("2")) {
-            viewAllFiles5();
-        }
-        if(key.equals("3")) {
-            viewAllFiles6();
-        }
+        key=intent.getStringExtra("subject");
+        viewAllFiles1(); // for cse semester subjects
+
+//        if(key.equals("Daa")) {
+//            viewAllFiles1();
+//        }
+//        if(key.equals("first18")) {
+//            viewAllFiles2();
+//        }
+//        if(key.equals("first17")) {
+//            viewAllFiles3();
+//        }
+//        if(key.equals("1")) {
+//            viewAllFiles4();
+//        }
+//        if(key.equals("2")) {
+//            viewAllFiles5();
+//        }
+//        if(key.equals("3")) {
+//            viewAllFiles6();
+//        }
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -67,7 +69,11 @@ public class Pdflist extends AppCompatActivity {
                // Intent intent=new Intent(getBaseContext(),Pdfviewer.class);
                 Intent intent=new Intent();
                 intent.setType(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(uploadPDF.getUrl()));
+                Uri uri=Uri.parse(uploadPDF.getUrl());
+                if(uri.toString().contains(".pdf")) {
+                    intent.setDataAndType(uri,"application/pdf");
+                }
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
 //
 
@@ -76,43 +82,7 @@ public class Pdflist extends AppCompatActivity {
     }
 
     private void viewAllFiles1() {
-        databaseReference= FirebaseDatabase.getInstance().getReference("btech_first_sem_2019");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-             for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
-                 uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
-                 uploadPDFS.add(uploadPDF);
-
-
-             }
-             String[] uploads=new String[uploadPDFS.size()];
-             for(int i=0; i<uploads.length;i++){
-                 uploads[i]=uploadPDFS.get(i).getName();
-             }
-                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
-                    @NonNull
-                    @Override
-                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                        View view=super.getView(position, convertView, parent);
-                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
-                        myText.setTextColor(Color.BLACK);
-                        return view;
-                    }
-                };
-             listView.setAdapter(adapter);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-    private void viewAllFiles2() {
-        databaseReference= FirebaseDatabase.getInstance().getReference("btech_first_sem_2018");
+        databaseReference= FirebaseDatabase.getInstance().getReference(key);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -147,148 +117,221 @@ public class Pdflist extends AppCompatActivity {
             }
         });
     }
-    private void viewAllFiles3() {
-        databaseReference= FirebaseDatabase.getInstance().getReference("btech_first_sem_2017");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
-                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
-                    uploadPDFS.add(uploadPDF);
 
-
-                }
-                String[] uploads=new String[uploadPDFS.size()];
-                for(int i=0; i<uploads.length;i++){
-                    uploads[i]=uploadPDFS.get(i).getName();
-                }
-                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
-                    @NonNull
-                    @Override
-                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                        View view=super.getView(position, convertView, parent);
-                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
-                        myText.setTextColor(Color.BLACK);
-                        return view;
-                    }
-                };
-                listView.setAdapter(adapter);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-    private void viewAllFiles4() {
-        databaseReference= FirebaseDatabase.getInstance().getReference("btech_second_sem_2019");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
-                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
-                    uploadPDFS.add(uploadPDF);
-
-
-                }
-                String[] uploads=new String[uploadPDFS.size()];
-                for(int i=0; i<uploads.length;i++){
-                    uploads[i]=uploadPDFS.get(i).getName();
-                }
-                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
-                    @NonNull
-                    @Override
-                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                        View view=super.getView(position, convertView, parent);
-                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
-                        myText.setTextColor(Color.BLACK);
-                        return view;
-                    }
-                };
-                listView.setAdapter(adapter);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-    private void viewAllFiles5() {
-        databaseReference= FirebaseDatabase.getInstance().getReference("btech_second_sem_2018");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
-                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
-                    uploadPDFS.add(uploadPDF);
-
-
-                }
-                String[] uploads=new String[uploadPDFS.size()];
-                for(int i=0; i<uploads.length;i++){
-                    uploads[i]=uploadPDFS.get(i).getName();
-                }
-                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
-                    @NonNull
-                    @Override
-                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                        View view=super.getView(position, convertView, parent);
-                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
-                        myText.setTextColor(Color.BLACK);
-                        return view;
-                    }
-                };
-                listView.setAdapter(adapter);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-    private void viewAllFiles6() {
-        databaseReference= FirebaseDatabase.getInstance().getReference("btech_second_sem_2017");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
-                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
-                    uploadPDFS.add(uploadPDF);
-
-
-                }
-                String[] uploads=new String[uploadPDFS.size()];
-                for(int i=0; i<uploads.length;i++){
-                    uploads[i]=uploadPDFS.get(i).getName();
-                }
-                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
-                    @NonNull
-                    @Override
-                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-                        View view=super.getView(position, convertView, parent);
-                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
-                        myText.setTextColor(Color.BLACK);
-                        return view;
-                    }
-                };
-                listView.setAdapter(adapter);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
+//    private void viewAllFiles1() {
+//        databaseReference= FirebaseDatabase.getInstance().getReference("Cse-firstsem-"+key);
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//             for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+//                 uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
+//                 uploadPDFS.add(uploadPDF);
+//
+//
+//             }
+//             String[] uploads=new String[uploadPDFS.size()];
+//             for(int i=0; i<uploads.length;i++){
+//                 uploads[i]=uploadPDFS.get(i).getName();
+//             }
+//                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
+//                    @NonNull
+//                    @Override
+//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//                        View view=super.getView(position, convertView, parent);
+//                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
+//                        myText.setTextColor(Color.BLACK);
+//                        return view;
+//                    }
+//                };
+//             listView.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
+//    private void viewAllFiles2() {
+//        databaseReference= FirebaseDatabase.getInstance().getReference("btech_first_sem_2018");
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+//                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
+//                    uploadPDFS.add(uploadPDF);
+//
+//
+//                }
+//                String[] uploads=new String[uploadPDFS.size()];
+//                for(int i=0; i<uploads.length;i++){
+//                    uploads[i]=uploadPDFS.get(i).getName();
+//                }
+//                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
+//                    @NonNull
+//                    @Override
+//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//                        View view=super.getView(position, convertView, parent);
+//                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
+//                        myText.setTextColor(Color.BLACK);
+//                        return view;
+//                    }
+//                };
+//                listView.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
+//    private void viewAllFiles3() {
+//        databaseReference= FirebaseDatabase.getInstance().getReference("btech_first_sem_2017");
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+//                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
+//                    uploadPDFS.add(uploadPDF);
+//
+//
+//                }
+//                String[] uploads=new String[uploadPDFS.size()];
+//                for(int i=0; i<uploads.length;i++){
+//                    uploads[i]=uploadPDFS.get(i).getName();
+//                }
+//                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
+//                    @NonNull
+//                    @Override
+//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//                        View view=super.getView(position, convertView, parent);
+//                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
+//                        myText.setTextColor(Color.BLACK);
+//                        return view;
+//                    }
+//                };
+//                listView.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
+//    private void viewAllFiles4() {
+//        databaseReference= FirebaseDatabase.getInstance().getReference("btech_second_sem_2019");
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+//                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
+//                    uploadPDFS.add(uploadPDF);
+//
+//
+//                }
+//                String[] uploads=new String[uploadPDFS.size()];
+//                for(int i=0; i<uploads.length;i++){
+//                    uploads[i]=uploadPDFS.get(i).getName();
+//                }
+//                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
+//                    @NonNull
+//                    @Override
+//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//                        View view=super.getView(position, convertView, parent);
+//                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
+//                        myText.setTextColor(Color.BLACK);
+//                        return view;
+//                    }
+//                };
+//                listView.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
+//    private void viewAllFiles5() {
+//        databaseReference= FirebaseDatabase.getInstance().getReference("btech_second_sem_2018");
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+//                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
+//                    uploadPDFS.add(uploadPDF);
+//
+//
+//                }
+//                String[] uploads=new String[uploadPDFS.size()];
+//                for(int i=0; i<uploads.length;i++){
+//                    uploads[i]=uploadPDFS.get(i).getName();
+//                }
+//                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
+//                    @NonNull
+//                    @Override
+//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//                        View view=super.getView(position, convertView, parent);
+//                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
+//                        myText.setTextColor(Color.BLACK);
+//                        return view;
+//                    }
+//                };
+//                listView.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
+//    private void viewAllFiles6() {
+//        databaseReference= FirebaseDatabase.getInstance().getReference("btech_second_sem_2017");
+//        databaseReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
+//                    uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
+//                    uploadPDFS.add(uploadPDF);
+//
+//
+//                }
+//                String[] uploads=new String[uploadPDFS.size()];
+//                for(int i=0; i<uploads.length;i++){
+//                    uploads[i]=uploadPDFS.get(i).getName();
+//                }
+//                ArrayAdapter<String> adapter=new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_list_item_1,uploads){
+//                    @NonNull
+//                    @Override
+//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+//                        View view=super.getView(position, convertView, parent);
+//                        TextView myText=(TextView) view.findViewById(android.R.id.text1);
+//                        myText.setTextColor(Color.BLACK);
+//                        return view;
+//                    }
+//                };
+//                listView.setAdapter(adapter);
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//    }
 }
