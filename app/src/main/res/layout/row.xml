@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/subjectname"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="10dp"
+        android:text="Spiderman"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/papercount"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subjectname"
+        android:layout_marginTop="-1dp"
+        android:inputType="number"
+        android:paddingTop="10dp"
+        android:text="Spiderman"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/static_textview"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subjectname"
+        android:layout_toLeftOf="@id/download_btn"
+        android:layout_toRightOf="@id/papercount"
+        android:gravity="center_horizontal"
+        android:text="papers"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/download_btn"
+        android:layout_width="69dp"
+        android:layout_height="69dp"
+        android:layout_toRightOf="@id/subjectname"
+        android:background="@drawable/images"
+         />
+
+</RelativeLayout>

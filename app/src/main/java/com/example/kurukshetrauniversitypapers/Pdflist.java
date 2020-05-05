@@ -89,8 +89,6 @@ public class Pdflist extends AppCompatActivity {
                 for(DataSnapshot postSnapshot: dataSnapshot.getChildren()){
                     uploadPDF uploadPDF=postSnapshot.getValue(com.example.kurukshetrauniversitypapers.uploadPDF.class);
                     uploadPDFS.add(uploadPDF);
-
-
                 }
                 String[] uploads=new String[uploadPDFS.size()];
                 for(int i=0; i<uploads.length;i++){
