@@ -19,6 +19,11 @@ import androidx.annotation.Nullable;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -39,7 +44,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
     StorageReference storageReference,myref;
     FirebaseStorage firebaseStorage;
     int year=2019; // for downloader loop, year is initialized to 2019 as a starting year, than it will be decremneted
-
+    //static int count;
     //constructor initializing the values
     public Mylistadapter(Context context, int resource, List<Listdata> subjectlist) {
         super(context, resource, subjectlist);
@@ -121,30 +126,51 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
         //finally returning the view
         return view;
     }
-    public void download(final String directory, final String filename, int count) {
-
+    public void download(final String directory, final String filename,  int count) {
+        storageReference = firebaseStorage.getInstance().getReference();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         for (int i = 0; i < count; i++) {
-            storageReference = firebaseStorage.getInstance().getReference();
-            myref = storageReference.child(directory + "/" + filename+" "+year+".pdf");
-            myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    String url = uri.toString();
-                     class Example {
-                        protected Context context;
 
-                        public Example(Context context){
-                            this.context = context.getApplicationContext();
-                        }
-                    }
-                    downloadfiles(context.getApplicationContext(), directory + "/" + filename+" "+year, ".pdf", DIRECTORY_DOWNLOADS, url);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
+
+            rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
-                public void onFailure(@NonNull Exception e) {
+               public void onDataChange(DataSnapshot snapshot) {
+                    if (snapshot.hasChild(directory + "/" + filename+" "+year+".pdf")) {
+                        // run some code
+                        myref = storageReference.child(directory + "/" + filename+" "+year+".pdf");
+                        myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String url = uri.toString();
+                                class Example {
+                                    protected Context context;
+
+                                    public Example(Context context){
+                                        this.context = context.getApplicationContext();
+                                    }
+                                }
+                                downloadfiles(context.getApplicationContext(), directory + "/" + filename+" "+year, ".pdf", DIRECTORY_DOWNLOADS, url);
+
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+
+                            }
+                        });
+                    }
+                    else {
+                        year--;
+                        count++;
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
             });
+
         }
     }
 
