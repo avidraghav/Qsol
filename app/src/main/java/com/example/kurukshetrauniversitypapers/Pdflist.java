@@ -15,7 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.github.barteksc.pdfviewer.PDFView;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +29,7 @@ public class Pdflist extends AppCompatActivity {
      ListView listView;
      DatabaseReference databaseReference;
      List<uploadPDF> uploadPDFS;
-     PDFView pdfView;
+
      String key;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

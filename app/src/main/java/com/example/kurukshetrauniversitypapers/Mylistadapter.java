@@ -43,8 +43,9 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
     int resource;
     StorageReference storageReference,myref;
     FirebaseStorage firebaseStorage;
-    int year=2019; // for downloader loop, year is initialized to 2019 as a starting year, than it will be decremneted
-    //static int count;
+    int pyear; // for downloader loop, year is initialized to 2019 as a starting year, than it will be decremneted
+    int year; // for downloader loop, year is initialized to 2019 as a starting year, than it will be decremneted
+     int counter=0;
     //constructor initializing the values
     public Mylistadapter(Context context, int resource, List<Listdata> subjectlist) {
         super(context, resource, subjectlist);
@@ -88,7 +89,8 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
 //                AlertDialog.Builder builder = new AlertDialog.Builder(context);
 //                builder.setTitle("Are you sure you want to download all files?");
                 if(subjectname.getText().equals("Biotechnology")) {
-                    download("cse-firstsem-Biotechnology", subjectname.getText().toString(), papercount5);
+                    year=2019;
+                    download("cse-firstsem-Biotechnology", subjectname.getText().toString(),year, papercount5);
                 }
 //                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 //            @Override
@@ -126,64 +128,71 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
         //finally returning the view
         return view;
     }
-    public void download(final String directory, final String filename,  int count) {
+    public void download(final String directory, final String filename,int year, int count) {
+         pyear=year;
+        counter=count;
         storageReference = firebaseStorage.getInstance().getReference();
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        for (int i = 0; i < count; i++) {
-
-
-            rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        for (int i = 0; i < counter; i++) {
+            storageReference.child(directory+"/"+filename+" "+pyear+".pdf").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
-               public void onDataChange(DataSnapshot snapshot) {
-                    if (snapshot.hasChild(directory + "/" + filename+" "+year+".pdf")) {
-                        // run some code
-                        myref = storageReference.child(directory + "/" + filename+" "+year+".pdf");
-                        myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                String url = uri.toString();
-                                class Example {
-                                    protected Context context;
+                public void onSuccess(Uri uri) {
+                    // Got the download URL for 'users/me/profile.png'
+                    rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot snapshot) {
+                            //if (snapshot.hasChild(directory + "/" + filename+" "+year)) {
+                            // if(storageReference.child(directory + "/" + filename+" "+year+".pdf").){
+                            myref = storageReference.child(directory + "/" + filename+" "+pyear+".pdf");
+                            myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String url = uri.toString();
+                                    class Example {
+                                        protected Context context;
 
-                                    public Example(Context context){
-                                        this.context = context.getApplicationContext();
+                                        public Example(Context context){
+                                            this.context = context.getApplicationContext();
+                                        }
                                     }
+                                   pyear= downloadfiles(context.getApplicationContext(), directory + "/" + filename+" "+pyear, ".pdf", DIRECTORY_DOWNLOADS, url);
+
                                 }
-                                downloadfiles(context.getApplicationContext(), directory + "/" + filename+" "+year, ".pdf", DIRECTORY_DOWNLOADS, url);
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
 
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
+                                }
+                            });
+                        }
 
-                            }
-                        });
-                    }
-                    else {
-                        year--;
-                        count++;
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
                 }
-
+            }).addOnFailureListener(new OnFailureListener() {
                 @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                public void onFailure(@NonNull Exception exception) {
+                    // File not found
+                    --pyear;
+                    counter=counter+2;
                 }
             });
-
         }
     }
 
 
-    public void downloadfiles(Context context, String filename, String fileExtension, String destinationDirectory, String url)
+    public int downloadfiles(Context context, String file, String fileExtension, String destinationDirectory, String url)
     {
         DownloadManager downloadmanager= (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri=Uri.parse(url);
         DownloadManager.Request request =new DownloadManager.Request(uri);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalFilesDir(context, destinationDirectory, filename+fileExtension);
+        request.setDestinationInExternalFilesDir(context, destinationDirectory, file+fileExtension);
         downloadmanager.enqueue(request);
-        year--;
+        return (--pyear);
     }
     //this method will remove the item from the list
 //    private void removeHero(final int position) {

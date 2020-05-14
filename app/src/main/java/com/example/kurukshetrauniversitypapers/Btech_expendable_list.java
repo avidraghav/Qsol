@@ -1,17 +1,30 @@
 package com.example.kurukshetrauniversitypapers;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.example.kurukshetrauniversitypapers.Cse_firstsem_subjectlist.papercount5;
 
 public class Btech_expendable_list extends AppCompatActivity {
 
@@ -19,74 +32,74 @@ public class Btech_expendable_list extends AppCompatActivity {
     List<String> branch;
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
+     int cs01;
+    DatabaseReference ref ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_btech_expendable_list);
-        expandableListView=findViewById(R.id.btechexpendablelist);          // expListAdapter.getChild(
-                                                                               // groupPosition, childPosition);
-        filldata();
+        expandableListView=findViewById(R.id.btechexpendablelist);
 
-        listAdapter=new MyExListAdapter(this,branch,semester);
-        expandableListView.setAdapter(listAdapter);
+
+        ref=FirebaseDatabase.getInstance().getReference("IN/KU/CS/01");
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("BI")) {
+                    cs01=cs01+(int)dataSnapshot.getChildrenCount();
+                    Log.e(dataSnapshot.getKey(), cs01 + "");
+                }
+                if(dataSnapshot.getKey().equals("MA")) {
+                    cs01=cs01+(int)dataSnapshot.getChildrenCount();
+                    Log.e(dataSnapshot.getKey(), cs01 + "");
+                }
+                if(dataSnapshot.getKey().equals("PH")) {
+                    cs01=cs01+(int)dataSnapshot.getChildrenCount();
+                    Log.e(dataSnapshot.getKey(), cs01 + "");
+                }
+                filldata();
+
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-               if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition)=="First semester") {
-                   Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
-                   //i.putExtra("key", "first");
-                   startActivity(i);
-                   Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-               }
-//                if(groupPosition==0 && semester.get(branch.get(groupPosition)).get(childPosition)=="Seond semster") {
-//                    Intent i=new Intent(getBaseContext(),Pdflist.class);
-//                    i.putExtra("key", "second");
-//                    startActivity(i);
-//                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(groupPosition==0 && semester.get(branch.get(groupPosition)).get(childPosition)=="Third semester") {
-//                    Intent i=new Intent(getBaseContext(),Pdflist.class);
-//                    i.putExtra("key", "third");
-//                    startActivity(i);
-//                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(groupPosition==0 && semester.get(branch.get(groupPosition)).get(childPosition)=="Fourth semester") {
-//                    Intent i=new Intent(getBaseContext(),Pdflist.class);
-//                    i.putExtra("key", "fourth");
-//                    startActivity(i);
-//                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(groupPosition==0 && semester.get(branch.get(groupPosition)).get(childPosition)=="Fifth semester") {
-//                    Intent i=new Intent(getBaseContext(),Pdflist.class);
-//                    i.putExtra("key", "fifth");
-//                    startActivity(i);
-//                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(groupPosition==0 && semester.get(branch.get(groupPosition)).get(childPosition)=="Sixth semester") {
-//                    Intent i=new Intent(getBaseContext(),Pdflist.class);
-//                    i.putExtra("key", "sixth");
-//                    startActivity(i);
-//                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(groupPosition==0 && semester.get(branch.get(groupPosition)).get(childPosition)=="Seventh semester") {
-//                    Intent i=new Intent(getBaseContext(),Pdflist.class);
-//                    i.putExtra("key", "seventh");
-//                    startActivity(i);
-//                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(groupPosition==0 && semester.get(branch.get(groupPosition)).get(childPosition)=="Eight semester") {
-//                    Intent i=new Intent(getBaseContext(),Pdflist.class);
-//                    i.putExtra("key", "eigth");
-//                    startActivity(i);
-//                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
-//                }
-                //Toast.makeText(Btech_expendable_list.this, branch.get(groupPosition)+ ":"+ semester.get(branch.get(groupPosition)).get(childPosition), Toast.LENGTH_SHORT).show();
+                if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("First semester "+cs01+" papers")) {
+                    Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
+                    //i.putExtra("key", "first");
+                    startActivity(i);
+                    Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
+                }
 
                 return false;
             }
         });
-
     }
     public void filldata(){
         branch=new ArrayList<>();
@@ -103,19 +116,9 @@ public class Btech_expendable_list extends AppCompatActivity {
         List<String> third=new ArrayList<>();
         List<String> fourth=new ArrayList<>();
         List<String> fifth=new ArrayList<>();
-//        List<String> sixth=new ArrayList<>();
-//        List<String> seventh=new ArrayList<>();
-//        List<String> eigth=new ArrayList<>();
 
-//        first.add("2019");
-//        first.add("2018");
-//        first.add("2017");
-//
-//        second.add("2019");
-//        second.add("2018");
-//        second.add("2017");
-
-        first.add("First semester");
+        first.add("First semester "+cs01+" papers");
+        Log.e("value",cs01+"");
         first.add("Second semester");
         first.add("Third semester");
         first.add("Fourth semester");
@@ -160,43 +163,6 @@ public class Btech_expendable_list extends AppCompatActivity {
         fifth.add("Seventh semester");
         fifth.add("Eight semester");
 
-//        third.add("Computer science engineering");
-//        third.add("Information technology");
-//        third.add("Mechanical engineering");
-//        third.add("Electronics and communication engg.");
-//        third.add("Electrical engineering");
-//
-//        fourth.add("Computer science engineering");
-//        fourth.add("Information technology");
-//        fourth.add("Mechanical engineering");
-//        fourth.add("Electronics and communication engg.");
-//        fourth.add("Electrical engineering");
-//
-//        fifth.add("Computer science engineering");
-//        fifth.add("Information technology");
-//        fifth.add("Mechanical engineering");
-//        fifth.add("Electronics and communication engg.");
-//        fifth.add("Electrical engineering");
-//
-//        sixth.add("Computer science engineering");
-//        sixth.add("Information technology");
-//        sixth.add("Mechanical engineering");
-//        sixth.add("Electronics and communication engg.");
-//        sixth.add("Electrical engineering");
-//
-//        seventh.add("Computer science engineering");
-//        seventh.add("Information technology");
-//        seventh.add("Mechanical engineering");
-//        seventh.add("Electronics and communication engg.");
-//        seventh.add("Electrical engineering");
-//
-//        eigth.add("Computer science engineering");
-//        eigth.add("Information technology");
-//        eigth.add("Mechanical engineering");
-//        eigth.add("Electronics and communication engg.");
-//        eigth.add("Electrical engineering");
-
-
         semester.put(branch.get(0),first);
         semester.put(branch.get(1),second);
         semester.put(branch.get(2),third);
@@ -205,6 +171,6 @@ public class Btech_expendable_list extends AppCompatActivity {
 //        semester.put(branch.get(5),sixth);
 //        semester.put(branch.get(6),seventh);
 //        semester.put(branch.get(7),eigth);
-
     }
+
 }

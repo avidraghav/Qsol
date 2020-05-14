@@ -1,63 +1,34 @@
 {
   "project_info": {
-    "project_number": "612838664751",
-    "firebase_url": "https://previous-year-q-paper.firebaseio.com",
-    "project_id": "previous-year-q-paper",
-    "storage_bucket": "previous-year-q-paper.appspot.com"
+    "project_number": "507188393173",
+    "firebase_url": "https://new-database-d16b8.firebaseio.com",
+    "project_id": "new-database-d16b8",
+    "storage_bucket": "new-database-d16b8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:612838664751:android:a7b5e2728c2649b821b4da",
-        "android_client_info": {
-          "package_name": "com.example.firebasetesting"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:612838664751:android:96ddc8a8520cf5aa21b4da",
+        "mobilesdk_app_id": "1:507188393173:android:7002f84e20f6f099d15e5c",
         "android_client_info": {
           "package_name": "com.example.kurukshetrauniversitypapers"
         }
       },
       "oauth_client": [
         {
-          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+          "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
+          "current_key": "AIzaSyBcaItNPfAEbxn6_IO57Rc8yqX__DRozbM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+              "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -66,56 +37,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:612838664751:android:7ad6b1dcd6d551b421b4da",
+        "mobilesdk_app_id": "1:507188393173:android:965900be48e43e52d15e5c",
         "android_client_info": {
-          "package_name": "com.example.pdfretrieve"
+          "package_name": "com.example.perfect_uploader"
         }
       },
       "oauth_client": [
         {
-          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+          "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
+          "current_key": "AIzaSyBcaItNPfAEbxn6_IO57Rc8yqX__DRozbM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:612838664751:android:98ba406df5867ba821b4da",
-        "android_client_info": {
-          "package_name": "com.example.previousyearqpaper"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB2h9Vtz2oT2Zx-GCWu13Vzvm8g6kAO4cI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "612838664751-2rd8uaaj9aueq9cnfp50ha8bf3q8pm2j.apps.googleusercontent.com",
+              "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
