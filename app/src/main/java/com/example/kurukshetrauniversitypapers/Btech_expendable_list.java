@@ -32,8 +32,8 @@ public class Btech_expendable_list extends AppCompatActivity {
     List<String> branch;
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
-     int cs01;
-    DatabaseReference ref ;
+     int cs01,cs02, total;
+    DatabaseReference ref1,ref2 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +42,8 @@ public class Btech_expendable_list extends AppCompatActivity {
         expandableListView=findViewById(R.id.btechexpendablelist);
 
 
-        ref=FirebaseDatabase.getInstance().getReference("IN/KU/CS/01");
-        ref.addChildEventListener(new ChildEventListener() {
+        ref1=FirebaseDatabase.getInstance().getReference("IN/KU/CS/01");
+        ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if(dataSnapshot.getKey().equals("BI")) {
@@ -86,6 +86,49 @@ public class Btech_expendable_list extends AppCompatActivity {
             }
         });
 
+        ref2=FirebaseDatabase.getInstance().getReference("IN/KU/CS/02");
+        ref2.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("CH")) {
+                    cs02=cs02+(int)dataSnapshot.getChildrenCount();
+                    Log.e(dataSnapshot.getKey(), cs02 + "");
+                }
+                if(dataSnapshot.getKey().equals("EE")) {
+                    cs02=cs02+(int)dataSnapshot.getChildrenCount();
+                    Log.e(dataSnapshot.getKey(), cs02 + "");
+                }
+
+                total=cs01+cs02;
+                filldata();
+
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
@@ -105,7 +148,7 @@ public class Btech_expendable_list extends AppCompatActivity {
         branch=new ArrayList<>();
         semester=new HashMap<>();
 
-        branch.add("Computer Science Engineering");
+        branch.add("Computer Science Engineering "+total+" papers");
         branch.add("Information Technology");
         branch.add("Mechanical Engineering");
         branch.add("Electronics and Communication Engg.");
@@ -119,7 +162,7 @@ public class Btech_expendable_list extends AppCompatActivity {
 
         first.add("First semester "+cs01+" papers");
         Log.e("value",cs01+"");
-        first.add("Second semester");
+        first.add("Second semester "+cs02+" papers");
         first.add("Third semester");
         first.add("Fourth semester");
         first.add("Fifth semester");

@@ -34,8 +34,7 @@ public class Cse_firstsem_subjectlist extends AppCompatActivity {
  Button downloadall;
  TextView subjectname;
  static int papercount1,papercount2,papercount3,papercount4,papercount5;
- FirebaseDatabase db=FirebaseDatabase.getInstance();
- DatabaseReference ref = db.getReference();
+ DatabaseReference ref;
  StorageReference storageReference,myref;
  FirebaseStorage firebaseStorage;
 
@@ -58,36 +57,37 @@ public class Cse_firstsem_subjectlist extends AppCompatActivity {
 //        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,subjects);
 //        listView.setAdapter(adapter)
         subjectlist = new ArrayList<>();
-
+           Log.e("info","11");
+           ref=FirebaseDatabase.getInstance().getReference("IN/KU/CS/01");
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("cse-firstsem-Biotechnology")) {
+                if(dataSnapshot.getKey().equals("BI")) {
                     papercount5=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Biotechnology", papercount5));
                     Log.e("papers", papercount5 + "");
 
                 }
-                if(dataSnapshot.getKey().equals("cse-firstsem-Engineering drawing and graphics")) {
+                if(dataSnapshot.getKey().equals("ED")) {
                     papercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Engineering drawing and graphics", papercount4));
+                    subjectlist.add(new Listdata("Engineering drawing", papercount4));
                     Log.e("papers", papercount4 + "");
 
                 }
-                if(dataSnapshot.getKey().equals("cse-firstsem-Foundation of computer programming")) {
+                if(dataSnapshot.getKey().equals("FP")) {
                     papercount3=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Foundation of computer programming", papercount3));
                     Log.e("papers", papercount3 + "");
 
                 }
-                if(dataSnapshot.getKey().equals("cse-firstsem-Mathematics")) {
+                if(dataSnapshot.getKey().equals("MA")) {
                     papercount2=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Mathematics", papercount2));
                     Log.e("papers", papercount2 + "");
 
                 }
-                if(dataSnapshot.getKey().equals("cse-firstsem-Physics")) {
+                if(dataSnapshot.getKey().equals("PH")) {
                     papercount1 =(int)dataSnapshot.getChildrenCount();
                     Log.e("papers", papercount1 + "");
                     subjectlist.add(new Listdata("Physics", papercount1));
