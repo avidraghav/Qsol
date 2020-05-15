@@ -1,5 +1,11 @@
 # Kurukshetra-University-papers-app
 This application is developed for the purpose of storing previous year papers of Kurukshetra University.
-<center>
+<p align="center">
 <img src="Screenshots/Screenshot_1589541413.png" height="450dp" width="300dp" class="center">
-</center>
+</p>
+<p align="center">
+<img src="" height="450dp" width="300dp" class="center">
+</p>
+<p align="center">
+<img src="Screenshots/Screenshot_1589541413.png" height="450dp" width="300dp" class="center">
+</p>
