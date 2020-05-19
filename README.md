@@ -1,4 +1,4 @@
-# Kurukshetra University papes application
+# Kurukshetra University papers application
 1. Papers are stored in the form of pdf files in firebase database
 2. Users can either view or download the files from the app
 3. Provides details about the number of papers available for each branch, semester and subject.
