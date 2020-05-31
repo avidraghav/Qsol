@@ -117,7 +117,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="BBA"
+                                    android:text="BBA (uploaded soon)"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview2"
                                     android:layout_centerHorizontal="true"
@@ -127,6 +127,7 @@
                                     android:id="@+id/bbabtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:onClick="progress"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
@@ -161,7 +162,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="MBA"
+                                    android:text="MBA (uploaded soon)"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview3"
                                     android:layout_centerHorizontal="true"
@@ -171,6 +172,7 @@
                                     android:id="@+id/mbabtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:onClick="progress"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
@@ -197,7 +199,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="BCA"
+                                    android:text="BCA (uploaded soon)"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview4"
                                     android:layout_centerHorizontal="true"
@@ -207,6 +209,7 @@
                                     android:id="@+id/bcabtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:onClick="progress"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
@@ -241,7 +244,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="MCA"
+                                    android:text="MCA (uploaded soon)"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview5"
                                     android:layout_centerHorizontal="true"
@@ -251,6 +254,7 @@
                                     android:id="@+id/mcabtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:onClick="progress"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
@@ -288,7 +292,8 @@
                                     android:id="@+id/kubtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:background="@android:color/transparent" />
+                                    android:background="@android:color/transparent"
+                                    android:onClick="website" />
 
                             </RelativeLayout>
 

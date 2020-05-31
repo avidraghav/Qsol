@@ -7,35 +7,32 @@
 
     <TextView
         android:id="@+id/subjectname"
-        android:layout_width="240dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:gravity="center_horizontal"
+        android:gravity="left"
         android:paddingBottom="10dp"
         android:text="Spiderman"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textColor="#0C0C0C"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/papercount"
-        android:layout_width="240dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/subjectname"
         android:gravity="center_horizontal"
         android:inputType="number"
         android:text="Spiderman"
-        android:layout_below="@+id/subjectname"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-
+        android:textColor="#0C0C0C"
+        android:textSize="12sp" />
 
     <Button
         android:id="@+id/download_btn"
-        android:layout_width="69dp"
-        android:layout_height="69dp"
+        android:layout_width="85dp"
+        android:layout_height="68dp"
         android:layout_toRightOf="@id/subjectname"
-        android:background="@drawable/images"
+        android:background="@drawable/downarrow8"
          />
 
 </RelativeLayout>

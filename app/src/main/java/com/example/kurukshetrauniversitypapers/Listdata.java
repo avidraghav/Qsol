@@ -4,9 +4,14 @@ public class Listdata {
     String subjectname;
     int papercount;
 
+
     public Listdata( String subjectname, int papercount) {
         this.subjectname = subjectname;
         this.papercount = papercount;
+
+    }
+    public Listdata(){
+
     }
 
 
@@ -17,4 +22,5 @@ public class Listdata {
     public int getPapercount() {
         return papercount;
     }
+
 }

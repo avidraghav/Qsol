@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".Cse_firstsem_subjectlist">
+    tools:context=".Cse_thirdesem_subjectlist">
 
     <ListView
         android:id="@+id/list"
@@ -13,9 +12,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp"
-        android:smoothScrollbar="true"
-       />
+        tools:layout_editor_absoluteY="20dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -24,7 +21,7 @@
 
         android:layout_marginRight="10dp"
         android:gravity="left"
-        android:text="1"
+        android:text="3"
         android:textColor="#100F0F"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -40,6 +37,4 @@
         android:textColor="#100F0F"
         android:textSize="15dp"
         android:textStyle="bold" />
-
-
 </RelativeLayout>
