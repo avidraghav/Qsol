@@ -205,38 +205,38 @@ static String sem1;
                 }
                 if(position==5) {
                     Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/CU");
+                    intent.putExtra("subject","IN/KU/CS/01/CH");
                     startActivity(intent);
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==6) {
                     Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/CH");
+                    intent.putExtra("subject","IN/KU/CS/01/CU");
                     startActivity(intent);
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==7) {
                     Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/EE");
+                    intent.putExtra("subject","IN/KU/CS/01/ED");
                     startActivity(intent);
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
 
                 if(position==8) {
                     Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/ET");
+                    intent.putExtra("subject","IN/KU/CS/01/EE");
                     startActivity(intent);
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==9) {
                     Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/ED");
+                    intent.putExtra("subject","IN/KU/CS/01/EH");
                     startActivity(intent);
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==10) {
                     Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/EH");
+                    intent.putExtra("subject","IN/KU/CS/01/ET");
                     startActivity(intent);
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }

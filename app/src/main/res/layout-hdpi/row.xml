@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/subjectname"
-        android:layout_width="340dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center_horizontal"
@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/papercount"
-        android:layout_width="340dp"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:inputType="number"
