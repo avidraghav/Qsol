@@ -52,39 +52,39 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("DC")) {
                     threepapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Discrete structure", threepapercount1));
+                    subjectlist.add(new Listdata("Discrete structure", threepapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DM")) {
                     threepapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Database management system", threepapercount2));
+                    subjectlist.add(new Listdata("Database management system", threepapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DT")) {
                     threepapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Data structures and algorithms", threepapercount3));
+                    subjectlist.add(new Listdata("Data structures and algorithms", threepapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DS")) {
                     threepapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Data structures", threepapercount4));
+                    subjectlist.add(new Listdata("Data structures", threepapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DE")) {
                     threepapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Digital electronics", threepapercount5));
+                    subjectlist.add(new Listdata("Digital electronics", threepapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("IF")) {
                     threepapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Internet Fundamental", threepapercount6));
+                    subjectlist.add(new Listdata("Internet Fundamental", threepapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("OP")) {
                     threepapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Object oriented programming", threepapercount7));
+                    subjectlist.add(new Listdata("Object oriented programming", threepapercount7+""));
                 }
                 if(dataSnapshot.getKey().equals("PL")) {
                     threepapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Programming language", threepapercount8));
+                    subjectlist.add(new Listdata("Programming language", threepapercount8+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

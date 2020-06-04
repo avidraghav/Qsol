@@ -12,30 +12,31 @@
         android:layout_height="match_parent"
         android:layout_marginTop="30dp"
         tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp" />
+        tools:layout_editor_absoluteY="20dp"
+        android:smoothScrollbar="true"
+        />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="35dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="10dp"
         android:gravity="left"
-        android:text="2"
+        android:text="1"
         android:textColor="#100F0F"
         android:textSize="14sp"
-        android:textStyle="bold" />
+        />
 
     <TextView
         android:id="@+id/sem"
-        android:layout_width="374dp"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-30dp"
+        android:layout_marginLeft="-8dp"
         android:layout_toRightOf="@+id/textView"
         android:gravity="left"
         android:text="semester"
         android:textColor="#100F0F"
-        android:textSize="15dp"
-        android:textStyle="bold" />
+        android:textSize="14sp" />
 
 </RelativeLayout>

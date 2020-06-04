@@ -67,80 +67,80 @@ static String sem1;
             {
                 if(dataSnapshot.getKey().equals("AC")) {
                     onepapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Applied chemistry", onepapercount1));
+                    subjectlist.add(new Listdata("Applied chemistry", onepapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("AM")) {
                     onepapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Applied mathematics", onepapercount2));
+                    subjectlist.add(new Listdata("Applied mathematics", onepapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("AP")) {
                     onepapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Applied physics", onepapercount3));
+                    subjectlist.add(new Listdata("Applied physics", onepapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("BI")) {
                     onepapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Biology", onepapercount4));
+                    subjectlist.add(new Listdata("Biology", onepapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("BT")) {
                     onepapercount5=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Biotechnology", onepapercount5));
+                    subjectlist.add(new Listdata("Biotechnology", onepapercount5+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CU")) {
                     onepapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Calculus linear algebra", onepapercount6));
+                    subjectlist.add(new Listdata("Calculus linear algebra", onepapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("CH")) {
                     onepapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Chemistry", onepapercount7));
+                    subjectlist.add(new Listdata("Chemistry", onepapercount7+""));
                 }
 
                 if(dataSnapshot.getKey().equals("EE")) {
                     onepapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical engineering", onepapercount8));
+                    subjectlist.add(new Listdata("Electrical engineering", onepapercount8+""));
                 }
                 if(dataSnapshot.getKey().equals("ET")) {
                     onepapercount9 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical technology", onepapercount9));
+                    subjectlist.add(new Listdata("Electrical technology", onepapercount9+""));
                 }
 
 
                 if(dataSnapshot.getKey().equals("ED")) {
                     onepapercount10=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Engineering drawing", onepapercount10));
+                    subjectlist.add(new Listdata("Engineering drawing", onepapercount10+""));
                 }
                 if(dataSnapshot.getKey().equals("EH")) {
                     onepapercount11 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("English", onepapercount11));
+                    subjectlist.add(new Listdata("English", onepapercount11+""));
                 }
                 if(dataSnapshot.getKey().equals("FP")) {
                     onepapercount12 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Fundamentals of computer programming", onepapercount12));
+                    subjectlist.add(new Listdata("Fundamentals of computer programming", onepapercount12+""));
                 }
                 if(dataSnapshot.getKey().equals("MA")) {
                     onepapercount13 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Mathematics", onepapercount13));
+                    subjectlist.add(new Listdata("Mathematics", onepapercount13+""));
                 }
                 if(dataSnapshot.getKey().equals("ML")) {
                     onepapercount14 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Multivariable calculus and linear algebra", onepapercount14));
+                    subjectlist.add(new Listdata("Multivariable calculus and linear algebra", onepapercount14+""));
                 }
                 if(dataSnapshot.getKey().equals("PH")) {
                     onepapercount15 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Physics", onepapercount15));
+                    subjectlist.add(new Listdata("Physics", onepapercount15+""));
                 }
 
                 if(dataSnapshot.getKey().equals("PP")) {
                     onepapercount16 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Programming for problem solving", onepapercount16));
+                    subjectlist.add(new Listdata("Programming for problem solving", onepapercount16+""));
                 }
                 if(dataSnapshot.getKey().equals("SH")) {
                     onepapercount17 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Semiconductor physics", onepapercount17));
+                    subjectlist.add(new Listdata("Semiconductor physics", onepapercount17+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

@@ -50,35 +50,35 @@ public class Cse_fourthsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("CA")) {
                     fourpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer architecture and organisation", fourpapercount1));
+                    subjectlist.add(new Listdata("Computer architecture and organisation", fourpapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("IF")) {
                     fourpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Internet Fundamental", fourpapercount2));
+                    subjectlist.add(new Listdata("Internet Fundamental", fourpapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("MI")) {
                     fourpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Microprocessor and interfacing", fourpapercount3));
+                    subjectlist.add(new Listdata("Microprocessor and interfacing", fourpapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("OP")) {
                     fourpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Object oriented programming", fourpapercount4));
+                    subjectlist.add(new Listdata("Object oriented programming", fourpapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("OS")) {
                     fourpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Operating systems", fourpapercount5));
+                    subjectlist.add(new Listdata("Operating systems", fourpapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("PL")) {
                     fourpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Programming language", fourpapercount6));
+                    subjectlist.add(new Listdata("Programming language", fourpapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("DD")) {
                     fourpapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Digital data communication", fourpapercount7));
+                    subjectlist.add(new Listdata("Digital data communication", fourpapercount7+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

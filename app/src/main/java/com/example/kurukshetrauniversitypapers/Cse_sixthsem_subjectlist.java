@@ -49,39 +49,39 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("AD")) {
                     sixpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Advanced database systems", sixpapercount1));
+                    subjectlist.add(new Listdata("Advanced database systems", sixpapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CD")) {
                     sixpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Compiler design semester", sixpapercount2));
+                    subjectlist.add(new Listdata("Compiler design semester", sixpapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CT")) {
                     sixpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer hardware technologies", sixpapercount3));
+                    subjectlist.add(new Listdata("Computer hardware technologies", sixpapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("EO")) {
                     sixpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Essentials of information technology", sixpapercount4));
+                    subjectlist.add(new Listdata("Essentials of information technology", sixpapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("MC")) {
                     sixpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Mobile computing", sixpapercount5));
+                    subjectlist.add(new Listdata("Mobile computing", sixpapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("NM")) {
                     sixpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Network management and security", sixpapercount6));
+                    subjectlist.add(new Listdata("Network management and security", sixpapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("SE")) {
                     sixpapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Software engineering", sixpapercount7));
+                    subjectlist.add(new Listdata("Software engineering", sixpapercount7+""));
                 }
                 if(dataSnapshot.getKey().equals("WE")) {
                     sixpapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Web engineering", sixpapercount8));
+                    subjectlist.add(new Listdata("Web engineering", sixpapercount8+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

@@ -57,39 +57,39 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("CC")) {
                     eightpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Cloud computing", eightpapercount1));
+                    subjectlist.add(new Listdata("Cloud computing", eightpapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DW")) {
                     eightpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Data warehouse and data mining", eightpapercount2));
+                    subjectlist.add(new Listdata("Data warehouse and data mining", eightpapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("IC")) {
                     eightpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Interactive computer graphics", eightpapercount3));
+                    subjectlist.add(new Listdata("Interactive computer graphics", eightpapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("MD")) {
                     eightpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Mobile apps development", eightpapercount4));
+                    subjectlist.add(new Listdata("Mobile apps development", eightpapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("NO")) {
                     eightpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Neural network and fuzzy lose", eightpapercount5));
+                    subjectlist.add(new Listdata("Neural network and fuzzy lose", eightpapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("NL")) {
                     eightpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Neural network and fuzzy logic", eightpapercount6));
+                    subjectlist.add(new Listdata("Neural network and fuzzy logic", eightpapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("ST")) {
                     eightpapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Software testing", eightpapercount7));
+                    subjectlist.add(new Listdata("Software testing", eightpapercount7+""));
                 }
                 if(dataSnapshot.getKey().equals("SV")) {
                     eightpapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Software verification validation and testing", eightpapercount8));
+                    subjectlist.add(new Listdata("Software verification validation and testing", eightpapercount8+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

@@ -152,7 +152,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
         Listdata listdata = subjectlist.get(position);
 
         subjectname.setText(listdata.getSubjectname());
-        papercount.setText(Integer.toString(listdata.getPapercount()));
+        papercount.setText(listdata.getPapercount());
        // textView.setText(listdata.getSemester());
 
         downloadall.setOnClickListener(new View.OnClickListener() {

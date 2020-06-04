@@ -51,35 +51,35 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("AT")) {
                     fivepapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Automata Theory", fivepapercount1));
+                    subjectlist.add(new Listdata("Automata Theory", fivepapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("EO")) {
                     fivepapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Essentials of information technology", fivepapercount2));
+                    subjectlist.add(new Listdata("Essentials of information technology", fivepapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CN")) {
                     fivepapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer networks", fivepapercount3));
+                    subjectlist.add(new Listdata("Computer networks", fivepapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CO")) {
                     fivepapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer organisation and architecture", fivepapercount4));
+                    subjectlist.add(new Listdata("Computer organisation and architecture", fivepapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DA")) {
                     fivepapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Design and analysis of algorithm", fivepapercount5));
+                    subjectlist.add(new Listdata("Design and analysis of algorithm", fivepapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("SA")) {
                     fivepapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Simulation and modelling", fivepapercount6));
+                    subjectlist.add(new Listdata("Simulation and modelling", fivepapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("OS")) {
                     fivepapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Operating systems", fivepapercount7));
+                    subjectlist.add(new Listdata("Operating systems", fivepapercount7+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

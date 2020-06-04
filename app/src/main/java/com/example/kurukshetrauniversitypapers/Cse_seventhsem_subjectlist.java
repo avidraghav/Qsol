@@ -51,43 +51,43 @@ public class Cse_seventhsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("CD")) {
                     sevenpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Compiler design", sevenpapercount1));
+                    subjectlist.add(new Listdata("Compiler design", sevenpapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CG")) {
                     sevenpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer graphics and animation", sevenpapercount2));
+                    subjectlist.add(new Listdata("Computer graphics and animation", sevenpapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CI")) {
                     sevenpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Cryptography and information security", sevenpapercount3));
+                    subjectlist.add(new Listdata("Cryptography and information security", sevenpapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("ES")) {
                     sevenpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Expert systems", sevenpapercount4));
+                    subjectlist.add(new Listdata("Expert systems", sevenpapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("SC")) {
                     sevenpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Security and cryptography", sevenpapercount5));
+                    subjectlist.add(new Listdata("Security and cryptography", sevenpapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("SP")) {
                     sevenpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Software project management", sevenpapercount6));
+                    subjectlist.add(new Listdata("Software project management", sevenpapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("SM")) {
                     sevenpapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Statistical models for computer science", sevenpapercount7));
+                    subjectlist.add(new Listdata("Statistical models for computer science", sevenpapercount7+""));
                 }
                 if(dataSnapshot.getKey().equals("UL")) {
                     sevenpapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Unix and Linux prog", sevenpapercount8));
+                    subjectlist.add(new Listdata("Unix and Linux prog", sevenpapercount8+""));
                 }
                 if(dataSnapshot.getKey().equals("WE")) {
                     sevenpapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Web engineering", sevenpapercount8));
+                    subjectlist.add(new Listdata("Web engineering", sevenpapercount8+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

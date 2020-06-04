@@ -49,76 +49,76 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("AC")) {
                     twopapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Applied chemistry", twopapercount1));
+                    subjectlist.add(new Listdata("Applied chemistry", twopapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("AM")) {
                     twopapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Applied mathematics", twopapercount2));
+                    subjectlist.add(new Listdata("Applied mathematics", twopapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("AP")) {
                     twopapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Applied physics", twopapercount3));
+                    subjectlist.add(new Listdata("Applied physics", twopapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("BI")) {
                     twopapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Biology", twopapercount4));
+                    subjectlist.add(new Listdata("Biology", twopapercount4+""));
 
                 }
                 if(dataSnapshot.getKey().equals("BT")) {
                     twopapercount5=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Biotechnology",twopapercount5));
+                    subjectlist.add(new Listdata("Biotechnology",twopapercount5+""));
 
                 }
                 if(dataSnapshot.getKey().equals("CL")) {
                     twopapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Calculus and ordinary differential equation", twopapercount6));
+                    subjectlist.add(new Listdata("Calculus and ordinary differential equation", twopapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("CH")) {
                     twopapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Chemistry", twopapercount7));
+                    subjectlist.add(new Listdata("Chemistry", twopapercount7+""));
                 }
                 if(dataSnapshot.getKey().equals("EE")) {
                     twopapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical engineering", twopapercount8));
+                    subjectlist.add(new Listdata("Electrical engineering", twopapercount8+""));
                 }
                 if(dataSnapshot.getKey().equals("ET")) {
                     twopapercount9 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical technology", twopapercount9));
+                    subjectlist.add(new Listdata("Electrical technology", twopapercount9+""));
                 }
                 if(dataSnapshot.getKey().equals("EF")) {
                     twopapercount10 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical technology fundamentals", twopapercount10));
+                    subjectlist.add(new Listdata("Electrical technology fundamentals", twopapercount10+""));
                 }
                 if(dataSnapshot.getKey().equals("ED")) {
                     twopapercount11 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Engineering drawing", twopapercount11));
+                    subjectlist.add(new Listdata("Engineering drawing", twopapercount11+""));
                 }
                 if(dataSnapshot.getKey().equals("EH")) {
                     twopapercount12 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("English", twopapercount12));
+                    subjectlist.add(new Listdata("English", twopapercount12+""));
                 }
                 if(dataSnapshot.getKey().equals("FP")) {
                     twopapercount13 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Fundamentals of computer programming", twopapercount13));
+                    subjectlist.add(new Listdata("Fundamentals of computer programming", twopapercount13+""));
                 }
                 if(dataSnapshot.getKey().equals("MA")) {
                     twopapercount14 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Mathematics", twopapercount14));
+                    subjectlist.add(new Listdata("Mathematics", twopapercount14+""));
                 }
                 if(dataSnapshot.getKey().equals("PH")) {
                     twopapercount15 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Physics", twopapercount15));
+                    subjectlist.add(new Listdata("Physics", twopapercount15+""));
                 }
                 if(dataSnapshot.getKey().equals("PS")) {
                     twopapercount16 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Probability and statistics", twopapercount16));
+                    subjectlist.add(new Listdata("Probability and statistics", twopapercount16+""));
                 }
                 if(dataSnapshot.getKey().equals("PP")) {
                     twopapercount17 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Programming for problem solving", twopapercount17));
+                    subjectlist.add(new Listdata("Programming for problem solving", twopapercount17+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);

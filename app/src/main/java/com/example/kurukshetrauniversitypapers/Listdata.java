@@ -1,11 +1,13 @@
 package com.example.kurukshetrauniversitypapers;
 
+import android.util.Log;
+
 public class Listdata {
     String subjectname;
-    int papercount;
+    String papercount;
 
 
-    public Listdata( String subjectname, int papercount) {
+    public Listdata( String subjectname, String papercount) {
         this.subjectname = subjectname;
         this.papercount = papercount;
 
@@ -16,11 +18,13 @@ public class Listdata {
 
 
     public String getSubjectname() {
-        return subjectname;
+
+            return subjectname;
+
     }
 
-    public int getPapercount() {
-        return papercount;
+    public String getPapercount() {
+        return "("+papercount+")";
     }
 
 }
