@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
@@ -31,11 +32,13 @@ public class Btech_expendable_list extends AppCompatActivity {
     ExpandableListAdapter listAdapter;
      int cs01,cs02,cs03,cs04,cs05,cs06,cs07,cs08, total;
     DatabaseReference ref1;
+    private static int timeout=4000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_btech_expendable_list);
+
         expandableListView=findViewById(R.id.btechexpendablelist);
 
 

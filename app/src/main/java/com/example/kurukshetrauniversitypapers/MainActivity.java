@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
         kubtn=findViewById(R.id.kubtn);
         checkConnection();
 
-
     }
 
     public void showfirst(View view) {
+//        startActivity(new Intent(this,SplashScreen_branchlist.class));
         Intent i=new Intent(this,Btech_expendable_list.class);
         startActivity(i);
     }
