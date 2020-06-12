@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -159,7 +160,9 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
             @Override
             public void onClick(View v) {
 
+
                 if(subjectname.getText().equals("Applied chemistry")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/AC", subjectname.getText().toString(),onepapercount1);
                     else {
@@ -167,6 +170,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Applied mathematics")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/AM", subjectname.getText().toString(),onepapercount2);
                     else {
@@ -174,6 +178,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Applied Physics")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/AP", subjectname.getText().toString(),onepapercount3);
                     else {
@@ -181,12 +186,14 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Biology")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/BI", subjectname.getText().toString(),onepapercount4);
                     else
                         download("IN/KU/CS/02/BI", subjectname.getText().toString(), twopapercount4);
                 }
                 if(subjectname.getText().equals("Biotechnology")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/BT", subjectname.getText().toString(),onepapercount5);
                     else {
@@ -194,10 +201,12 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Calculus and linear algebra")) {
+                    toast();
                         download("IN/KU/CS/01/CU", subjectname.getText().toString(),onepapercount6);
                 }
 
                 if(subjectname.getText().equals("Chemistry")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/CH", subjectname.getText().toString(),onepapercount7);
                     else {
@@ -206,6 +215,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
 
                 if(subjectname.getText().equals("Electrical engineering")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/EE", subjectname.getText().toString(),onepapercount8);
                     else {
@@ -213,6 +223,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Electrical technology")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/ET", subjectname.getText().toString(),onepapercount9);
                     else {
@@ -220,6 +231,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Engineering drawing")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/ED", subjectname.getText().toString(),onepapercount10);
                     else {
@@ -227,6 +239,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("English")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/EH", subjectname.getText().toString(),onepapercount11);
                     else {
@@ -234,6 +247,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Fundamnetals of computer programming")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/FP", subjectname.getText().toString(),onepapercount12);
                     else {
@@ -241,6 +255,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Mathematics")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/MA", subjectname.getText().toString(),onepapercount13);
                     else {
@@ -248,64 +263,79 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                 }
                 if(subjectname.getText().equals("Multivariable calculus and linear algebra")) {
+                    toast();
                         download("IN/KU/CS/01/MA", subjectname.getText().toString(),onepapercount14);
                 }
                 if(subjectname.getText().equals("Physics")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/PH", subjectname.getText().toString(),onepapercount15);
                     else
                         download("IN/KU/CS/02/PH", subjectname.getText().toString(), twopapercount15);
                 }
                 if(subjectname.getText().equals("Programming for problem solving")) {
+                    toast();
                     if(sem1.equals("1"))
                         download("IN/KU/CS/01/PP", subjectname.getText().toString(),onepapercount16);
                     else
                         download("IN/KU/CS/02/PP", subjectname.getText().toString(),twopapercount17);
                 }
                 if(subjectname.getText().equals("Semiconductor physics")) {
+                    toast();
                         download("IN/KU/CS/01/PH", subjectname.getText().toString(),onepapercount16);
                 }
                 if(subjectname.getText().equals("Calculus and ordinary differential equation")) {
+                    toast();
                     download("IN/KU/CS/02/CL", subjectname.getText().toString(),twopapercount6);
                 }
                 if(subjectname.getText().equals("Electrical technology fundamentals")) {
+                    toast();
                     download("IN/KU/CS/02/EF", subjectname.getText().toString(),twopapercount10);
                 }
                 if(subjectname.getText().equals("Probability and statistics")) {
+                    toast();
                     download("IN/KU/CS/02/PS", subjectname.getText().toString(),twopapercount16);
                 }
 
 
                 if(subjectname.getText().equals("Discrete structure")) {
+                    toast();
                     download("IN/KU/CS/01/DC", subjectname.getText().toString(),threepapercount1);
                 }
                 if(subjectname.getText().equals("Database management system")) {
+                    toast();
                     download("IN/KU/CS/01/DM", subjectname.getText().toString(),threepapercount2);
                 }
                 if(subjectname.getText().equals("Data structures and algorithms")) {
+                    toast();
                     download("IN/KU/CS/01/DT", subjectname.getText().toString(),threepapercount3);
                 }
                 if(subjectname.getText().equals("Data structures")) {
+                    toast();
                     download("IN/KU/CS/01/DS", subjectname.getText().toString(),threepapercount4);
                 }
                 if(subjectname.getText().equals("Digital electronics")) {
+                    toast();
                     download("IN/KU/CS/01/DE", subjectname.getText().toString(),threepapercount5);
                 }
 
 
                 if(subjectname.getText().equals("Internet Fundamental")) {
+                    toast();
                     if(sem3.equals("3"))
                         download("IN/KU/CS/03/IF", subjectname.getText().toString(),threepapercount6);
                     else
                         download("IN/KU/CS/04/IF", subjectname.getText().toString(),fourpapercount2);
                 }
                 if(subjectname.getText().equals("Programming language")) {
+                    toast();
                     if(sem3.equals("3"))
                         download("IN/KU/CS/03/PL", subjectname.getText().toString(),threepapercount8);
                     else
                         download("IN/KU/CS/04/PL", subjectname.getText().toString(),fourpapercount6);
                 }
                 if(subjectname.getText().equals("Object oriented programming")) {
+                    toast();
                     if(sem3.equals("3"))
                         download("IN/KU/CS/03/OP", subjectname.getText().toString(),threepapercount7);
                     else
@@ -313,65 +343,82 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
 
                 if(subjectname.getText().equals("Computer architecture and organisation")) {
+                    toast();
                     download("IN/KU/CS/04/CA", subjectname.getText().toString(),fourpapercount1);
                 }
                 if(subjectname.getText().equals("Microprocessor and interfacing")) {
+                    toast();
                     download("IN/KU/CS/04/MI", subjectname.getText().toString(),fourpapercount3);
                 }
                 if(subjectname.getText().equals("Digital data communication")) {
+                    toast();
                     download("IN/KU/CS/04/DD", subjectname.getText().toString(),fourpapercount7);
                 }
 
                 if(subjectname.getText().equals("Operating systems")) {
+                    toast();
                     if(sem4.equals("4"))
                         download("IN/KU/CS/04/OS", subjectname.getText().toString(),fourpapercount5);
                     else
                         download("IN/KU/CS/05/OS", subjectname.getText().toString(),fivepapercount7);
                 }
                 if(subjectname.getText().equals("Automata theory")) {
+                    toast();
                     download("IN/KU/CS/05/AT", subjectname.getText().toString(),fivepapercount1);
                 }
                 if(subjectname.getText().equals("Computer networks")) {
+                    toast();
                     download("IN/KU/CS/05/CN", subjectname.getText().toString(),fivepapercount3);
                 }
                 if(subjectname.getText().equals("Computer organisation and architecture")) {
+                    toast();
                     download("IN/KU/CS/05/CO", subjectname.getText().toString(),fivepapercount4);
                 }
                 if(subjectname.getText().equals("Design and analysis of algorithm")) {
+                    toast();
                     download("IN/KU/CS/05/DA", subjectname.getText().toString(),fivepapercount5);
                 }
                 if(subjectname.getText().equals("Simulation and modelling")) {
+                    toast();
                     download("IN/KU/CS/05/SA", subjectname.getText().toString(),fivepapercount6);
                 }
                 if(subjectname.getText().equals("Essentials of information technology")) {
+                    toast();
                     if(sem5.equals("5"))
                         download("IN/KU/CS/05/EO", subjectname.getText().toString(),fivepapercount2);
                     else
                         download("IN/KU/CS/06/EO", subjectname.getText().toString(),sixpapercount4);
                 }
                 if(subjectname.getText().equals("Advanced database systems")) {
+                    toast();
                     download("IN/KU/CS/06/AD", subjectname.getText().toString(),sixpapercount1);
                 }
 
                 if(subjectname.getText().equals("Computer hardware technologies")) {
+                    toast();
                     download("IN/KU/CS/06/CT", subjectname.getText().toString(),sixpapercount3);
                 }
                 if(subjectname.getText().equals("Mobile computing")) {
+                    toast();
                     download("IN/KU/CS/06/MC", subjectname.getText().toString(),sixpapercount5);
                 }
                 if(subjectname.getText().equals("Network management and security")) {
+                    toast();
                     download("IN/KU/CS/06/NM", subjectname.getText().toString(),sixpapercount6);
                 }
                 if(subjectname.getText().equals("Software engineering")) {
+                    toast();
                     download("IN/KU/CS/06/SE", subjectname.getText().toString(),sixpapercount7);
                 }
                 if(subjectname.getText().equals("Compiler design")) {
+                    toast();
                     if(sem6.equals("6"))
                         download("IN/KU/CS/06/CD", subjectname.getText().toString(),sixpapercount2);
                     if(sem7.equals("7"))
                         download("IN/KU/CS/07/CD", subjectname.getText().toString(),sevenpapercount1);
                 }
                 if(subjectname.getText().equals("Web engineering")) {
+                    toast();
                     if(sem6.equals("6"))
                         download("IN/KU/CS/06/WE", subjectname.getText().toString(),sixpapercount8);
                     else
@@ -379,49 +426,63 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
 
                 if(subjectname.getText().equals("Computer graphics and animation")) {
+                    toast();
                     download("IN/KU/CS/07/CG", subjectname.getText().toString(),sevenpapercount2);
                 }
                 if(subjectname.getText().equals("Cryptography and information security")) {
+                    toast();
                     download("IN/KU/CS/07/CI", subjectname.getText().toString(),sevenpapercount3);
                 }
                 if(subjectname.getText().equals("Expert systems")) {
+                    toast();
                     download("IN/KU/CS/07/ES", subjectname.getText().toString(),sevenpapercount4);
                 }
                 if(subjectname.getText().equals("Security and cryptography")) {
+                    toast();
                     download("IN/KU/CS/07/SC", subjectname.getText().toString(),sevenpapercount5);
                 }
                 if(subjectname.getText().equals("Software project management")) {
+                    toast();
                     download("IN/KU/CS/07/SP", subjectname.getText().toString(),sevenpapercount6);
                 }
-                if(subjectname.getText().equals("Statiscal models for computer science")) {
+                if(subjectname.getText().equals("Statistical models for computer science")) {
+                    toast();
                     download("IN/KU/CS/07/SM", subjectname.getText().toString(),sevenpapercount7);
                 }
-                if(subjectname.getText().equals("Unix and Linux programming")) {
+                if(subjectname.getText().equals("Unix and Linux prog")) {
+                    toast();
                     download("IN/KU/CS/07/UL", subjectname.getText().toString(),sevenpapercount8);
                 }
 
                 if(subjectname.getText().equals("Cloud computing")) {
+                    toast();
                     download("IN/KU/CS/08/CC", subjectname.getText().toString(),eightpapercount1);
                 }
                 if(subjectname.getText().equals("Data warehouse and data mining")) {
+                    toast();
                     download("IN/KU/CS/08/DW", subjectname.getText().toString(),eightpapercount2);
                 }
                 if(subjectname.getText().equals("Interactive computer graphics")) {
+                    toast();
                     download("IN/KU/CS/08/IC", subjectname.getText().toString(),eightpapercount3);
                 }
                 if(subjectname.getText().equals("Mobile apps development")) {
+                    toast();
                     download("IN/KU/CS/08/MD", subjectname.getText().toString(),eightpapercount4);
                 }
                 if(subjectname.getText().equals("Neural network and fuzzy lose")) {
+                    toast();
                     download("IN/KU/CS/08/NO", subjectname.getText().toString(),eightpapercount5);
                 }
                 if(subjectname.getText().equals("Neural network and fuzzy logic")) {
                     download("IN/KU/CS/08/NL", subjectname.getText().toString(),eightpapercount6);
                 }
                 if(subjectname.getText().equals("Software testing")) {
+                    toast();
                     download("IN/KU/CS/08/ST", subjectname.getText().toString(),eightpapercount7);
                 }
                 if(subjectname.getText().equals("Software verification validation and testing")) {
+                    toast();
                     download("IN/KU/CS/08/SV", subjectname.getText().toString(),eightpapercount8);
                 }
 
@@ -477,6 +538,8 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
 
 
     }
+
+    public void toast(){Toast.makeText(context, "downloading", Toast.LENGTH_LONG).show();}
 
     public void downloadfiles(Context context, String file, String fileExtension, String destinationDirectory, String url)
     {
