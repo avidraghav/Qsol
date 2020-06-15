@@ -137,7 +137,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
         this.subjectlist = subjectlist;
     }
 
-   // @SuppressLint("SetTextI18n")
+
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -485,8 +485,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     toast();
                     download("IN/KU/CS/08/SV", subjectname.getText().toString(),eightpapercount8);
                 }
-
-
 
 
             }

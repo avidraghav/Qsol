@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:context=".Pdflist"
     android:background="#008577">
 
     <ListView
-        android:id="@+id/btechfirst2019"
+        android:id="@+id/pdflist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
+
         />
 
 

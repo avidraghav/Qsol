@@ -1,6 +1,7 @@
 package com.example.kurukshetrauniversitypapers;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -10,12 +11,20 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btechbtn,bbabtn,mbabtn,bcabtn,mcabtn,kubtn;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +35,16 @@ public class MainActivity extends AppCompatActivity {
         bcabtn=findViewById(R.id.bcabtn);
         mcabtn=findViewById(R.id.mcabtn);
         kubtn=findViewById(R.id.kubtn);
+        mAuth=FirebaseAuth.getInstance();
         checkConnection();
+
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
     }
 
     public void showfirst(View view) {
-//        startActivity(new Intent(this,SplashScreen_branchlist.class));
+
         Intent i=new Intent(this,Btech_expendable_list.class);
         startActivity(i);
     }
@@ -54,28 +67,32 @@ public class MainActivity extends AppCompatActivity {
         }
        else {
             Toast.makeText(this, "Turn on internet connection", Toast.LENGTH_SHORT).show();
-//            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
-//            builder.setTitle("Turn on Internet connection");
-//
-//            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//
-//
-//                }
-//            });
-//            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//                         moveTaskToBack(true);
-//                         android.os.Process.killProcess(android.os.Process.myPid());
-//                         System.exit(1);
-//                }
-//            });
-//
-//            AlertDialog alertDialog = builder.create();
-//            alertDialog.show();
+
         }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.option_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                if((mAuth.getCurrentUser()==null)){
+                    Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+            }
+                else {
+                    mAuth.getInstance().signOut();
+                    finish();
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    break;
+                }
+
+        }
+        return true;
     }
 
 
