@@ -52,14 +52,15 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
         textViewSol.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "solution", Toast.LENGTH_SHORT).show();
+
                 if (mAuth.getCurrentUser() != null) {
-                    Toast.makeText(context, "The user is already logged in", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context, "The user is already logged in", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "solution", Toast.LENGTH_SHORT).show();
                 }
                 else{
                 String[] items = {"Yes", "No"};
                 AlertDialog.Builder dialog = new AlertDialog.Builder(context);
-                dialog.setTitle("Login first");
+                dialog.setTitle("To get the solution login first");
                 dialog.setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

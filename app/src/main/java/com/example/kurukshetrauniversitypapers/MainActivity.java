@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     mAuth.getInstance().signOut();
                     finish();
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    Toast.makeText(this, "You have been logged out", Toast.LENGTH_SHORT).show();
+                   // startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     break;
                 }
 

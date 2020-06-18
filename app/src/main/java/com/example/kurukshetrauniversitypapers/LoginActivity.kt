@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -45,9 +46,9 @@ class LoginActivity : AppCompatActivity() {
             loginUser(email, password)
         }
 
-        text_view_withoutlogin.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-        }
+//        text_view_withoutlogin.setOnClickListener {
+//            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+//        }
 
         text_view_register.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))

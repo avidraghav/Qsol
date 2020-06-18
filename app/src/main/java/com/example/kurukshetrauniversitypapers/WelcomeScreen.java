@@ -43,15 +43,10 @@ FirebaseAuth mAuth;
         {
             @Override
             public void run() {
-                if((mAuth.getCurrentUser()!=null)) {
                     Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                }
-                else {
-                    startActivity(new Intent(WelcomeScreen.this,LoginActivity.class));
-                    finish();
-                }
+
             }
         },SPLASH_SCREEN);
 

@@ -57,7 +57,7 @@ class RegisterActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     progressbar.visibility = View.GONE
                     if (task.isSuccessful) {
-                        startActivity(Intent(this@RegisterActivity, MainActivity::class.java))
+                        startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
                     } else {
                         task.exception?.message?.let {
                             toast(it)

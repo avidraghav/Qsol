@@ -30,9 +30,8 @@ public class Btech_expendable_list extends AppCompatActivity {
     List<String> branch;
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
-     int cs01,cs02,cs03,cs04,cs05,cs06,cs07,cs08, total;
+    int cs01,cs02,cs03,cs04,cs05,cs06,cs07,cs08, total;
     DatabaseReference ref1;
-    private static int timeout=4000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,84 +40,81 @@ public class Btech_expendable_list extends AppCompatActivity {
 
         expandableListView=findViewById(R.id.btechexpendablelist);
 
-
         ref1=FirebaseDatabase.getInstance().getReference("IN/KU/CS/01");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if(dataSnapshot.getKey().equals("AC")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("AM")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("AP")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("EE")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("BI")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("BT")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("CU")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("CH")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("ET")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("ED")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("EH")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("FP")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("MA")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("ML")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("PH")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("PP")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("SH")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs01 + "");
+
                 }
-               // total=total+cs01;
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
-
             }
 
             @Override
@@ -148,79 +144,76 @@ public class Btech_expendable_list extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if(dataSnapshot.getKey().equals("AC")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("AM")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("AP")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("BI")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("BT")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("CL")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("CH")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("EE")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("ET")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("EF")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("ED")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("EH")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("FP")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("MA")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("PH")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("PS")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
                 if(dataSnapshot.getKey().equals("PP")) {
                     cs02=cs02+(int)dataSnapshot.getChildrenCount();
-                    Log.e(dataSnapshot.getKey(), cs02 + "");
+
                 }
 
-                //total=total+cs02;
                 filldata();
-
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
-
             }
 
             @Override
@@ -273,9 +266,7 @@ public class Btech_expendable_list extends AppCompatActivity {
                     cs03=cs03+(int)dataSnapshot.getChildrenCount();
                 }
 
-                // total=total+cs06;
                 filldata();
-
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
 
@@ -330,10 +321,8 @@ public class Btech_expendable_list extends AppCompatActivity {
 
                 // total=total+cs06;
                 filldata();
-
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
-
             }
 
             @Override
@@ -385,7 +374,6 @@ public class Btech_expendable_list extends AppCompatActivity {
 
                 // total=total+cs06;
                 filldata();
-
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
 
@@ -441,9 +429,8 @@ public class Btech_expendable_list extends AppCompatActivity {
                     cs06=cs06+(int)dataSnapshot.getChildrenCount();
                 }
 
-               // total=total+cs06;
+                // total=total+cs06;
                 filldata();
-
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
 
@@ -501,10 +488,9 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("WE")) {
                     cs07=cs07+(int)dataSnapshot.getChildrenCount();
                 }
-                 Log.e("7 sem",cs07+"");
-               // total=total+cs07;
+                Log.e("7 sem",cs07+"");
+                // total=total+cs07;
                 filldata();
-
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
 
@@ -563,7 +549,6 @@ public class Btech_expendable_list extends AppCompatActivity {
                 Log.e("total",total+"");
                 total=cs01+cs02+cs03+cs04+cs05+cs06+cs07+cs08;
                 filldata();
-
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
 
@@ -589,6 +574,7 @@ public class Btech_expendable_list extends AppCompatActivity {
 
             }
         });
+
 
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
@@ -764,6 +750,9 @@ public class Btech_expendable_list extends AppCompatActivity {
             }
         });
     }
+
+
+    
     public void filldata(){
         branch=new ArrayList<>();
         semester=new HashMap<>();
@@ -830,9 +819,7 @@ public class Btech_expendable_list extends AppCompatActivity {
         semester.put(branch.get(2),third);
         semester.put(branch.get(3),fourth);
         semester.put(branch.get(4),fifth);
-//        semester.put(branch.get(5),sixth);
-//        semester.put(branch.get(6),seventh);
-//        semester.put(branch.get(7),eigth);
+
     }
 
 }
