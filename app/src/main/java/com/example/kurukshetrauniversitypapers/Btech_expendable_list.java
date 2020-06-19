@@ -2,23 +2,18 @@ package com.example.kurukshetrauniversitypapers;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
-
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,12 +26,14 @@ public class Btech_expendable_list extends AppCompatActivity {
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
     int cs01,cs02,cs03,cs04,cs05,cs06,cs07,cs08, total;
+   static int csem1,csem2,csem3,csem4,csem5,csem6,csem7;
     DatabaseReference ref1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_btech_expendable_list);
+        csem1=1; csem2=2; csem3=3;csem4=4;csem5=5;csem6=6;csem7=7;
 
         expandableListView=findViewById(R.id.btechexpendablelist);
 
@@ -575,20 +572,18 @@ public class Btech_expendable_list extends AppCompatActivity {
             }
         });
 
-
-
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+cs01+")")) {
                     Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
-                    //i.putExtra("key", "first");
+                    //i.putExtra("key", "1");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+cs02+")")) {
                     Intent i=new Intent(getBaseContext(),Cse_secondsem_subjectlist.class);
-                    //i.putExtra("key", "first");
+                   // i.putExtra("key", "2");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }

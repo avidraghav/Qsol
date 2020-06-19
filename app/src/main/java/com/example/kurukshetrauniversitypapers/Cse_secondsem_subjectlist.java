@@ -28,7 +28,6 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
     TextView subjectname;
     TextView papercount;
     TextView textView;
-
     static int twopapercount1,twopapercount2,twopapercount3,twopapercount4,twopapercount5,twopapercount6,twopapercount7,twopapercount8,twopapercount9,twopapercount10,twopapercount11,twopapercount12,twopapercount13,twopapercount14,twopapercount15,twopapercount16,twopapercount17;
     DatabaseReference ref;
     @Override
@@ -40,6 +39,8 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
         listView=findViewById(R.id.list);
+
+        Intent intent=getIntent();
 
         subjectlist = new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/CS/02");
@@ -244,13 +245,13 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==15) {
                     Intent intent=new Intent(Cse_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/02/PS");
+                    intent.putExtra("subject","IN/KU/CS/02/PP");
                     startActivity(intent);
                     Toast.makeText(Cse_secondsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==16) {
                     Intent intent=new Intent(Cse_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/02/PP");
+                    intent.putExtra("subject","IN/KU/CS/02/PS");
                     startActivity(intent);
                     Toast.makeText(Cse_secondsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }

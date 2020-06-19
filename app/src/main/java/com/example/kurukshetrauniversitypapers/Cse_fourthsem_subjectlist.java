@@ -27,7 +27,7 @@ public class Cse_fourthsem_subjectlist extends AppCompatActivity {
     TextView subjectname;
     TextView papercount;
     TextView textView;
-    static String sem4;
+
     static int fourpapercount1,fourpapercount2,fourpapercount3,fourpapercount4,fourpapercount5,fourpapercount6,fourpapercount7;
     DatabaseReference ref;
     @Override
@@ -40,7 +40,8 @@ public class Cse_fourthsem_subjectlist extends AppCompatActivity {
         subjectname=findViewById(R.id.subjectname);
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
-        sem4=textView.getText().toString();
+
+
 
         subjectlist = new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/CS/04");

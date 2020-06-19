@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".FeedbackActivity"-->
+<!--    android:background="@color/colorPrimaryDark">-->
+
+<!--<EditText-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginTop="20dp"-->
+<!--    android:hint="name"-->
+<!--    android:textSize="20dp"-->
+<!--    android:textColor="@color/colorPrimary"-->
+<!--    android:id="@+id/sender_name"/>-->
+<!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:hint="Feedback"-->
+<!--        android:textSize="20dp"-->
+<!--        android:layout_below="@+id/sender_name"-->
+<!--        android:textColor="@color/colorPrimary"-->
+<!--        android:id="@+id/feedback"/>-->
+<!--    -->
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Send"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:id="@+id/button_send"-->
+<!--        android:textSize="20dp"/>-->
+
+<!--</RelativeLayout>-->
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/text_view_register"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textAlignment="center"
+        android:text="Your feedback is of great importance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <EditText
+        android:id="@+id/sender_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_feedback_image"
+        android:drawablePadding="10dp"
+        android:singleLine="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Your name"
+        />
+
+
+    <EditText
+        android:id="@+id/feedback"
+        android:gravity="top|left"
+        android:layout_width="fill_parent"
+        android:layout_height="372dp"
+        android:hint="Feedback"
+        android:inputType="textMultiLine"
+        />
+
+
+
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="22dp"
+        android:background="#d67601"
+        android:text="Send"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"/>
+
+
+</LinearLayout>

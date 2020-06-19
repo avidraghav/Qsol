@@ -29,7 +29,7 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
     TextView textView;
     static int threepapercount1,threepapercount2,threepapercount3,threepapercount4,threepapercount5,threepapercount6,threepapercount7,threepapercount8;
     DatabaseReference ref;
-   static String sem3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +39,6 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
         subjectname=findViewById(R.id.subjectname);
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
-
-        sem3=textView.getText().toString();
 
 
 

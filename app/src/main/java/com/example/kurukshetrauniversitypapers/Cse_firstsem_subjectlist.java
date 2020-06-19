@@ -39,7 +39,7 @@ public class Cse_firstsem_subjectlist extends AppCompatActivity {
  TextView subjectname;
  TextView papercount;
 TextView textView;
-static String sem1;
+
  static int onepapercount1,onepapercount2,onepapercount3,onepapercount4,onepapercount5,onepapercount6,onepapercount7,onepapercount8,onepapercount9,onepapercount10,onepapercount11,onepapercount12,onepapercount13,onepapercount14,onepapercount15,onepapercount16,onepapercount17;
  DatabaseReference ref;
 
@@ -56,8 +56,6 @@ static String sem1;
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
 
-     sem1=textView.getText().toString();
-     Log.e("sem",sem1);
 
         subjectlist = new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/CS/01");

@@ -24,7 +24,7 @@
         android:layout_width="61dp"
         android:layout_height="56dp"
 
-        android:background="@drawable/downarrow8"
+        android:background="@drawable/ic_vector_download"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
