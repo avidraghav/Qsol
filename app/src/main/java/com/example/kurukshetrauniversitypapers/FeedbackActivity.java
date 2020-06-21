@@ -25,7 +25,7 @@ public class FeedbackActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent=new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("mailto:"+ "raghavaggarwal776@gmail.com"));
+                        Uri.parse("mailto:"+ "jmit.raghav@gmail.com"));
                        intent.putExtra(Intent.EXTRA_SUBJECT,"Feedback for KUK papers application");
                        intent.putExtra(Intent.EXTRA_TEXT,"Name: "+e1.getText().toString()+"\n Feedback: "+e2.getText().toString());
                 startActivity(intent);

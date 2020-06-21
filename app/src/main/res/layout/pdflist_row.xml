@@ -7,19 +7,20 @@
 
     <TextView
         android:id="@+id/pdfname"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:gravity="left"
+        android:onClick="viewFiles"
         android:paddingBottom="10dp"
         android:text="Chemistry"
         android:textColor="#3F51B5"
         app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="viewFiles"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView

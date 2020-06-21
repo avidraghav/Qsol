@@ -41,7 +41,9 @@ public class Cse_seventhsem_subjectlist extends AppCompatActivity {
         subjectname=findViewById(R.id.subjectname);
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
-
+        GlobalClass globalClass=(GlobalClass)getApplicationContext();
+        globalClass.setBranch("CSE");
+        globalClass.setSemester(7);
 
         subjectlist = new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/CS/07");

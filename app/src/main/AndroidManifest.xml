@@ -3,13 +3,18 @@
     package="com.example.kurukshetrauniversitypapers">
 
     <application
+        android:name=".GlobalClass"
         android:allowBackup="true"
         android:icon="@drawable/kurukshetrauniversity"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".Ece_eightsem_subjectlist"></activity>
+        <activity android:name=".Ece_seventhsem_subjectlist" />
+        <activity android:name=".Ece_sixthsem_subjectlist" />
+        <activity android:name=".Ece_fourthsem_subjectlist" />
+        <activity android:name=".FeedbackActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".WelcomeScreen">

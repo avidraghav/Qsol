@@ -39,6 +39,7 @@ public class Cse_firstsem_subjectlist extends AppCompatActivity {
  TextView subjectname;
  TextView papercount;
 TextView textView;
+static String semester;
 
  static int onepapercount1,onepapercount2,onepapercount3,onepapercount4,onepapercount5,onepapercount6,onepapercount7,onepapercount8,onepapercount9,onepapercount10,onepapercount11,onepapercount12,onepapercount13,onepapercount14,onepapercount15,onepapercount16,onepapercount17;
  DatabaseReference ref;
@@ -55,6 +56,11 @@ TextView textView;
         listview=findViewById(R.id.list);
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
+         semester=textView.getText().toString();
+
+         GlobalClass globalClass=(GlobalClass)getApplicationContext();
+        globalClass.setBranch("CSE");
+        globalClass.setSemester(1);
 
 
         subjectlist = new ArrayList<>();
