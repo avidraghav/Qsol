@@ -7,6 +7,6 @@
     tools:context=".Ece_eightsem_subjectlist">
 
     <include
-        layout="@layout/ece_layout"/>
+        layout="@layout/subjects_layout"/>
 
 </RelativeLayout>

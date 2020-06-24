@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Ece_fourthsem_subjectlist">
+    tools:context=".It_eightsem_subjectlist">
 
-    <include
-        layout="@layout/subjects_layout"/>
+    <include layout="@layout/subjects_layout"/>
 
 </RelativeLayout>

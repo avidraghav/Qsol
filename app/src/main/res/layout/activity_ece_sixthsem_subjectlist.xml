@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Ece_sixthsem_subjectlist">
     <include
-        layout="@layout/ece_layout"/>
+        layout="@layout/subjects_layout"/>
 
 </RelativeLayout>

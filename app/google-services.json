@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:507188393173:android:7002f84e20f6f099d15e5c",
         "android_client_info": {
-          "package_name": "com.example.kurukshetrauniversitypapers"
+          "package_name": "com.application.kurukshetrauniversitypapers"
         }
       },
       "oauth_client": [
@@ -39,7 +39,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:507188393173:android:965900be48e43e52d15e5c",
         "android_client_info": {
-          "package_name": "com.example.perfect_uploader"
+          "package_name": "com.application.perfect_uploader"
         }
       },
       "oauth_client": [
