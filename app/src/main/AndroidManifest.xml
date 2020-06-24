@@ -10,7 +10,8 @@
         android:roundIcon="@drawable/kurukshetrauniversity"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".It_eightsem_subjectlist"></activity>
+        <activity android:name=".Expendable_loader"></activity>
+        <activity android:name=".It_eightsem_subjectlist" />
         <activity android:name=".It_seventhsem_subjectlist" />
         <activity android:name=".It_sixthsem_subjectlist" />
         <activity android:name=".It_fourthsem_subjectlist" />
@@ -60,8 +61,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

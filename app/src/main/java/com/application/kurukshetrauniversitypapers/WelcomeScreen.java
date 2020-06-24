@@ -18,14 +18,14 @@ public class WelcomeScreen extends AppCompatActivity {
 ImageView imageView;
 TextView textView, textView2;
 Animation top, bottom;
-FirebaseAuth mAuth;
+//FirebaseAuth mAuth;
     private  static  int SPLASH_SCREEN =2500;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mAuth=FirebaseAuth.getInstance();
+        //mAuth=FirebaseAuth.getInstance();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_welcome_screen);
 

@@ -1,13 +1,21 @@
 package com.application.kurukshetrauniversitypapers;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -28,17 +36,17 @@ public class Btech_expendable_list extends AppCompatActivity {
     int cs01,cs02,cs03,cs04,cs05,cs06,cs07,cs08, total_cse;
     int ec04,ec06,ec07,ec08,total_ece;
     int it04,it06,it07,it08,total_it;
-
     DatabaseReference ref1;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_btech_expendable_list);
+        textView=findViewById(R.id.refresh);
 
 
         expandableListView=findViewById(R.id.btechexpendablelist);
-
         ref1=FirebaseDatabase.getInstance().getReference("IN/KU/CS/01");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
@@ -510,7 +518,6 @@ public class Btech_expendable_list extends AppCompatActivity {
             }
         });
         ref1=FirebaseDatabase.getInstance().getReference("IN/KU/CS/08");
-
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -567,9 +574,7 @@ public class Btech_expendable_list extends AppCompatActivity {
 
             }
         });
-
         // ece paper counts
-
         ref1=FirebaseDatabase.getInstance().getReference("IN/KU/EC/04");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
@@ -778,7 +783,6 @@ public class Btech_expendable_list extends AppCompatActivity {
 
             }
         });
-
         // IT paper count
         ref1=FirebaseDatabase.getInstance().getReference("IN/KU/IT/04");
         ref1.addChildEventListener(new ChildEventListener() {
@@ -949,6 +953,7 @@ public class Btech_expendable_list extends AppCompatActivity {
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
 
+
             }
 
             @Override
@@ -973,6 +978,12 @@ public class Btech_expendable_list extends AppCompatActivity {
         });
 
 
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Btech_expendable_list.this,Expendable_loader.class));
+            }
+        });
 
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
@@ -1168,8 +1179,6 @@ public class Btech_expendable_list extends AppCompatActivity {
         });
     }
 
-
-    
     public void filldata(){
         branch=new ArrayList<>();
         semester=new HashMap<>();
