@@ -1,4 +1,5 @@
-# SOL ![Logo]("Screenshots/kuk.png")
+# SOL  <img src="/Screenshots/kuk.png" height="100">
+
 ### One destination for all previous year papers of Kurukshetra university.
 
 _Italics_
@@ -18,11 +19,15 @@ _Italics_
 
 **Screenshots**
 
-![Splash screen]("Screenshots/Splashscreen.jpg")
-![Dashboard]("Screenshots/Dashboard.jpg")
-![List of engineering branches]("Screenshots/Expendablelist.jpg")
-![All semesters included]("Screenshots/expanded.jpg")
-![All subjects available]("Screenshots/subjectlist.jpg")
+<img src="/Screenshots/Splashscreen.jpg" height="500"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="/Screenshots/Dashboard.jpg" height="500">
+
+<img src="/Screenshots/Expendablelist.jpg" height="500">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/Screenshots/expanded.jpg" height="500">
+
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="/Screenshots/subjectlsit.jpg" height="500">
+
+
+
+
 
 ### All papers are added through an uploader app following a series of steps as follows
 
@@ -37,7 +42,7 @@ _Italics_
 
 ### Nomenclature for database
 
-[excel file](Nomenclature/Nomenclature.xlxs )
+[excel file](/Nomenclature/Nomenclature.xlxs )
 
 
 ### For contribution
@@ -49,7 +54,8 @@ Push your branch (git push origin my-new-feature)
 Create a new Pull Request
 ```
 
-![image]("Screenshots/gitone.png")
+
+<img src="/Screenshots/gitone.png" height="100">
 
 ### Raghav Aggarwal
 
