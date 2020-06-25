@@ -2,7 +2,6 @@
 
 ### One destination for all previous year papers of Kurukshetra university.
 
-_Italics_
 
 ### Features
 ```Plain
