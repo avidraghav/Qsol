@@ -31,7 +31,7 @@
         android:gravity="left"
         android:paddingBottom="10dp"
         android:text="Solution"
-        android:textColor="#3F51B5"
+        android:textColor="#8A9195"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"

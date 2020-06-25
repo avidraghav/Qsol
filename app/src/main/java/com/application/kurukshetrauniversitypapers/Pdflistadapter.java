@@ -56,28 +56,30 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
             @Override
             public void onClick(View view) {
 
-                if (mAuth.getCurrentUser() != null) {
-                    //Toast.makeText(context, "The user is already logged in", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(context, "solution", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                String[] items = {"Yes", "No"};
-                AlertDialog.Builder dialog = new AlertDialog.Builder(context);
-                dialog.setTitle("To get the solution login first");
-                dialog.setItems(items, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (which == 0) {
-                            Intent intent = new Intent(context, LoginActivity.class);
-                            context.startActivity(intent);
-                        }
-                        if (which == 1) {
+                Toast.makeText(context, "will be uploaded soon", Toast.LENGTH_SHORT).show();
 
-                        }
-                    }
-                });
-                dialog.create().show();
-            }
+//                if (mAuth.getCurrentUser() != null) {
+//                    //Toast.makeText(context, "The user is already logged in", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "solution", Toast.LENGTH_SHORT).show();
+//                }
+//                else{
+//                String[] items = {"Yes", "No"};
+//                AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+//                dialog.setTitle("To get the solution login first");
+//                dialog.setItems(items, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        if (which == 0) {
+//                            Intent intent = new Intent(context, LoginActivity.class);
+//                            context.startActivity(intent);
+//                        }
+//                        if (which == 1) {
+//
+//                        }
+//                    }
+//                });
+//                dialog.create().show();
+//            }
             }
         });
         return listViewItem;
