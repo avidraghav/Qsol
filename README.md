@@ -1,4 +1,4 @@
-# SOL ![Logo]("Screenshots/kuk.png")
+# SOL ![Logo]("SOL/Screenshots/kuk.png")
 ### One destination for all previous year papers of Kurukshetra university.
 
 _Italics_
