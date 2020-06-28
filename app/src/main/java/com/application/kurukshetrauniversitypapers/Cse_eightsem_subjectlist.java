@@ -35,7 +35,7 @@ import java.util.List;
 public class Cse_eightsem_subjectlist extends AppCompatActivity {
     ListView listView;
     List<Listdata> subjectlist;
-    Button downloadall;
+    TextView downloadall;
     TextView subjectname;
     TextView papercount;
     TextView textView;

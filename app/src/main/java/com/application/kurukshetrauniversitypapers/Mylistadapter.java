@@ -4,6 +4,7 @@ package com.application.kurukshetrauniversitypapers;
 import android.app.DownloadManager;
 import android.content.Context;
 
+import android.media.effect.EffectFactory;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -147,6 +148,30 @@ import static com.application.kurukshetrauniversitypapers.Ece_sixthsem_subjectli
 import static com.application.kurukshetrauniversitypapers.Ece_sixthsem_subjectlist.ece_sixpapercount4;
 import static com.application.kurukshetrauniversitypapers.Ece_sixthsem_subjectlist.ece_sixpapercount5;
 import static com.application.kurukshetrauniversitypapers.Ece_sixthsem_subjectlist.ece_sixpapercount6;
+import static com.application.kurukshetrauniversitypapers.Ele_eightsem_subjectlist.el_eightpapercount1;
+import static com.application.kurukshetrauniversitypapers.Ele_eightsem_subjectlist.el_eightpapercount2;
+import static com.application.kurukshetrauniversitypapers.Ele_eightsem_subjectlist.el_eightpapercount3;
+import static com.application.kurukshetrauniversitypapers.Ele_eightsem_subjectlist.el_eightpapercount4;
+import static com.application.kurukshetrauniversitypapers.Ele_eightsem_subjectlist.el_eightpapercount5;
+import static com.application.kurukshetrauniversitypapers.Ele_fourthsem_subjectlist.el_fourpapercount1;
+import static com.application.kurukshetrauniversitypapers.Ele_fourthsem_subjectlist.el_fourpapercount2;
+import static com.application.kurukshetrauniversitypapers.Ele_fourthsem_subjectlist.el_fourpapercount3;
+import static com.application.kurukshetrauniversitypapers.Ele_fourthsem_subjectlist.el_fourpapercount4;
+import static com.application.kurukshetrauniversitypapers.Ele_fourthsem_subjectlist.el_fourpapercount5;
+import static com.application.kurukshetrauniversitypapers.Ele_fourthsem_subjectlist.el_fourpapercount6;
+import static com.application.kurukshetrauniversitypapers.Ele_fourthsem_subjectlist.el_fourpapercount7;
+import static com.application.kurukshetrauniversitypapers.Ele_seventhsem_subjectlist.el_sevenpapercount1;
+import static com.application.kurukshetrauniversitypapers.Ele_seventhsem_subjectlist.el_sevenpapercount2;
+import static com.application.kurukshetrauniversitypapers.Ele_seventhsem_subjectlist.el_sevenpapercount3;
+import static com.application.kurukshetrauniversitypapers.Ele_seventhsem_subjectlist.el_sevenpapercount4;
+import static com.application.kurukshetrauniversitypapers.Ele_seventhsem_subjectlist.el_sevenpapercount5;
+import static com.application.kurukshetrauniversitypapers.Ele_sixthsem_subjectlist.el_sixpapercount1;
+import static com.application.kurukshetrauniversitypapers.Ele_sixthsem_subjectlist.el_sixpapercount2;
+import static com.application.kurukshetrauniversitypapers.Ele_sixthsem_subjectlist.el_sixpapercount3;
+import static com.application.kurukshetrauniversitypapers.Ele_sixthsem_subjectlist.el_sixpapercount6;
+import static com.application.kurukshetrauniversitypapers.Ele_sixthsem_subjectlist.el_sixpapercount7;
+import static com.application.kurukshetrauniversitypapers.Ele_sixthsem_subjectlist.el_sixpapercount8;
+import static com.application.kurukshetrauniversitypapers.Ele_sixthsem_subjectlist.el_sixpapercount9;
 import static com.application.kurukshetrauniversitypapers.It_eightsem_subjectlist.it_eightpapercount1;
 import static com.application.kurukshetrauniversitypapers.It_eightsem_subjectlist.it_eightpapercount2;
 import static com.application.kurukshetrauniversitypapers.It_eightsem_subjectlist.it_eightpapercount3;
@@ -199,7 +224,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
 
         final TextView subjectname = view.findViewById(R.id.subjectname);
         final TextView papercount = view.findViewById(R.id.papercount);
-        Button downloadall = view.findViewById(R.id.download_btn);
+        final TextView downloadall = view.findViewById(R.id.download_btn);
 
 
         Listdata listdata = subjectlist.get(position);
@@ -210,6 +235,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
         downloadall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 GlobalClass globalClass=new GlobalClass();
 
@@ -376,16 +402,21 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     download("IN/KU/CS/01/DE", subjectname.getText().toString(),threepapercount5);
                     if(globalClass.getBranch().equals("ECE") && globalClass.getSemester()==4)
                         download("IN/KU/EC/04/DE", subjectname.getText().toString(),ece_fourpapercount3);
+                    if(globalClass.getBranch().equals("ELE") && globalClass.getSemester()==4)
+                        download("IN/KU/El/04/DE", subjectname.getText().toString(),el_fourpapercount6);
+
 
                 }
 
 
                 if(subjectname.getText()==("Internet Fundamental")) {
                     toast();
-                    if(globalClass.getSemester()==3)
+                    if(globalClass.getBranch().equals("CSE") && globalClass.getSemester()==3)
                         download("IN/KU/CS/03/IF", subjectname.getText().toString(),threepapercount6);
-                    else
+                    if(globalClass.getBranch().equals("CSE") && globalClass.getSemester()==4)
                         download("IN/KU/CS/04/IF", subjectname.getText().toString(),fourpapercount2);
+                    if(globalClass.getBranch().equals("ELE") && globalClass.getSemester()==8)
+                        download("IN/KU/EL/08/IF", subjectname.getText().toString(),el_eightpapercount3);
                 }
                 if(subjectname.getText()==("Programming language")) {
                     toast();
@@ -416,7 +447,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Microprocessor and interfacing")) {
                     toast();
-                    download("IN/KU/CS/04/MI", subjectname.getText().toString(),fourpapercount3);
+                    if(globalClass.getSemester()==4 && globalClass.getBranch().equals("CSE"))
+                    download("IN/KU/CS/04/MS", subjectname.getText().toString(),fourpapercount3);
+                    if(globalClass.getSemester()==6 && globalClass.getBranch().equals("ELE"))
+                        download("IN/KU/EL/06/MS", subjectname.getText().toString(),el_sixpapercount7);
                 }
                 if(subjectname.getText()==("Digital data communication")) {
                     toast();
@@ -587,7 +621,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Electronic measurements and instruments")) {
                     toast();
+                    if(globalClass.getBranch().equals("ECE")&&globalClass.getSemester()==4)
                     download("IN/KU/EC/04/EM", subjectname.getText().toString(),ece_fourpapercount5);
+                    if(globalClass.getBranch().equals("ELE")&&globalClass.getSemester()==4)
+                        download("IN/KU/El/04/EM", subjectname.getText().toString(),el_fourpapercount3);
                 }
                 if(subjectname.getText()==("Field and waves")) {
                     toast();
@@ -599,6 +636,8 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     download("IN/KU/EC/04/TA", subjectname.getText().toString(),ece_fourpapercount9);
                     if(globalClass.getSemester()==8)
                         download("IN/KU/EC/08/TA", subjectname.getText().toString(),ece_eightpapercount6);
+                    if(globalClass.getBranch().equals("ELE")&&globalClass.getSemester()==7)
+                        download("IN/KU/El/07/TA", subjectname.getText().toString(),el_sevenpapercount5);
                 }
                 if(subjectname.getText()==("Computer communication network")) {
                     toast();
@@ -618,7 +657,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Digital signal processing")) {
                     toast();
+                    if(globalClass.getBranch().equals("ECE") && globalClass.getSemester()==6)
                     download("IN/KU/EC/06/DP", subjectname.getText().toString(),ece_sixpapercount5);
+                    if(globalClass.getBranch().equals("ELE") && globalClass.getSemester()==6)
+                        download("IN/KU/EL/06/DP", subjectname.getText().toString(),el_sixpapercount2);
                 }
                 if(subjectname.getText()==("Vhdl and digital systems")) {
                     toast();
@@ -713,6 +755,89 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     toast();
                     download("IN/KU/IT/08/IO", subjectname.getText().toString(),it_eightpapercount6);
                 }
+                // ELE subjects
+                if(subjectname.getText()==("Communication system")) {
+                    toast();
+                    download("IN/KU/EL/04/CY", subjectname.getText().toString(),el_fourpapercount1);
+                }
+                if(subjectname.getText()==("Electrical engineering material and processes")) {
+                    toast();
+                    download("IN/KU/EL/04/EG", subjectname.getText().toString(),el_fourpapercount2);
+                }
+                if(subjectname.getText()==("Electrical machines")) {
+                    toast();
+                    download("IN/KU/EL/04/EA", subjectname.getText().toString(),el_fourpapercount7);
+                }
+                if(subjectname.getText()==("Power generation and control")) {
+                    toast();
+                    download("IN/KU/EL/04/PG", subjectname.getText().toString(),el_fourpapercount4);
+                }
+                if(subjectname.getText()==("Signals and systems")) {
+                    toast();
+                    download("IN/KU/EL/04/SS", subjectname.getText().toString(),el_fourpapercount5);
+                }
+
+                if(subjectname.getText()==("Advanced programming")) {
+                    toast();
+                    download("IN/KU/EL/06/AE", subjectname.getText().toString(),el_sixpapercount1);
+                }
+
+                if(subjectname.getText()==("Electrical drives and traction")) {
+                    toast();
+                    download("IN/KU/EL/06/EN", subjectname.getText().toString(),el_sixpapercount3);
+                }
+                if(subjectname.getText()==("Microcontrollers and applications")) {
+                    toast();
+                    download("IN/KU/EL/06/EN", subjectname.getText().toString(),el_sixpapercount6);
+                }
+                if(subjectname.getText()==("Power electronics")) {
+                    toast();
+                    download("IN/KU/EL/06/PE", subjectname.getText().toString(),el_sixpapercount8);
+                }
+                if(subjectname.getText()==("Power system analysis and protection")) {
+                    toast();
+                    download("IN/KU/EL/06/PN", subjectname.getText().toString(),el_sixpapercount9);
+                }
+
+                if(subjectname.getText()==("Discrete data non linear control system")) {
+                    toast();
+                    download("IN/KU/EL/07/DN", subjectname.getText().toString(),el_sevenpapercount1);
+                }
+                if(subjectname.getText()==("Electrical machine design")) {
+                    toast();
+                    download("IN/KU/EL/07/EZ", subjectname.getText().toString(),el_sevenpapercount2);
+                }
+                if(subjectname.getText()==("Non conventional sources of energy and management")) {
+                    toast();
+                    download("IN/KU/EL/07/NC", subjectname.getText().toString(),el_sevenpapercount4);
+                }
+                if(subjectname.getText()==("High voltage engineering")) {
+                    toast();
+                    download("IN/KU/EL/07/HV", subjectname.getText().toString(),el_sevenpapercount3);
+                }
+
+                if(subjectname.getText()==("Computer methods in power systems")) {
+                    toast();
+                    download("IN/KU/EL/08/CP", subjectname.getText().toString(),el_eightpapercount1);
+                }
+                if(subjectname.getText()==("Electrical engineering material and processes")) {
+                    toast();
+                    download("IN/KU/EL/08/EG", subjectname.getText().toString(),el_eightpapercount2);
+                }
+                if(subjectname.getText()==("Operational research")) {
+                    toast();
+                    download("IN/KU/EL/08/OR", subjectname.getText().toString(),el_eightpapercount4);
+                }
+                if(subjectname.getText()==("Utilisation of electrical energy")) {
+                    toast();
+                    download("IN/KU/EL/08/UT", subjectname.getText().toString(),el_eightpapercount5);
+                }
+
+
+
+
+
+
 
 
 

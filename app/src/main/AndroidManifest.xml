@@ -10,7 +10,11 @@
         android:roundIcon="@drawable/kurukshetrauniversity"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Expendable_loader"></activity>
+        <activity android:name=".Ele_eightsem_subjectlist"></activity>
+        <activity android:name=".Ele_seventhsem_subjectlist" />
+        <activity android:name=".Ele_sixthsem_subjectlist" />
+        <activity android:name=".Ele_fourthsem_subjectlist" />
+        <activity android:name=".Expendable_loader" />
         <activity android:name=".It_eightsem_subjectlist" />
         <activity android:name=".It_seventhsem_subjectlist" />
         <activity android:name=".It_sixthsem_subjectlist" />

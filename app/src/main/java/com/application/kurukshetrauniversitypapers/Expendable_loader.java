@@ -12,7 +12,7 @@ import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Wave;
 
 public class Expendable_loader extends AppCompatActivity {
-    private  static  int SPLASH_SCREEN =2000;
+    private  static  int SPLASH_SCREEN =3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,9 +1,12 @@
 package com.application.kurukshetrauniversitypapers;
 
 import android.app.Activity;
-import android.content.DialogInterface;
+import android.app.DownloadManager;
+import android.content.Context;
+
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,19 +15,34 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
 
-import com.application.kurukshetrauniversitypapers.LoginActivity;
-import com.application.kurukshetrauniversitypapers.R;
-import com.application.kurukshetrauniversitypapers.uploadPDF;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
+
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
 
 public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
     private Activity context;
     List<uploadPDF> pdflist;
     FirebaseAuth mAuth;
+    StorageReference storageReference,myref;
+    FirebaseStorage firebaseStorage;
+    DatabaseReference rootref;
+    private String branch;
+    private String semester;
+    private String code;
 
 
     public Pdflistadapter(Activity context, List<uploadPDF> pdflist) {
@@ -38,12 +56,11 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.pdflist_row, null, true);
 
-        TextView textViewName = (TextView) listViewItem.findViewById(R.id.pdfname);
+        final TextView textViewName = (TextView) listViewItem.findViewById(R.id.pdfname);
         TextView textViewSol = (TextView) listViewItem.findViewById(R.id.solution);
 
         uploadPDF uploadPDF = pdflist.get(position);
         textViewName.setText(uploadPDF.getName());
-        // textViewGenre.setText(artist.getArtistGenre());
         mAuth=FirebaseAuth.getInstance();
         textViewName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,9 +72,13 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
         textViewSol.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-
-                Toast.makeText(context, "will be uploaded soon", Toast.LENGTH_SHORT).show();
-
+           SingleDownloadClass singleDownloadClass=new SingleDownloadClass();
+            branch=singleDownloadClass.getBranch();
+             semester=singleDownloadClass.getSemester();
+              code=singleDownloadClass.getCode();
+                  toast();
+                download("IN/KU"+"/"+branch+"/"+semester+"/"+code, textViewName.getText().toString());
+                Log.e("dir","IN/KU"+"/"+branch+"/"+semester+"/"+code);
 //                if (mAuth.getCurrentUser() != null) {
 //                    //Toast.makeText(context, "The user is already logged in", Toast.LENGTH_SHORT).show();
 //                    Toast.makeText(context, "solution", Toast.LENGTH_SHORT).show();
@@ -98,6 +119,52 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
 
     }
 
+    public void download(final String directory, final String filename) {
+
+
+        storageReference = firebaseStorage.getInstance().getReference(directory);
+        rootref= FirebaseDatabase.getInstance().getReference(directory);
+
+        rootref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                myref = storageReference.child(filename+".pdf");
+                myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        String url = uri.toString();
+                        downloadfiles(getContext(),filename, ".pdf", DIRECTORY_DOWNLOADS, url);
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+    public void toast(){Toast.makeText(context, "downloading", Toast.LENGTH_LONG).show();}
+
+
+    public void downloadfiles(Context context, String file, String fileExtension, String destinationDirectory, String url)
+    {
+        DownloadManager downloadmanager= (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri=Uri.parse(url);
+        DownloadManager.Request request =new DownloadManager.Request(uri);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalFilesDir(context, destinationDirectory, file+fileExtension);
+        downloadmanager.enqueue(request);
+
+    }
 
 }
 

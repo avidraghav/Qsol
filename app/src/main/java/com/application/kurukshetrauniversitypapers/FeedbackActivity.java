@@ -23,12 +23,16 @@ public class FeedbackActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent=new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("mailto:"+ "jmit.raghav@gmail.com"));
-                       intent.putExtra(Intent.EXTRA_SUBJECT,"Feedback for KUK papers application");
-                       intent.putExtra(Intent.EXTRA_TEXT,"Name: "+e1.getText().toString()+"\n Feedback: "+e2.getText().toString());
-                startActivity(intent);
+                if(e1.getText().toString().isEmpty() && e2.getText().toString().isEmpty()){
+                    Toast.makeText(FeedbackActivity.this, "Kindly fill the details", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("mailto:" + "jmit.raghav@gmail.com"));
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for KUK papers application");
+                    intent.putExtra(Intent.EXTRA_TEXT, "Name: " + e1.getText().toString() + "\n Feedback: " + e2.getText().toString());
+                    startActivity(intent);
+                }
             }
         });
 
