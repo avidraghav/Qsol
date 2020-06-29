@@ -25,12 +25,11 @@
         />
 
     <TextView
-        android:id="@+id/sem"
+        android:id="@+id/semester"
         android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="-8dp"
         android:layout_toRightOf="@+id/textView"
-        android:gravity="left"
+        android:gravity="center_vertical"
         android:text="semester"
         android:textColor="#100F0F"
         android:textSize="14sp" />

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:descendantFocusability="blocksDescendants">
@@ -9,15 +11,18 @@
         android:id="@+id/subjectname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:gravity="left"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:paddingBottom="10dp"
-        android:text="Chemistry"
+        android:singleLine="false"
+        android:text="Subject name"
         android:textColor="#3F51B5"
-
         app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/papercount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +33,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
 
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="6dp"
         android:gravity="center"
         android:inputType="number"
         android:text="0"
@@ -36,16 +41,17 @@
         app:autoSizeTextType="uniform"
         app:layout_constraintStart_toEndOf="@+id/subjectname"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
+
+    <Button
         android:id="@+id/download_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="94dp"
+        android:layout_height="34dp"
         android:layout_marginTop="5dp"
         android:gravity="left"
         android:paddingBottom="10dp"
         android:text="Download"
         android:textColor="#000"
-        android:background="?android:selectableItemBackground"
+        android:textSize="12dp"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -58,6 +64,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent=".80"
+        app:layout_constraintGuide_percent=".75"
         app:layout_constraintGuide_begin="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

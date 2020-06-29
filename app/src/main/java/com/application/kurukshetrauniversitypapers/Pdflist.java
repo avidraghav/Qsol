@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,7 +27,8 @@ public class Pdflist extends AppCompatActivity  {
      ListView listView;
      DatabaseReference databaseReference;
      List<uploadPDF> uploadPDFS;
-     TextView textViewName,textViewSol;
+     TextView textViewName;
+     Button download_single;
      FirebaseAuth mAuth;
 
      String key;
@@ -38,7 +40,7 @@ public class Pdflist extends AppCompatActivity  {
         mAuth=FirebaseAuth.getInstance();
         listView=findViewById(R.id.pdflist);
         textViewName=findViewById(R.id.pdfname);
-        textViewSol=findViewById(R.id.solution);
+        download_single=findViewById(R.id.download_single);
         uploadPDFS= new ArrayList<>();
 
         Intent intent1=getIntent();

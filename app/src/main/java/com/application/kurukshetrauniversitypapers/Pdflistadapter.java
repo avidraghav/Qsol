@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,11 +58,12 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
         View listViewItem = inflater.inflate(R.layout.pdflist_row, null, true);
 
         final TextView textViewName = (TextView) listViewItem.findViewById(R.id.pdfname);
-        TextView textViewSol = (TextView) listViewItem.findViewById(R.id.solution);
+        Button btndownload = (Button) listViewItem.findViewById(R.id.download_single);
 
         uploadPDF uploadPDF = pdflist.get(position);
         textViewName.setText(uploadPDF.getName());
         mAuth=FirebaseAuth.getInstance();
+
         textViewName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +71,7 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
 
             }
         });
-        textViewSol.setOnClickListener(new View.OnClickListener(){
+        btndownload.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
            SingleDownloadClass singleDownloadClass=new SingleDownloadClass();
