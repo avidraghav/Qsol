@@ -1,4 +1,4 @@
-# SOL  <img src="/Screenshots/kuk.png" height="100">
+# QSOL  <img src="/Screenshots/kuk.png" height="100">
 
 ### One destination for all previous year papers of Kurukshetra university.
 
@@ -13,7 +13,7 @@
 
 
 ### Download the app
-[Google Playstore Link](# )
+[Google Playstore Link](https://play.google.com/store/apps/details?id=com.application.kurukshetrauniversitypapers )
 
 
 **Screenshots**
@@ -41,7 +41,7 @@
 
 ### Nomenclature for database
 
-[excel file](/Nomenclature/Nomenclature.xlxs )
+[excel file](Nomenclature)
 
 
 ### For contribution
@@ -60,4 +60,4 @@ Create a new Pull Request
 
 [Website](https://elegant-bassi-f1c949.netlify.app/ )
 
-[LinkedIn](linkedin.com/in/raghav-aggarwal-74b873143/)
+[LinkedIn](https://www.linkedin.com/in/raghav-aggarwal-74b873143/)

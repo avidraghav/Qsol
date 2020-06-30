@@ -79,20 +79,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+
         switch (item.getItemId()) {
-            case R.id.action_logout:
-                if((mAuth.getCurrentUser()==null)){
-                    Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
-            }
-                else {
-                    mAuth.getInstance().signOut();
-                    //finish();
-                    Toast.makeText(this, "You have been logged out", Toast.LENGTH_SHORT).show();
-                   // startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                }
+            case R.id.source_code:
+                Intent Browserintent=new Intent(Intent.ACTION_VIEW,Uri.parse("https://github.com/raghavagg01/Qsol"));
+                startActivity(Browserintent);
+//                if((mAuth.getCurrentUser()==null)){
+//                    Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+//            }
+//                else {
+//                    mAuth.getInstance().signOut();
+//                    //finish();
+//                    Toast.makeText(this, "You have been logged out", Toast.LENGTH_SHORT).show();
+//                   // startActivity(new Intent(MainActivity.this, LoginActivity.class));
+//                }
                 break;
             case R.id.feedback_option:
-                startActivity(new Intent(MainActivity.this,FeedbackActivity.class));
+                startActivity(new Intent(MainActivity.this,ActivityStarRating.class));
                 break;
 
         }

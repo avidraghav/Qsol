@@ -570,7 +570,11 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Management information system")) {
                     toast();
+                    if(globalClass.getBranch().equals("IT"))
                     download("IN/KU/IT/06/MM");
+                    if(globalClass.getBranch().equals("ME"))
+                        download("IN/KU/ME/08/MM");
+
                 }
                 if(subjectname.getText()==("Introduction to microcontroller")) {
                     toast();
@@ -675,14 +679,106 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Operational research")) {
                     toast();
+                    if(globalClass.getBranch().equals("ELE"))
                     download("IN/KU/EL/08/OR");
+                    if(globalClass.getBranch().equals("ME") && globalClass.getSemester()==6)
+                        download("IN/KU/ME/06/OR");
+                    else download("IN/KU/ME/08/OR");
+
                 }
                 if(subjectname.getText()==("Utilisation of electrical energy")) {
                     toast();
                     download("IN/KU/EL/08/UT");
                 }
 
+                // ME SUBJECTS
 
+                if(subjectname.getText()==("Dynamics of machine")) {
+                    toast();
+                    download("IN/KU/ME/04/DY");
+                }
+                if(subjectname.getText()==("Fluid mechanics")) {
+                    toast();
+                    download("IN/KU/ME/04/FM");
+                }
+                if(subjectname.getText()==("Material science")) {
+                    toast();
+                    download("IN/KU/ME/04/MT");
+                }
+                if(subjectname.getText()==("Mechanics of solids")) {
+                    toast();
+                    download("IN/KU/ME/04/MO");
+                }
+                if(subjectname.getText()==("Production technology")) {
+                    toast();
+                    download("IN/KU/ME/04/PT");
+                }
+                if(subjectname.getText()==("Strength of materials")) {
+                    toast();
+                    download("IN/KU/ME/04/SL");
+                }
+                if(subjectname.getText()==("Steam generator and power")) {
+                    toast();
+                    download("IN/KU/ME/04/SG");
+                }
+                if(subjectname.getText()==("Computer aided design and manufacturing")) {
+                    toast();
+                    download("IN/KU/ME/06/CF");
+                }
+                if(subjectname.getText()==("Machine design")) {
+                    toast();
+                    download("IN/KU/ME/06/MN");
+                }
+                if(subjectname.getText()==("Mechanical vibrations")) {
+                    toast();
+                    download("IN/KU/ME/06/MV");
+                }
+                if(subjectname.getText()==("Refrigeration and air conditioning")) {
+                    toast();
+                    download("IN/KU/ME/06/RC");
+                }
+                if(subjectname.getText()==("Tribology")) {
+                    toast();
+                    download("IN/KU/ME/06/TY");
+                }
+
+                if(subjectname.getText()==("Tribology and mechanical vibration")) {
+                    toast();
+                    download("IN/KU/ME/06/TV");
+                }
+                if(subjectname.getText()==("Advanced manufacturing tech")) {
+                    toast();
+                    download("IN/KU/ME/07/AF");
+                }
+                if(subjectname.getText()==("Automobile engineering ")) {
+                    toast();
+                    download("IN/KU/ME/07/AG");
+                }
+                if(subjectname.getText()==("Maintenance engineering")) {
+                    toast();
+                    download("IN/KU/ME/07/MG");
+                }
+                if(subjectname.getText()==("Measurement and control")) {
+                    toast();
+                    download("IN/KU/ME/07/MR");
+                }
+                if(subjectname.getText()==("Statistical quality control and reliability")) {
+                    toast();
+                    download("IN/KU/ME/07/SQ");
+                }
+                if(subjectname.getText()==("Entrepreneurship")) {
+                    toast();
+                    download("IN/KU/ME/08/EP");
+                }
+
+                if(subjectname.getText()==("Non conventional manufacturing")) {
+                    toast();
+                    download("IN/KU/ME/08/NG");
+                }
+                if(subjectname.getText()==("Powerplant engineering")) {
+                    toast();
+                    download("IN/KU/ME/08/PI");
+                }
 
 
 

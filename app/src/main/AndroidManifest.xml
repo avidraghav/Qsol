@@ -10,7 +10,12 @@
         android:roundIcon="@drawable/kurukshetrauniversity"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ele_eightsem_subjectlist"></activity>
+        <activity android:name=".Me_eightsem_subjectlist"></activity>
+        <activity android:name=".Me_seventhsem_subjectlist" />
+        <activity android:name=".Me_sixthsem_subjectlist" />
+        <activity android:name=".Me_fourthsem_subjectlist" />
+        <activity android:name=".ActivityStarRating" />
+        <activity android:name=".Ele_eightsem_subjectlist" />
         <activity android:name=".Ele_seventhsem_subjectlist" />
         <activity android:name=".Ele_sixthsem_subjectlist" />
         <activity android:name=".Ele_fourthsem_subjectlist" />
@@ -65,8 +70,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

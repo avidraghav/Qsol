@@ -6,9 +6,14 @@
         android:title="Give feedback"
         app:showAsAction="always"
         />
+<!--    <item-->
+<!--        android:id="@+id/action_logout"-->
+<!--        android:title="Logout"-->
+<!--        app:showAsAction="never"-->
+<!--        />-->
     <item
-        android:id="@+id/action_logout"
-        android:title="Logout"
+        android:id="@+id/source_code"
+        android:title="Source code"
         app:showAsAction="never"
         />
 </menu>
