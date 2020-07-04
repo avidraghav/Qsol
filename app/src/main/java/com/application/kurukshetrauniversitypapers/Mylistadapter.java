@@ -225,7 +225,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     download("IN/KU/CS/02/PS");
                 }
 
-
                 if(subjectname.getText()==("Discrete structure")) {
                     toast();
                     download("IN/KU/CS/01/DC");
@@ -779,10 +778,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     toast();
                     download("IN/KU/ME/08/PI");
                 }
-
-
-
-
 
 
 

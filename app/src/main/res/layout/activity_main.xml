@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
     android:background="#008577">
 
@@ -36,19 +37,24 @@
                     android:gravity="center"
                     android:background="@drawable/back">
 
-                    <ImageView
-                        android:layout_width="396dp"
-                        android:layout_height="172dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/kurukshetrauniversity" />
-                       <TextView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="Kurukshetra university papers"
-                           android:textSize="18sp"
-                           android:textColor="#ffffff"
-                           android:textStyle="bold"
-                           />
+
+                    <TextView
+                        android:id="@+id/total_papers"
+                        android:layout_width="282dp"
+                        android:layout_height="138dp"
+                        android:fontFamily="sans-serif-smallcaps"
+                        android:gravity="center"
+                        android:textColor="#ffffff"
+                        android:textSize="90sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text= "Papers Available"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -98,8 +104,98 @@
                                     android:id="@+id/btechbtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:focusable="true"
+                                    android:foreground="?attr/selectableItemBackground"
                                     android:onClick="showfirst"
+
                                     android:background="@android:color/transparent" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                               >
+
+                                <ImageView
+                                    android:id="@+id/imageview2"
+                                    android:layout_width="80dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/ic_search"
+                                    android:layout_centerInParent="true"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Quick search"
+                                    android:textSize="16sp"
+                                    android:layout_below="@+id/imageview2"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"/>
+                                <Button
+                                    android:id="@+id/quick_search"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:focusable="true"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:background="@android:color/transparent"/>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="135dp"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/imageview6"
+                                    android:layout_width="100dp"
+                                    android:layout_height="50dp"
+                                    android:src="@drawable/kurukshetrauniversity"
+                                    android:layout_centerInParent="true"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="KU website"
+                                    android:textSize="16sp"
+                                    android:layout_below="@+id/imageview6"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginBottom="10dp"/>
+
+                                <Button
+                                    android:id="@+id/kubtn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:focusable="true"
+                                    android:foreground="?attr/selectableItemBackground"
+                                    android:background="@android:color/transparent"
+                                    android:onClick="website" />
 
                             </RelativeLayout>
 
@@ -118,22 +214,22 @@
                                 android:background="#808080">
 
                                 <ImageView
-                                    android:id="@+id/imageview2"
+                                    android:id="@+id/imageview5"
                                     android:layout_width="80dp"
                                     android:layout_height="50dp"
-                                    android:src="@drawable/bba1"
+                                    android:src="@drawable/mca1"
                                     android:layout_centerInParent="true"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="BBA (uploaded soon)"
+                                    android:text="MCA (uploaded soon)"
                                     android:textSize="16sp"
-                                    android:layout_below="@+id/imageview2"
+                                    android:layout_below="@+id/imageview5"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="8dp"
                                     android:layout_marginBottom="10dp"/>
                                 <Button
-                                    android:id="@+id/bbabtn"
+                                    android:id="@+id/mcabtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:onClick="progress"
@@ -222,90 +318,6 @@
                                     android:layout_height="match_parent"
                                     android:onClick="progress"
                                     android:background="@android:color/transparent"/>
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="135dp"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="10dp">
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp"
-                            android:orientation="vertical">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="#808080">
-
-                                <ImageView
-                                    android:id="@+id/imageview5"
-                                    android:layout_width="80dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/mca1"
-                                    android:layout_centerInParent="true"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="MCA (uploaded soon)"
-                                    android:textSize="16sp"
-                                    android:layout_below="@+id/imageview5"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginBottom="10dp"/>
-                                <Button
-                                    android:id="@+id/mcabtn"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:onClick="progress"
-                                    android:background="@android:color/transparent"/>
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="5dp"
-                            android:orientation="vertical">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <ImageView
-                                    android:id="@+id/imageview6"
-                                    android:layout_width="100dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/kurukshetrauniversity"
-                                    android:layout_centerInParent="true"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="KU website"
-                                    android:textSize="16sp"
-                                    android:layout_below="@+id/imageview6"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginBottom="10dp"/>
-
-                                <Button
-                                    android:id="@+id/kubtn"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@android:color/transparent"
-                                    android:onClick="website" />
 
                             </RelativeLayout>
 

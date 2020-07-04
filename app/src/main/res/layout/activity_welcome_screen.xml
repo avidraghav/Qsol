@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="KUK papers"
+        android:text="Qsol"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="50dp"

@@ -53,5 +53,9 @@ Animation top, bottom;
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        System.exit(0);
+        super.onBackPressed();
+    }
 }
