@@ -134,9 +134,6 @@ android:gravity="center"
         android:textSize="18sp"
         />
 
-
-
-
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"

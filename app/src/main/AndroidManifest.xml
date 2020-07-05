@@ -5,9 +5,9 @@
     <application
         android:name=".GlobalClass"
         android:allowBackup="true"
-        android:icon="@drawable/kurukshetrauniversity"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/kurukshetrauniversity"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Filter_search"></activity>
