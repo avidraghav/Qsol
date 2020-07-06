@@ -29,7 +29,7 @@ public class ActivityStarRating extends AppCompatActivity {
         final RatingBar ratingBar=findViewById(R.id.ratingbar);
         LayerDrawable stars = (LayerDrawable) ratingBar.getProgressDrawable();
         stars.getDrawable(2).setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
-        Button button=findViewById(R.id.submit_rating);
+        Button dismiss=findViewById(R.id.dismiss);
         final TextView textView=findViewById(R.id.show_rating);
 
        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
@@ -62,12 +62,13 @@ public class ActivityStarRating extends AppCompatActivity {
            }
        });
 
-        button.setOnClickListener(new View.OnClickListener() {
+        dismiss.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_HOME);
-                startActivity(intent);
+                System.exit(0);
+//                Intent intent = new Intent(Intent.ACTION_MAIN);
+//                intent.addCategory(Intent.CATEGORY_HOME);
+//                startActivity(intent);
 
             }
         });

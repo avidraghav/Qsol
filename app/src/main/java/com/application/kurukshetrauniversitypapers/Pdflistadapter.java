@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -59,7 +61,7 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
 
         final TextView textViewName = (TextView) listViewItem.findViewById(R.id.pdfname);
         Button btndownload = (Button) listViewItem.findViewById(R.id.download_single);
-
+        Button btnshare =(Button) listViewItem.findViewById(R.id.share);
         uploadPDF uploadPDF = pdflist.get(position);
         textViewName.setText(uploadPDF.getName());
         mAuth=FirebaseAuth.getInstance();
@@ -71,6 +73,45 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
 
             }
         });
+
+        btnshare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if((mAuth.getCurrentUser()==null)){
+                    String[] items = {"Yes", "No"};
+                    AlertDialog.Builder dialog= new AlertDialog.Builder(getContext());
+                    dialog.setTitle("To share you need to login");
+                    dialog.setItems(items, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if(which==0){
+                                Intent intent=new Intent(getContext(),LoginActivity.class);
+                               context.startActivity(intent);
+                            }
+                            if(which ==1){
+
+                            }
+                        }
+                    });
+                    dialog.create().show();
+                }
+
+                else {
+                    Uri uri = getLink(position);
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    String shareBody = uri.toString();
+                    String shareSubject = "Paper Link";
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
+                    context.startActivity(Intent.createChooser(shareIntent, "Share Using"));
+                }
+
+
+            }
+        });
+
         btndownload.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -106,6 +147,13 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
             }
         });
         return listViewItem;
+    }
+
+    public Uri getLink(int position){
+        uploadPDF uploadPDF = pdflist.get(position);
+
+        return ( Uri.parse(uploadPDF.getUrl()) );
+
     }
 
     public void viewFiles(int position){

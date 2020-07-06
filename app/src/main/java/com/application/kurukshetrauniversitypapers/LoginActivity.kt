@@ -54,9 +54,9 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
         }
 
-//        text_view_forget_password.setOnClickListener {
-//            startActivity(Intent(this@LoginActivity, ResetPasswordActivity::class.java))
-//        }
+        text_view_forget_password.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, ResetPasswordActivity::class.java))
+        }
     }
 
     private fun loginUser(email: String, password: String) {
@@ -74,10 +74,10 @@ class LoginActivity : AppCompatActivity() {
                 }
     }
 
-//    override fun onStart() {
-//        super.onStart()
-//        mAuth.currentUser?.let {
-//            login()
-//        }
-//    }
+    override fun onStart() {
+        super.onStart()
+        mAuth.currentUser?.let {
+            login()
+        }
+    }
 }

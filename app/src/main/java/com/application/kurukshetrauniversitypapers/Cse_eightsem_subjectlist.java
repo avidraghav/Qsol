@@ -170,7 +170,7 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==7) {
                     Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/08/SW");
+                    intent.putExtra("subject","IN/KU/CS/08/SV");
                     startActivity(intent);
                     Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }

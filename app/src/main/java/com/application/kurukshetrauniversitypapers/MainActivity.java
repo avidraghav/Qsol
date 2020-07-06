@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btechbtn,quick_search,mbabtn,bcabtn,mcabtn,kubtn;
     FirebaseAuth mAuth;
+   final static int counter=0;
    // Animation zoomin,zoomout;
     TextView total_papers;
     @Override
@@ -56,9 +57,15 @@ public class MainActivity extends AppCompatActivity {
         mcabtn=findViewById(R.id.mcabtn);
         kubtn=findViewById(R.id.kubtn);
         total_papers=findViewById(R.id.total_papers);
+
+
+
         mAuth=FirebaseAuth.getInstance();
+
+        if(counter==0)
         checkConnection();
-        startCountAnimation();
+
+        startCountAnimation(counter);
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         total_papers.setText("764");
@@ -138,32 +145,33 @@ public class MainActivity extends AppCompatActivity {
             case R.id.source_code:
                 Intent Browserintent=new Intent(Intent.ACTION_VIEW,Uri.parse("https://github.com/raghavagg01/Qsol"));
                 startActivity(Browserintent);
-//                if((mAuth.getCurrentUser()==null)){
-//                    Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
-//            }
-//                else {
-//                    mAuth.getInstance().signOut();
-//                    //finish();
-//                    Toast.makeText(this, "You have been logged out", Toast.LENGTH_SHORT).show();
-//                   // startActivity(new Intent(MainActivity.this, LoginActivity.class));
-//                }
                 break;
-//            case R.id.feedback_option:
-//                startActivity(new Intent(MainActivity.this,ActivityStarRating.class));
-//                break;
+            case R.id.action_logout:
+                if((mAuth.getCurrentUser()==null)){
+                    Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+                else {
+                    mAuth.getInstance().signOut();
+                    finish();
+                    Toast.makeText(this, "You have been logged out", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    break;
+                }
 
         }
         return true;
     }
-    private void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 764);
-        animator.setDuration(5000);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            public void onAnimationUpdate(ValueAnimator animation) {
-                total_papers.setText(animation.getAnimatedValue().toString());
-            }
-        });
-        animator.start();
+    private void startCountAnimation(int counter) {
+            ValueAnimator animator = ValueAnimator.ofInt(0, 764);
+            animator.setDuration(2500);
+            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    total_papers.setText(animation.getAnimatedValue().toString());
+                }
+            });
+            animator.start();
+            counter++;
     }
 
     @Override
@@ -171,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this,ActivityStarRating.class));
         super.onBackPressed();
     }
+
 
 
 }

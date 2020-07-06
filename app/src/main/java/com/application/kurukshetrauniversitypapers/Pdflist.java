@@ -43,6 +43,7 @@ public class Pdflist extends AppCompatActivity  {
         download_single=findViewById(R.id.download_single);
         uploadPDFS= new ArrayList<>();
 
+
         Intent intent1=getIntent();
         key=intent1.getStringExtra("subject");
         br=key.substring(6,8);
