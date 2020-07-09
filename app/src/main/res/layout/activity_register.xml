@@ -94,9 +94,10 @@
                 <TextView
                     android:id="@+id/text_view_login"
                     android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorPrimary"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:textAlignment="center"
-                    android:text="Already have an account.\nLogin Here"
+                    android:text="@string/ask_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

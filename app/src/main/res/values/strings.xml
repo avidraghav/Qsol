@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Qsol</string>
+    <string name="ask_register"><u>Don\'t have an account.\nRegister Here</u></string>
+    <string name="ask_login"><u>Already have an account.\nLogin Here</u></string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>

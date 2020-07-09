@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".Cse_eightsem_subjectlist">
+    tools:context="CSE_subjectlists.Cse_eightsem_subjectlist">
 
     <ListView
         android:id="@+id/list"

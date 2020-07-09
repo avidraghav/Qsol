@@ -107,7 +107,9 @@
                     android:layout_gravity="center_horizontal"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     android:textAlignment="center"
-                    android:text="Don't have an account.\nRegister Here"
+                    android:textColor="@color/colorPrimary"
+
+                    android:text="@string/ask_register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

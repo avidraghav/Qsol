@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -58,6 +59,15 @@ public class ActivityStarRating extends AppCompatActivity {
                databaseReference.child(databaseReference.push().getKey()).setValue(ratingBar.getRating());
               // startActivity(new Intent(ActivityStarRating.this,MainActivity.class));
                Toast.makeText(ActivityStarRating.this, "Thanks for submitting the feedback", Toast.LENGTH_SHORT).show();
+
+               final Handler handler = new Handler();
+               handler.postDelayed(new Runnable() {
+                   @Override
+                   public void run() {
+                       System.exit(0);
+                   }
+               }, 1500);
+
 
            }
        });

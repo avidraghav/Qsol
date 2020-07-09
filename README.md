@@ -1,4 +1,4 @@
-# QSOL  <img src="/Screenshots/newlogo2.png" height="100">
+# QSOL  <img src="/Screenshots/newlogo2.jpg" height="100">
 
 ### One destination for all previous year papers of Kurukshetra university.
 

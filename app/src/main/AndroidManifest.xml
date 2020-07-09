@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.application.kurukshetrauniversitypapers">
+    package="com.application.kurukshetrauniversitypapers" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".GlobalClass"
@@ -9,87 +12,78 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ResetPasswordActivity"></activity>
+        android:theme="@style/AppTheme" >
+        <activity android:name=".Management_expendable_list" />
+        <activity android:name=".ResetPasswordActivity" />
         <activity android:name=".Filter_search" />
-        <activity android:name=".Me_eightsem_subjectlist" />
-        <activity android:name=".Me_seventhsem_subjectlist" />
-        <activity android:name=".Me_sixthsem_subjectlist" />
-        <activity android:name=".Me_fourthsem_subjectlist" />
+        <activity android:name="ME_subjectlists.Me_eightsem_subjectlist" />
+        <activity android:name="ME_subjectlists.Me_seventhsem_subjectlist" />
+        <activity android:name="ME_subjectlists.Me_sixthsem_subjectlist" />
+        <activity android:name="ME_subjectlists.Me_fourthsem_subjectlist" />
         <activity android:name=".ActivityStarRating" />
-        <activity android:name=".Ele_eightsem_subjectlist" />
-        <activity android:name=".Ele_seventhsem_subjectlist" />
-        <activity android:name=".Ele_sixthsem_subjectlist" />
-        <activity android:name=".Ele_fourthsem_subjectlist" />
+        <activity android:name="ELE_subjectlists.Ele_eightsem_subjectlist" />
+        <activity android:name="ELE_subjectlists.Ele_seventhsem_subjectlist" />
+        <activity android:name="ELE_subjectlists.Ele_sixthsem_subjectlist" />
+        <activity android:name="ELE_subjectlists.Ele_fourthsem_subjectlist" />
         <activity android:name=".Expendable_loader" />
-        <activity android:name=".It_eightsem_subjectlist" />
-        <activity android:name=".It_seventhsem_subjectlist" />
-        <activity android:name=".It_sixthsem_subjectlist" />
-        <activity android:name=".It_fourthsem_subjectlist" />
-        <activity android:name=".Ece_eightsem_subjectlist" />
-        <activity android:name=".Ece_seventhsem_subjectlist" />
-        <activity android:name=".Ece_sixthsem_subjectlist" />
-        <activity android:name=".Ece_fourthsem_subjectlist" />
+        <activity android:name="IT_subjectlists.It_eightsem_subjectlist" />
+        <activity android:name="IT_subjectlists.It_seventhsem_subjectlist" />
+        <activity android:name="IT_subjectlists.It_sixthsem_subjectlist" />
+        <activity android:name="IT_subjectlists.It_fourthsem_subjectlist" />
+        <activity android:name="ECE_subjectlists.Ece_eightsem_subjectlist" />
+        <activity android:name="ECE_subjectlists.Ece_seventhsem_subjectlist" />
+        <activity android:name="ECE_subjectlists.Ece_sixthsem_subjectlist" />
+        <activity android:name="ECE_subjectlists.Ece_fourthsem_subjectlist" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity">
-
-        </activity>
-        <activity android:name=".WelcomeScreen">
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".WelcomeScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".Cse_secondsem_subjectlist"
+            android:name="CSE_subjectlists.Cse_secondsem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cse_thirdesem_subjectlist"
+            android:name="CSE_subjectlists.Cse_thirdesem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cse_fourthsem_subjectlist"
+            android:name="CSE_subjectlists.Cse_fourthsem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cse_fifthsem_subjectlist"
+            android:name="CSE_subjectlists.Cse_fifthsem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cse_sixthsem_subjectlist"
+            android:name="CSE_subjectlists.Cse_sixthsem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cse_seventhsem_subjectlist"
+            android:name="CSE_subjectlists.Cse_seventhsem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cse_eightsem_subjectlist"
+            android:name="CSE_subjectlists.Cse_eightsem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Cse_firstsem_subjectlist"
+            android:name="CSE_subjectlists.Cse_firstsem_subjectlist"
             android:screenOrientation="portrait" />
-
-
         <activity android:name=".Pdflist" />
-
-        <activity android:name=".MainActivity">
-
-        </activity>
-
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Btech_expendable_list" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
         <service
             android:name=".MyMessagingService"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>
