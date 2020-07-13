@@ -1408,7 +1408,10 @@ public class Btech_expendable_list extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Btech_expendable_list.this,Expendable_loader.class));
+                Intent intent=new Intent(Btech_expendable_list.this,Expendable_loader.class);
+                intent.putExtra("reference","btech");
+                startActivity(intent);
+
             }
         });
 

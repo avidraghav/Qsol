@@ -5,5 +5,6 @@
     <color name="colorAccent">#dff2fa</color>
     <color name="white">#fff</color>
     <color name="gold">	#FFD700</color>
-
+    <drawable name="pressed_color">#7ec0ee</drawable> <!--custom color for pressed state -->
+    <drawable name="normal_color">#00FFFFFF</drawable> <!--transperent color for normal state -->
 </resources>

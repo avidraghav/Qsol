@@ -2,6 +2,7 @@ package com.application.kurukshetrauniversitypapers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
@@ -10,13 +11,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.animation.ValueAnimator;
-import android.app.AlertDialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -37,6 +38,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,17 +47,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     Button btechbtn, quick_search, mbabtn, bcabtn, managementbtn, kubtn;
     FirebaseAuth mAuth;
     private DrawerLayout drawer;
-    // Animation zoomin,zoomout;
-    TextView total_papers, txt_welcome;
+    TextView total_papers;
+    private FirebaseAnalytics mFirebaseAnalytics;
+    public static boolean firstStart;
+    public static int count;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        firstStart = prefs.getBoolean("firstStart", true);
+
         setContentView(R.layout.activity_main);
         btechbtn = findViewById(R.id.btechbtn);
         quick_search = findViewById(R.id.quick_search);
@@ -65,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         kubtn = findViewById(R.id.kubtn);
         total_papers = findViewById(R.id.total_papers);
         mAuth = FirebaseAuth.getInstance();
-        total_papers.setText("838");
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         checkConnection();
         startCountAnimation();
@@ -102,23 +111,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 });
 
+
+
         quick_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Filter_search.class));
+                startActivity(new Intent(MainActivity.this, NewFilterSearch.class));
             }
         });
 
         managementbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Management_expendable_list.class));
+                startActivity(new Intent(MainActivity.this, Management_expendable_list.class));
             }
         });
         btechbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Btech_expendable_list.class));
+                startActivity(new Intent(MainActivity.this, Btech_expendable_list.class));
             }
         });
     }
@@ -131,8 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (mAuth.getCurrentUser() != null) {
             navWelcome.setVisibility(View.VISIBLE);
             navUsername.setText(mAuth.getCurrentUser().getEmail());
-        }
-        else {
+        } else {
             navWelcome.setVisibility(View.INVISIBLE);
             navUsername.setText("Sign in to Share Papers");
         }
@@ -157,8 +167,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
     }
-    private void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 764);
+    public void startCountAnimation() {
+        ValueAnimator animator = ValueAnimator.ofInt(0, 861);
         animator.setDuration(2500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -166,31 +176,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
         animator.start();
-
     }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_signin:
-                if(mAuth.getCurrentUser()==null) {
+                if (mAuth.getCurrentUser() == null) {
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     break;
-                }
-                else {
+                } else {
                     Toast.makeText(this, "You are already logged in", Toast.LENGTH_SHORT).show();
                     break;
                 }
             case R.id.action_logout:
                 if ((mAuth.getCurrentUser() == null)) {
-                Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
-                break;
-            } else {
-                mAuth.getInstance().signOut();
-                Toast.makeText(this, "You have been logged out", Toast.LENGTH_SHORT).show();
-                break;
-            }
+                    Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+                    break;
+                } else {
+                    String[] items = {"Yes", "No"};
+                    androidx.appcompat.app.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                    dialog.setTitle("Are you sure to log out?");
+                    dialog.setItems(items, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (which == 0) {
+                                mAuth.getInstance().signOut();
+                                Toast.makeText(MainActivity.this, "You have been logged out", Toast.LENGTH_SHORT).show();
+                            }
+                            if (which == 1) {
+
+                            }
+                        }
+                    });
+                    dialog.create().show();
+                    break;
+                }
             case R.id.source_code:
                 Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/raghavagg01/Qsol"));
                 startActivity(Browserintent);
@@ -207,24 +230,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
 
             case R.id.write_feedback:
-                startActivity(new Intent(MainActivity.this,FeedbackActivity.class));
+                startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
                 break;
 
 
         }
         return true;
     }
+
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            startActivity(new Intent(MainActivity.this, ActivityStarRating.class));
-            super.onBackPressed();
+            if (firstStart) {
+                startActivity(new Intent(MainActivity.this, ActivityStarRating.class));
+                SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("firstStart", false);
+                editor.apply();
+            } else
+                System.exit(0);
         }
+        super.onBackPressed();
     }
-
-
-
 
 }

@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +22,13 @@ import java.util.List;
 import java.util.Map;
 
 import Adapters.MyExListAdapter;
+import CSE_subjectlists.Cse_firstsem_subjectlist;
+import CSE_subjectlists.Cse_secondsem_subjectlist;
+import ECE_subjectlists.Ece_fourthsem_subjectlist;
+import MBA_subjectlist.Mba_firstsem_subjectlist;
+import MBA_subjectlist.Mba_fourthsem_subjectlist;
+import MBA_subjectlist.Mba_secondsem_subjectlist;
+import MBA_subjectlist.Mba_thirdsem_subjectlist;
 
 public class Management_expendable_list extends AppCompatActivity {
 
@@ -38,6 +47,14 @@ public class Management_expendable_list extends AppCompatActivity {
         setContentView(R.layout.activity_management_expendable_list);
         textView=findViewById(R.id.refresh);
         expandableListView=findViewById(R.id.managementexpendablelist);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Management_expendable_list.this,Expendable_loader.class);
+                intent.putExtra("reference","management");
+                startActivity(intent);
+            }
+        });
         ref1= FirebaseDatabase.getInstance().getReference("IN/KU/MB/01");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
@@ -329,6 +346,37 @@ public class Management_expendable_list extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+                if((groupPosition)==0)
+                    Toast.makeText(Management_expendable_list.this, "Uploading in progress", Toast.LENGTH_SHORT).show();
+                if((groupPosition)==1  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+mb01+")")) {
+                    Intent i=new Intent(getBaseContext(), Mba_firstsem_subjectlist.class);
+                    i.putExtra("key", "1");
+                    startActivity(i);
+                }
+                if((groupPosition)==1  && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+mb02+")")) {
+                    Intent i=new Intent(getBaseContext(), Mba_secondsem_subjectlist.class);
+                    i.putExtra("key", "2");
+                    startActivity(i);
+
+                }
+                if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+mb03+")")) {
+                    Intent i=new Intent(getBaseContext(), Mba_thirdsem_subjectlist.class);
+                    i.putExtra("key", "3");
+                    startActivity(i);
+
+                }
+                if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+mb04+")")) {
+                    Intent i=new Intent(getBaseContext(), Mba_fourthsem_subjectlist.class);
+                    i.putExtra("key", "4");
+                    startActivity(i);
+                }
+                return false;
             }
         });
     }

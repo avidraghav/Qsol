@@ -36,6 +36,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
+import static android.os.Environment.DIRECTORY_DOCUMENTS;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class Mylistadapter extends ArrayAdapter<Listdata> {
@@ -634,7 +635,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Electrical engineering material and processes")) {
                     toast();
+                    if(globalClass.getSemester()== 4)
                     download("IN/KU/EL/04/EG");
+                    if(globalClass.getSemester()== 8)
+                        download("IN/KU/EL/08/EG");
                 }
                 if(subjectname.getText()==("Electrical machines")) {
                     toast();
@@ -1002,7 +1006,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                                @Override
                                public void onSuccess(Uri uri) {
                                    String url = uri.toString();
-                                   downloadfiles(getContext(),paper.child("name").getValue().toString(), ".pdf", DIRECTORY_DOWNLOADS, url);
+                                   downloadfiles(getContext(),paper.child("name").getValue().toString(), ".pdf", DIRECTORY_DOCUMENTS, url);
                                    Log.e("inside onSucces","");
                                }
                            }).addOnFailureListener(new OnFailureListener() {
