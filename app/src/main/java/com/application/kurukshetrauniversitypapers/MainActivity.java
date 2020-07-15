@@ -23,6 +23,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -54,16 +55,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     TextView total_papers;
     private FirebaseAnalytics mFirebaseAnalytics;
-    public static boolean firstStart;
-    public static int count;
-
+    String key;
+//    public static boolean firstStart;
+    private long backPressedTime;
+    private Toast backToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        firstStart = prefs.getBoolean("firstStart", true);
+//        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+//        firstStart = prefs.getBoolean("firstStart", true);
+
+
 
         setContentView(R.layout.activity_main);
         btechbtn = findViewById(R.id.btechbtn);
@@ -76,8 +80,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAuth = FirebaseAuth.getInstance();
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        Intent intent=getIntent();
+        key=intent.getStringExtra("run counter");
+        if(key.equals("yes"))
+            startCountAnimation();
+        else
+            total_papers.setText("890");
+
+
         checkConnection();
-        startCountAnimation();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -168,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     public void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 861);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 890);
         animator.setDuration(2500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -240,19 +251,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            if (firstStart) {
-                startActivity(new Intent(MainActivity.this, ActivityStarRating.class));
-                SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putBoolean("firstStart", false);
-                editor.apply();
-            } else
-                System.exit(0);
         }
-        super.onBackPressed();
+        else{
+            super.onBackPressed();
+            finish();
+        }
+//
     }
 
 }

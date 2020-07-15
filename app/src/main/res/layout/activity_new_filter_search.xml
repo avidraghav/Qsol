@@ -24,27 +24,28 @@
 
         <Button
             android:id="@+id/cse"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
             android:layout_alignParentLeft="true"
             android:background="@drawable/button_default"
             android:text="Computer Science"
             android:textAllCaps="false" />
+
         <Button
             android:id="@+id/it"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:text="Information Technology"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/cse"
-            android:layout_marginLeft="4dp"
             android:background="@drawable/button_default"
-            android:textAllCaps="false"
-            />
+            android:text="Information Technology"
+            android:textAllCaps="false" />
+
         <Button
             android:id="@+id/me"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:text="Mechanical Engineering"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:text="Mechanical Engg."
             android:layout_below="@+id/cse"
             android:singleLine="true"
             android:background="@drawable/button_default"
@@ -53,26 +54,25 @@
 
         <Button
             android:id="@+id/ee"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:layout_toRightOf="@+id/me"
-            android:layout_below="@+id/it"
-            android:layout_marginLeft="4dp"
-            android:textAllCaps="false"
-            android:background="@drawable/button_default"
-            android:text="Electrical Engineering"
-            android:layout_marginTop="4dp" />
-        <Button
-            android:id="@+id/ec"
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/me"
             android:layout_marginTop="4dp"
-            android:text="Electronics and communication"
             android:background="@drawable/button_default"
-            android:textAllCaps="false"
-            />
+            android:text="Electrical Engg."
+            android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/ec"
+            android:layout_width="170dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/it"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/me"
+            android:background="@drawable/button_default"
+            android:text="Electronics and comm."
+            android:textAllCaps="false" />
 
 
     </RelativeLayout>
@@ -192,31 +192,17 @@
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_below="@id/txt_subject"
-        android:background="@drawable/button_default"/>
-    <Button
-        android:id="@+id/search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:background="#d67601"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:text="Search"
-        android:textAllCaps="false"
-        android:textColor="#fff"
-        android:textSize="18sp"
-        />
+        android:background="@drawable/button_default"
+       />
+
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@+id/search"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/spinner"
+        android:layout_marginRight="5dp"
         android:background="#fff"
         app:layout_constraintEnd_toEndOf="parent" />
 </RelativeLayout>

@@ -7,11 +7,6 @@
         android:endColor="#6ca752"
         android:startColor="#9dcf87" />
 
-    <padding
-        android:bottom="7dp"
-        android:left="7dp"
-        android:right="7dp"
-        android:top="7dp" />
 
     <stroke
         android:width="2dp"

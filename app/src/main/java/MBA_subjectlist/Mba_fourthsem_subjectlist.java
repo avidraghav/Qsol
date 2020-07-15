@@ -172,24 +172,25 @@ public class Mba_fourthsem_subjectlist extends AppCompatActivity {
                     startActivity(intent);
                     Toast.makeText(Mba_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==5) {
+                if(position==3) {
                     Intent intent=new Intent(Mba_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/MB/04/IA");
                     startActivity(intent);
                     Toast.makeText(Mba_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==3) {
+                if(position==4) {
                     Intent intent=new Intent(Mba_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/MB/04/IL");
                     startActivity(intent);
                     Toast.makeText(Mba_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==4) {
+                if(position==5) {
                     Intent intent=new Intent(Mba_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/MB/04/IT");
                     startActivity(intent);
                     Toast.makeText(Mba_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
+
                 if(position==6) {
                     Intent intent=new Intent(Mba_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/MB/04/MF");

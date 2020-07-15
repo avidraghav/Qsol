@@ -18,14 +18,14 @@ public class WelcomeScreen extends AppCompatActivity {
 ImageView imageView;
 TextView textView, textView2;
 Animation top, bottom;
-//FirebaseAuth mAuth;
+
     private  static  int SPLASH_SCREEN =2500;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mAuth=FirebaseAuth.getInstance();
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_welcome_screen);
 
@@ -44,12 +44,12 @@ Animation top, bottom;
             @Override
             public void run() {
                     Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
+                    intent.putExtra("run counter","yes");
                     startActivity(intent);
                     finish();
 
             }
         },SPLASH_SCREEN);
-
 
     }
 

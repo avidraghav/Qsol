@@ -32,7 +32,7 @@ import java.util.List;
 import Adapters.Pdflistadapter;
 
 public class NewFilterSearch extends AppCompatActivity {
-    Button cse,it,me,ee,ec,first,second,third,fourth,fifth,sixth,seventh,eight,search;
+    Button cse,it,me,ee,ec,first,second,third,fourth,fifth,sixth,seventh,eight;
     String selected_branch,selected_semester;
     Spinner spinner;
     ArrayAdapter<String> adapter;
@@ -41,7 +41,6 @@ public class NewFilterSearch extends AppCompatActivity {
     List<uploadPDF> uploadPDFS;
     ListView listView;
     ValueEventListener listener;
-    Boolean aBoolean=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,25 +58,24 @@ public class NewFilterSearch extends AppCompatActivity {
         sixth=findViewById(R.id.sixth);
         seventh=findViewById(R.id.seventh);
         eight=findViewById(R.id.eight);
-        search=findViewById(R.id.search);
         uploadPDFS= new ArrayList<>();
         subjects=new ArrayList<>();
         listView=findViewById(R.id.list);
         spinner=findViewById(R.id.spinner);
 
         setDefaultList();
-
-
-
         cse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 selected_branch="CS";
+                setList();
                 cse.setBackgroundResource(R.drawable.button_pressed);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_default);
-                setList();
+                third.setEnabled(true);
+                fifth.setEnabled(true);
+
             }
         });
         it.setOnClickListener(new View.OnClickListener() {
@@ -90,6 +88,8 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_default);
+                third.setEnabled(false);
+                fifth.setEnabled(false);
             }
         });
         me.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +102,8 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_pressed);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_default);
+                third.setEnabled(false);
+                fifth.setEnabled(false);
             }
         });
         ec.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +116,8 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_pressed);
                 ee.setBackgroundResource(R.drawable.button_default);
+                third.setEnabled(false);
+                fifth.setEnabled(false);
             }
         });
         ee.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +130,8 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_pressed);
+                third.setEnabled(false);
+                fifth.setEnabled(false);
             }
         });
 
@@ -259,95 +265,15 @@ public class NewFilterSearch extends AppCompatActivity {
                 Log.e("val", spinner.getSelectedItem() + "");
                 Subjectcode subjectcode = new Subjectcode();
                 subjectcode.setSubjectname(spinner.getSelectedItem().toString());
+                displayResults();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
         });
 
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if(selected_branch.equals("IT")
-                        ||selected_branch.equals("ME")
-                        ||selected_branch.equals("EC")
-                        ||selected_branch.equals("EL"))
-                {
-                    if(selected_semester.equals("03")||selected_semester.equals("05"))
-                    {
-                        Toast.makeText(NewFilterSearch.this, "No results available for the selected combination", Toast.LENGTH_SHORT).show();
-                    }
-                    else
-                    {
-                        if(selected_semester.equals("01") || selected_semester.equals("02"))
-                        {
-                            selected_branch="CS";
-                        }
-                        Subjectcode subjectcode = new Subjectcode();
-                        SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-                        singleDownloadClass.setBranch(selected_branch);
-                        singleDownloadClass.setSemester(selected_semester);
-                        singleDownloadClass.setCode(subjectcode.getcode());
-
-                        databaseReference = FirebaseDatabase.getInstance().getReference("IN/KU/" + selected_branch + "/" + selected_semester + "/" + subjectcode.getcode());
-                        databaseReference.addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                uploadPDFS.clear();
-                                for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
-                                    uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
-                                    uploadPDFS.add(uploadPDF);
-                                }
-
-                                Pdflistadapter adapter = new Pdflistadapter(NewFilterSearch.this, uploadPDFS);
-                                listView.setAdapter(adapter);
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
-
-                    }
-                }
-
-                else {
-                    Subjectcode subjectcode = new Subjectcode();
-                    SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-                    singleDownloadClass.setBranch(selected_branch);
-                    singleDownloadClass.setSemester(selected_semester);
-                    singleDownloadClass.setCode(subjectcode.getcode());
-
-                    databaseReference = FirebaseDatabase.getInstance().getReference("IN/KU/" + selected_branch + "/" + selected_semester + "/" + subjectcode.getcode());
-                    databaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            uploadPDFS.clear();
-                            for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
-                                uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
-                                uploadPDFS.add(uploadPDF);
-                            }
-
-                            Pdflistadapter adapter = new Pdflistadapter(NewFilterSearch.this, uploadPDFS);
-                            listView.setAdapter(adapter);
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
-                }
-                }
-
-        });
-
     }
     public void setList()
     {
-        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, subjects);
-        spinner.setAdapter(adapter);
         db = FirebaseDatabase.getInstance().getReference().child(selected_branch + selected_semester);
         listener=db.addValueEventListener(new ValueEventListener() {
             @Override
@@ -365,13 +291,18 @@ public class NewFilterSearch extends AppCompatActivity {
 
             }
         });
+        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, subjects);
+        spinner.setAdapter(adapter);
+        inflate();
+
+
     }
     public void setDefaultList()
     {
         selected_branch="CS";
         selected_semester="01";
-        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, subjects);
-        spinner.setAdapter(adapter);
+        cse.setBackgroundResource(R.drawable.button_pressed);
+        first.setBackgroundResource(R.drawable.button_pressed);
         db = FirebaseDatabase.getInstance().getReference().child(selected_branch+selected_semester);
         listener=db.addValueEventListener(new ValueEventListener() {
             @Override
@@ -388,5 +319,84 @@ public class NewFilterSearch extends AppCompatActivity {
 
             }
         });
+        adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, subjects);
+        spinner.setAdapter(adapter);
+        inflate();
+    }
+    public void inflate()
+    {findViewById(android.R.id.content).post(new Runnable() {
+        @Override
+        public void run() {
+            spinner.performClick();
+        }
+    });}
+
+    public void displayResults()
+    {
+        if(selected_branch.equals("IT")
+                ||selected_branch.equals("ME")
+                ||selected_branch.equals("EC")
+                ||selected_branch.equals("EL"))
+        {
+            if(selected_semester.equals("01") || selected_semester.equals("02"))
+            {
+                selected_branch="CS";
+            }
+            Subjectcode subjectcode = new Subjectcode();
+            SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
+            singleDownloadClass.setBranch(selected_branch);
+            singleDownloadClass.setSemester(selected_semester);
+            singleDownloadClass.setCode(subjectcode.getcode());
+
+            databaseReference = FirebaseDatabase.getInstance().getReference("IN/KU/" + selected_branch + "/" + selected_semester + "/" + subjectcode.getcode());
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    uploadPDFS.clear();
+                    for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
+                        uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
+                        uploadPDFS.add(uploadPDF);
+                    }
+
+                    Pdflistadapter adapter = new Pdflistadapter(NewFilterSearch.this, uploadPDFS);
+                    listView.setAdapter(adapter);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
+        }
+
+        else {
+            Subjectcode subjectcode = new Subjectcode();
+            SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
+            singleDownloadClass.setBranch(selected_branch);
+            singleDownloadClass.setSemester(selected_semester);
+            singleDownloadClass.setCode(subjectcode.getcode());
+
+            databaseReference = FirebaseDatabase.getInstance().getReference("IN/KU/" + selected_branch + "/" + selected_semester + "/" + subjectcode.getcode());
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    uploadPDFS.clear();
+                    for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
+                        uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
+                        uploadPDFS.add(uploadPDF);
+                    }
+
+                    Pdflistadapter adapter = new Pdflistadapter(NewFilterSearch.this, uploadPDFS);
+                    listView.setAdapter(adapter);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
     }
 }

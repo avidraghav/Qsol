@@ -1698,8 +1698,10 @@ public class Btech_expendable_list extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
+        Intent intent=new Intent(Btech_expendable_list.this, MainActivity.class);
+        intent.putExtra("run counter","no");
+        startActivity(intent);
         super.onBackPressed();
-        startActivity(new Intent(Btech_expendable_list.this, MainActivity.class));
         finish();
 
     }

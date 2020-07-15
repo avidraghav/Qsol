@@ -10,9 +10,12 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewFilterSearch">
-
-        </activity>
+        <activity android:name="BBA_subjectlists.Bba_thirdsem_subjectlist"></activity>
+        <activity android:name="BBA_subjectlists.Bba_secondsem_subjectlist" />
+        <activity android:name="BBA_subjectlists.Bba_firstsem_subjectlist" />
+        <activity
+            android:name=".NewFilterSearch"
+            android:screenOrientation="portrait" />
         <activity android:name="MBA_subjectlist.Mba_fourthsem_subjectlist" />
         <activity android:name="MBA_subjectlist.Mba_thirdsem_subjectlist" />
         <activity android:name="MBA_subjectlist.Mba_secondsem_subjectlist" />
@@ -76,14 +79,7 @@
         <activity android:name=".Pdflist" />
         <activity
             android:name=".MainActivity"
-
-            android:screenOrientation="portrait">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Btech_expendable_list" />
 
         <meta-data
@@ -98,8 +94,8 @@
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

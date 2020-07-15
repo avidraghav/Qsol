@@ -3,21 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <!--    <item-->
-    <!--        android:id="@+id/feedback_option"-->
-    <!--        android:title="Give feedback"-->
-    <!--        app:showAsAction="always"-->
-    <!--        />-->
-<!--    <group android:checkableBehavior="single">-->
-<!--        <item-->
-<!--            android:id="@+id/action_logout"-->
-<!--            android:title="Logout"-->
-<!--            app:showAsAction="never" />-->
-<!--        <item-->
-<!--            android:id="@+id/source_code"-->
-<!--            android:title="Source code"-->
-<!--            app:showAsAction="never" />-->
-<!--    </group>-->
 
     <item android:title="Communicate">
         <menu>

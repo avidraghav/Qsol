@@ -814,7 +814,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Business statistics")) {
                     toast();
+                    if(globalClass.getBranch().equals("MBA"))
                     download("IN/KU/MB/01/BS");
+                    else
+                        download("IN/KU/BB/02/BS");
                 }
                 if(subjectname.getText()==("Computer applications for business")) {
                     toast();
@@ -838,7 +841,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Managerial economics")) {
                     toast();
+                    if(globalClass.getBranch().equals("MBA"))
                     download("IN/KU/MB/01/MN");
+                    if(globalClass.getBranch().equals("BBA"))
+                        download("IN/KU/BB/01/MN");
                 }
                 if(subjectname.getText()==("Business environment ")) {
                     toast();
@@ -850,7 +856,11 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Financial management ")) {
                     toast();
+                    if(globalClass.getBranch().equals("MBA"))
                     download("IN/KU/MB/02/FM");
+                    else
+                        download("IN/KU/BB/02/FM");
+
                 }
                 if(subjectname.getText()==("Human resource management")) {
                     toast();
@@ -862,7 +872,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 }
                 if(subjectname.getText()==("Marketing management")) {
                     toast();
+                    if(globalClass.getBranch().equals("MBA"))
                     download("IN/KU/MB/02/MK");
+                    else
+                        download("IN/KU/BB/02/MK");
                 }
                 if(subjectname.getText()==("Organisational behaviour ")) {
                     toast();
@@ -944,7 +957,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     toast();
                     download("IN/KU/MB/04/SI");
                 }
-                if(subjectname.getText()==("Business legislation ")) {
+                if(subjectname.getText()==("Business legislation")) {
                     toast();
                     download("IN/KU/MB/03/BL");
                 }
@@ -973,13 +986,62 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     download("IN/KU/MB/03/WC");
                 }
 
-
-
-
-
-
-
-
+                if(subjectname.getText()==("Business accounting")) {
+                    toast();
+                    download("IN/KU/BB/01/BA");
+                }
+                if(subjectname.getText()==("Analysis of financial statements")) {
+                    toast();
+                    download("IN/KU/BB/01/AY");
+                }
+                if(subjectname.getText()==("Business mathematics")) {
+                    toast();
+                    download("IN/KU/BB/01/BM");
+                }
+                if(subjectname.getText()==("Hindi")) {
+                    toast();
+                    download("IN/KU/BB/01/HI");
+                }
+                if(subjectname.getText()==("Business communication")) {
+                    toast();
+                    download("IN/KU/BB/01/BU");
+                }
+                if(subjectname.getText()==("Business organisation")) {
+                    toast();
+                    download("IN/KU/BB/01/BO");
+                }
+                if(subjectname.getText()==("Principles of management")) {
+                    toast();
+                    download("IN/KU/BB/01/PM");
+                }
+                if(subjectname.getText()==("Computer fundamentals")) {
+                    toast();
+                    download("IN/KU/BB/01/CF");
+                }
+                if(subjectname.getText()==("Understanding human behaviour")) {
+                    toast();
+                    download("IN/KU/BB/02/UH");
+                }
+                if(subjectname.getText()==("Fundamentals of DBMS and ORACLE")) {
+                    toast();
+                    download("IN/KU/BB/02/FD");
+                }
+                if(subjectname.getText()==("Micro business environment")) {
+                    toast();
+                    download("IN/KU/BB/02/MT");
+                }
+                if(subjectname.getText()==("Management accounting")) {
+                    toast();
+                    download("IN/KU/BB/02/MG");
+                }
+                if(subjectname.getText()==("Human behaviour at work")) {
+                    toast();
+                    download("IN/KU/BB/02/HB");
+                }
+                if(subjectname.getText()==("Understanding social behaviour")) {
+                    toast();
+                    download("IN/KU/BB/03/US");
+                }
 
             }
         });
@@ -1006,7 +1068,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                                @Override
                                public void onSuccess(Uri uri) {
                                    String url = uri.toString();
-                                   downloadfiles(getContext(),paper.child("name").getValue().toString(), ".pdf", DIRECTORY_DOCUMENTS, url);
+                                   downloadfiles(getContext(),paper.child("name").getValue().toString(), ".pdf", DIRECTORY_DOWNLOADS, url);
                                    Log.e("inside onSucces","");
                                }
                            }).addOnFailureListener(new OnFailureListener() {

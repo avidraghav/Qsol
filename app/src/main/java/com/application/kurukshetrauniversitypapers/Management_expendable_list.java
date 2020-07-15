@@ -22,6 +22,9 @@ import java.util.List;
 import java.util.Map;
 
 import Adapters.MyExListAdapter;
+import BBA_subjectlists.Bba_firstsem_subjectlist;
+import BBA_subjectlists.Bba_secondsem_subjectlist;
+import BBA_subjectlists.Bba_thirdsem_subjectlist;
 import CSE_subjectlists.Cse_firstsem_subjectlist;
 import CSE_subjectlists.Cse_secondsem_subjectlist;
 import ECE_subjectlists.Ece_fourthsem_subjectlist;
@@ -37,7 +40,7 @@ public class Management_expendable_list extends AppCompatActivity {
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
     int total_bba,total_mba;
-    int bba01,bba02,bba03,bba04,bba05,bba06,mb01,mb02,mb03,mb04;
+    int bb01,bb02,bb03,mb01,mb02,mb03,mb04;
     DatabaseReference ref1;
     TextView textView;
 
@@ -55,6 +58,171 @@ public class Management_expendable_list extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ref1= FirebaseDatabase.getInstance().getReference("IN/KU/BB/01");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("AY")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("BA")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("BM")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("BO")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("BU")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("CF")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("HI")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("MN")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("PM")) {
+                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
+
+                }
+
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        ref1= FirebaseDatabase.getInstance().getReference("IN/KU/BB/02");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("BS")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("FD")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("FM")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("HB")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("MG")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("MK")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("MT")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+                if(dataSnapshot.getKey().equals("UH")) {
+                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
+
+                }
+
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        ref1= FirebaseDatabase.getInstance().getReference("IN/KU/BB/03");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("US")) {
+                    bb03=bb03+(int)dataSnapshot.getChildrenCount();
+                }
+
+                total_bba=bb01+bb02+bb03;
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
         ref1= FirebaseDatabase.getInstance().getReference("IN/KU/MB/01");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
@@ -352,8 +520,23 @@ public class Management_expendable_list extends AppCompatActivity {
         expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                if((groupPosition)==0)
-                    Toast.makeText(Management_expendable_list.this, "Uploading in progress", Toast.LENGTH_SHORT).show();
+                if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+bb01+")")){
+                    Intent i=new Intent(getBaseContext(), Bba_firstsem_subjectlist.class);
+                    i.putExtra("key", "1");
+                    startActivity(i);
+                }
+                if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+bb02+")")){
+                    Intent i=new Intent(getBaseContext(), Bba_secondsem_subjectlist.class);
+                    i.putExtra("key", "2");
+                    startActivity(i);
+                }
+                if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester " +"("+bb03+")")){
+                    Intent i=new Intent(getBaseContext(), Bba_thirdsem_subjectlist.class);
+                    i.putExtra("key", "3");
+                    startActivity(i);
+                }
+
+
                 if((groupPosition)==1  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+mb01+")")) {
                     Intent i=new Intent(getBaseContext(), Mba_firstsem_subjectlist.class);
                     i.putExtra("key", "1");
@@ -391,12 +574,9 @@ public class Management_expendable_list extends AppCompatActivity {
         List<String> first=new ArrayList<>();
         List<String> second=new ArrayList<>();
         
-        first.add("First semester " +"("+bba01+")");
-        first.add("Second semester "+"("+bba02+")");
-        first.add("Third semester "+"("+bba03+")");
-        first.add("Fourth semester "+"("+bba04+")");
-        first.add("Fifth semester "+"("+bba05+")");
-        first.add("Sixth semester "+"("+bba06+")");
+        first.add("First semester " +"("+bb01+")");
+        first.add("Second semester "+"("+bb02+")");
+        first.add("Third semester "+"("+bb03+")");
 
         second.add("First semester "+"("+mb01+")");
         second.add("Second semester "+"("+mb02+")");
@@ -410,9 +590,10 @@ public class Management_expendable_list extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
+        Intent intent=new Intent(Management_expendable_list.this, MainActivity.class);
+        intent.putExtra("run counter","no");
+        startActivity(intent);
         super.onBackPressed();
-        startActivity(new Intent(Management_expendable_list.this, MainActivity.class));
         finish();
-
     }
 }
