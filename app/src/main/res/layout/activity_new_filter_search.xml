@@ -29,6 +29,7 @@
             android:layout_alignParentLeft="true"
             android:background="@drawable/button_default"
             android:text="Computer Science"
+            android:singleLine="true"
             android:textAllCaps="false" />
 
         <Button
@@ -38,6 +39,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/cse"
             android:background="@drawable/button_default"
+            android:singleLine="true"
             android:text="Information Technology"
             android:textAllCaps="false" />
 
@@ -58,6 +60,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/me"
             android:layout_marginTop="4dp"
+            android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="Electrical Engg."
             android:textAllCaps="false" />
@@ -70,6 +73,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@+id/me"
+            android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="Electronics and comm."
             android:textAllCaps="false" />

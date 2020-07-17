@@ -50,7 +50,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btechbtn, quick_search, mbabtn, bcabtn, managementbtn, kubtn;
+    Button btechbtn, quick_search, computer_applications_btn, bcabtn, managementbtn, kubtn;
     FirebaseAuth mAuth;
     private DrawerLayout drawer;
     TextView total_papers;
@@ -68,11 +68,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        firstStart = prefs.getBoolean("firstStart", true);
 
 
-
         setContentView(R.layout.activity_main);
         btechbtn = findViewById(R.id.btechbtn);
         quick_search = findViewById(R.id.quick_search);
-        mbabtn = findViewById(R.id.mbabtn);
+        computer_applications_btn = findViewById(R.id.computer_applications_btn);
         bcabtn = findViewById(R.id.bcabtn);
         managementbtn = findViewById(R.id.managementbtn);
         kubtn = findViewById(R.id.kubtn);
@@ -85,10 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(key.equals("yes"))
             startCountAnimation();
         else
-            total_papers.setText("890");
-
-
-        checkConnection();
+            total_papers.setText("972");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -99,8 +95,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        updateNavHeader();
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel =
@@ -143,6 +137,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this, Btech_expendable_list.class));
             }
         });
+//        bcabtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, ComputerApplications_expendable_list.class));
+//            }
+//        });
+        computer_applications_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ComputerApplications_expendable_list.class));
+            }
+        });
     }
 
     public void updateNavHeader() {
@@ -171,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (null != activenetwork) {
 
             if (activenetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-                //Toast.makeText(this, "Internet not connected", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Internet connected", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Turn on internet connection", Toast.LENGTH_SHORT).show();
@@ -179,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     public void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 890);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 972);
         animator.setDuration(2500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -188,8 +194,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         animator.start();
     }
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -215,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         public void onClick(DialogInterface dialog, int which) {
                             if (which == 0) {
                                 mAuth.getInstance().signOut();
+                                updateNavHeader();
                                 Toast.makeText(MainActivity.this, "You have been logged out", Toast.LENGTH_SHORT).show();
                             }
                             if (which == 1) {
@@ -248,7 +253,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
-
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START))
@@ -261,5 +265,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 //
     }
-
+    @Override
+    protected void onStart() {
+        updateNavHeader();
+        checkConnection();
+        super.onStart();
+    }
 }

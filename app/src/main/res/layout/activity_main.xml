@@ -267,29 +267,31 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="#808080">
+                                >
 
                                 <ImageView
                                     android:id="@+id/imageview3"
                                     android:layout_width="80dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/mca1"
+                                    android:layout_height="80dp"
+                                    android:layout_alignParentTop="true"
+                                    android:src="@drawable/computerapplications"
                                     android:layout_centerInParent="true"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="MCA (uploaded soon)"
+                                    android:text="Computer Applications"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview3"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"/>
+
                                 <Button
-                                    android:id="@+id/mbabtn"
+                                    android:id="@+id/computer_applications_btn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:onClick="progress"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@android:color/transparent"
+                                     />
 
                             </RelativeLayout>
 

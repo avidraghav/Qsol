@@ -49,6 +49,21 @@ public class Expendable_loader extends AppCompatActivity {
                 }
             }, SPLASH_SCREEN2);
         }
+        if(key.equals("computer_applications"))
+        {
+            ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
+            Sprite wave = new Wave();
+            progressBar.setIndeterminateDrawable(wave);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(Expendable_loader.this, ComputerApplications_expendable_list.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+            }, SPLASH_SCREEN2);
+        }
 
 
     }

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#008577"
     android:orientation="vertical"
     tools:context=".RegisterActivity"
     android:scrollbarAlwaysDrawVerticalTrack="true">
@@ -12,7 +11,7 @@
         android:id="@+id/loginLayout"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_below="@id/login_title"
+        android:layout_alignParentTop="true"
         android:layout_height="wrap_content">
 
         <RelativeLayout
@@ -122,15 +121,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/login_title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:gravity="center_horizontal"
-        android:text="New User Registration"
-        android:textColor="#fff"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/login_title"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:text="New User Registration"-->
+<!--        android:textColor="#fff"-->
+<!--        android:textSize="26sp"-->
+<!--        android:textStyle="bold" />-->
 
 </RelativeLayout>

@@ -10,7 +10,17 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="BBA_subjectlists.Bba_thirdsem_subjectlist"></activity>
+        <activity android:name="MCA_subjectlists.Mca_fifthsem_subjectlist"></activity>
+        <activity android:name="MCA_subjectlists.Mca_fourthsem_subjectlist" />
+        <activity android:name="MCA_subjectlists.Mca_thirdsem_subjectlist" />
+        <activity android:name="MCA_subjectlists.Mca_secondsem_subjectlist" />
+        <activity android:name="MCA_subjectlists.Mca_firstsem_subjectlist" />
+        <activity android:name=".Statistics" />
+        <activity android:name="BCA_subjectlists.Bca_thirdsem_subjectlist" />
+        <activity android:name="BCA_subjectlists.Bca_secondsem_subjectlist" />
+        <activity android:name=".ComputerApplications_expendable_list" />
+        <activity android:name="BCA_subjectlists.Bca_firstsem_subjectlist" />
+        <activity android:name="BBA_subjectlists.Bba_thirdsem_subjectlist" />
         <activity android:name="BBA_subjectlists.Bba_secondsem_subjectlist" />
         <activity android:name="BBA_subjectlists.Bba_firstsem_subjectlist" />
         <activity

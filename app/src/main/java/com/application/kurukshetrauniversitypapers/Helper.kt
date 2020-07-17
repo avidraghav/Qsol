@@ -11,6 +11,7 @@ fun Context.login() {
     val intent = Intent(this, MainActivity::class.java).apply {
         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
     }
+    intent.putExtra("run counter","no");
     startActivity(intent)
 }
 

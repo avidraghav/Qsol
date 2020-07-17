@@ -118,36 +118,38 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
 
         btndownload.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-           SingleDownloadClass singleDownloadClass=new SingleDownloadClass();
-            branch=singleDownloadClass.getBranch();
-             semester=singleDownloadClass.getSemester();
-              code=singleDownloadClass.getCode();
-                  toast();
-                download("IN/KU"+"/"+branch+"/"+semester+"/"+code, textViewName.getText().toString());
-                Log.e("dir","IN/KU"+"/"+branch+"/"+semester+"/"+code);
-//                if (mAuth.getCurrentUser() != null) {
-//                    //Toast.makeText(context, "The user is already logged in", Toast.LENGTH_SHORT).show();
-//                    Toast.makeText(context, "solution", Toast.LENGTH_SHORT).show();
-//                }
-//                else{
-//                String[] items = {"Yes", "No"};
-//                AlertDialog.Builder dialog = new AlertDialog.Builder(context);
-//                dialog.setTitle("To get the solution login first");
-//                dialog.setItems(items, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        if (which == 0) {
-//                            Intent intent = new Intent(context, LoginActivity.class);
-//                            context.startActivity(intent);
-//                        }
-//                        if (which == 1) {
-//
-//                        }
-//                    }
-//                });
-//                dialog.create().show();
-//            }
+            public void onClick(final View view) {
+
+                if((mAuth.getCurrentUser()==null)){
+                    String[] items = {"Ok", "Cancel"};
+                    AlertDialog.Builder dialog= new AlertDialog.Builder(view.getContext());
+                    dialog.setTitle("To download login first");
+                    dialog.setItems(items, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if(which==0){
+                                Intent intent=new Intent(getContext(), LoginActivity.class);
+                                view.getContext().startActivity(intent);
+
+                            }
+                            if(which ==1){
+
+                            }
+                        }
+                    });
+                    dialog.create().show();
+                }
+
+                else {
+                    SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
+                    branch = singleDownloadClass.getBranch();
+                    semester = singleDownloadClass.getSemester();
+                    code = singleDownloadClass.getCode();
+                    toast();
+                    download("IN/KU" + "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
+                    Log.e("dir", "IN/KU" + "/" + branch + "/" + semester + "/" + code);
+                }
+
             }
         });
         return listViewItem;

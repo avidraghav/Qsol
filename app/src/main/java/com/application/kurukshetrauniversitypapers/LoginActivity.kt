@@ -65,7 +65,8 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     progressbar.visibility = View.GONE
                     if (task.isSuccessful) {
-                        login()
+                        finish()
+                      //  login()
                     } else {
                         task.exception?.message?.let {
                             toast(it)
