@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#33b0ed</color>
-    <color name="colorPrimaryDark">#008577</color>
+    <color name="colorPrimaryDark">#2e2e2e</color>
     <color name="colorAccent">#dff2fa</color>
     <color name="white">#fff</color>
+    <color name="fontColor">#2b74cc</color>
     <color name="gold">	#FFD700</color>
     <drawable name="pressed_color">#7ec0ee</drawable> <!--custom color for pressed state -->
     <drawable name="normal_color">#00FFFFFF</drawable> <!--transperent color for normal state -->

@@ -88,26 +88,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
 
                 GlobalClass globalClass=new GlobalClass();
 
-                if((mAuth.getCurrentUser()==null)){
-                    String[] items = {"Ok", "Cancel"};
-                    AlertDialog.Builder dialog= new AlertDialog.Builder(v.getContext());
-                    dialog.setTitle("To download login first");
-                    dialog.setItems(items, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if(which==0){
-                                Intent intent=new Intent(getContext(), LoginActivity.class);
-                                v.getContext().startActivity(intent);
-
-                            }
-                            if(which ==1){
-
-                            }
-                        }
-                    });
-                    dialog.create().show();
-                }
-                else {
                     if (subjectname.getText() == ("Applied chemistry")) {
                         toast();
                         if (globalClass.getSemester() == 1)
@@ -192,7 +172,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                                 download("IN/KU/CS/02/EH");
                             }
                         }
-
                         else if(globalClass.getBranch().equals("BCA"))
                                 download("IN/KU/BC/01/EH");
                     }
@@ -1201,7 +1180,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         download("IN/KU/MC/05/LP");
                     }
 
-                }
+
             }
         });
 
@@ -1219,7 +1198,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                    @Override
                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                        for(final DataSnapshot paper:dataSnapshot.getChildren()) {
-
                            Log.e("papername",paper.child("name").getValue().toString());
                              Log.e("info",paper.child("name").getValue().toString());
                            myref = storageReference.child(paper.child("name").getValue().toString()+".pdf");
@@ -1234,7 +1212,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                                @Override
                                public void onFailure(@NonNull Exception e) {
                                    Log.e("inside onfailure", "");
-
                                }
                            });
 

@@ -68,23 +68,18 @@ public class Btech_expendable_list extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if(dataSnapshot.getKey().equals("AC")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-
                 }
                 if(dataSnapshot.getKey().equals("AM")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-
                 }
                 if(dataSnapshot.getKey().equals("AP")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-
                 }
                 if(dataSnapshot.getKey().equals("EE")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-
                 }
                 if(dataSnapshot.getKey().equals("BI")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();
-
                 }
                 if(dataSnapshot.getKey().equals("BT")) {
                     cs01=cs01+(int)dataSnapshot.getChildrenCount();

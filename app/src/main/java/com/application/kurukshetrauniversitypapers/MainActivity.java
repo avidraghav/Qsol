@@ -50,7 +50,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btechbtn, quick_search, computer_applications_btn, bcabtn, managementbtn, kubtn;
+    Button btechbtn,quicksearch, computer_applications_btn, managementbtn, kubtn;
     FirebaseAuth mAuth;
     private DrawerLayout drawer;
     TextView total_papers;
@@ -63,16 +63,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-//        firstStart = prefs.getBoolean("firstStart", true);
-
-
         setContentView(R.layout.activity_main);
         btechbtn = findViewById(R.id.btechbtn);
-        quick_search = findViewById(R.id.quick_search);
+        quicksearch=findViewById(R.id.quick_search);
         computer_applications_btn = findViewById(R.id.computer_applications_btn);
-        bcabtn = findViewById(R.id.bcabtn);
+
         managementbtn = findViewById(R.id.managementbtn);
         kubtn = findViewById(R.id.kubtn);
         total_papers = findViewById(R.id.total_papers);
@@ -87,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             total_papers.setText("972");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        //toolbar.setBackground(getResources().getDrawable( R.drawable.actionbar_shape));
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -95,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel =
@@ -117,14 +114,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 });
 
 
-
-        quick_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NewFilterSearch.class));
-            }
-        });
-
         managementbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,16 +126,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this, Btech_expendable_list.class));
             }
         });
-//        bcabtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, ComputerApplications_expendable_list.class));
-//            }
-//        });
         computer_applications_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,ComputerApplications_expendable_list.class));
+            }
+        });
+        quicksearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,NewFilterSearch.class));
             }
         });
     }
@@ -194,6 +183,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         animator.start();
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu2, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.quick:
+                startActivity(new Intent(MainActivity.this,NewFilterSearch.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

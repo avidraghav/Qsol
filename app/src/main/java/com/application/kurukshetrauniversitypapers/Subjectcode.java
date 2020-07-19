@@ -545,6 +545,327 @@ public class Subjectcode {
         if(subjectname.equals("Powerplant engineering")) {
             code ="PI";
         }
+        if (subjectname.equals("Principles and practices of management")) {
+            
+            code="PD";
+        }
+        if (subjectname.equals("Business communication")) {
+            
+            code="BN";
+        }
+        if (subjectname.equals("Business statistics")) {
+            
+                code="BS";
+        }
+        if (subjectname.equals("Computer applications for business")) {
+            
+            code="CB";
+        }
+        if (subjectname.equals("Financial accounting ")) {
+            
+            code="FA";
+        }
+        if (subjectname.equals("Financial reporting statement and analysis ")) {
+            
+            code="FS";
+        }
+        if (subjectname.equals("Management processes and organisational behaviour ")) {
+            
+            code="MQ";
+        }
+        if (subjectname.equals("Statistics and analysis of decision making ")) {
+            
+            code="SY";
+        }
+        if (subjectname.equals("Managerial economics")) {
+            
+                code="MN";
+        }
+        if (subjectname.equals("Business environment ")) {
+            
+            code="BE";
+        }
+        if (subjectname.equals("Business research methodology ")) {
+            
+            code="BR";
+        }
+        if (subjectname.equals("Financial management ")) {
+            
+                code="FM";
+
+        }
+        if (subjectname.equals("Human resource management")) {
+            
+            code="HR";
+        }
+        if (subjectname.equals("Management science")) {
+            
+            code="MH";
+        }
+        if (subjectname.equals("Marketing management")) {
+            
+                code="MK";
+        }
+        if (subjectname.equals("Organisational behaviour ")) {
+            
+            code="OB";
+        }
+        if (subjectname.equals("Foreign exchange management")) {
+            
+            code="FX";
+        }
+        if (subjectname.equals("Corporate finance ")) {
+            
+            code="CR";
+        }
+        if (subjectname.equals("Legal environment")) {
+            
+            code="LE";
+        }
+        if (subjectname.equals("Production and operations management")) {
+            
+            code="PI";
+        }
+        if (subjectname.equals("Compensation management ")) {
+            
+            code="CV";
+        }
+        if (subjectname.equals("Entrepreneurship development")) {
+            
+            code="EL";
+        }
+        if (subjectname.equals("Industrial marketing")) {
+            
+            code="IL";
+        }
+        if (subjectname.equals("International marketing")) {
+            
+            code="IT";
+        }
+        if (subjectname.equals("Management of financial services ")) {
+            
+            code="MF";
+        }
+        if (subjectname.equals("Management of training and development")) {
+            
+            code="MO";
+        }
+        if (subjectname.equals("Marketing communication strategy")) {
+            
+            code="MR";
+        }
+        if (subjectname.equals("Portfolio management ")) {
+            
+            code="PT";
+        }
+        if (subjectname.equals("Principles of insurance and banking")) {
+            
+            code="PB";
+        }
+        if (subjectname.equals("Project management")) {
+            
+            code="PJ";
+        }
+        if (subjectname.equals("Service marketing")) {
+            
+            code="SG";
+        }
+        if (subjectname.equals("Human resource planning and development")) {
+            
+            code="MX";
+        }
+        if (subjectname.equals("Financial derivative ")) {
+            
+            code="FT";
+        }
+        if (subjectname.equals("International financial management ")) {
+            
+            code="IA";
+        }
+        if (subjectname.equals("Strategies and systems")) {
+            
+            code="SI";
+        }
+        if (subjectname.equals("Business legislation")) {
+            
+            code="BL";
+        }
+        if (subjectname.equals("Legal framework governing human relations")) {
+            
+            code="LF";
+        }
+        if (subjectname.equals("Manpower development for technological change")) {
+            
+            code="MJ";
+        }
+        if (subjectname.equals("Organisation change and intervention strategies")) {
+            
+            code="OI";
+        }
+        if (subjectname.equals("Sales and distribution management")) {
+            
+            code="SD";
+        }
+        if (subjectname.equals("Strategic management")) {
+            
+            code="SR";
+        }
+        if (subjectname.equals("Working capital management")) {
+            
+            code="WC";
+        }
+
+        if (subjectname.equals("Business accounting")) {
+            
+            code="BA";
+        }
+        if (subjectname.equals("Analysis of financial statements")) {
+            
+            code="AY";
+        }
+        if (subjectname.equals("Business mathematics")) {
+            
+            code="BM";
+        }
+        if (subjectname.equals("Hindi")) {
+            
+            code="HI";
+        }
+        if (subjectname.equals("Business communication")) {
+            
+            code="BU";
+        }
+        if (subjectname.equals("Business organisation")) {
+            
+            code="BO";
+        }
+        if (subjectname.equals("Principles of management")) {
+            
+            code="PM";
+        }
+        if (subjectname.equals("Computer fundamentals")) {
+            
+            code="CF";
+        }
+        if (subjectname.equals("Understanding human behaviour")) {
+            
+            code="UH";
+        }
+        if (subjectname.equals("Fundamentals of DBMS and ORACLE")) {
+            
+            code="FD";
+        }
+        if (subjectname.equals("Micro business environment")) {
+            
+            code="MT";
+        }
+        if (subjectname.equals("Management accounting")) {
+            
+            code="MG";
+        }
+        if (subjectname.equals("Human behaviour at work")) {
+            
+            code="HB";
+        }
+        if (subjectname.equals("Understanding social behaviour")) {
+            
+            code="US";
+        }
+        // BCA subjects
+        if (subjectname.equals("Logical organization of computer")) {
+            
+            code="LR";
+        }
+        if (subjectname.equals("Programming in c")) {
+            
+                code="PC";
+        }
+        if (subjectname.equals("Windows and pc software")) {
+            
+            code="WR";
+        }
+        if (subjectname.equals("Advanced programming in c")) {
+            
+            code="AG";
+        }
+        if (subjectname.equals("Office automation tools")) {
+            
+            code="OA";
+        }
+        if (subjectname.equals("Personality development")) {
+            
+            code="PY";
+        }
+        if (subjectname.equals("Structured system analysis and design")) {
+            
+            code="SX";
+        }
+        if (subjectname.equals("Relational database management system")) {
+            
+            code="RD";
+        }
+        if (subjectname.equals("Computer and programming fundamentals")) {
+            
+            code="CX";
+        }
+        // MCA subjects
+
+        if (subjectname.equals("Computer organization")) {
+            
+            code="CZ";
+        }
+        if (subjectname.equals("Discrete mathematical structures")) {
+            
+            code="DU";
+        }
+        if (subjectname.equals("Numerical and statistical methods")) {
+            
+            code="NS";
+        }
+        if (subjectname.equals("Web technology")) {
+            
+            code="WT";
+        }
+        if (subjectname.equals("System programming")) {
+            
+            code="SO";
+        }
+        if (subjectname.equals("Principles of programming language")) {
+            
+            code="PF";
+        }
+        if (subjectname.equals("Computer networks and data communication")) {
+            
+            code="CW";
+        }
+        if (subjectname.equals("Object oriented design using uml")) {
+            
+            code="OU";
+        }
+        if (subjectname.equals("Visual programming")) {
+            
+            code="VP";
+        }
+        if (subjectname.equals("Advanced computer architecture")) {
+            
+            code="AH";
+        }
+        if (subjectname.equals("Programming in java")) {
+            
+            code="PV";
+        }
+        if (subjectname.equals("Advanced web technology ")) {
+            
+            code="AW";
+        }
+        if (subjectname.equals("Computer architecture and parallel processing")) {
+            
+            code="CQ";
+        }
+        if (subjectname.equals("Linux and shell programming")) {
+            
+            code="LP";
+        }
 
         return code;
     }

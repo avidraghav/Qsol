@@ -32,7 +32,7 @@ import java.util.List;
 import Adapters.Pdflistadapter;
 
 public class NewFilterSearch extends AppCompatActivity {
-    Button cse,it,me,ee,ec,first,second,third,fourth,fifth,sixth,seventh,eight;
+    Button cse,it,me,ee,ec,mb,bb,bc,mc,first,second,third,fourth,fifth,sixth,seventh,eight;
     String selected_branch,selected_semester;
     Spinner spinner;
     ArrayAdapter<String> adapter;
@@ -50,6 +50,10 @@ public class NewFilterSearch extends AppCompatActivity {
         me=findViewById(R.id.me);
         ee=findViewById(R.id.ee);
         ec=findViewById(R.id.ec);
+        mb=findViewById(R.id.mb);
+        bb=findViewById(R.id.bb);
+        bc=findViewById(R.id.bc);
+        mc=findViewById(R.id.mc);
         first=findViewById(R.id.first);
         second=findViewById(R.id.second);
         third=findViewById(R.id.third);
@@ -73,8 +77,16 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
                 third.setEnabled(true);
+                fourth.setEnabled(true);
                 fifth.setEnabled(true);
+                sixth.setEnabled(true);
+                seventh.setEnabled(true);
+                eight.setEnabled(true);
 
             }
         });
@@ -88,8 +100,16 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
                 third.setEnabled(false);
                 fifth.setEnabled(false);
+                fourth.setEnabled(true);
+                sixth.setEnabled(true);
+                seventh.setEnabled(true);
+                eight.setEnabled(true);
             }
         });
         me.setOnClickListener(new View.OnClickListener() {
@@ -102,8 +122,16 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_pressed);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
                 third.setEnabled(false);
                 fifth.setEnabled(false);
+                fourth.setEnabled(true);
+                sixth.setEnabled(true);
+                seventh.setEnabled(true);
+                eight.setEnabled(true);
             }
         });
         ec.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +144,16 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_pressed);
                 ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
                 third.setEnabled(false);
                 fifth.setEnabled(false);
+                fourth.setEnabled(true);
+                sixth.setEnabled(true);
+                seventh.setEnabled(true);
+                eight.setEnabled(true);
             }
         });
         ee.setOnClickListener(new View.OnClickListener() {
@@ -130,8 +166,104 @@ public class NewFilterSearch extends AppCompatActivity {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_pressed);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
                 third.setEnabled(false);
                 fifth.setEnabled(false);
+                fourth.setEnabled(true);
+                sixth.setEnabled(true);
+                seventh.setEnabled(true);
+                eight.setEnabled(true);
+            }
+        });
+        mb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_branch="MB";
+                setList();
+                cse.setBackgroundResource(R.drawable.button_default);
+                it.setBackgroundResource(R.drawable.button_default);
+                me.setBackgroundResource(R.drawable.button_default);
+                ec.setBackgroundResource(R.drawable.button_default);
+                ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_pressed);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
+                third.setEnabled(true);
+                fourth.setEnabled(true);
+                fifth.setEnabled(false);
+                sixth.setEnabled(false);
+                seventh.setEnabled(false);
+                eight.setEnabled(false);
+            }
+        });
+        bb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_branch="BB";
+                setList();
+                cse.setBackgroundResource(R.drawable.button_default);
+                it.setBackgroundResource(R.drawable.button_default);
+                me.setBackgroundResource(R.drawable.button_default);
+                ec.setBackgroundResource(R.drawable.button_default);
+                ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_pressed);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
+                third.setEnabled(true);
+                fourth.setEnabled(false);
+                fifth.setEnabled(false);
+                sixth.setEnabled(false);
+                seventh.setEnabled(false);
+                eight.setEnabled(false);
+            }
+        });
+        bc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_branch="BC";
+                setList();
+                cse.setBackgroundResource(R.drawable.button_default);
+                it.setBackgroundResource(R.drawable.button_default);
+                me.setBackgroundResource(R.drawable.button_default);
+                ec.setBackgroundResource(R.drawable.button_default);
+                ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_pressed);
+                mc.setBackgroundResource(R.drawable.button_default);
+                third.setEnabled(true);
+                fourth.setEnabled(false);
+                fifth.setEnabled(false);
+                sixth.setEnabled(false);
+                seventh.setEnabled(false);
+                eight.setEnabled(false);
+            }
+        });
+        mc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_branch="MC";
+                setList();
+                cse.setBackgroundResource(R.drawable.button_default);
+                it.setBackgroundResource(R.drawable.button_default);
+                me.setBackgroundResource(R.drawable.button_default);
+                ec.setBackgroundResource(R.drawable.button_default);
+                ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_pressed);
+                third.setEnabled(true);
+                fourth.setEnabled(true);
+                fifth.setEnabled(true);
+                sixth.setEnabled(false);
+                seventh.setEnabled(false);
+                eight.setEnabled(false);
             }
         });
 

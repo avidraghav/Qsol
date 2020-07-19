@@ -48,7 +48,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="22dp"
-        android:background="#d67601"
+        android:background="@drawable/button_shape"
         android:text="Send"
         android:textAllCaps="false"
         android:textColor="#fff"

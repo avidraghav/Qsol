@@ -31,13 +31,13 @@ Animation top, bottom;
 
         textView2 = findViewById(R.id.textView2);
         imageView = findViewById(R.id.imageView);
-        textView = findViewById(R.id.textView);
+       // textView = findViewById(R.id.textView);
 
 
         top = AnimationUtils.loadAnimation(this, R.anim.top);
         bottom = AnimationUtils.loadAnimation(this, R.anim.bottom);
         imageView.setAnimation(top);
-        textView.setAnimation(bottom);
+      //  textView.setAnimation(bottom);
         textView2.setAnimation(bottom);
         new Handler().postDelayed(new Runnable()
         {

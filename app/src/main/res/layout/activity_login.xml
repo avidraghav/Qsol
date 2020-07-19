@@ -23,7 +23,6 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="70dp"
-            android:background="@color/white"
             android:elevation="4dp"
             android:orientation="vertical"
             android:padding="10dp">
@@ -38,6 +37,7 @@
                 <TextView
                     android:labelFor="@id/text_email"
                     android:text="email"
+                    android:textColor="#000"
                     android:fontFamily="sans-serif-light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -49,6 +49,7 @@
                     android:drawableLeft="@drawable/ic_email"
                     android:drawablePadding="10dp"
                     android:singleLine="true"
+                    android:textColor="#000"
                     android:layout_marginBottom="10dp"
                     android:hint="john@gmail.com"
                     android:inputType="textEmailAddress"/>
@@ -56,6 +57,7 @@
                 <TextView
                     android:labelFor="@id/edit_text_password"
                     android:text="password"
+                    android:textColor="#000"
                     android:fontFamily="sans-serif-light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -68,6 +70,7 @@
                     android:id="@+id/edit_text_password"
                     android:drawableLeft="@drawable/ic_lock"
                     android:hint="Password"
+                    android:textColor="#000"
                     android:inputType="textPassword"/>
 
 
@@ -77,6 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
                     android:paddingTop="5dp"
+                    android:textColor="#2b74cc"
                     android:text="Forgot Password?"/>
 
 
@@ -85,7 +89,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="22dp"
-                    android:background="#d67601"
+                    android:background="@drawable/button_shape"
                     android:text="Log in"
                     android:textAllCaps="false"
                     android:textColor="#fff"

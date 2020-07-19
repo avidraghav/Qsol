@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
-    android:background="#008577">
+    android:background="@color/white">
 
 
     <ScrollView
@@ -24,13 +24,14 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:id="@+id/toolbar"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                 android:elevation="4dp"
-                />
+                android:background="#D3D3D3"
+                android:elevation="4dp"
+                app:titleTextColor="#2b74cc"
+                android:theme="@style/AppTheme"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
             <FrameLayout
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
@@ -39,13 +40,13 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:background="#008577">
+                android:background="@color/white">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/back">
+                   >
 
 
                     <TextView
@@ -54,7 +55,7 @@
                         android:layout_height="138dp"
                         android:fontFamily="sans-serif-smallcaps"
                         android:gravity="center"
-                        android:textColor="#ffffff"
+                        android:textColor="#2b74cc"
                         android:textSize="90sp"
                         android:textStyle="bold" />
 
@@ -62,10 +63,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text= "Papers Available"
-                        android:textColor="#ffffff"
+                        android:textColor="#2b74cc"
                         android:textSize="18sp"
                         android:textStyle="bold" />
-
 
                 </LinearLayout>
 
@@ -88,23 +88,27 @@
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                           >
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cardview_shape">
 
                                 <ImageView
                                     android:id="@+id/imageview1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="90dp"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
                                     android:layout_marginTop="5dp"
                                     android:src="@drawable/btechnew"
+                                    android:layout_centerInParent="true"
                                     android:layout_alignParentTop="true"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="B-Tech"
+                                    android:text="B.Tech"
+                                    android:textColor="#2b74cc"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview1"
                                     android:layout_centerHorizontal="true"
@@ -133,30 +137,32 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                               >
+                                android:background="@drawable/cardview_shape"
+                                >
 
                                 <ImageView
-                                    android:id="@+id/imageview2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="90dp"
-                                    android:src="@drawable/ic_search"
-                                   android:layout_alignParentTop="true"/>
+                                    android:id="@+id/imageview3"
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:layout_alignParentTop="true"
+                                    android:src="@drawable/computerapplications"
+                                    android:layout_centerInParent="true"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Quick search"
+                                    android:text="BCA/MCA"
+                                    android:textColor="#2b74cc"
                                     android:textSize="16sp"
-                                    android:layout_below="@+id/imageview2"
+                                    android:layout_below="@+id/imageview3"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"/>
+
                                 <Button
-                                    android:id="@+id/quick_search"
+                                    android:id="@+id/computer_applications_btn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:focusable="true"
-                                    android:foreground="?attr/selectableItemBackground"
-                                    android:background="@android:color/transparent"/>
+                                    android:background="@android:color/transparent" />
 
                             </RelativeLayout>
 
@@ -179,7 +185,8 @@
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="match_parent"
+                                android:background="@drawable/cardview_shape">
 
                                 <ImageView
                                     android:id="@+id/imageview6"
@@ -191,6 +198,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="KU website"
+                                    android:textColor="#2b74cc"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview6"
                                     android:layout_centerHorizontal="true"
@@ -220,6 +228,7 @@
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:background="@drawable/cardview_shape"
                                 >
 
                                 <ImageView
@@ -232,7 +241,8 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Management courses"
+                                    android:text="BBA/MBA"
+                                    android:textColor="#2b74cc"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview5"
                                     android:layout_centerHorizontal="true"
@@ -261,71 +271,34 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:layout_gravity="center"
-                            android:layout_marginRight="5dp"
+
                             android:orientation="vertical">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:background="@drawable/cardview_shape"
                                 >
 
                                 <ImageView
-                                    android:id="@+id/imageview3"
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:layout_alignParentTop="true"
-                                    android:src="@drawable/computerapplications"
-                                    android:layout_centerInParent="true"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Computer Applications"
-                                    android:textSize="16sp"
-                                    android:layout_below="@+id/imageview3"
-                                    android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginBottom="10dp"/>
-
-                                <Button
-                                    android:id="@+id/computer_applications_btn"
+                                    android:id="@+id/imageview7"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@android:color/transparent"
-                                     />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="5dp"
-                            android:orientation="vertical">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="#808080">
-
-                                <ImageView
-                                    android:id="@+id/imageview4"
-                                    android:layout_width="80dp"
-                                    android:layout_height="50dp"
-                                    android:src="@drawable/bca1"
-                                    android:layout_centerInParent="true"/>
+                                    android:layout_height="90dp"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_search" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="BCA (uploaded soon)"
+                                    android:text="Quick Search"
+                                    android:textColor="#2b74cc"
                                     android:textSize="16sp"
-                                    android:layout_below="@+id/imageview4"
+                                    android:layout_below="@+id/imageview7"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
+                                    android:layout_marginTop="8dp"
                                     android:layout_marginBottom="10dp"/>
                                 <Button
-                                    android:id="@+id/bcabtn"
+                                    android:id="@+id/quick_search"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:onClick="progress"
@@ -334,7 +307,6 @@
                             </RelativeLayout>
 
                         </androidx.cardview.widget.CardView>
-
 
                     </LinearLayout>
 
@@ -346,15 +318,13 @@
     </ScrollView>
 
 
-
-
-
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/option_menu"
         android:layout_gravity="start"
+        app:itemIconTint="@color/fontColor"
+        app:itemTextColor="@color/fontColor"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
 

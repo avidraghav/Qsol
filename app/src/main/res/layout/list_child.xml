@@ -16,5 +16,5 @@
         android:text="TextView"
         android:textSize="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#F4EEEE" />
+        android:textColor="#2b74cc" />
 </LinearLayout>

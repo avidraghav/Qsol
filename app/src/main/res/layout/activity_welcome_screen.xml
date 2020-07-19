@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center"
-    android:background="@color/colorPrimaryDark"
     android:gravity="center"
     tools:context=".WelcomeScreen">
 
@@ -17,17 +16,7 @@
         android:src="@drawable/logowithoutback"
         />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="Qsol"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="50dp"
-        android:textStyle="italic"
-        app:fontFamily="sans-serif" />
+
 
     <TextView
         android:id="@+id/textView2"
@@ -36,8 +25,8 @@
         android:layout_marginTop="10dp"
         android:text="One destination for all previous year papers"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="15dp"
+        android:textColor="#2b74cc"
+        android:textSize="18sp"
         app:fontFamily="sans-serif" />
 
 

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Communicate">
+    <item android:title="Communicate"
+        >
         <menu>
             <item
                 android:id="@+id/action_signin"
