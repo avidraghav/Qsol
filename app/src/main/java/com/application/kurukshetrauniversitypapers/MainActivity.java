@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(key.equals("yes"))
             startCountAnimation();
         else
-            total_papers.setText("972");
+            total_papers.setText("1011");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         //toolbar.setBackground(getResources().getDrawable( R.drawable.actionbar_shape));
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     public void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 972);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 1011);
         animator.setDuration(2500);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {

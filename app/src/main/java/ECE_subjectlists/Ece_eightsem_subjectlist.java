@@ -128,17 +128,17 @@ public class Ece_eightsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==2) {
                     Intent intent=new Intent(Ece_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/08/MY");
+                    intent.putExtra("subject","IN/KU/EC/08/RA");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Ece_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/08/RA");
+                    intent.putExtra("subject","IN/KU/EC/08/TA");
                     startActivity(intent);
                 }
                 if(position==4) {
                     Intent intent=new Intent(Ece_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/08/RE");
+                    intent.putExtra("subject","IN/KU/EC/08/WI");
                     startActivity(intent);
                 }
                 if(position==5) {

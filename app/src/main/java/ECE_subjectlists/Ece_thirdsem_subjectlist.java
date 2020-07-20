@@ -1,4 +1,4 @@
-package ELE_subjectlists;
+package ECE_subjectlists;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,8 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.Mylistadapter;
+import ELE_subjectlists.Ele_eightsem_subjectlist;
 
-public class Ele_eightsem_subjectlist extends AppCompatActivity {
+public class Ece_thirdsem_subjectlist extends AppCompatActivity {
     ListView listView;
     List<Listdata> subjectlist;
     Button downloadall;
@@ -33,13 +34,14 @@ public class Ele_eightsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int el_eightpapercount1,el_eightpapercount2,el_eightpapercount3,el_eightpapercount4,el_eightpapercount5;
+    static int el_eightpapercount1,el_eightpapercount2,el_eightpapercount3;
     DatabaseReference ref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_el_eightsem_subjectlist);
+        setContentView(R.layout.activity_ece_thirdsem_subjectlist);
         listView=findViewById(R.id.list);
         downloadall=findViewById(R.id.download_btn);
         subjectname=findViewById(R.id.subjectname);
@@ -52,37 +54,28 @@ public class Ele_eightsem_subjectlist extends AppCompatActivity {
         textView.setText(key);
 
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
-        globalClass.setBranch("EL");
-        globalClass.setSemester(8);
+        globalClass.setBranch("EC");
+        globalClass.setSemester(3);
 
-        ref= FirebaseDatabase.getInstance().getReference("IN/KU/EL/08");
+        ref= FirebaseDatabase.getInstance().getReference("IN/KU/EC/03");
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("CP")) {
+                if(dataSnapshot.getKey().equals("ER")) {
                     el_eightpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer methods in power systems", el_eightpapercount1+""));
+                    subjectlist.add(new Listdata("Digital electronics", el_eightpapercount1+""));
 
                 }
-                if(dataSnapshot.getKey().equals("EG")) {
-                    el_eightpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical engineering material and processes", el_eightpapercount2+""));
-
-                }
-                if(dataSnapshot.getKey().equals("IF")) {
+                if(dataSnapshot.getKey().equals("DE")) {
                     el_eightpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Internet Fundamental", el_eightpapercount3+""));
+                    subjectlist.add(new Listdata("Semiconductor devices and circuits", el_eightpapercount3+""));
 
                 }
-                if(dataSnapshot.getKey().equals("OR")) {
-                    el_eightpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Operation research", el_eightpapercount4+""));
+                if(dataSnapshot.getKey().equals("SN")) {
+                    el_eightpapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Semiconductor devices and circuits", el_eightpapercount2+""));
 
-                }
-                if(dataSnapshot.getKey().equals("UT")) {
-                    el_eightpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Utilisation of electrical energy", el_eightpapercount5+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
@@ -116,31 +109,21 @@ public class Ele_eightsem_subjectlist extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
-                    Intent intent=new Intent(Ele_eightsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/08/CP");
+                    Intent intent=new Intent(Ece_thirdsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/03/DE");
                     startActivity(intent);
                 }
                 if(position==1) {
-                    Intent intent=new Intent(Ele_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/08/EG");
+                    Intent intent=new Intent(Ece_thirdsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/03/ER");
                     startActivity(intent);
                 }
                 if(position==2) {
-                    Intent intent=new Intent(Ele_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/08/IF");
+                    Intent intent=new Intent(Ece_thirdsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/03/SN");
                     startActivity(intent);
                 }
-                if(position==3) {
-                    Intent intent=new Intent(Ele_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/08/OR");
-                    startActivity(intent);
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Ele_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/08/UT");
-                    startActivity(intent);
-                }
-
+               
             }
         });
     }

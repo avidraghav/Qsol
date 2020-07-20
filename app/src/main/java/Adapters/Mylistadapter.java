@@ -217,6 +217,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/CS/01/PH");
                     }
+                if (subjectname.getText() == ("Business intelligence and entrepreneurship")) {
+                    toast();
+                    download("IN/KU/CS/03/BG");
+                }
                     if (subjectname.getText() == ("Calculus and ordinary differential equation")) {
                         toast();
                         download("IN/KU/CS/02/CL");
@@ -262,10 +266,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                             download("IN/KU/CS/01/DE");
                         if (globalClass.getBranch().equals("ECE") && globalClass.getSemester() == 4)
                             download("IN/KU/EC/04/DE");
+                        if (globalClass.getBranch().equals("ECE") && globalClass.getSemester() == 3)
+                            download("IN/KU/EC/03/DE");
                         if (globalClass.getBranch().equals("ELE") && globalClass.getSemester() == 4)
                             download("IN/KU/El/04/DE");
-
-
                     }
                     if (subjectname.getText() == ("Internet Fundamental")) {
                         toast();
@@ -310,6 +314,12 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                             download("IN/KU/CS/04/MS");
                         if (globalClass.getSemester() == 6 && globalClass.getBranch().equals("ELE"))
                             download("IN/KU/EL/06/MS");
+                        if(globalClass.getBranch().equals("ECE")){
+                            if(globalClass.getSemester()==4)
+                                download("IN/KU/EC/04/MS");
+                            if(globalClass.getSemester()==5)
+                                download("IN/KU/EL/05/MS");
+                        }
                     }
                     if (subjectname.getText() == ("Digital data communication")) {
                         toast();
@@ -489,7 +499,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         download("IN/KU/CS/08/SV");
                     }
                     //ECE SUBJECTS
-
                     if (subjectname.getText() == ("Analog Electronics")) {
                         toast();
                         download("IN/KU/EC/04/AN");
@@ -498,6 +507,14 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/EC/04/EY");
                     }
+                if (subjectname.getText() == ("Electronic devices")) {
+                    toast();
+                    download("IN/KU/EC/03/ER");
+                }
+                if (subjectname.getText() == ("Semiconductor devices and circuits")) {
+                    toast();
+                    download("IN/KU/EC/03/SN");
+                }
                     if (subjectname.getText() == ("Electronic measurements and instruments")) {
                         toast();
                         if (globalClass.getBranch().equals("ECE") && globalClass.getSemester() == 4)
@@ -577,7 +594,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         if (globalClass.getBranch().equals("IT") && globalClass.getSemester() == 8)
                             download("IN/KU/IT/08/EI");
                     }
-
                     if (subjectname.getText() == ("Radar engineering")) {
                         toast();
                         download("IN/KU/EC/08/RA");
@@ -628,7 +644,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                             download("IN/KU/IT/06/MM");
                         if (globalClass.getBranch().equals("ME"))
                             download("IN/KU/ME/08/MM");
-
                     }
                     if (subjectname.getText() == ("Introduction to microcontroller")) {
                         toast();
@@ -689,12 +704,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/EL/04/SS");
                     }
-
                     if (subjectname.getText() == ("Advanced programming")) {
                         toast();
                         download("IN/KU/EL/06/AE");
                     }
-
                     if (subjectname.getText() == ("Electrical drives and traction")) {
                         toast();
                         download("IN/KU/EL/06/EN");
@@ -711,7 +724,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/EL/06/PN");
                     }
-
                     if (subjectname.getText() == ("Discrete data non linear control system")) {
                         toast();
                         download("IN/KU/EL/07/DN");
@@ -728,7 +740,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/EL/07/HV");
                     }
-
                     if (subjectname.getText() == ("Computer methods in power systems")) {
                         toast();
                         download("IN/KU/EL/08/CP");
@@ -737,7 +748,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/EL/08/EG");
                     }
-                    if (subjectname.getText() == ("Operational research")) {
+                    if (subjectname.getText() == ("Operation research")) {
                         toast();
                         if (globalClass.getBranch().equals("ELE"))
                             download("IN/KU/EL/08/OR");
@@ -753,9 +764,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/EL/08/UT");
                     }
-
                     // ME SUBJECTS
-
                     if (subjectname.getText() == ("Dynamics of machine")) {
                         toast();
                         download("IN/KU/ME/04/DY");

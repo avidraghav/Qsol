@@ -33,7 +33,7 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
     TextView subjectname;
     TextView papercount;
     TextView textView;
-    static int threepapercount1,threepapercount2,threepapercount3,threepapercount4,threepapercount5,threepapercount6,threepapercount7,threepapercount8;
+    static int threepapercount1,threepapercount2,threepapercount3,threepapercount4,threepapercount5,threepapercount6,threepapercount7,threepapercount8,threepapercount9;
     DatabaseReference ref;
 
     @Override
@@ -60,6 +60,11 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("DC")) {
                     threepapercount1=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Discrete structure", threepapercount1+""));
+
+                }
+                if(dataSnapshot.getKey().equals("BG")) {
+                    threepapercount9=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Business intelligence and entrepreneurship", threepapercount9+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DM")) {
@@ -126,47 +131,53 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DC");
+                    intent.putExtra("subject","IN/KU/CS/03/BG");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==1) {
-                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DM");
-                    startActivity(intent);
-                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==2) {
-                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DT");
+                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/CS/03/DC");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==3) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DS");
-                    startActivity(intent);
-                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DE");
+                    intent.putExtra("subject","IN/KU/CS/03/DM");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==5) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/IF");
+                    intent.putExtra("subject","IN/KU/CS/03/DT");
+                    startActivity(intent);
+                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                }
+                if(position==4) {
+                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/CS/03/DS");
+                    startActivity(intent);
+                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                }
+                if(position==2) {
+                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/CS/03/DE");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==6) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/OP");
+                    intent.putExtra("subject","IN/KU/CS/03/IF");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==7) {
+                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/CS/03/OP");
+                    startActivity(intent);
+                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                }
+                if(position==8) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/03/PL");
                     startActivity(intent);

@@ -120,27 +120,6 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
             @Override
             public void onClick(final View view) {
 
-                if((mAuth.getCurrentUser()==null)){
-                    String[] items = {"Ok", "Cancel"};
-                    AlertDialog.Builder dialog= new AlertDialog.Builder(view.getContext());
-                    dialog.setTitle("To download login first");
-                    dialog.setItems(items, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if(which==0){
-                                Intent intent=new Intent(getContext(), LoginActivity.class);
-                                view.getContext().startActivity(intent);
-
-                            }
-                            if(which ==1){
-
-                            }
-                        }
-                    });
-                    dialog.create().show();
-                }
-
-                else {
                     SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
                     branch = singleDownloadClass.getBranch();
                     semester = singleDownloadClass.getSemester();
@@ -148,7 +127,7 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
                     toast();
                     download("IN/KU" + "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
                     Log.e("dir", "IN/KU" + "/" + branch + "/" + semester + "/" + code);
-                }
+
 
             }
         });

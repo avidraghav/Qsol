@@ -771,6 +771,9 @@ public class Subjectcode {
             
             code="US";
         }
+        if (subjectname.equals("Business intelligence and entrepreneurship")) {
+            code="BG";
+        }
         // BCA subjects
         if (subjectname.equals("Logical organization of computer")) {
             
@@ -865,6 +868,14 @@ public class Subjectcode {
         if (subjectname.equals("Linux and shell programming")) {
             
             code="LP";
+        }
+        if (subjectname.equals("Electronic devices")) {
+
+            code="ER";
+        }
+        if (subjectname.equals("Semiconductor devices and circuits")) {
+
+            code="SN";
         }
 
         return code;

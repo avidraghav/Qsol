@@ -33,7 +33,7 @@ public class Ece_seventhsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int ece_sevenpapercount1,ece_sevenpapercount2,ece_sevenpapercount3,ece_sevenpapercount4,ece_sevenpapercount6,ece_sevenpapercount5;
+    static int ece_sevenpapercount1,ece_sevenpapercount2,ece_sevenpapercount3,ece_sevenpapercount4,ece_sevenpapercount6,ece_sevenpapercount5,ece_sevenpapercount7;
     DatabaseReference ref;
 
 
@@ -89,6 +89,10 @@ public class Ece_seventhsem_subjectlist extends AppCompatActivity {
                     ece_sevenpapercount6 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("VLSI design", ece_sevenpapercount6+""));
                 }
+                if(dataSnapshot.getKey().equals("MP")) {
+                    ece_sevenpapercount7 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Microcontrollers and applications", ece_sevenpapercount7+""));
+                }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -132,20 +136,25 @@ public class Ece_seventhsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==2) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/OC");
+                    intent.putExtra("subject","IN/KU/EC/07/MP");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/RE");
+                    intent.putExtra("subject","IN/KU/EC/07/OC");
                     startActivity(intent);
                 }
                 if(position==4) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/TE");
+                    intent.putExtra("subject","IN/KU/EC/07/RE");
                     startActivity(intent);
                 }
                 if(position==5) {
+                    Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/07/TE");
+                    startActivity(intent);
+                }
+                if(position==6) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/EC/07/VL");
                     startActivity(intent);

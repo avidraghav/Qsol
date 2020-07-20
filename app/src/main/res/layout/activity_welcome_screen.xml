@@ -13,9 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="300dp"
         android:layout_height="250dp"
-        android:src="@drawable/logowithoutback"
-        />
-
+        android:src="@drawable/logowithoutback" />
 
 
     <TextView
@@ -23,11 +21,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="One destination for all previous year papers"
+        android:fontFamily="@font/bungee"
+        android:text="Previous year papers on fingertips"
         android:textAlignment="center"
         android:textColor="#2b74cc"
-        android:textSize="18sp"
-        app:fontFamily="sans-serif" />
+        android:textSize="20sp"
+        app:fontFamily="@font/acme" />
 
 
 </LinearLayout>
