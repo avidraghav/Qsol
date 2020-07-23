@@ -42,8 +42,9 @@
                 android:layout_height="fill_parent"
                 android:background="@color/white">
                 <LinearLayout
+                    android:id="@+id/counter"
                     android:layout_width="match_parent"
-                    android:layout_height="230dp"
+                    android:layout_height="210dp"
                     android:orientation="vertical"
                     android:gravity="center"
                    >
@@ -73,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="251dp"
+                    android:layout_marginTop="220dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
 

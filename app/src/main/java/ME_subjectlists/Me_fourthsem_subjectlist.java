@@ -136,12 +136,12 @@ public class Me_fourthsem_subjectlist extends AppCompatActivity {
                     intent.putExtra("subject","IN/KU/ME/04/FM");
                     startActivity(intent);
                 }
-                if(position==3) {
+                if(position==2) {
                     Intent intent=new Intent(Me_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/ME/04/MT");
                     startActivity(intent);
                 }
-                if(position==2) {
+                if(position==3) {
                     Intent intent=new Intent(Me_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/ME/04/MO");
                     startActivity(intent);
@@ -151,12 +151,12 @@ public class Me_fourthsem_subjectlist extends AppCompatActivity {
                     intent.putExtra("subject","IN/KU/ME/04/PT");
                     startActivity(intent);
                 }
-                if(position==6) {
+                if(position==5) {
                     Intent intent=new Intent(Me_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/ME/04/SL");
                     startActivity(intent);
                 }
-                if(position==5) {
+                if(position==6) {
                     Intent intent=new Intent(Me_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/ME/04/SG");
                     startActivity(intent);

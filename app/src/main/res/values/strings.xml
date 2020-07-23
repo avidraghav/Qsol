@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Qsol</string>
-    <string name="ask_register"><u>Sign up</u></string>
-    <string name="ask_login"><u>Login Here</u></string>
     <string name="forget_password">Reset password</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

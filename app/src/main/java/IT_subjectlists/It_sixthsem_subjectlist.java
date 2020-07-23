@@ -162,7 +162,7 @@ public class It_sixthsem_subjectlist extends AppCompatActivity {
                     startActivity(intent);
                     Toast.makeText(It_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==5) {
+                if(position==6) {
                     Intent intent=new Intent(It_sixthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/IT/06/SE");
                     startActivity(intent);

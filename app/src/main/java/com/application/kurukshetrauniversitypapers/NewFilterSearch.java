@@ -104,8 +104,8 @@ public class NewFilterSearch extends AppCompatActivity {
                 bb.setBackgroundResource(R.drawable.button_default);
                 bc.setBackgroundResource(R.drawable.button_default);
                 mc.setBackgroundResource(R.drawable.button_default);
-                third.setEnabled(false);
-                fifth.setEnabled(false);
+                third.setEnabled(true);
+                fifth.setEnabled(true);
                 fourth.setEnabled(true);
                 sixth.setEnabled(true);
                 seventh.setEnabled(true);
@@ -126,8 +126,8 @@ public class NewFilterSearch extends AppCompatActivity {
                 bb.setBackgroundResource(R.drawable.button_default);
                 bc.setBackgroundResource(R.drawable.button_default);
                 mc.setBackgroundResource(R.drawable.button_default);
-                third.setEnabled(false);
-                fifth.setEnabled(false);
+                third.setEnabled(true);
+                fifth.setEnabled(true);
                 fourth.setEnabled(true);
                 sixth.setEnabled(true);
                 seventh.setEnabled(true);

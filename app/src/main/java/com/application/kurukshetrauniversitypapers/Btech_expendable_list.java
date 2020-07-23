@@ -39,13 +39,17 @@ import ELE_subjectlists.Ele_fourthsem_subjectlist;
 import ELE_subjectlists.Ele_seventhsem_subjectlist;
 import ELE_subjectlists.Ele_sixthsem_subjectlist;
 import IT_subjectlists.It_eightsem_subjectlist;
+import IT_subjectlists.It_fifthsem_subjectlist;
 import IT_subjectlists.It_fourthsem_subjectlist;
 import IT_subjectlists.It_seventhsem_subjectlist;
 import IT_subjectlists.It_sixthsem_subjectlist;
+import IT_subjectlists.It_thirdsem_subjectlist;
 import ME_subjectlists.Me_eightsem_subjectlist;
+import ME_subjectlists.Me_fifthsem_subjectlist;
 import ME_subjectlists.Me_fourthsem_subjectlist;
 import ME_subjectlists.Me_seventhsem_subjectlist;
 import ME_subjectlists.Me_sixthsem_subjectlist;
+import ME_subjectlists.Me_thirdsem_subjectlist;
 
 public class Btech_expendable_list extends AppCompatActivity {
 
@@ -53,7 +57,7 @@ public class Btech_expendable_list extends AppCompatActivity {
     List<String> branch;
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
-    int cs01,cs02,cs03,cs04,cs05,cs06,cs07,cs08,ec03,ec04,ec05,ec06,ec07,ec08,it04,it06,it07,it08,el04,el06,el07,el08,me04,me06,me07,me08;
+    int cs01,cs02,cs03,cs04,cs05,cs06,cs07,cs08,ec03,ec04,ec05,ec06,ec07,ec08,it03,it04,it05,it06,it07,it08,el04,el06,el07,el08,me03,me04,me05,me06,me07,me08;
     int total_cse,total_ece,total_it,total_el,total_me;
     DatabaseReference ref1;
     TextView textView;
@@ -877,6 +881,51 @@ public class Btech_expendable_list extends AppCompatActivity {
             }
         });
         // IT paper count
+        ref1=FirebaseDatabase.getInstance().getReference("IN/KU/IT/03");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("DM")) {
+                    it03=it03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("DS")) {
+                    it03=it03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("DE")) {
+                    it03=it03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("DC")) {
+                    it03=it03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("IF")) {
+                    it03=it03+(int)dataSnapshot.getChildrenCount();
+                }
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         ref1=FirebaseDatabase.getInstance().getReference("IN/KU/IT/04");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
@@ -901,6 +950,60 @@ public class Btech_expendable_list extends AppCompatActivity {
                 }
                 if(dataSnapshot.getKey().equals("FR")) {
                     it04=it04+(int)dataSnapshot.getChildrenCount();
+                }
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        ref1=FirebaseDatabase.getInstance().getReference("IN/KU/IT/05");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("LI")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("IU")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MY")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("CM")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("WD")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("NN")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("OS")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("JP")) {
+                    it05=it05+(int)dataSnapshot.getChildrenCount();
                 }
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
@@ -1056,7 +1159,7 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("AV")) {
                     it08=it08+(int)dataSnapshot.getChildrenCount();
                 }
-                total_it=cs01+cs02+it04+it06+it07+it08;
+                total_it=cs01+cs02+it03+it04+it05+it06+it07+it08;
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
@@ -1286,6 +1389,60 @@ public class Btech_expendable_list extends AppCompatActivity {
         });
 
         // ME paper count
+        ref1=FirebaseDatabase.getInstance().getReference("IN/KU/ME/03");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("TD")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("SL")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MN")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("KM")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("PT")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("BZ")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MO")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MT")) {
+                    me03=me03+(int)dataSnapshot.getChildrenCount();
+                }
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         ref1=FirebaseDatabase.getInstance().getReference("IN/KU/ME/04");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
@@ -1310,6 +1467,57 @@ public class Btech_expendable_list extends AppCompatActivity {
                 }
                 if(dataSnapshot.getKey().equals("SL")) {
                     me04=me04+(int)dataSnapshot.getChildrenCount();
+                }
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        ref1=FirebaseDatabase.getInstance().getReference("IN/KU/ME/05");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("GE")) {
+                    me05=me05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("FM")) {
+                    me05=me05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("HT")) {
+                    me05=me05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("IE")) {
+                    me05=me05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MN")) {
+                    me05=me05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("SG")) {
+                    me05=me05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("PT")) {
+                    me05=me05+(int)dataSnapshot.getChildrenCount();
                 }
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
@@ -1453,7 +1661,7 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("PI")) {
                     me08=me08+(int)dataSnapshot.getChildrenCount();
                 }
-                total_me=cs01+cs02+me04+me06+me07+me08;
+                total_me=cs01+cs02+me03+me04+me05+me06+me07+me08;
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
@@ -1556,8 +1764,10 @@ public class Btech_expendable_list extends AppCompatActivity {
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
-                if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester")) {
-                    Toast.makeText(Btech_expendable_list.this, "Uploaded soon", Toast.LENGTH_SHORT).show();
+                if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+it03+")")) {
+                    Intent i=new Intent(getBaseContext(), It_thirdsem_subjectlist.class);
+                    i.putExtra("key", "3");
+                    startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+it04+")")) {
                     Intent i=new Intent(getBaseContext(), It_fourthsem_subjectlist.class);
@@ -1565,8 +1775,10 @@ public class Btech_expendable_list extends AppCompatActivity {
                     startActivity(i);
 
                 }
-                if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester")) {
-                    Toast.makeText(Btech_expendable_list.this, "Uploaded soon", Toast.LENGTH_SHORT).show();
+                if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+it05+")")) {
+                    Intent i=new Intent(getBaseContext(), It_fifthsem_subjectlist.class);
+                    i.putExtra("key", "3");
+                    startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+it06+")")) {
                     Intent i=new Intent(getBaseContext(), It_sixthsem_subjectlist.class);
@@ -1594,16 +1806,20 @@ public class Btech_expendable_list extends AppCompatActivity {
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
-                if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester")) {
-                    Toast.makeText(Btech_expendable_list.this, "Uploaded soon", Toast.LENGTH_SHORT).show();
+                if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+me03+")")) {
+                    Intent i=new Intent(getBaseContext(), Me_thirdsem_subjectlist.class);
+                    i.putExtra("key", "3");
+                    startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+me04+")")) {
                     Intent i=new Intent(getBaseContext(), Me_fourthsem_subjectlist.class);
                     i.putExtra("key", "4");
                     startActivity(i);
                 }
-                if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester")) {
-                    Toast.makeText(Btech_expendable_list.this, "Uploaded soon", Toast.LENGTH_SHORT).show();
+                if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+me05+")")) {
+                    Intent i=new Intent(getBaseContext(), Me_fifthsem_subjectlist.class);
+                    i.putExtra("key", "5");
+                    startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+me06+")")) {
                     Intent i=new Intent(getBaseContext(), Me_sixthsem_subjectlist.class);
@@ -1736,18 +1952,18 @@ public class Btech_expendable_list extends AppCompatActivity {
 
         second.add("First semester "+"("+cs01+")");
         second.add("Second semester "+"("+cs02+")");
-        second.add("Third semester "+"("+0+")");
+        second.add("Third semester "+"("+it03+")");
         second.add("Fourth semester "+"("+it04+")");
-        second.add("Fifth semester "+"("+0+")");
+        second.add("Fifth semester "+"("+it05+")");
         second.add("Sixth semester "+"("+it06+")");
         second.add("Seventh semester "+"("+it07+")");
         second.add("Eight semester "+"("+it08+")");
 
         third.add("First semester "+"("+cs01+")");
         third.add("Second semester "+"("+cs02+")");
-        third.add("Third semester "+"("+0+")");
+        third.add("Third semester "+"("+me03+")");
         third.add("Fourth semester "+"("+me04+")");
-        third.add("Fifth semester "+"("+0+")");
+        third.add("Fifth semester "+"("+me05+")");
         third.add("Sixth semester "+"("+me06+")");
         third.add("Seventh semester "+"("+me07+")");
         third.add("Eight semester "+"("+me08+")");

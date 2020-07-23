@@ -10,6 +10,10 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="ME_subjectlists.Me_fifthsem_subjectlist"></activity>
+        <activity android:name="ME_subjectlists.Me_thirdsem_subjectlist" />
+        <activity android:name="IT_subjectlists.It_fifthsem_subjectlist" />
+        <activity android:name="IT_subjectlists.It_thirdsem_subjectlist" />
         <activity android:name="ECE_subjectlists.Ece_fifthsem_subjectlist" />
         <activity android:name="ECE_subjectlists.Ece_thirdsem_subjectlist" />
         <activity android:name="MCA_subjectlists.Mca_fifthsem_subjectlist" />

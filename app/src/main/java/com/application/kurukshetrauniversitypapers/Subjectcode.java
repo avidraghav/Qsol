@@ -877,6 +877,42 @@ public class Subjectcode {
 
             code="SN";
         }
+        if (subjectname.equals("Thermodynamics")) {
+            code="TD";
+        }
+        if (subjectname.equals("Kinematics of machine")) {
+            code="KM";
+        }
+        if (subjectname.equals("Basics of economics and management")) {
+            code="BZ";
+        }
+        if (subjectname.equals("IC engine and gas turbine")) {
+            code="GE";
+        }
+        if (subjectname.equals("Heat transfer")) {
+            code="HT";
+        }
+        if (subjectname.equals("Industrial engineering")) {
+            code="IE";
+        }
+        if (subjectname.equals("Linux operating system")) {
+            code="LI";
+        }
+        if (subjectname.equals("Introduction to digital data communication")) {
+            code="IU";
+        }
+        if (subjectname.equals("Multimedia and virtual reality")) {
+            code="MY";
+        }
+        if (subjectname.equals("Web design")) {
+            code="WD";
+        }
+        if (subjectname.equals("Network programming")) {
+            code="NN";
+        }
+        if (subjectname.equals("Java programming")) {
+            code="JP";
+        }
 
         return code;
     }

@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/bungee"
-        android:text="Previous year papers on fingertips"
+        android:text="Papers on fingertips"
         android:textAlignment="center"
         android:textColor="#2b74cc"
         android:textSize="20sp"
