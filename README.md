@@ -2,6 +2,13 @@
 
 ### One destination for all previous year papers of Kurukshetra university.
 
+### Everyone can contribute to Qsol by
+```
+Sending previous year exam papers at jmit.raghav@gmail.com
+Giving feedback, finding bugs and suggesting new features.
+Help maintaing the application.
+```
+
 
 ### Features
 ```Plain
@@ -26,7 +33,12 @@
 
 
 
-
+### Everyone can contribute to Qsol by
+```
+Sending previous year exam papers at jmit.raghav@gmail.com
+Giving feedback, finding bugs and suggesting new features.
+Help maintaing the application.
+```
 
 ### All papers are added through an uploader app following a series of steps as follows
 
@@ -44,7 +56,7 @@
 [excel file](Nomenclature)
 
 
-### For contribution
+### For software contribution
 ```
 Fork it
 Create your feature branch (git checkout -b my-new-feature)
@@ -52,8 +64,6 @@ Commit your changes (git commit -m 'Add some feature')
 Push your branch (git push origin my-new-feature)
 Create a new Pull Request
 ```
-
-
 <img src="/Screenshots/gitone.png" height="100">
 
 ### Raghav Aggarwal
