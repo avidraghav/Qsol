@@ -4,6 +4,7 @@
 
 ### Everyone can contribute to Qsol by
 ```
+Signing up in the app to get latest updates.
 Sending previous year exam papers at jmit.raghav@gmail.com
 Giving feedback, finding bugs and suggesting new features.
 Help maintaing the application.
