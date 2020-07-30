@@ -1,6 +1,6 @@
 # QSOL  <img src="/Screenshots/newlogo2.jpg" height="100">
 
-### One destination for all previous year papers of Kurukshetra university.
+### One destination for all previous year university question papers.
 
 ### Everyone can contribute to Qsol by
 ```
