@@ -4,9 +4,9 @@
 
 ### Everyone can contribute to Qsol by
 ```
-Signing up in the app to get latest updates.
-Sending previous year exam papers at jmit.raghav@gmail.com
-Giving feedback, finding bugs and suggesting new features.
+Signing up in the app.
+Sending previous year exam papers
+Give feedback, find bugs and suggest new features.
 Help maintaing the application.
 ```
 
@@ -72,3 +72,7 @@ Create a new Pull Request
 [Website](https://elegant-bassi-f1c949.netlify.app/ )
 
 [LinkedIn](https://www.linkedin.com/in/raghav-aggarwal-74b873143/)
+
+### Contact
+[Mail](qsol.info@gmail.com)
+
