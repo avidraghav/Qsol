@@ -1,6 +1,14 @@
 # QSOL  <img src="/Screenshots/newlogo2.jpg" height="100">
 
-### One destination for all previous year papers of Kurukshetra university.
+### One destination for all previous year university question papers.
+
+### Everyone can contribute to Qsol by
+```
+Signing up in the app.
+Sending previous year exam papers
+Give feedback, find bugs and suggest new features.
+Help maintaing the application.
+```
 
 
 ### Features
@@ -26,7 +34,12 @@
 
 
 
-
+### Everyone can contribute to Qsol by
+```
+Sending previous year exam papers at jmit.raghav@gmail.com
+Giving feedback, finding bugs and suggesting new features.
+Help maintaing the application.
+```
 
 ### All papers are added through an uploader app following a series of steps as follows
 
@@ -44,7 +57,7 @@
 [excel file](Nomenclature)
 
 
-### For contribution
+### For software contribution
 ```
 Fork it
 Create your feature branch (git checkout -b my-new-feature)
@@ -52,8 +65,6 @@ Commit your changes (git commit -m 'Add some feature')
 Push your branch (git push origin my-new-feature)
 Create a new Pull Request
 ```
-
-
 <img src="/Screenshots/gitone.png" height="100">
 
 ### Raghav Aggarwal
@@ -61,3 +72,7 @@ Create a new Pull Request
 [Website](https://elegant-bassi-f1c949.netlify.app/ )
 
 [LinkedIn](https://www.linkedin.com/in/raghav-aggarwal-74b873143/)
+
+### Contact
+[Mail](qsol.info@gmail.com)
+
