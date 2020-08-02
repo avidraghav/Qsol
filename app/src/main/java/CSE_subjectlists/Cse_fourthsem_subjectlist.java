@@ -151,7 +151,7 @@ public class Cse_fourthsem_subjectlist extends AppCompatActivity {
                     Toast.makeText(Cse_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==5) {
-                    Intent intent=new Intent(Cse_fourthsem_subjectlist.this,Pdflist.class);
+                    Intent intent=new Intent(Cse_fourthsem_subjectlist.this, Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/04/PL");
                     startActivity(intent);
                     Toast.makeText(Cse_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
@@ -168,5 +168,9 @@ public class Cse_fourthsem_subjectlist extends AppCompatActivity {
 
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

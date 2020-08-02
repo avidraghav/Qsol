@@ -9,10 +9,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import com.application.kurukshetrauniversitypapers.Pdflist;
 
 import com.application.kurukshetrauniversitypapers.GlobalClass;
 import com.application.kurukshetrauniversitypapers.Listdata;
-import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -73,7 +73,6 @@ public class Me_sixthsem_subjectlist extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("MV")) {
                     me_sixpapercount3=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Mechanical vibrations", me_sixpapercount3+""));
-
                 }
                 if(dataSnapshot.getKey().equals("RC")) {
                     me_sixpapercount4=(int)dataSnapshot.getChildrenCount();

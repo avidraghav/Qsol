@@ -127,7 +127,7 @@ public class Ece_sixthsem_subjectlist extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(position==1) {
-                    Intent intent=new Intent(Ece_sixthsem_subjectlist.this,Pdflist.class);
+                    Intent intent=new Intent(Ece_sixthsem_subjectlist.this, Pdflist.class);
                     intent.putExtra("subject","IN/KU/EC/06/CS");
                     startActivity(intent);
                 }

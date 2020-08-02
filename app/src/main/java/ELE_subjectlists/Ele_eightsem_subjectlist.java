@@ -121,7 +121,7 @@ public class Ele_eightsem_subjectlist extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(position==1) {
-                    Intent intent=new Intent(Ele_eightsem_subjectlist.this,Pdflist.class);
+                    Intent intent=new Intent(Ele_eightsem_subjectlist.this, Pdflist.class);
                     intent.putExtra("subject","IN/KU/EL/08/EG");
                     startActivity(intent);
                 }

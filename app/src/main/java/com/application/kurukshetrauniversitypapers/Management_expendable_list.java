@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,9 +24,6 @@ import Adapters.MyExListAdapter;
 import BBA_subjectlists.Bba_firstsem_subjectlist;
 import BBA_subjectlists.Bba_secondsem_subjectlist;
 import BBA_subjectlists.Bba_thirdsem_subjectlist;
-import CSE_subjectlists.Cse_firstsem_subjectlist;
-import CSE_subjectlists.Cse_secondsem_subjectlist;
-import ECE_subjectlists.Ece_fourthsem_subjectlist;
 import MBA_subjectlist.Mba_firstsem_subjectlist;
 import MBA_subjectlist.Mba_fourthsem_subjectlist;
 import MBA_subjectlist.Mba_secondsem_subjectlist;
@@ -568,8 +564,8 @@ public class Management_expendable_list extends AppCompatActivity {
         branch=new ArrayList<>();
         semester=new HashMap<>();
 
-        branch.add("Bachelor of Business Administration" +"("+total_bba+")");
-        branch.add("Master of Business Administration "+"("+total_mba+")");
+        branch.add("BBA " +"("+total_bba+")");
+        branch.add("MBA "+"("+total_mba+")");
         
         List<String> first=new ArrayList<>();
         List<String> second=new ArrayList<>();
@@ -591,9 +587,10 @@ public class Management_expendable_list extends AppCompatActivity {
     public void onBackPressed()
     {
         Intent intent=new Intent(Management_expendable_list.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("run counter","no");
+        intent.putExtra("EXIT", true);
         startActivity(intent);
-        super.onBackPressed();
         finish();
     }
 }

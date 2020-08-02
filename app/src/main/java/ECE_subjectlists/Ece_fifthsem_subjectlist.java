@@ -52,17 +52,28 @@ public class Ece_fifthsem_subjectlist extends AppCompatActivity {
         textView.setText(key);
 
         GlobalClass globalClass = (GlobalClass) getApplicationContext();
-        globalClass.setBranch("EC");
+        globalClass.setBranch("ECE");
         globalClass.setSemester(5);
 
         ref = FirebaseDatabase.getInstance().getReference("IN/KU/EC/05");
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if (dataSnapshot.getKey().equals("MS")) {
+                if (dataSnapshot.getKey().equals("EW")) {
                     el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Microprocessors and interfacing", el_eightpapercount1 + ""));
-
+                    subjectlist.add(new Listdata("Electromagnetic waves", el_eightpapercount1 + ""));
+                }
+                if (dataSnapshot.getKey().equals("II")) {
+                    el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Information theory and coding", el_eightpapercount1 + ""));
+                }
+                if (dataSnapshot.getKey().equals("CO")) {
+                    el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Computer organisation and architecture", el_eightpapercount1 + ""));
+                }
+                if (dataSnapshot.getKey().equals("DP")) {
+                    el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Digital signal processing", el_eightpapercount1 + ""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
@@ -97,7 +108,22 @@ public class Ece_fifthsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
                     Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject", "IN/KU/EC/05/MS");
+                    intent.putExtra("subject", "IN/KU/EC/05/CO");
+                    startActivity(intent);
+                }
+                if (position == 1) {
+                    Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject", "IN/KU/EC/05/DP");
+                    startActivity(intent);
+                }
+                if (position == 2) {
+                    Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject", "IN/KU/EC/05/EW");
+                    startActivity(intent);
+                }
+                if (position == 3) {
+                    Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject", "IN/KU/EC/05/II");
                     startActivity(intent);
                 }
 

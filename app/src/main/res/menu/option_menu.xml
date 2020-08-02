@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
@@ -18,10 +17,10 @@
                 android:icon="@drawable/ic_lock"
                  />
             <item
-                android:id="@+id/source_code"
-                android:title="Source code"
-                android:icon="@drawable/ic_source"
-                 />
+                android:id="@+id/credits"
+                android:title="Credits"
+                android:icon="@drawable/ic_star"
+                />
             <item
                 android:id="@+id/write_feedback"
                 android:title="Write feedback"
@@ -31,6 +30,8 @@
                 android:title="Rate the App"
                 android:icon="@drawable/ic_rate"/>
 
+
         </menu>
     </item>
+
 </menu>

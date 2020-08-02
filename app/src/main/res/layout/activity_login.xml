@@ -74,25 +74,31 @@
                     android:textColor="#000"
                     android:inputType="textPassword"/>
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/relative1">
+                    <TextView
+                        android:id="@+id/text_view_forget_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingTop="5dp"
+                        android:background="?android:selectableItemBackground"
+                        android:textColor="#2b74cc"
+                        android:text="Forgot Password?"/>
+                    <TextView
+                        android:id="@+id/text_view_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:background="?android:selectableItemBackground"
+                        android:textColor="#2b74cc"
+                        android:paddingTop="5dp"
+                        android:text="Create Account"/>
+                </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/text_view_forget_password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:paddingTop="5dp"
-                    android:background="?android:selectableItemBackground"
-                    android:textColor="#2b74cc"
-                    android:text="Forgot Password?"/>
-                <TextView
-                    android:id="@+id/text_view_register"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:background="?android:selectableItemBackground"
-                    android:paddingTop="5dp"
-                    android:textColor="#2b74cc"
-                    android:text="Create Account"/>
+
 
 
                 <Button

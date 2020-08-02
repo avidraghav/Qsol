@@ -5,12 +5,9 @@ public class Subjectcode {
    static String code;
 
     public Subjectcode(){}
-
     public void setSubjectname(String subjectname) {
         this.subjectname = subjectname;
     }
-    
-    
     public String getcode() {
 
         if(subjectname.equals("Applied chemistry")) {
@@ -19,7 +16,7 @@ public class Subjectcode {
         if(subjectname.equals("Applied mathematics")) {
                 code ="AM";
         }
-        if(subjectname.equals("Applied Physics")) {
+        if(subjectname.equals("Applied physics")) {
             code ="AP";
         }
         if(subjectname.equals("Biology")) {
@@ -56,7 +53,7 @@ public class Subjectcode {
                 code ="MA";
         }
         if(subjectname.equals("Multivariable calculus and linear algebra")) {
-            code ="MA";
+            code ="ML";
         }
         if(subjectname.equals("Physics")) {
                 code ="PH";
@@ -101,6 +98,10 @@ public class Subjectcode {
 
                 code ="PL";
         }
+        if(subjectname.equals("Mathematics 3")) {
+
+            code ="M3";
+        }
         if(subjectname.equals("Object oriented programming")) {
 
 
@@ -111,11 +112,9 @@ public class Subjectcode {
                 code ="CA";
 
         }
-        if(subjectname.equals("Microprocessors and interfacing")) {
+        if(subjectname.equals("Microprocessor and interfacing")) {
 
-
-                code ="MS";
-
+                code ="MI";
         }
         if(subjectname.equals("Digital data communication")) {
 
@@ -127,7 +126,7 @@ public class Subjectcode {
 
                 code ="OS";
         }
-        if(subjectname.equals("Automata theory")) {
+        if(subjectname.equals("Formal Language and automata theory")) {
 
             code ="AT";
         }
@@ -353,28 +352,23 @@ public class Subjectcode {
             code="IM";
         }
         if(subjectname.equals("Artificial intelligence")) {
-
             code="AL";
         }
         if(subjectname.equals("Broadband communication")) {
-
             code="BC";
         }
         if(subjectname.equals("E commerce")) {
-
             code="EC";
         }
         if(subjectname.equals("Linux for security applications")) {
-
             code="LS";
         }
         if(subjectname.equals("Advance computer network and applications")) {
-
             code ="AA";
         }
         if(subjectname.equals("Mobile communication")) {
 
-            code ="MB";
+            code = "MB";
         }
         if(subjectname.equals("Information technology applications")) {
 
@@ -390,15 +384,12 @@ public class Subjectcode {
             code ="EG";
         }
         if(subjectname.equals("Electrical machines")) {
-
             code ="EA";
         }
         if(subjectname.equals("Power generation and control")) {
-
             code ="PG";
         }
         if(subjectname.equals("Signals and systems")) {
-
             code ="SS";
         }
 
@@ -442,27 +433,19 @@ public class Subjectcode {
         }
 
         if(subjectname.equals("Computer methods in power systems")) {
-
             code ="CP";
         }
         if(subjectname.equals("Electrical engineering material and processes")) {
-
             code ="EG";
         }
         if(subjectname.equals("Operational research")) {
-
              code ="OR";
-
         }
         if(subjectname.equals("Utilisation of electrical energy")) {
-
             code ="UT";
         }
-
         // ME SUBJECTS
-
         if(subjectname.equals("Dynamics of machine")) {
-
             code ="DY";
         }
         if(subjectname.equals("Fluid mechanics")) {
@@ -509,6 +492,18 @@ public class Subjectcode {
 
             code ="TY";
         }
+        if(subjectname.equals("Theory of machines")) {
+
+            code ="TM";
+        }
+        if(subjectname.equals("Optics and waves")) {
+
+            code ="OW";
+        }
+        if(subjectname.equals("Basics of economics and management")) {
+
+            code ="BF";
+        }
 
         if(subjectname.equals("Tribology and mechanical vibration")) {
 
@@ -545,12 +540,11 @@ public class Subjectcode {
         if(subjectname.equals("Powerplant engineering")) {
             code ="PI";
         }
+        // MBA subjects
         if (subjectname.equals("Principles and practices of management")) {
-            
             code="PD";
         }
         if (subjectname.equals("Business communication")) {
-            
             code="BN";
         }
         if (subjectname.equals("Business statistics")) {
@@ -561,19 +555,19 @@ public class Subjectcode {
             
             code="CB";
         }
-        if (subjectname.equals("Financial accounting ")) {
+        if (subjectname.equals("Financial accounting")) {
             
             code="FA";
         }
-        if (subjectname.equals("Financial reporting statement and analysis ")) {
+        if (subjectname.equals("Financial reporting statement and analysis")) {
             
             code="FS";
         }
-        if (subjectname.equals("Management processes and organisational behaviour ")) {
+        if (subjectname.equals("Management processes and organisational behaviour")) {
             
             code="MQ";
         }
-        if (subjectname.equals("Statistics and analysis of decision making ")) {
+        if (subjectname.equals("Statistics and analysis of decision making")) {
             
             code="SY";
         }
@@ -581,15 +575,15 @@ public class Subjectcode {
             
                 code="MN";
         }
-        if (subjectname.equals("Business environment ")) {
+        if (subjectname.equals("Business environment")) {
             
             code="BE";
         }
-        if (subjectname.equals("Business research methodology ")) {
+        if (subjectname.equals("Business research methodology")) {
             
             code="BR";
         }
-        if (subjectname.equals("Financial management ")) {
+        if (subjectname.equals("Financial management")) {
             
                 code="FM";
 
@@ -614,7 +608,7 @@ public class Subjectcode {
             
             code="FX";
         }
-        if (subjectname.equals("Corporate finance ")) {
+        if (subjectname.equals("Corporate finance")) {
             
             code="CR";
         }
@@ -626,7 +620,7 @@ public class Subjectcode {
             
             code="PI";
         }
-        if (subjectname.equals("Compensation management ")) {
+        if (subjectname.equals("Compensation management")) {
             
             code="CV";
         }
@@ -642,7 +636,7 @@ public class Subjectcode {
             
             code="IT";
         }
-        if (subjectname.equals("Management of financial services ")) {
+        if (subjectname.equals("Management of financial services")) {
             
             code="MF";
         }
@@ -654,7 +648,7 @@ public class Subjectcode {
             
             code="MR";
         }
-        if (subjectname.equals("Portfolio management ")) {
+        if (subjectname.equals("Portfolio management")) {
             
             code="PT";
         }
@@ -674,11 +668,11 @@ public class Subjectcode {
             
             code="MX";
         }
-        if (subjectname.equals("Financial derivative ")) {
+        if (subjectname.equals("Financial derivative")) {
             
             code="FT";
         }
-        if (subjectname.equals("International financial management ")) {
+        if (subjectname.equals("International financial management")) {
             
             code="IA";
         }
@@ -728,12 +722,7 @@ public class Subjectcode {
             code="BM";
         }
         if (subjectname.equals("Hindi")) {
-            
             code="HI";
-        }
-        if (subjectname.equals("Business communication")) {
-            
-            code="BU";
         }
         if (subjectname.equals("Business organisation")) {
             
@@ -866,7 +855,6 @@ public class Subjectcode {
             code="CQ";
         }
         if (subjectname.equals("Linux and shell programming")) {
-            
             code="LP";
         }
         if (subjectname.equals("Electronic devices")) {
@@ -912,6 +900,15 @@ public class Subjectcode {
         }
         if (subjectname.equals("Java programming")) {
             code="JP";
+        }
+        if (subjectname.equals("Fundamentals of management")) {
+            code="FN";
+        }
+        if (subjectname.equals("Electromagnetic waves")) {
+            code="EW";
+        }
+        if (subjectname.equals("Information theory and coding")) {
+            code="II";
         }
 
         return code;

@@ -5,8 +5,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -17,35 +15,24 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -56,9 +43,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TextView total_papers;
     private FirebaseAnalytics mFirebaseAnalytics;
     String key;
-//    public static boolean firstStart;
-    private long backPressedTime;
-    private Toast backToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +51,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btechbtn = findViewById(R.id.btechbtn);
         quicksearch=findViewById(R.id.quick_search);
         computer_applications_btn = findViewById(R.id.computer_applications_btn);
-
         managementbtn = findViewById(R.id.managementbtn);
         kubtn = findViewById(R.id.kubtn);
         total_papers = findViewById(R.id.total_papers);
         mAuth = FirebaseAuth.getInstance();
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
 
         Intent intent=getIntent();
         key=intent.getStringExtra("run counter");
@@ -135,9 +119,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         quicksearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,NewFilterSearch.class));
+                startActivity(new Intent(MainActivity.this,Filters.class));
             }
         });
+
+
     }
 
     public void updateNavHeader() {
@@ -175,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
     public void startCountAnimation() {
         ValueAnimator animator = ValueAnimator.ofInt(0, 1074);
-        animator.setDuration(2500);
+        animator.setDuration(2000);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
                 total_papers.setText(animation.getAnimatedValue().toString());
@@ -193,13 +179,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.quick:
-                startActivity(new Intent(MainActivity.this,NewFilterSearch.class));
-                return true;
+                startActivity(new Intent(MainActivity.this,Filters.class));
+                break;
+            case R.id.contri:
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/raghavagg01/Qsol/blob/master/README.md#everyone-can-contribute-to-qsol-by"));
+                startActivity(Browserintent);
+                break;
             default:
                 return super.onOptionsItemSelected(item);
-        }
-    }
 
+        }
+        return true;
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -213,7 +204,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     break;
                 }
             case R.id.action_logout:
-                if ((mAuth.getCurrentUser() == null)) {
+                if((mAuth.getCurrentUser() == null)) {
                     Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
                     break;
                 } else {
@@ -236,9 +227,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     dialog.create().show();
                     break;
                 }
-            case R.id.source_code:
-                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/raghavagg01/Qsol"));
-                startActivity(Browserintent);
+            case R.id.credits:
+                startActivity(new Intent(MainActivity.this,CreditActivity.class));
                 break;
             case R.id.rate:
                 try {
@@ -266,10 +256,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
         }
         else{
-            super.onBackPressed();
+        if (getIntent().getBooleanExtra("EXIT", false))
+        {
             finish();
         }
-//
+           finish();
+        }
+
     }
     @Override
     protected void onStart() {
@@ -277,4 +270,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         checkConnection();
         super.onStart();
     }
+
 }

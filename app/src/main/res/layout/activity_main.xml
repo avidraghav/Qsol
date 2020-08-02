@@ -48,25 +48,24 @@
                     android:orientation="vertical"
                     android:gravity="center"
                    >
-
-
-                    <TextView
+                        <TextView
                         android:id="@+id/total_papers"
-                        android:layout_width="282dp"
-                        android:layout_height="138dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-smallcaps"
                         android:gravity="center"
                         android:textColor="#2b74cc"
                         android:textSize="90sp"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text= "Papers Available"
-                        android:textColor="#2b74cc"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text= "Papers Available"
+                            android:layout_gravity="center"
+                            android:textColor="#2b74cc"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -74,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="220dp"
+                    android:layout_marginTop="240dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
 

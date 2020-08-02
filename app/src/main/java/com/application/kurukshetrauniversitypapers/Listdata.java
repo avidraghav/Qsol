@@ -1,7 +1,5 @@
 package com.application.kurukshetrauniversitypapers;
 
-import android.util.Log;
-
 public class Listdata {
     String subjectname;
     String papercount;

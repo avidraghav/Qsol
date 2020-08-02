@@ -265,22 +265,13 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("BG")) {
                     cs03=cs03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("DC")) {
-                    cs03=cs03+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("DM")) {
-                    cs03=cs03+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("DT")) {
-                    cs03=cs03+(int)dataSnapshot.getChildrenCount();
-                }
                 if(dataSnapshot.getKey().equals("DS")) {
                     cs03=cs03+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("DE")) {
                     cs03=cs03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("IF")) {
+                if(dataSnapshot.getKey().equals("M3")) {
                     cs03=cs03+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("OP")) {
@@ -378,21 +369,16 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("EO")) {
                     cs06=cs06+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("CN")) {
-                    cs05=cs05+(int)dataSnapshot.getChildrenCount();
-                }
                 if(dataSnapshot.getKey().equals("CO")) {
                     cs05=cs05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("DA")) {
+                if(dataSnapshot.getKey().equals("DM")) {
                     cs05=cs05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("SA")) {
+                if(dataSnapshot.getKey().equals("SS")) {
                     cs05=cs05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("OS")) {
-                    cs05=cs05+(int)dataSnapshot.getChildrenCount();
-                }
+
 
                 // total_cse=total_cse+cs06;
                 filldata();
@@ -481,9 +467,7 @@ public class Btech_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("CD")) {
-                    cs07=cs07+(int)dataSnapshot.getChildrenCount();
-                }
+
                 if(dataSnapshot.getKey().equals("CG")) {
                     cs07=cs07+(int)dataSnapshot.getChildrenCount();
                 }
@@ -493,21 +477,10 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("ES")) {
                     cs07=cs07+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("SC")) {
-                    cs07=cs07+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("SP")) {
-                    cs07=cs07+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("SM")) {
-                    cs07=cs07+(int)dataSnapshot.getChildrenCount();
-                }
                 if(dataSnapshot.getKey().equals("UL")) {
                     cs07=cs07+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("WE")) {
-                    cs07=cs07+(int)dataSnapshot.getChildrenCount();
-                }
+
                 Log.e("7 sem",cs07+"");
                 // total_cse=total_cse+cs07;
                 filldata();
@@ -598,13 +571,19 @@ public class Btech_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("SN")) {
+                if(dataSnapshot.getKey().equals("OW")) {
                     ec03=ec03+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("ER")) {
                     ec03=ec03+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("DE")) {
+                    ec03=ec03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("SS")) {
+                    ec03=ec03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("EO")) {
                     ec03=ec03+(int)dataSnapshot.getChildrenCount();
                 }
 
@@ -696,7 +675,18 @@ public class Btech_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("MS")) {
+                if(dataSnapshot.getKey().equals("CO")) {
+                    ec05=ec05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("II")) {
+                    ec05=ec05+(int)dataSnapshot.getChildrenCount();
+                }
+
+                if(dataSnapshot.getKey().equals("EW")) {
+                    ec05=ec05+(int)dataSnapshot.getChildrenCount();
+                }
+
+                if(dataSnapshot.getKey().equals("DP")) {
                     ec05=ec05+(int)dataSnapshot.getChildrenCount();
                 }
 
@@ -885,7 +875,7 @@ public class Btech_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("DM")) {
+                if(dataSnapshot.getKey().equals("M3")) {
                     it03=it03+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("DS")) {
@@ -894,10 +884,10 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("DE")) {
                     it03=it03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("DC")) {
+                if(dataSnapshot.getKey().equals("FN")) {
                     it03=it03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("IF")) {
+                if(dataSnapshot.getKey().equals("OP")) {
                     it03=it03+(int)dataSnapshot.getChildrenCount();
                 }
                 filldata();
@@ -981,25 +971,14 @@ public class Btech_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("LI")) {
-                    it05=it05+(int)dataSnapshot.getChildrenCount();
-                }
+
                 if(dataSnapshot.getKey().equals("IU")) {
                     it05=it05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("MY")) {
+                if(dataSnapshot.getKey().equals("CO")) {
                     it05=it05+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("CM")) {
-                    it05=it05+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("WD")) {
-                    it05=it05+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("NN")) {
-                    it05=it05+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("OS")) {
                     it05=it05+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("JP")) {
@@ -1396,25 +1375,19 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("TD")) {
                     me03=me03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("SL")) {
+                if(dataSnapshot.getKey().equals("M3")) {
                     me03=me03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("MN")) {
+                if(dataSnapshot.getKey().equals("TM")) {
                     me03=me03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("KM")) {
+                if(dataSnapshot.getKey().equals("OW")) {
                     me03=me03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("PT")) {
-                    me03=me03+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("BZ")) {
+                if(dataSnapshot.getKey().equals("BF")) {
                     me03=me03+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("MO")) {
-                    me03=me03+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("MT")) {
                     me03=me03+(int)dataSnapshot.getChildrenCount();
                 }
                 filldata();
@@ -1498,24 +1471,24 @@ public class Btech_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("GE")) {
-                    me05=me05+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("FM")) {
-                    me05=me05+(int)dataSnapshot.getChildrenCount();
-                }
+//                if(dataSnapshot.getKey().equals("GE")) {
+//                    me05=me05+(int)dataSnapshot.getChildrenCount();
+//                }
+//                if(dataSnapshot.getKey().equals("FM")) {
+//                    me05=me05+(int)dataSnapshot.getChildrenCount();
+//                }
                 if(dataSnapshot.getKey().equals("HT")) {
                     me05=me05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("IE")) {
+                if(dataSnapshot.getKey().equals("EP")) {
                     me05=me05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("MN")) {
+                if(dataSnapshot.getKey().equals("TV")) {
                     me05=me05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("SG")) {
-                    me05=me05+(int)dataSnapshot.getChildrenCount();
-                }
+//                if(dataSnapshot.getKey().equals("SG")) {
+//                    me05=me05+(int)dataSnapshot.getChildrenCount();
+//                }
                 if(dataSnapshot.getKey().equals("PT")) {
                     me05=me05+(int)dataSnapshot.getChildrenCount();
                 }
@@ -1603,10 +1576,10 @@ public class Btech_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("AF")) {
                     me07=me07+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("AG")) {
+                if(dataSnapshot.getKey().equals("CF")) {
                     me07=me07+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("MG")) {
+                if(dataSnapshot.getKey().equals("PI")) {
                     me07=me07+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("MR")) {
@@ -1777,7 +1750,7 @@ public class Btech_expendable_list extends AppCompatActivity {
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+it05+")")) {
                     Intent i=new Intent(getBaseContext(), It_fifthsem_subjectlist.class);
-                    i.putExtra("key", "3");
+                    i.putExtra("key", "5");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+it06+")")) {
@@ -1997,9 +1970,10 @@ public class Btech_expendable_list extends AppCompatActivity {
     public void onBackPressed()
     {
         Intent intent=new Intent(Btech_expendable_list.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("run counter","no");
+        intent.putExtra("EXIT", true);
         startActivity(intent);
-        super.onBackPressed();
         finish();
 
     }

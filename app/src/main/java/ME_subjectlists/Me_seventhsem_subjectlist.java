@@ -9,10 +9,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import com.application.kurukshetrauniversitypapers.Pdflist;
 
 import com.application.kurukshetrauniversitypapers.GlobalClass;
 import com.application.kurukshetrauniversitypapers.Listdata;
-import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -66,14 +66,14 @@ public class Me_seventhsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Advanced manufacturing tech", me_sevenpapercount1+""));
 
                 }
-                if(dataSnapshot.getKey().equals("AG")) {
+                if(dataSnapshot.getKey().equals("CF")) {
                     me_sevenpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Automobile engineering ", me_sevenpapercount2+""));
+                    subjectlist.add(new Listdata("Computer aided design and manufacturing", me_sevenpapercount2+""));
 
                 }
-                if(dataSnapshot.getKey().equals("MG")) {
+                if(dataSnapshot.getKey().equals("PI")) {
                     me_sevenpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Maintenance engineering", me_sevenpapercount3+""));
+                    subjectlist.add(new Listdata("Powerplant engineering", me_sevenpapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("MR")) {

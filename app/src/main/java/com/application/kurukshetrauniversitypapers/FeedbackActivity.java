@@ -28,7 +28,7 @@ public class FeedbackActivity extends AppCompatActivity {
                 }
                 else {
                     Intent intent = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("mailto:" + "jmit.raghav@gmail.com"));
+                            Uri.parse("mailto:" + "qsol.info@gmail.com"));
                     intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for KUK papers application");
                     intent.putExtra(Intent.EXTRA_TEXT, "Name: " + e1.getText().toString() + "\n Feedback: " + e2.getText().toString());
                     startActivity(intent);
@@ -36,6 +36,17 @@ public class FeedbackActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent=new Intent(FeedbackActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("run counter","no");
+        intent.putExtra("EXIT", true);
+        startActivity(intent);
+        finish();
 
     }
 }

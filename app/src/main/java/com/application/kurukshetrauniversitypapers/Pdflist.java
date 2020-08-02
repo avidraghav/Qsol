@@ -74,27 +74,7 @@ public class Pdflist extends AppCompatActivity  {
             }
         });
 
-//         textViewSol.setOnClickListener(new View.OnClickListener() {
-//             @Override
-//             public void onClick(View v) {
-//                 String[] items = {"Yes", "No"};
-//                 AlertDialog.Builder dialog= new AlertDialog.Builder(Pdflist.this);
-//                 dialog.setTitle("Signup first");
-//                 dialog.setItems(items, new DialogInterface.OnClickListener() {
-//                     @Override
-//                     public void onClick(DialogInterface dialog, int which) {
-//                         if(which==0){
-//                             Intent intent=new Intent(Pdflist.this,RegisterActivity.class);
-//                             startActivity(intent);
-//                         }
-//                         if(which ==1){
 //
-//                         }
-//                     }
-//                 });
-//                 dialog.create().show();
-//             }
-//         });
     }
 
 

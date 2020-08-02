@@ -268,4 +268,8 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
         });
 
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

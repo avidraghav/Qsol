@@ -2,11 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <item android:title="Contribute to Qsol"
+        android:id="@+id/contri"
+        app:showAsAction="always"
+        />
     <item android:title="Quick search"
         android:id="@+id/quick"
 android:icon="@drawable/ic_search_black"
         app:showAsAction="always"
         />
+
 
 
 

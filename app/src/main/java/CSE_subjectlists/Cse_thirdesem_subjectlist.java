@@ -57,39 +57,39 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("DC")) {
-                    threepapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Discrete structure", threepapercount1+""));
-
-                }
+//                if(dataSnapshot.getKey().equals("DC")) {
+//                    threepapercount1=(int)dataSnapshot.getChildrenCount();
+//                    subjectlist.add(new Listdata("Discrete structure", threepapercount1+""));
+//                }
                 if(dataSnapshot.getKey().equals("BG")) {
                     threepapercount9=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Business intelligence and entrepreneurship", threepapercount9+""));
-
                 }
-                if(dataSnapshot.getKey().equals("DM")) {
+                if(dataSnapshot.getKey().equals("M3")) {
                     threepapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Database management system", threepapercount2+""));
-
+                    subjectlist.add(new Listdata("Mathematics 3", threepapercount2+""));
                 }
+//                if(dataSnapshot.getKey().equals("DM")) {
+//                    threepapercount2=(int)dataSnapshot.getChildrenCount();
+//                    subjectlist.add(new Listdata("Database management system", threepapercount2+""));
+//                }
                 if(dataSnapshot.getKey().equals("DT")) {
                     threepapercount3=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Data structures and algorithms", threepapercount3+""));
-
                 }
-                if(dataSnapshot.getKey().equals("DS")) {
-                    threepapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Data structures", threepapercount4+""));
-
-                }
+//                if(dataSnapshot.getKey().equals("DS")) {
+//                    threepapercount4=(int)dataSnapshot.getChildrenCount();
+//                    subjectlist.add(new Listdata("Data structures", threepapercount4+""));
+//
+//                }
                 if(dataSnapshot.getKey().equals("DE")) {
                     threepapercount5 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Digital electronics", threepapercount5+""));
                 }
-                if(dataSnapshot.getKey().equals("IF")) {
-                    threepapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Internet Fundamental", threepapercount6+""));
-                }
+//                if(dataSnapshot.getKey().equals("IF")) {
+//                    threepapercount6 =(int)dataSnapshot.getChildrenCount();
+//                    subjectlist.add(new Listdata("Internet Fundamental", threepapercount6+""));
+//                }
                 if(dataSnapshot.getKey().equals("OP")) {
                     threepapercount7 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Object oriented programming", threepapercount7+""));
@@ -137,55 +137,65 @@ public class Cse_thirdesem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DC");
-                    startActivity(intent);
-                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==3) {
-                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DM");
-                    startActivity(intent);
-                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==5) {
-                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DT");
-                    startActivity(intent);
-                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DS");
+                    intent.putExtra("subject","IN/KU/CS/03/DE");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/DE");
+                    intent.putExtra("subject","IN/KU/CS/03/DT");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==6) {
+                if(position==3) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/03/IF");
+                    intent.putExtra("subject","IN/KU/CS/03/M3");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==7) {
+                if(position==4) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/03/OP");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==8) {
+                if(position==5) {
                     Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/03/PL");
                     startActivity(intent);
                     Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
+//                if(position==2) {
+//                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
+//                    intent.putExtra("subject","IN/KU/CS/03/DE");
+//                    startActivity(intent);
+//                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+//                }
+//                if(position==6) {
+//                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
+//                    intent.putExtra("subject","IN/KU/CS/03/IF");
+//                    startActivity(intent);
+//                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+//                }
+//                if(position==7) {
+//                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
+//                    intent.putExtra("subject","IN/KU/CS/03/OP");
+//                    startActivity(intent);
+//                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+//                }
+//                if(position==8) {
+//                    Intent intent=new Intent(Cse_thirdesem_subjectlist.this,Pdflist.class);
+//                    intent.putExtra("subject","IN/KU/CS/03/PL");
+//                    startActivity(intent);
+//                    Toast.makeText(Cse_thirdesem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+//                }
 
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

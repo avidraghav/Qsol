@@ -128,7 +128,6 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
                     download("IN/KU" + "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
                     Log.e("dir", "IN/KU" + "/" + branch + "/" + semester + "/" + code);
 
-
             }
         });
         return listViewItem;

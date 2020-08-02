@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.Mylistadapter;
-import ELE_subjectlists.Ele_eightsem_subjectlist;
 
 public class Ece_thirdsem_subjectlist extends AppCompatActivity {
     ListView listView;
@@ -34,7 +33,7 @@ public class Ece_thirdsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int el_eightpapercount1,el_eightpapercount2,el_eightpapercount3;
+    static int el_eightpapercount2;
     DatabaseReference ref;
 
 
@@ -54,7 +53,7 @@ public class Ece_thirdsem_subjectlist extends AppCompatActivity {
         textView.setText(key);
 
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
-        globalClass.setBranch("EC");
+        globalClass.setBranch("ECE");
         globalClass.setSemester(3);
 
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/EC/03");
@@ -63,19 +62,26 @@ public class Ece_thirdsem_subjectlist extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
                 if(dataSnapshot.getKey().equals("ER")) {
-                    el_eightpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Digital electronics", el_eightpapercount1+""));
+                    el_eightpapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Electronic devices", el_eightpapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DE")) {
-                    el_eightpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Semiconductor devices and circuits", el_eightpapercount3+""));
+                    el_eightpapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Digital electronics", el_eightpapercount2+""));
 
                 }
-                if(dataSnapshot.getKey().equals("SN")) {
+                if(dataSnapshot.getKey().equals("OW")) {
                     el_eightpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Semiconductor devices and circuits", el_eightpapercount2+""));
-
+                    subjectlist.add(new Listdata("Optics and waves", el_eightpapercount2+""));
+                }
+                if(dataSnapshot.getKey().equals("SS")) {
+                    el_eightpapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Signals and systems", el_eightpapercount2+""));
+                }
+                if(dataSnapshot.getKey().equals("EO")) {
+                    el_eightpapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Essentials of information technology", el_eightpapercount2+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
@@ -115,12 +121,22 @@ public class Ece_thirdsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(Ece_thirdsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/03/ER");
+                    intent.putExtra("subject","IN/KU/EC/03/EO");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Ece_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/03/SN");
+                    intent.putExtra("subject","IN/KU/EC/03/ER");
+                    startActivity(intent);
+                }
+                if(position==3) {
+                    Intent intent=new Intent(Ece_thirdsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/03/OW");
+                    startActivity(intent);
+                }
+                if(position==4) {
+                    Intent intent=new Intent(Ece_thirdsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/03/SS");
                     startActivity(intent);
                 }
                

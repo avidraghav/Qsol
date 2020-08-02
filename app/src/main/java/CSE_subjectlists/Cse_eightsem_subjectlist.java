@@ -173,4 +173,9 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
 }

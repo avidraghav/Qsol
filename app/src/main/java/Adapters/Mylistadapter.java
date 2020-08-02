@@ -4,8 +4,6 @@ package Adapters;
 import android.app.DownloadManager;
 import android.content.Context;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,11 +18,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 
 import com.application.kurukshetrauniversitypapers.GlobalClass;
 import com.application.kurukshetrauniversitypapers.Listdata;
-import com.application.kurukshetrauniversitypapers.LoginActivity;
 import com.application.kurukshetrauniversitypapers.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -41,7 +37,6 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
-import static android.os.Environment.DIRECTORY_DOCUMENTS;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class Mylistadapter extends ArrayAdapter<Listdata> {
@@ -183,6 +178,17 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                             download("IN/KU/CS/02/FP");
                         }
                     }
+
+                if (subjectname.getText() == ("Mathematics 3")) {
+                    toast();
+                    if(globalClass.getBranch().equals("CSE")) {
+                        download("IN/KU/CS/03/M3");
+                    }
+                    if(globalClass.getBranch().equals("ME"))
+                        download("IN/KU/ME/03/M3");
+                    if(globalClass.getBranch().equals("IT"))
+                        download("IN/KU/IT/03/M3");
+                }
                     if (subjectname.getText() == ("Mathematics")) {
                         toast();
                         if(globalClass.getBranch().equals("CSE")) {
@@ -245,12 +251,15 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         if(globalClass.getBranch().equals("CSE")) {
                             if(globalClass.getSemester()==1)
                             download("IN/KU/CS/01/DM");
-                            else
-                            download("IN/KU/MC/03/DM");
+                            if(globalClass.getSemester()==5)
+                                download("IN/KU/CS/05/DM");
                         }
-                        else {
+                        if(globalClass.getBranch().equals("IT"))
+                        {
                             download("IN/KU/IT/03/DM");
                         }
+                            if(globalClass.getBranch().equals("MC"))
+                                download("IN/KU/MC/03/DM");
 
                     }
                     if (subjectname.getText() == ("Data structures and algorithms")) {
@@ -282,7 +291,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         if (globalClass.getBranch().equals("ELE") && globalClass.getSemester() == 4)
                             download("IN/KU/El/04/DE");
                         if(globalClass.getBranch().equals("IT"))
-                            download("IN/KU/El/03/DE");
+                            download("IN/KU/IT/03/DE");
                     }
                     if (subjectname.getText() == ("Internet Fundamental")) {
                         toast();
@@ -319,8 +328,8 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                             download("IN/KU/CS/03/OP");
                         if (globalClass.getBranch().equals("CSE") && globalClass.getSemester() == 4)
                             download("IN/KU/CS/04/OP");
-                        if (globalClass.getBranch().equals("IT") && globalClass.getSemester() == 4)
-                            download("IN/KU/IT/04/OP");
+                        if (globalClass.getBranch().equals("IT") && globalClass.getSemester() == 3)
+                            download("IN/KU/IT/03/OP");
                         if (globalClass.getBranch().equals("MCA"))
                             download("IN/KU/MC/02/OP");
                     }
@@ -362,7 +371,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                                 download("IN/KU/IT/05/OS");
                         }
                     }
-                    if (subjectname.getText() == ("Automata theory")) {
+                    if (subjectname.getText() == ("Formal Language and automata theory")) {
                         toast();
                         download("IN/KU/CS/05/AT");
                     }
@@ -379,6 +388,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                             download("IN/KU/CS/05/CO");
                         if (globalClass.getBranch().equals("IT") && globalClass.getSemester() == 4)
                             download("IN/KU/IT/04/CO");
+                        if (globalClass.getBranch().equals("IT") && globalClass.getSemester() == 5)
+                            download("IN/KU/IT/05/CO");
+                        if (globalClass.getBranch().equals("EC") && globalClass.getSemester() == 5)
+                            download("IN/KU/EC/05/CO");
                     }
                     if (subjectname.getText() == ("Design and analysis of algorithm")) {
                         toast();
@@ -396,10 +409,15 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Essentials of information technology")) {
                         toast();
-                        if (globalClass.getSemester() == 5)
-                            download("IN/KU/CS/05/EO");
-                        else
-                            download("IN/KU/CS/06/EO");
+                        if(globalClass.getBranch().equals("CSE"))
+                        {
+                            if (globalClass.getSemester() == 5)
+                                download("IN/KU/CS/05/EO");
+                            else
+                                download("IN/KU/CS/06/EO");
+                        }
+                        else if(globalClass.getBranch().equals("ECE"))
+                            download("IN/KU/EC/03/EO");
                     }
                     if (subjectname.getText() == ("Advanced database systems")) {
                         toast();
@@ -450,7 +468,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Cryptography and information security")) {
                         toast();
-                        if (globalClass.getBranch().equals("CSE") && globalClass.getSemester() == 6)
+                        if (globalClass.getBranch().equals("CSE") && globalClass.getSemester() == 7)
                             download("IN/KU/CS/07/CI");
                         if (globalClass.getBranch().equals("IT") && globalClass.getSemester() == 8)
                             download("IN/KU/IT/08/CI");
@@ -575,14 +593,26 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/KU/EC/06/DO");
                     }
+                if (subjectname.getText() == ("Electromagnetic waves")) {
+                    toast();
+                    download("IN/KU/EC/05/EW");
+                }
+                if (subjectname.getText() == ("Information theory and coding")) {
+                    toast();
+                    download("IN/KU/EC/05/II");
+                }
                     if (subjectname.getText() == ("Digital design using verilog")) {
                         toast();
                         download("IN/KU/EC/06/DI");
                     }
                     if (subjectname.getText() == ("Digital signal processing")) {
                         toast();
-                        if (globalClass.getBranch().equals("ECE") && globalClass.getSemester() == 6)
-                            download("IN/KU/EC/06/DP");
+                        if (globalClass.getBranch().equals("ECE")) {
+                            if (globalClass.getSemester() == 6)
+                                download("IN/KU/EC/06/DP");
+                            if (globalClass.getSemester() == 5)
+                                download("IN/KU/EC/05/DP");
+                        }
                         if (globalClass.getBranch().equals("ELE") && globalClass.getSemester() == 6)
                             download("IN/KU/EL/06/DP");
                     }
@@ -613,6 +643,21 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                 if (subjectname.getText() == ("Thermodynamics")) {
                     toast();
                     download("IN/KU/ME/03/TD");
+                }
+                if (subjectname.getText() == ("Theory of machines")) {
+                    toast();
+                    download("IN/KU/ME/03/TM");
+                }
+                if (subjectname.getText() == ("Basic electronics engineering")) {
+                    toast();
+                    download("IN/KU/ME/03/BF");
+                }
+                if (subjectname.getText() == ("Optics and waves")) {
+                    toast();
+                    if(globalClass.getBranch().equals("ME"))
+                    download("IN/KU/ME/03/OW");
+                    if(globalClass.getBranch().equals("ECE"))
+                        download("IN/KU/EC/03/OW");
                 }
                 if (subjectname.getText() == ("Kinematics of machine")) {
                     toast();
@@ -705,6 +750,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     toast();
                     download("IN/KU/IT/05/JP");
                 }
+                if (subjectname.getText() == ("Fundamentals of management")) {
+                    toast();
+                    download("IN/KU/IT/03/FN");
+                }
                     if (subjectname.getText() == ("Management information system")) {
                         toast();
                         if (globalClass.getBranch().equals("IT"))
@@ -769,7 +818,10 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Signals and systems")) {
                         toast();
-                        download("IN/KU/EL/04/SS");
+                        if(globalClass.getBranch().equals("CSE"))
+                            download("IN/KU/CS/05/SS");
+                        if(globalClass.getBranch().equals("ECE"))
+                        download("IN/KU/EC/03/SS");
                     }
                     if (subjectname.getText() == ("Advanced programming")) {
                         toast();
@@ -876,7 +928,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Computer aided design and manufacturing")) {
                         toast();
-                        download("IN/KU/ME/06/CF");
+                        download("IN/KU/ME/07/CF");
                     }
                     if (subjectname.getText() == ("Machine design")) {
                         toast();
@@ -900,7 +952,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
 
                     if (subjectname.getText() == ("Tribology and mechanical vibration")) {
                         toast();
-                        download("IN/KU/ME/06/TV");
+                        download("IN/KU/ME/05/TV");
                     }
                     if (subjectname.getText() == ("Advanced manufacturing tech")) {
                         toast();
@@ -924,7 +976,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Entrepreneurship")) {
                         toast();
-                        download("IN/KU/ME/08/EP");
+                        download("IN/KU/ME/05/EP");
                     }
 
                     if (subjectname.getText() == ("Non conventional manufacturing")) {
@@ -933,7 +985,7 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Powerplant engineering")) {
                         toast();
-                        download("IN/KU/ME/08/PI");
+                        download("IN/KU/ME/07/PI");
                     }
                     // MBA subjects
                     if (subjectname.getText() == ("Principles and practices of management")) {

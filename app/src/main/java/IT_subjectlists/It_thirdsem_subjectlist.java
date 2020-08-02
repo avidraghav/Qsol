@@ -10,10 +10,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.GlobalClass;
 import com.application.kurukshetrauniversitypapers.Listdata;
-import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -62,9 +61,9 @@ public class It_thirdsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("DM")) {
+                if(dataSnapshot.getKey().equals("FN")) {
                     it_sixpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Database management system", it_sixpapercount1+""));
+                    subjectlist.add(new Listdata("Fundamentals of management", it_sixpapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DS")) {
@@ -72,9 +71,9 @@ public class It_thirdsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Data structures", it_sixpapercount2+""));
 
                 }
-                if(dataSnapshot.getKey().equals("IF")) {
+                if(dataSnapshot.getKey().equals("M3")) {
                     it_sixpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Internet Fundamental", it_sixpapercount3+""));
+                    subjectlist.add(new Listdata("Mathematics 3", it_sixpapercount3+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DE")) {
@@ -82,9 +81,9 @@ public class It_thirdsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Digital electronics", it_sixpapercount4+""));
 
                 }
-                if(dataSnapshot.getKey().equals("DC")) {
+                if(dataSnapshot.getKey().equals("OP")) {
                     it_sixpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Discrete structure", it_sixpapercount5+""));
+                    subjectlist.add(new Listdata("Object oriented programming", it_sixpapercount5+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
@@ -119,31 +118,31 @@ public class It_thirdsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(It_thirdsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/03/DC");
+                    intent.putExtra("subject","IN/KU/IT/03/DE");
                     startActivity(intent);
                     Toast.makeText(It_thirdsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==1) {
                     Intent intent=new Intent(It_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/03/DE");
+                    intent.putExtra("subject","IN/KU/IT/03/DS");
                     startActivity(intent);
                     Toast.makeText(It_thirdsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
                     Intent intent=new Intent(It_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/03/DM");
+                    intent.putExtra("subject","IN/KU/IT/03/FN");
                     startActivity(intent);
                     Toast.makeText(It_thirdsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==3) {
                     Intent intent=new Intent(It_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/03/DS");
+                    intent.putExtra("subject","IN/KU/IT/03/M3");
                     startActivity(intent);
                     Toast.makeText(It_thirdsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==4) {
                     Intent intent=new Intent(It_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/03/IF");
+                    intent.putExtra("subject","IN/KU/IT/03/OP");
                     startActivity(intent);
                     Toast.makeText(It_thirdsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }

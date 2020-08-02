@@ -184,7 +184,7 @@ static String semester;
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
+                    Intent intent=new Intent(Cse_firstsem_subjectlist.this, Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/01/AP");
                     startActivity(intent);
                     Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
@@ -282,6 +282,10 @@ static String semester;
 
 
 
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 
 }

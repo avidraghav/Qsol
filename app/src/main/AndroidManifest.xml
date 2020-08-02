@@ -10,57 +10,59 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="ME_subjectlists.Me_fifthsem_subjectlist"></activity>
-        <activity android:name="ME_subjectlists.Me_thirdsem_subjectlist" />
-        <activity android:name="IT_subjectlists.It_fifthsem_subjectlist" />
-        <activity android:name="IT_subjectlists.It_thirdsem_subjectlist" />
-        <activity android:name="ECE_subjectlists.Ece_fifthsem_subjectlist" />
-        <activity android:name="ECE_subjectlists.Ece_thirdsem_subjectlist" />
-        <activity android:name="MCA_subjectlists.Mca_fifthsem_subjectlist" />
-        <activity android:name="MCA_subjectlists.Mca_fourthsem_subjectlist" />
-        <activity android:name="MCA_subjectlists.Mca_thirdsem_subjectlist" />
-        <activity android:name="MCA_subjectlists.Mca_secondsem_subjectlist" />
-        <activity android:name="MCA_subjectlists.Mca_firstsem_subjectlist" />
-        <activity android:name="BCA_subjectlists.Bca_thirdsem_subjectlist" />
-        <activity android:name="BCA_subjectlists.Bca_secondsem_subjectlist" />
-        <activity android:name=".ComputerApplications_expendable_list" />
-        <activity android:name="BCA_subjectlists.Bca_firstsem_subjectlist" />
-        <activity android:name="BBA_subjectlists.Bba_thirdsem_subjectlist" />
-        <activity android:name="BBA_subjectlists.Bba_secondsem_subjectlist" />
-        <activity android:name="BBA_subjectlists.Bba_firstsem_subjectlist" />
-        <activity
-            android:name=".NewFilterSearch"
-            android:screenOrientation="portrait" />
-        <activity android:name="MBA_subjectlist.Mba_fourthsem_subjectlist" />
-        <activity android:name="MBA_subjectlist.Mba_thirdsem_subjectlist" />
-        <activity android:name="MBA_subjectlist.Mba_secondsem_subjectlist" />
-        <activity android:name="MBA_subjectlist.Mba_firstsem_subjectlist" />
-        <activity android:name=".Management_expendable_list" />
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name="ME_subjectlists.Me_eightsem_subjectlist" />
-        <activity android:name="ME_subjectlists.Me_seventhsem_subjectlist" />
-        <activity android:name="ME_subjectlists.Me_sixthsem_subjectlist" />
-        <activity android:name="ME_subjectlists.Me_fourthsem_subjectlist" />
+        <activity android:name=".Filters"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".CreditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="ME_subjectlists.Me_fifthsem_subjectlist" android:screenOrientation="portrait" />
+        <activity android:name="ME_subjectlists.Me_thirdsem_subjectlist" android:screenOrientation="portrait" />
+        <activity android:name="IT_subjectlists.It_fifthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="IT_subjectlists.It_thirdsem_subjectlist" android:screenOrientation="portrait" />
+        <activity android:name="ECE_subjectlists.Ece_fifthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ECE_subjectlists.Ece_thirdsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="MCA_subjectlists.Mca_fifthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="MCA_subjectlists.Mca_fourthsem_subjectlist" android:screenOrientation="portrait" />
+        <activity android:name="MCA_subjectlists.Mca_thirdsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="MCA_subjectlists.Mca_secondsem_subjectlist" android:screenOrientation="portrait" />
+        <activity android:name="MCA_subjectlists.Mca_firstsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="BCA_subjectlists.Bca_thirdsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="BCA_subjectlists.Bca_secondsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name=".ComputerApplications_expendable_list" android:screenOrientation="portrait"/>
+        <activity android:name="BCA_subjectlists.Bca_firstsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="BBA_subjectlists.Bba_thirdsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="BBA_subjectlists.Bba_secondsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="BBA_subjectlists.Bba_firstsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="MBA_subjectlist.Mba_fourthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="MBA_subjectlist.Mba_thirdsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="MBA_subjectlist.Mba_secondsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="MBA_subjectlist.Mba_firstsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name=".Management_expendable_list" android:screenOrientation="portrait"/>
+        <activity android:name=".ResetPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="ME_subjectlists.Me_eightsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ME_subjectlists.Me_seventhsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ME_subjectlists.Me_sixthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ME_subjectlists.Me_fourthsem_subjectlist" android:screenOrientation="portrait"/>
         <activity
             android:name=".ActivityStarRating"
             android:theme="@style/Theme.AppCompat.DayNight.Dialog" />
-        <activity android:name="ELE_subjectlists.Ele_eightsem_subjectlist" />
-        <activity android:name="ELE_subjectlists.Ele_seventhsem_subjectlist" />
-        <activity android:name="ELE_subjectlists.Ele_sixthsem_subjectlist" />
-        <activity android:name="ELE_subjectlists.Ele_fourthsem_subjectlist" />
+        <activity android:name="ELE_subjectlists.Ele_eightsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ELE_subjectlists.Ele_seventhsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ELE_subjectlists.Ele_sixthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ELE_subjectlists.Ele_fourthsem_subjectlist" android:screenOrientation="portrait"/>
         <activity android:name=".Expendable_loader" />
-        <activity android:name="IT_subjectlists.It_eightsem_subjectlist" />
-        <activity android:name="IT_subjectlists.It_seventhsem_subjectlist" />
-        <activity android:name="IT_subjectlists.It_sixthsem_subjectlist" />
-        <activity android:name="IT_subjectlists.It_fourthsem_subjectlist" />
-        <activity android:name="ECE_subjectlists.Ece_eightsem_subjectlist" />
-        <activity android:name="ECE_subjectlists.Ece_seventhsem_subjectlist" />
-        <activity android:name="ECE_subjectlists.Ece_sixthsem_subjectlist" />
-        <activity android:name="ECE_subjectlists.Ece_fourthsem_subjectlist" />
-        <activity android:name=".FeedbackActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".WelcomeScreen">
+        <activity android:name="IT_subjectlists.It_eightsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="IT_subjectlists.It_seventhsem_subjectlist" android:screenOrientation="portrait" />
+        <activity android:name="IT_subjectlists.It_sixthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="IT_subjectlists.It_fourthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ECE_subjectlists.Ece_eightsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ECE_subjectlists.Ece_seventhsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ECE_subjectlists.Ece_sixthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name="ECE_subjectlists.Ece_fourthsem_subjectlist" android:screenOrientation="portrait"/>
+        <activity android:name=".FeedbackActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".WelcomeScreen" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -91,11 +93,12 @@
         <activity
             android:name="CSE_subjectlists.Cse_firstsem_subjectlist"
             android:screenOrientation="portrait" />
-        <activity android:name=".Pdflist" />
+        <activity android:name=".Pdflist" android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Btech_expendable_list" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Btech_expendable_list" android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"

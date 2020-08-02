@@ -25,10 +25,6 @@ import Adapters.MyExListAdapter;
 import BCA_subjectlists.Bca_firstsem_subjectlist;
 import BCA_subjectlists.Bca_secondsem_subjectlist;
 import BCA_subjectlists.Bca_thirdsem_subjectlist;
-import MBA_subjectlist.Mba_firstsem_subjectlist;
-import MBA_subjectlist.Mba_fourthsem_subjectlist;
-import MBA_subjectlist.Mba_secondsem_subjectlist;
-import MBA_subjectlist.Mba_thirdsem_subjectlist;
 import MCA_subjectlists.Mca_fifthsem_subjectlist;
 import MCA_subjectlists.Mca_firstsem_subjectlist;
 import MCA_subjectlists.Mca_fourthsem_subjectlist;
@@ -511,8 +507,8 @@ public class ComputerApplications_expendable_list extends AppCompatActivity {
         branch=new ArrayList<>();
         semester=new HashMap<>();
 
-        branch.add("Bachelor of Computer Applications" +"("+total_bca+")");
-        branch.add("Master ofComputer Applications "+"("+total_mca+")");
+        branch.add("BCA" +"("+total_bca+")");
+        branch.add("MCA"+"("+total_mca+")");
 
         List<String> first=new ArrayList<>();
         List<String> second=new ArrayList<>();
@@ -535,9 +531,10 @@ public class ComputerApplications_expendable_list extends AppCompatActivity {
     public void onBackPressed()
     {
         Intent intent=new Intent(ComputerApplications_expendable_list.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("run counter","no");
+        intent.putExtra("EXIT", true);
         startActivity(intent);
-        super.onBackPressed();
         finish();
     }
 }

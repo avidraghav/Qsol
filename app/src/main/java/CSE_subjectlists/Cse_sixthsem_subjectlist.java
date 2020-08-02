@@ -147,7 +147,7 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
                     Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==4) {
-                    Intent intent=new Intent(Cse_sixthsem_subjectlist.this,Pdflist.class);
+                    Intent intent=new Intent(Cse_sixthsem_subjectlist.this, Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/06/MC");
                     startActivity(intent);
                     Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();

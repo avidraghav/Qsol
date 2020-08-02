@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:507188393173:android:ebc5b180199bdc24d15e5c",
+        "mobilesdk_app_id": "1:507188393173:android:58bd12b550ab6f17d15e5c",
         "android_client_info": {
-          "package_name": "com.example.customdialog"
+          "package_name": "com.application.filtersearch"
         }
       },
       "oauth_client": [
@@ -37,9 +37,83 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:507188393173:android:7002f84e20f6f099d15e5c",
+        "mobilesdk_app_id": "1:507188393173:android:f42b3ef004c86520d15e5c",
         "android_client_info": {
           "package_name": "com.application.kurukshetrauniversitypapers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507188393173-4v4ukkgj4b0cjo9uj7i4rup8emeh0bsg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.kurukshetrauniversitypapers",
+            "certificate_hash": "64f7cdf42aa449a34c50f756b724e1fed2a9e46e"
+          }
+        },
+        {
+          "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcaItNPfAEbxn6_IO57Rc8yqX__DRozbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507188393173:android:89415b057aaa26bcd15e5c",
+        "android_client_info": {
+          "package_name": "com.application.qsol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507188393173-tr9nm2sp0sh0ll509qpljijmot3mm02g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.qsol",
+            "certificate_hash": "64f7cdf42aa449a34c50f756b724e1fed2a9e46e"
+          }
+        },
+        {
+          "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcaItNPfAEbxn6_IO57Rc8yqX__DRozbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507188393173:android:7002f84e20f6f099d15e5c",
+        "android_client_info": {
+          "package_name": "com.example.kurukshetrauniversitypapers"
         }
       },
       "oauth_client": [

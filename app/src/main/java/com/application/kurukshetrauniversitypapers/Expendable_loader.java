@@ -67,4 +67,8 @@ public class Expendable_loader extends AppCompatActivity {
 
 
     }
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 }

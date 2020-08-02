@@ -29,7 +29,7 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
 
-    static int fivepapercount1,fivepapercount2,fivepapercount3,fivepapercount4,fivepapercount5,fivepapercount6,fivepapercount7;
+    static int fivepapercount1,fivepapercount2,fivepapercount3,fivepapercount4,fivepapercount6;
     DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,32 +51,25 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("AT")) {
                     fivepapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Automata Theory", fivepapercount1+""));
+                    subjectlist.add(new Listdata("Formal Language and automata theory", fivepapercount1+""));
                 }
                 if(dataSnapshot.getKey().equals("EO")) {
                     fivepapercount2=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Essentials of information technology", fivepapercount2+""));
                 }
-                if(dataSnapshot.getKey().equals("CN")) {
+                if(dataSnapshot.getKey().equals("DM")) {
                     fivepapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer networks", fivepapercount3+""));
+                    subjectlist.add(new Listdata("Database management system", fivepapercount3+""));
                 }
                 if(dataSnapshot.getKey().equals("CO")) {
                     fivepapercount4=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Computer organisation and architecture", fivepapercount4+""));
                 }
-                if(dataSnapshot.getKey().equals("DA")) {
-                    fivepapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Design and analysis of algorithm", fivepapercount5+""));
-                }
-                if(dataSnapshot.getKey().equals("SA")) {
+                if(dataSnapshot.getKey().equals("SS")) {
                     fivepapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Simulation and modelling", fivepapercount6+""));
+                    subjectlist.add(new Listdata("Signals and systems", fivepapercount6+""));
                 }
-                if(dataSnapshot.getKey().equals("OS")) {
-                    fivepapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Operating systems", fivepapercount7+""));
-                }
+//
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -107,44 +100,36 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/05/CN");
+                    intent.putExtra("subject","IN/KU/CS/05/CO");
                     startActivity(intent);
                     Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
                     Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/05/CO");
+                    intent.putExtra("subject","IN/KU/CS/05/DM");
                     startActivity(intent);
                     Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==3) {
                     Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/05/DA");
+                    intent.putExtra("subject","IN/KU/CS/05/EO");
                     startActivity(intent);
                     Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==4) {
                     Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/05/EO");
+                    intent.putExtra("subject","IN/KU/CS/05/SS");
                     startActivity(intent);
                     Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==5) {
-                    Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/05/OS");
-                    startActivity(intent);
-                    Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==6) {
-                    Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/05/SA");
-                    startActivity(intent);
-                    Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
+//
             }
         });
 
 
-
+    }
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
