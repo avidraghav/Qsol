@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.smarteist.autoimageslider.SliderView;
+
 
 public class CreditActivity extends AppCompatActivity {
  TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14;
@@ -42,8 +42,6 @@ public class CreditActivity extends AppCompatActivity {
         p14=findViewById(R.id.person14);
 
         contribute=findViewById(R.id.contribute);
-
-
 
 
         linearLayout=findViewById(R.id.linear);
