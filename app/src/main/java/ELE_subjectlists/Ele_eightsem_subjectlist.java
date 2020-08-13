@@ -52,7 +52,7 @@ public class Ele_eightsem_subjectlist extends AppCompatActivity {
         textView.setText(key);
 
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
-        globalClass.setBranch("EL");
+        globalClass.setBranch("ELE");
         globalClass.setSemester(8);
 
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/EL/08");

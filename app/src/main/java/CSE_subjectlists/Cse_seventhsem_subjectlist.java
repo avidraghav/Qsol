@@ -34,6 +34,7 @@ public class Cse_seventhsem_subjectlist extends AppCompatActivity {
     TextView subjectname;
     TextView papercount;
     TextView textView;
+    String key;
 
     static int sevenpapercount1,sevenpapercount2,sevenpapercount3,sevenpapercount4,sevenpapercount5,sevenpapercount6,sevenpapercount7,sevenpapercount8;
     DatabaseReference ref;
@@ -47,6 +48,9 @@ public class Cse_seventhsem_subjectlist extends AppCompatActivity {
         subjectname=findViewById(R.id.subjectname);
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
+        Intent intent=getIntent();
+        key=intent.getStringExtra("key");
+        textView.setText(key);
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBranch("CSE");
         globalClass.setSemester(7);

@@ -29,8 +29,8 @@ public class FeedbackActivity extends AppCompatActivity {
                 else {
                     Intent intent = new Intent(Intent.ACTION_VIEW,
                             Uri.parse("mailto:" + "qsol.info@gmail.com"));
-                    intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for KUK papers application");
-                    intent.putExtra(Intent.EXTRA_TEXT, "Name: " + e1.getText().toString() + "\n Feedback: " + e2.getText().toString());
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "My contribution to Qsol");
+                    intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Sending previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
                     startActivity(intent);
                 }
             }

@@ -6,36 +6,6 @@
     android:layout_height="match_parent"
     tools:context="CSE_subjectlists.Cse_fifthsem_subjectlist">
 
-    <ListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp"
-        android:smoothScrollbar="true"
-        />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="10dp"
-        android:gravity="left"
-        android:text="5"
-        android:textColor="#100F0F"
-        android:textSize="14sp"
-        />
-
-    <TextView
-        android:id="@+id/sem"
-        android:layout_width="75dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="-8dp"
-        android:layout_toRightOf="@+id/textView"
-        android:gravity="left"
-        android:text="semester"
-        android:textColor="#100F0F"
-        android:textSize="14sp" />
+    <include
+        layout="@layout/subjects_layout"/>
 </RelativeLayout>

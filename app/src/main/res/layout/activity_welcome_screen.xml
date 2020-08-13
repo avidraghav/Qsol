@@ -24,9 +24,10 @@
         android:fontFamily="@font/bungee"
         android:text="Papers on fingertips"
         android:textAlignment="center"
-        android:textColor="#2b74cc"
+        android:textColor="@color/fontColor"
         android:textSize="20sp"
-        app:fontFamily="@font/acme" />
+        app:fontFamily="@font/acme"
+        android:gravity="center_horizontal" />
 
 
 </LinearLayout>

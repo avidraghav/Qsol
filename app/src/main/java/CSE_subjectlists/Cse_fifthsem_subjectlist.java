@@ -28,8 +28,9 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
     TextView subjectname;
     TextView papercount;
     TextView textView;
+    String key;
 
-    static int fivepapercount1,fivepapercount2,fivepapercount3,fivepapercount4,fivepapercount6;
+    static int fivepapercount1,fivepapercount2,fivepapercount3,fivepapercount4,fivepapercount5,fivepapercount6;
     DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,9 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
         subjectname=findViewById(R.id.subjectname);
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
+        Intent intent=getIntent();
+        key=intent.getStringExtra("key");
+        textView.setText(key);
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBranch("CSE");
         globalClass.setSemester(5);
@@ -64,6 +68,10 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("CO")) {
                     fivepapercount4=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Computer organisation and architecture", fivepapercount4+""));
+                }
+                if(dataSnapshot.getKey().equals("MS")) {
+                    fivepapercount5=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Microprocessors and interfacing", fivepapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("SS")) {
                     fivepapercount6 =(int)dataSnapshot.getChildrenCount();
@@ -117,6 +125,12 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
                     Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==4) {
+                    Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/CS/05/MS");
+                    startActivity(intent);
+                    Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                }
+                if(position==5) {
                     Intent intent=new Intent(Cse_fifthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/05/SS");
                     startActivity(intent);

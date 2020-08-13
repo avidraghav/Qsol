@@ -22,12 +22,13 @@ import java.util.Map;
 
 import Adapters.MyExListAdapter;
 import BBA_subjectlists.Bba_firstsem_subjectlist;
+import BBA_subjectlists.Bba_fourthsem_subjectlist;
 import BBA_subjectlists.Bba_secondsem_subjectlist;
 import BBA_subjectlists.Bba_thirdsem_subjectlist;
-import MBA_subjectlist.Mba_firstsem_subjectlist;
-import MBA_subjectlist.Mba_fourthsem_subjectlist;
-import MBA_subjectlist.Mba_secondsem_subjectlist;
-import MBA_subjectlist.Mba_thirdsem_subjectlist;
+import MBA_subjectlists.Mba_firstsem_subjectlist;
+import MBA_subjectlists.Mba_fourthsem_subjectlist;
+import MBA_subjectlists.Mba_secondsem_subjectlist;
+import MBA_subjectlists.Mba_thirdsem_subjectlist;
 
 public class Management_expendable_list extends AppCompatActivity {
 
@@ -36,7 +37,7 @@ public class Management_expendable_list extends AppCompatActivity {
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
     int total_bba,total_mba;
-    int bb01,bb02,bb03,mb01,mb02,mb03,mb04;
+    int bb01,bb02,bb03,bb04,mb01,mb02,mb03,mb04;
     DatabaseReference ref1;
     TextView textView;
 
@@ -59,23 +60,11 @@ public class Management_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("AY")) {
-                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
-
-                }
                 if(dataSnapshot.getKey().equals("BA")) {
                     bb01=bb01+(int)dataSnapshot.getChildrenCount();
 
                 }
                 if(dataSnapshot.getKey().equals("BM")) {
-                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
-
-                }
-                if(dataSnapshot.getKey().equals("BO")) {
-                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
-
-                }
-                if(dataSnapshot.getKey().equals("BU")) {
                     bb01=bb01+(int)dataSnapshot.getChildrenCount();
 
                 }
@@ -87,11 +76,7 @@ public class Management_expendable_list extends AppCompatActivity {
                     bb01=bb01+(int)dataSnapshot.getChildrenCount();
 
                 }
-                if(dataSnapshot.getKey().equals("MN")) {
-                    bb01=bb01+(int)dataSnapshot.getChildrenCount();
-
-                }
-                if(dataSnapshot.getKey().equals("PM")) {
+                if(dataSnapshot.getKey().equals("MZ")) {
                     bb01=bb01+(int)dataSnapshot.getChildrenCount();
 
                 }
@@ -125,35 +110,23 @@ public class Management_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("BS")) {
+                if(dataSnapshot.getKey().equals("AY")) {
                     bb02=bb02+(int)dataSnapshot.getChildrenCount();
 
                 }
-                if(dataSnapshot.getKey().equals("FD")) {
+                if(dataSnapshot.getKey().equals("BM")) {
                     bb02=bb02+(int)dataSnapshot.getChildrenCount();
 
                 }
-                if(dataSnapshot.getKey().equals("FM")) {
+                if(dataSnapshot.getKey().equals("BU")) {
                     bb02=bb02+(int)dataSnapshot.getChildrenCount();
 
                 }
-                if(dataSnapshot.getKey().equals("HB")) {
+                if(dataSnapshot.getKey().equals("MZ")) {
                     bb02=bb02+(int)dataSnapshot.getChildrenCount();
 
                 }
-                if(dataSnapshot.getKey().equals("MG")) {
-                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
-
-                }
-                if(dataSnapshot.getKey().equals("MK")) {
-                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
-
-                }
-                if(dataSnapshot.getKey().equals("MT")) {
-                    bb02=bb02+(int)dataSnapshot.getChildrenCount();
-
-                }
-                if(dataSnapshot.getKey().equals("UH")) {
+                if(dataSnapshot.getKey().equals("PM")) {
                     bb02=bb02+(int)dataSnapshot.getChildrenCount();
 
                 }
@@ -187,11 +160,73 @@ public class Management_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("US")) {
+                if(dataSnapshot.getKey().equals("BS")) {
+                    bb03=bb03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("BU")) {
+                    bb03=bb03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("FD")) {
+                    bb03=bb03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MG")) {
+                    bb03=bb03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MT")) {
+                    bb03=bb03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("UH")) {
                     bb03=bb03+(int)dataSnapshot.getChildrenCount();
                 }
 
                 total_bba=bb01+bb02+bb03;
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+        ref1= FirebaseDatabase.getInstance().getReference("IN/KU/BB/04");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("BS")) {
+                    bb04=bb04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("FZ")) {
+                    bb04=bb04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("HB")) {
+                    bb04=bb04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MK")) {
+                    bb04=bb04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MT")) {
+                    bb04=bb04+(int)dataSnapshot.getChildrenCount();
+                }
+
+                total_bba=bb01+bb02+bb03+bb04;
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
@@ -518,41 +553,46 @@ public class Management_expendable_list extends AppCompatActivity {
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+bb01+")")){
                     Intent i=new Intent(getBaseContext(), Bba_firstsem_subjectlist.class);
-                    i.putExtra("key", "1");
+                    i.putExtra("key", "BBA 1st semester");
                     startActivity(i);
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+bb02+")")){
                     Intent i=new Intent(getBaseContext(), Bba_secondsem_subjectlist.class);
-                    i.putExtra("key", "2");
+                    i.putExtra("key", "BBA 2nd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester " +"("+bb03+")")){
                     Intent i=new Intent(getBaseContext(), Bba_thirdsem_subjectlist.class);
-                    i.putExtra("key", "3");
+                    i.putExtra("key", "BBA 3rd semester");
+                    startActivity(i);
+                }
+                if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester " +"("+bb04+")")){
+                    Intent i=new Intent(getBaseContext(), Bba_fourthsem_subjectlist.class);
+                    i.putExtra("key", "BBA 4th semester");
                     startActivity(i);
                 }
 
 
                 if((groupPosition)==1  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+mb01+")")) {
                     Intent i=new Intent(getBaseContext(), Mba_firstsem_subjectlist.class);
-                    i.putExtra("key", "1");
+                    i.putExtra("key", "MBA 1st semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1  && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+mb02+")")) {
                     Intent i=new Intent(getBaseContext(), Mba_secondsem_subjectlist.class);
-                    i.putExtra("key", "2");
+                    i.putExtra("key", "MBA 2nd semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+mb03+")")) {
                     Intent i=new Intent(getBaseContext(), Mba_thirdsem_subjectlist.class);
-                    i.putExtra("key", "3");
+                    i.putExtra("key", "MBA 3rd semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+mb04+")")) {
                     Intent i=new Intent(getBaseContext(), Mba_fourthsem_subjectlist.class);
-                    i.putExtra("key", "4");
+                    i.putExtra("key", "MBA 4th semester");
                     startActivity(i);
                 }
                 return false;
@@ -573,6 +613,7 @@ public class Management_expendable_list extends AppCompatActivity {
         first.add("First semester " +"("+bb01+")");
         first.add("Second semester "+"("+bb02+")");
         first.add("Third semester "+"("+bb03+")");
+        first.add("Fourth semester "+"("+bb04+")");
 
         second.add("First semester "+"("+mb01+")");
         second.add("Second semester "+"("+mb02+")");

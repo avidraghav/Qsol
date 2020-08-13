@@ -51,7 +51,7 @@ public class Ele_fourthsem_subjectlist extends AppCompatActivity {
         textView.setText(key);
 
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
-        globalClass.setBranch("EL");
+        globalClass.setBranch("ELE");
         globalClass.setSemester(4);
 
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/EL/04");

@@ -61,14 +61,14 @@ public class It_sixthsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("CM")) {
+                if(dataSnapshot.getKey().equals("LX")) {
                     it_sixpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer graphics", it_sixpapercount1+""));
+                    subjectlist.add(new Listdata("Linux", it_sixpapercount1+""));
 
                 }
-                if(dataSnapshot.getKey().equals("CN")) {
+                if(dataSnapshot.getKey().equals("EC")) {
                     it_sixpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer networks", it_sixpapercount2+""));
+                    subjectlist.add(new Listdata("E commerce", it_sixpapercount2+""));
 
                 }
                 if(dataSnapshot.getKey().equals("DA")) {
@@ -76,18 +76,13 @@ public class It_sixthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Design and analysis of algorithm", it_sixpapercount3+""));
 
                 }
-                if(dataSnapshot.getKey().equals("MM")) {
-                    it_sixpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Management information system", it_sixpapercount4+""));
-
-                }
                 if(dataSnapshot.getKey().equals("SE")) {
                     it_sixpapercount5 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Software engineering", it_sixpapercount5+""));
                 }
-                if(dataSnapshot.getKey().equals("IM")) {
+                if(dataSnapshot.getKey().equals("NC")) {
                     it_sixpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Introduction to microcontroller", it_sixpapercount6+""));
+                    subjectlist.add(new Listdata("Non conventional sources of energy", it_sixpapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("DW")) {
                     it_sixpapercount7 =(int)dataSnapshot.getChildrenCount();
@@ -127,41 +122,35 @@ public class It_sixthsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(It_sixthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/06/CM");
+                    intent.putExtra("subject","IN/KU/IT/06/DA");
                     startActivity(intent);
                     Toast.makeText(It_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==1) {
                     Intent intent=new Intent(It_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/06/CN");
+                    intent.putExtra("subject","IN/KU/IT/06/DW");
                     startActivity(intent);
                     Toast.makeText(It_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
                     Intent intent=new Intent(It_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/06/DA");
+                    intent.putExtra("subject","IN/KU/IT/06/EC");
                     startActivity(intent);
                     Toast.makeText(It_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==3) {
                     Intent intent=new Intent(It_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/06/DW");
+                    intent.putExtra("subject","IN/KU/IT/06/LX");
                     startActivity(intent);
                     Toast.makeText(It_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==4) {
                     Intent intent=new Intent(It_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/06/IM");
+                    intent.putExtra("subject","IN/KU/IT/06/NC");
                     startActivity(intent);
                     Toast.makeText(It_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==5) {
-                    Intent intent=new Intent(It_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/06/MM");
-                    startActivity(intent);
-                    Toast.makeText(It_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==6) {
                     Intent intent=new Intent(It_sixthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/IT/06/SE");
                     startActivity(intent);

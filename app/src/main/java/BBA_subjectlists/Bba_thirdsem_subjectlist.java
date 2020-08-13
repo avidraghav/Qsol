@@ -33,7 +33,7 @@ public class Bba_thirdsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int bb_threepapercount1;
+    static int bb_twopapercount;
     DatabaseReference ref;
 
     @Override
@@ -60,10 +60,33 @@ public class Bba_thirdsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("US"))
-                {
-                    bb_threepapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Understanding social behaviour", bb_threepapercount1+""));
+                if(dataSnapshot.getKey().equals("UH")) {
+                    bb_twopapercount=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Understanding human behaviour", bb_twopapercount+""));
+
+                }
+                if(dataSnapshot.getKey().equals("MT")) {
+                    bb_twopapercount=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Micro business environment", bb_twopapercount+""));
+
+                }
+                if(dataSnapshot.getKey().equals("BS")) {
+                    bb_twopapercount=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Business statistics", bb_twopapercount+""));
+
+                }
+                if(dataSnapshot.getKey().equals("MG")) {
+                    bb_twopapercount=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Management accounting", bb_twopapercount+""));
+
+                }
+                if(dataSnapshot.getKey().equals("FD")) {
+                    bb_twopapercount =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Fundamentals of DBMS and ORACLE", bb_twopapercount+""));
+                }
+                if(dataSnapshot.getKey().equals("BU")) {
+                    bb_twopapercount =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Business communication", bb_twopapercount+""));
                 }
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -98,7 +121,37 @@ public class Bba_thirdsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Bba_thirdsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/03/US");
+                    intent.putExtra("subject","IN/KU/BB/03/BS");
+                    startActivity(intent);
+
+                }
+                if(position==1) {
+                    Intent intent=new Intent(Bba_thirdsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/BB/03/BU");
+                    startActivity(intent);
+
+                }
+                if(position==2) {
+                    Intent intent=new Intent(Bba_thirdsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/BB/03/FD");
+                    startActivity(intent);
+
+                }
+                if(position==3) {
+                    Intent intent=new Intent(Bba_thirdsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/BB/03/MG");
+                    startActivity(intent);
+
+                }
+                if(position==4) {
+                    Intent intent=new Intent(Bba_thirdsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/BB/03/MT");
+                    startActivity(intent);
+
+                }
+                if(position==5) {
+                    Intent intent=new Intent(Bba_thirdsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject","IN/KU/BB/03/UH");
                     startActivity(intent);
 
                 }

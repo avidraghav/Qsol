@@ -33,7 +33,7 @@ public class Bba_firstsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int bb_onepapercount1,bb_onepapercount2,bb_onepapercount3,bb_onepapercount4,bb_onepapercount5,bb_onepapercount6,bb_onepapercount7,bb_onepapercount8,bb_onepapercount9;
+    static int bb_onepapercount1,bb_onepapercount3,bb_onepapercount4,bb_onepapercount5,bb_onepapercount9;
     DatabaseReference ref;
 
     @Override
@@ -65,12 +65,8 @@ public class Bba_firstsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Business accounting", bb_onepapercount1+""));
 
                 }
-                if(dataSnapshot.getKey().equals("AY")) {
-                    bb_onepapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Analysis of financial statements", bb_onepapercount2+""));
-
-                }
-                if(dataSnapshot.getKey().equals("MN")) {
+//
+                if(dataSnapshot.getKey().equals("MZ")) {
                     bb_onepapercount3=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Managerial economics", bb_onepapercount3+""));
 
@@ -84,18 +80,15 @@ public class Bba_firstsem_subjectlist extends AppCompatActivity {
                     bb_onepapercount5 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Hindi", bb_onepapercount5+""));
                 }
-                if(dataSnapshot.getKey().equals("BU")) {
-                    bb_onepapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Business communication", bb_onepapercount6+""));
-                }
-                if(dataSnapshot.getKey().equals("BO")) {
-                    bb_onepapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Business organisation", bb_onepapercount7+""));
-                }
-                if(dataSnapshot.getKey().equals("PM")) {
-                    bb_onepapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Principles of management", bb_onepapercount8+""));
-                }
+//
+//                if(dataSnapshot.getKey().equals("BO")) {
+//                    bb_onepapercount7 =(int)dataSnapshot.getChildrenCount();
+//                    subjectlist.add(new Listdata("Business organisation", bb_onepapercount7+""));
+//                }
+//                if(dataSnapshot.getKey().equals("PM")) {
+//                    bb_onepapercount8 =(int)dataSnapshot.getChildrenCount();
+//                    subjectlist.add(new Listdata("Principles of management", bb_onepapercount8+""));
+//                }
                 if(dataSnapshot.getKey().equals("CF")) {
                     bb_onepapercount9 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Computer fundamentals", bb_onepapercount9+""));
@@ -134,50 +127,28 @@ public class Bba_firstsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Bba_firstsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/AY");
+                    intent.putExtra("subject","IN/KU/BB/01/BA");
                     startActivity(intent);
                 }
                 if(position==1) {
                     Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/BA");
+                    intent.putExtra("subject","IN/KU/BB/01/BM");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/BM");
+                    intent.putExtra("subject","IN/KU/BB/01/CF");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/BO");
+                    intent.putExtra("subject","IN/KU/BB/01/HI");
                     startActivity(intent);
                 }
                 if(position==4) {
                     Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/BU");
-                    startActivity(intent);
+                    intent.putExtra("subject","IN/KU/BB/01/MZ");
                 }
-                if(position==5) {
-                    Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/CF");
-                    startActivity(intent);
-                }
-                if(position==6) {
-                    Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/HI");
-                    startActivity(intent);
-                }
-                if(position==7) {
-                    Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/MN");
-                    startActivity(intent);
-                }
-                if(position==8) {
-                    Intent intent=new Intent(Bba_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/01/PM");
-                    startActivity(intent);
-                }
-               
 
             }
         });

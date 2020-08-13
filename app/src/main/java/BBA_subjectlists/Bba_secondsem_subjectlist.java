@@ -33,7 +33,7 @@ public class Bba_secondsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int bb_twopapercount1,bb_twopapercount2,bb_twopapercount3,bb_twopapercount4,bb_twopapercount5,bb_twopapercount6,bb_twopapercount7,bb_twopapercount8;
+    static int bb_onepapercount1,bb_onepapercount2,bb_onepapercount3,bb_onepapercount4,bb_onepapercount6,bb_onepapercount8;
     DatabaseReference ref;
 
 
@@ -61,41 +61,33 @@ public class Bba_secondsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("UH")) {
-                    bb_twopapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Understanding human behaviour", bb_twopapercount1+""));
+                if(dataSnapshot.getKey().equals("AY")) {
+                    bb_onepapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Analysis of financial statements", bb_onepapercount2+""));
 
                 }
-                if(dataSnapshot.getKey().equals("MT")) {
-                    bb_twopapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Micro business environment", bb_twopapercount2+""));
+                if(dataSnapshot.getKey().equals("PM")) {
+                    bb_onepapercount8 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Principles of management", bb_onepapercount8+""));
+                }
+                if(dataSnapshot.getKey().equals("MZ")) {
+                    bb_onepapercount3=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Managerial economics", bb_onepapercount3+""));
 
                 }
-                if(dataSnapshot.getKey().equals("BS")) {
-                    bb_twopapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Business statistics", bb_twopapercount3+""));
+                if(dataSnapshot.getKey().equals("US"))
+                {
+                    bb_onepapercount1=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Understanding social behaviour", bb_onepapercount1+""));
+                }
+                if(dataSnapshot.getKey().equals("BM")) {
+                    bb_onepapercount4=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Business mathematics", bb_onepapercount4+""));
 
                 }
-                if(dataSnapshot.getKey().equals("MG")) {
-                    bb_twopapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Management accounting", bb_twopapercount4+""));
-
-                }
-                if(dataSnapshot.getKey().equals("MK")) {
-                    bb_twopapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Marketing management", bb_twopapercount5+""));
-                }
-                if(dataSnapshot.getKey().equals("FM")) {
-                    bb_twopapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Financial management", bb_twopapercount6+""));
-                }
-                if(dataSnapshot.getKey().equals("HB")) {
-                    bb_twopapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Human behaviour at work", bb_twopapercount7+""));
-                }
-                if(dataSnapshot.getKey().equals("FD")) {
-                    bb_twopapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Fundamentals of DBMS and ORACLE", bb_twopapercount8+""));
+                if(dataSnapshot.getKey().equals("BU")) {
+                    bb_onepapercount6 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Business communication", bb_onepapercount6+""));
                 }
 
                 Mylistadapter adapter = new Mylistadapter(getBaseContext(), R.layout.row, subjectlist);
@@ -131,44 +123,30 @@ public class Bba_secondsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Bba_secondsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/BS");
+                    intent.putExtra("subject","IN/KU/BB/02/AY");
                     startActivity(intent);
                 }
                 if(position==1) {
                     Intent intent=new Intent(Bba_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/FD");
+                    intent.putExtra("subject","IN/KU/BB/02/BM");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Bba_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/FM");
-                    startActivity(intent);
-                }
-                if(position==5) {
-                    Intent intent=new Intent(Bba_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/HB");
+                    intent.putExtra("subject","IN/KU/BB/02/BU");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Bba_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/MG");
+                    intent.putExtra("subject","IN/KU/BB/02/MZ");
                     startActivity(intent);
                 }
                 if(position==4) {
                     Intent intent=new Intent(Bba_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/MK");
+                    intent.putExtra("subject","IN/KU/BB/02/PM");
                     startActivity(intent);
                 }
-                if(position==6) {
-                    Intent intent=new Intent(Bba_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/MT");
-                    startActivity(intent);
-                }
-                if(position==7) {
-                    Intent intent=new Intent(Bba_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/BB/02/UH");
-                    startActivity(intent);
-                }
+
             }
         });
     }

@@ -14,7 +14,8 @@
         android:layout_gravity="center_horizontal"
         android:gravity="left|center"
         android:text="TextView"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#2b74cc" />
+        android:textColor="@color/fontColor"
+        tools:ignore="RtlHardcoded" />
 </LinearLayout>

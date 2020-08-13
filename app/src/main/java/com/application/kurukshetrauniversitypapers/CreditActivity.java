@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 
 public class CreditActivity extends AppCompatActivity {
- TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14;
+ TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14,p16,p17,p18;
  Button contribute;
  LinearLayout linearLayout;
  AnimatorSet animatorSet;
@@ -40,6 +40,9 @@ public class CreditActivity extends AppCompatActivity {
         p11=findViewById(R.id.person11);
         p13=findViewById(R.id.person13);
         p14=findViewById(R.id.person14);
+        p16=findViewById(R.id.person16);
+        p17=findViewById(R.id.person17);
+        p18=findViewById(R.id.person18);
 
         contribute=findViewById(R.id.contribute);
 
@@ -62,13 +65,13 @@ public class CreditActivity extends AppCompatActivity {
         animatorSet.start();
 
 
-        p1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/raghav-aggarwal-74b873143/"));
-                startActivity(Browserintent);
-            }
-        });
+//        p1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/raghav-aggarwal-74b873143/"));
+//                startActivity(Browserintent);
+//            }
+//        });
         p2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,6 +146,27 @@ public class CreditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/sarthak-pal-8638ba171/"));
+                startActivity(Browserintent);
+            }
+        });
+        p16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.fiverr.com/s2/5ff15b31e8"));
+                startActivity(Browserintent);
+            }
+        });
+        p17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/yash-ahuja-551b92192"));
+                startActivity(Browserintent);
+            }
+        });
+        p18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/vidit-choudhary-21aa111a6"));
                 startActivity(Browserintent);
             }
         });

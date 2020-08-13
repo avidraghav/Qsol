@@ -32,6 +32,7 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
     TextView subjectname;
     TextView papercount;
     TextView textView;
+    String key;
 
     static int eightpapercount1,eightpapercount2,eightpapercount3,eightpapercount4,eightpapercount5,eightpapercount6,eightpapercount7,eightpapercount8;
     DatabaseReference ref;
@@ -44,7 +45,9 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
         subjectname=findViewById(R.id.subjectname);
         papercount=findViewById(R.id.papercount);
         textView=findViewById(R.id.textView);
-
+        Intent intent=getIntent();
+        key=intent.getStringExtra("key");
+        textView.setText(key);
 
         subjectlist = new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/CS/08");

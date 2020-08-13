@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class WelcomeScreen extends AppCompatActivity {
 ImageView imageView;
-TextView textView, textView2;
+TextView textView2;
 Animation top, bottom;
 
     private  static  int SPLASH_SCREEN =2500;

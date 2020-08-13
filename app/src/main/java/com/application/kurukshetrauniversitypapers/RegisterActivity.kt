@@ -1,10 +1,10 @@
 package com.application.kurukshetrauniversitypapers
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -66,6 +66,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
 
     }
+
 
     override fun onStart() {
         super.onStart()

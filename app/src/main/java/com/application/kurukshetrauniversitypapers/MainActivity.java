@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -15,6 +16,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -24,6 +26,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     TextView total_papers;
     private FirebaseAnalytics mFirebaseAnalytics;
     String key;
+    Animation fadein;
+    CardView btech_cardView,ca_cardview,ku_cardview,mb_cardview,quick_cardview;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,12 +64,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         total_papers = findViewById(R.id.total_papers);
         mAuth = FirebaseAuth.getInstance();
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        btech_cardView=findViewById(R.id.btech_cardview);
+        ca_cardview=findViewById(R.id.ca_cardview);
+        ku_cardview=findViewById(R.id.ku_cardview);
+        mb_cardview=findViewById(R.id.mb_cardview);
+        quick_cardview=findViewById(R.id.quick_cardview);
 
+
+
+        fadein = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 
         Intent intent=getIntent();
         key=intent.getStringExtra("run counter");
-        if(key.equals("yes"))
+        if(key.equals("yes")){
             startCountAnimation();
+            btech_cardView.setAnimation(fadein);
+            ca_cardview.setAnimation(fadein);
+            ku_cardview.setAnimation(fadein);
+            mb_cardview.setAnimation(fadein);
+            quick_cardview.setAnimation(fadein);
+
+        }
         else
             total_papers.setText("1074");
 
@@ -139,9 +162,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navUsername.setText("Sign in to Share Papers");
         }
     }
-    public void progress(View view) {
-        Toast.makeText(this, "Will be uploaded soon", Toast.LENGTH_SHORT).show();
-    }
     public void website(View view) {
         Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.kuk.ac.in/"));
         startActivity(Browserintent);
@@ -182,8 +202,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this,Filters.class));
                 break;
             case R.id.contri:
-                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/raghavagg01/Qsol/blob/master/README.md#everyone-can-contribute-to-qsol-by"));
-                startActivity(Browserintent);
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("mailto:" + "qsol.info@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "My contribution to Qsol");
+                intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Attaching previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
+                startActivity(intent);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -242,7 +265,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
 
             case R.id.write_feedback:
-                startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("mailto:" + "qsol.info@gmail.com"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "My contribution to Qsol");
+                intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Attaching previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
+                startActivity(intent);
                 break;
 
 

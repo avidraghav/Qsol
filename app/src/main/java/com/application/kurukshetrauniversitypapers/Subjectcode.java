@@ -62,7 +62,7 @@ public class Subjectcode {
                 code ="PP";
         }
         if(subjectname.equals("Semiconductor physics")) {
-            code ="PH";
+            code ="SH";
         }
         if(subjectname.equals("Calculus and ordinary differential equation")) {
             code ="CL";
@@ -376,8 +376,22 @@ public class Subjectcode {
         }
         // ELE subjects
         if(subjectname.equals("Communication system")) {
-
             code ="CY";
+        }
+        if(subjectname.equals("Electromechanical energy conversion")) {
+            code ="EK";
+        }
+        if(subjectname.equals("Network analysis and synthesis")) {
+            code ="NA";
+        }
+        if(subjectname.equals("Electrical power generation")) {
+            code ="EX";
+        }
+        if(subjectname.equals("Electrical measurements and measuring instruments")) {
+            code ="EJ";
+        }
+        if(subjectname.equals("Power transmission and distribution")) {
+            code ="PO";
         }
         if(subjectname.equals("Electrical engineering material and processes")) {
 

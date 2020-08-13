@@ -63,7 +63,7 @@
                             android:layout_height="wrap_content"
                             android:text= "Papers Available"
                             android:layout_gravity="center"
-                            android:textColor="#2b74cc"
+                            android:textColor="@color/fontColor"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="240dp"
+                    android:layout_marginTop="220dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
 
@@ -83,6 +83,7 @@
                         android:orientation="horizontal"
                         android:layout_marginBottom="10dp">
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/btech_cardview"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -108,12 +109,13 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="B.Tech"
-                                    android:textColor="#2b74cc"
+                                    android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview1"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"/>
+
 
                                 <Button
                                     android:id="@+id/btechbtn"
@@ -127,6 +129,7 @@
 
                         </androidx.cardview.widget.CardView>
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/ca_cardview"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -151,7 +154,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="BCA/MCA"
-                                    android:textColor="#2b74cc"
+                                    android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview3"
                                     android:layout_centerHorizontal="true"
@@ -176,6 +179,7 @@
                         android:orientation="horizontal"
                         android:layout_marginBottom="10dp">
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/ku_cardview"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -198,7 +202,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="KU website"
-                                    android:textColor="#2b74cc"
+                                    android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview6"
                                     android:layout_centerHorizontal="true"
@@ -218,6 +222,7 @@
 
                         </androidx.cardview.widget.CardView>
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/mb_cardview"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -242,7 +247,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="BBA/MBA"
-                                    android:textColor="#2b74cc"
+                                    android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview5"
                                     android:layout_centerHorizontal="true"
@@ -252,7 +257,6 @@
                                     android:id="@+id/managementbtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:onClick="progress"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
@@ -267,6 +271,7 @@
                         android:orientation="horizontal"
                         android:layout_marginBottom="10dp">
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/quick_cardview"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -291,7 +296,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Quick Search"
-                                    android:textColor="#2b74cc"
+                                    android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview7"
                                     android:layout_centerHorizontal="true"
@@ -301,7 +306,6 @@
                                     android:id="@+id/quick_search"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:onClick="progress"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>

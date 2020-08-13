@@ -23,8 +23,8 @@
                 />
             <item
                 android:id="@+id/write_feedback"
-                android:title="Write feedback"
-                android:icon="@drawable/ic_email"/>
+                android:title="Contribute"
+                android:icon="@drawable/contribute"/>
             <item
                 android:id="@+id/rate"
                 android:title="Rate the App"

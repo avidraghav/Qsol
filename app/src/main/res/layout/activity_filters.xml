@@ -11,20 +11,15 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:id="@+id/myToolbar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?attr/actionBarSize"-->
-<!--            android:background="@color/colorPrimary"-->
-<!--            app:layout_scrollFlags="scroll|enterAlways"-->
-<!--            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>-->
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabIndicatorColor="#fff"
+        app:tabIndicatorColor="#000"
         android:background="@color/fontColor"
-        app:tabIndicatorHeight="2dp"
+        app:tabIndicatorHeight="4dp"
+        app:tabSelectedTextColor="@color/gold"
         app:tabMode="fixed"
         app:tabGravity="fill"/>
 

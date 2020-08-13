@@ -19,7 +19,7 @@
         android:paddingBottom="10dp"
         android:singleLine="false"
         android:text="Subject name"
-        android:textColor="#2b74cc"
+        android:textColor="@color/fontColor"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toStartOf="@+id/papercount"
         app:layout_constraintStart_toStartOf="parent"
