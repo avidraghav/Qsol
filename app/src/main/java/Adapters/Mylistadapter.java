@@ -1,16 +1,14 @@
 package Adapters;
 
 
-import android.Manifest;
-import android.app.Activity;
+
+import android.annotation.SuppressLint;
+
 import android.app.DownloadManager;
 import android.content.Context;
 
-import android.content.pm.PackageManager;
+
 import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +22,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresPermission;
-import androidx.core.content.ContextCompat;
+
 
 import com.application.kurukshetrauniversitypapers.GlobalClass;
 import com.application.kurukshetrauniversitypapers.Listdata;
@@ -43,23 +40,9 @@ import com.google.firebase.storage.FirebaseStorage;
 
 import com.google.firebase.storage.StorageReference;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.ArrayList;
 import java.util.List;
-
-import static android.content.ContentValues.TAG;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
-import static androidx.core.app.ActivityCompat.requestPermissions;
+
 
 public class Mylistadapter extends ArrayAdapter<Listdata> {
 
@@ -70,7 +53,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
     FirebaseStorage firebaseStorage;
     DatabaseReference rootref;
     FirebaseAuth mAuth;
-    public static final int REQUEST_CODE=1001;
 
     public Mylistadapter(Context context, int resource, List<Listdata> subjectlist) {
         super(context, resource, subjectlist);
@@ -79,15 +61,12 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
         this.subjectlist = subjectlist;
     }
 
-
-
-
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(resource, null, false);
+       View view = layoutInflater.inflate(resource, null, false);
 
         final TextView subjectname = view.findViewById(R.id.subjectname);
         final TextView papercount = view.findViewById(R.id.papercount);
