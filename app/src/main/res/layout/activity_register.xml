@@ -59,7 +59,6 @@
                     android:fontFamily="sans-serif-light"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-
                 <EditText
                     android:drawablePadding="10dp"
                     android:layout_width="fill_parent"
@@ -70,6 +69,8 @@
                     android:drawableLeft="@drawable/ic_lock"
                     android:hint="Password"
                     android:inputType="textPassword"/>
+
+
                 <TextView
                     android:id="@+id/text_view_login"
                     android:layout_gravity="right"

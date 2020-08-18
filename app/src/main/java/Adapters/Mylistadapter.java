@@ -1569,7 +1569,6 @@ public class Mylistadapter extends ArrayAdapter<Listdata> {
                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                        for(final DataSnapshot paper:dataSnapshot.getChildren()) {
                            Log.e("papername",paper.child("name").getValue().toString());
-                             Log.e("info",paper.child("name").getValue().toString());
                            myref = storageReference.child(paper.child("name").getValue().toString()+".pdf");
                            myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                @Override

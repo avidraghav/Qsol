@@ -27,11 +27,41 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#D3D3D3"
-                android:elevation="4dp"
-                app:titleTextColor="#2b74cc"
+                android:background="@android:color/transparent"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
                 android:theme="@style/AppTheme"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:layout_width="70dp"
+                       android:layout_height="60dp"
+                       android:layout_alignParentLeft="true"
+
+                       android:src="@drawable/qslow" />
+
+                   <Button
+                       android:id="@+id/actionbar_signup"
+                       android:layout_width="60dp"
+                       android:layout_height="28dp"
+                       android:text="Sign up"
+                       android:textAllCaps="false"
+                       android:textColor="#1E5A54"
+                       android:layout_alignParentEnd="true"
+                       android:textSize="13sp"
+                       android:layout_marginTop="12dp"
+                       android:foreground="?attr/selectableItemBackground"
+                       android:background="@drawable/actionbar_signup_buttonshape"
+                       android:layout_alignParentRight="true" />
+
+
+               </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
             <FrameLayout
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
@@ -44,7 +74,7 @@
                 <LinearLayout
                     android:id="@+id/counter"
                     android:layout_width="match_parent"
-                    android:layout_height="210dp"
+                    android:layout_height="180dp"
                     android:orientation="vertical"
                     android:gravity="center"
                    >
@@ -73,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="220dp"
+                    android:layout_marginTop="200dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp">
 
@@ -101,20 +131,20 @@
                                     android:id="@+id/imageview1"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
-                                    android:layout_marginTop="5dp"
-                                    android:src="@drawable/btechnew"
-                                    android:layout_centerInParent="true"
-                                    android:layout_alignParentTop="true"/>
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/btech"
+                                    android:layout_centerHorizontal="true"/>
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="B.Tech"
-                                    android:textColor="@color/fontColor"
-                                    android:textSize="16sp"
                                     android:layout_below="@+id/imageview1"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
-                                    android:layout_marginBottom="10dp"/>
+                                    android:layout_marginBottom="10dp"
+                                    android:text="B.Tech"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/fontColor"
+                                    android:textSize="16sp" />
 
 
                                 <Button
@@ -145,26 +175,26 @@
 
                                 <ImageView
                                     android:id="@+id/imageview3"
-                                    android:layout_width="80dp"
-                                    android:layout_height="80dp"
-                                    android:layout_alignParentTop="true"
-                                    android:src="@drawable/computerapplications"
-                                    android:layout_centerInParent="true"/>
+                                    android:layout_width="match_parent"
+                                    android:layout_height="90dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/ca" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="BCA/MCA"
+                                    android:textStyle="bold"
                                     android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview3"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="10dp"
                                     android:layout_marginBottom="10dp"/>
 
                                 <Button
                                     android:id="@+id/computer_applications_btn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:foreground="?attr/selectableItemBackground"
                                     android:background="@android:color/transparent" />
 
                             </RelativeLayout>
@@ -196,17 +226,19 @@
                                     android:id="@+id/imageview6"
                                     android:layout_width="match_parent"
                                     android:layout_height="90dp"
-                                    android:src="@drawable/kurukshetrauniversity"
-                                    android:layout_alignParentTop="true"/>
+                                    android:src="@drawable/ku"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_centerHorizontal="true"/>
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="KU website"
+                                    android:textStyle="bold"
                                     android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview6"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="8dp"
+
                                     android:layout_marginBottom="10dp"/>
 
                                 <Button
@@ -240,23 +272,24 @@
                                     android:id="@+id/imageview5"
                                     android:layout_width="match_parent"
                                     android:layout_height="90dp"
-                                    android:layout_alignParentTop="true"
-                                    android:layout_centerInParent="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
                                     android:src="@drawable/management" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="BBA/MBA"
+                                    android:textStyle="bold"
                                     android:textColor="@color/fontColor"
                                     android:textSize="16sp"
                                     android:layout_below="@+id/imageview5"
                                     android:layout_centerHorizontal="true"
-                                    android:layout_marginTop="8dp"
                                     android:layout_marginBottom="10dp"/>
                                 <Button
                                     android:id="@+id/managementbtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:foreground="?attr/selectableItemBackground"
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
@@ -291,7 +324,7 @@
                                     android:layout_height="90dp"
                                     android:layout_alignParentTop="true"
                                     android:layout_centerInParent="true"
-                                    android:src="@drawable/ic_search" />
+                                    android:src="@drawable/filter" />
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -309,14 +342,9 @@
                                     android:background="@android:color/transparent"/>
 
                             </RelativeLayout>
-
                         </androidx.cardview.widget.CardView>
-
                     </LinearLayout>
-
-
                 </LinearLayout>
-
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

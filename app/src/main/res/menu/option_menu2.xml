@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item android:title="Contribute to Qsol"
-        android:id="@+id/contri"
-        android:icon="@drawable/contribute"
-        app:showAsAction="always"
-        />
+<!--    <item android:title="Contribute to Qsol"-->
+<!--        android:id="@+id/contri"-->
+<!--        app:showAsAction="always"-->
+<!--        />-->
     <item android:title="Quick search"
         android:id="@+id/quick"
-android:icon="@drawable/ic_search_black"
+        android:icon="@drawable/filter"
         app:showAsAction="always"
         />
 

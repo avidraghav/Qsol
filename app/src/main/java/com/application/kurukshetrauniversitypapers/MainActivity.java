@@ -41,7 +41,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btechbtn,quicksearch, computer_applications_btn, managementbtn, kubtn;
+    Button btechbtn,quicksearch, computer_applications_btn, managementbtn, kubtn,actionbar_signup;
     FirebaseAuth mAuth;
     private DrawerLayout drawer;
     TextView total_papers;
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ku_cardview=findViewById(R.id.ku_cardview);
         mb_cardview=findViewById(R.id.mb_cardview);
         quick_cardview=findViewById(R.id.quick_cardview);
+        actionbar_signup=findViewById(R.id.actionbar_signup);
 
 
 
@@ -89,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             total_papers.setText("1074");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+       // toolbar.setLogo(R.drawable.qslow);
         //toolbar.setBackground(getResources().getDrawable( R.drawable.actionbar_shape));
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
@@ -145,6 +148,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this,Filters.class));
             }
         });
+        actionbar_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+
+            }
+        });
 
 
     }
@@ -156,9 +166,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView navWelcome = headerView.findViewById(R.id.txt_welcome);
         if (mAuth.getCurrentUser() != null) {
             navWelcome.setVisibility(View.VISIBLE);
+            actionbar_signup.setVisibility(View.INVISIBLE);
             navUsername.setText(mAuth.getCurrentUser().getEmail());
         } else {
             navWelcome.setVisibility(View.INVISIBLE);
+            actionbar_signup.setVisibility(View.VISIBLE);
             navUsername.setText("Sign in to Share Papers");
         }
     }
@@ -201,13 +213,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.quick:
                 startActivity(new Intent(MainActivity.this,Filters.class));
                 break;
-            case R.id.contri:
-                Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("mailto:" + "qsol.info@gmail.com"));
-                intent.putExtra(Intent.EXTRA_SUBJECT, "My contribution to Qsol");
-                intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Attaching previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
-                startActivity(intent);
-                break;
+//            case R.id.contri:
+//                Intent intent = new Intent(Intent.ACTION_VIEW,
+//                        Uri.parse("mailto:" + "qsol.info@gmail.com"));
+//                intent.putExtra(Intent.EXTRA_SUBJECT, "My contribution to Qsol");
+//                intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Attaching previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
+//                startActivity(intent);
+//                break;
             default:
                 return super.onOptionsItemSelected(item);
 
