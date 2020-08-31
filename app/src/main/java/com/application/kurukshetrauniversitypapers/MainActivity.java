@@ -41,14 +41,14 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btechbtn,quicksearch, computer_applications_btn, managementbtn, kubtn,actionbar_signup;
+    Button btechbtn,quicksearch, computer_applications_btn, managementbtn, kubtn,actionbar_signup,diploma_btn;
     FirebaseAuth mAuth;
     private DrawerLayout drawer;
     TextView total_papers;
     private FirebaseAnalytics mFirebaseAnalytics;
     String key;
     Animation fadein;
-    CardView btech_cardView,ca_cardview,ku_cardview,mb_cardview,quick_cardview;
+    CardView btech_cardView,ca_cardview,ku_cardview,mb_cardview,quick_cardview,diploma_cardview;
 
 
 
@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mb_cardview=findViewById(R.id.mb_cardview);
         quick_cardview=findViewById(R.id.quick_cardview);
         actionbar_signup=findViewById(R.id.actionbar_signup);
+        diploma_btn=findViewById(R.id.diploma_btn);
+        diploma_cardview = findViewById(R.id.diploma_cardview);
 
 
 
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ku_cardview.setAnimation(fadein);
             mb_cardview.setAnimation(fadein);
             quick_cardview.setAnimation(fadein);
+            diploma_cardview.setAnimation(fadein);
 
         }
         else
@@ -148,6 +151,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this,Filters.class));
             }
         });
+        diploma_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Diploma_expendable_list.class));
+            }
+        });
         actionbar_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,14 +173,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.username);
         TextView navWelcome = headerView.findViewById(R.id.txt_welcome);
-        if (mAuth.getCurrentUser() != null) {
+        if (mAuth.getCurrentUser() != null)
+        {
             navWelcome.setVisibility(View.VISIBLE);
             actionbar_signup.setVisibility(View.INVISIBLE);
             navUsername.setText(mAuth.getCurrentUser().getEmail());
-        } else {
+            navigationView.getMenu().findItem(R.id.action_signin).setVisible(false);
+            navigationView.getMenu().findItem(R.id.action_logout).setVisible(true);
+        }
+        else
+            {
             navWelcome.setVisibility(View.INVISIBLE);
             actionbar_signup.setVisibility(View.VISIBLE);
             navUsername.setText("Sign in to Share Papers");
+            navigationView.getMenu().findItem(R.id.action_signin).setVisible(true);
+            navigationView.getMenu().findItem(R.id.action_logout).setVisible(false);
         }
     }
     public void website(View view) {

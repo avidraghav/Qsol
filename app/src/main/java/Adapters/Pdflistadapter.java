@@ -47,6 +47,7 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
     StorageReference storageReference,myref;
     FirebaseStorage firebaseStorage;
     DatabaseReference rootref;
+    private String board;
     private String branch;
     private String semester;
     private String code;
@@ -121,12 +122,14 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
             public void onClick(final View view) {
 
                     SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
+                    board= singleDownloadClass.getBoard();
                     branch = singleDownloadClass.getBranch();
                     semester = singleDownloadClass.getSemester();
                     code = singleDownloadClass.getCode();
                     toast();
-                    download("IN/KU" + "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
-                    Log.e("dir", "IN/KU" + "/" + branch + "/" + semester + "/" + code);
+                    download("IN/"+board+ "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
+                    Log.e("dir", "IN/"+board + "/" + branch + "/" + semester + "/" + code);
+                    Log.e("name",textViewName.getText().toString());
 
             }
         });
@@ -135,7 +138,6 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
 
     public Uri getLink(int position){
         uploadPDF uploadPDF = pdflist.get(position);
-
         return ( Uri.parse(uploadPDF.getUrl()) );
 
     }
@@ -163,18 +165,17 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 myref = storageReference.child(filename+".pdf");
+                Log.e(filename,filename+".pdf");
                 myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
                         String url = uri.toString();
+                        Log.e("url",url);
                         downloadfiles(getContext(),filename, ".pdf", DIRECTORY_DOWNLOADS, url);
-
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-
-
                     }
                 });
             }
@@ -188,7 +189,6 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
     }
     public void toast(){Toast.makeText(context, "downloading", Toast.LENGTH_LONG).show();}
 
-
     public void downloadfiles(Context context, String file, String fileExtension, String destinationDirectory, String url)
     {
         DownloadManager downloadmanager= (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
@@ -197,7 +197,6 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalFilesDir(context, destinationDirectory, file+fileExtension);
         downloadmanager.enqueue(request);
-
     }
 
 }

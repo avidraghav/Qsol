@@ -34,7 +34,7 @@ public class Pdflist extends AppCompatActivity  {
      FirebaseAuth mAuth;
 
      String key;
-     String br,sm,cd;
+     String board,branch,semester,subjectcode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,15 +48,17 @@ public class Pdflist extends AppCompatActivity  {
 
         Intent intent1=getIntent();
         key=intent1.getStringExtra("subject");
-        br=key.substring(6,8);
-        sm=key.substring(9,11);
-        cd=key.substring(12);
+        board=key.substring(3,5);
+        branch=key.substring(6,8);
+        semester=key.substring(9,11);
+        subjectcode=key.substring(12);
 
 
         SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-          singleDownloadClass.setBranch(br);
-          singleDownloadClass.setSemester(sm);
-          singleDownloadClass.setCode(cd);
+        singleDownloadClass.setBoard(board);
+          singleDownloadClass.setBranch(branch);
+          singleDownloadClass.setSemester(semester);
+          singleDownloadClass.setCode(subjectcode);
 
          listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

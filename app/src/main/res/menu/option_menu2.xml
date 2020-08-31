@@ -9,7 +9,7 @@
 <!--        />-->
     <item android:title="Quick search"
         android:id="@+id/quick"
-        android:icon="@drawable/filter"
+        android:icon="@drawable/filter2"
         app:showAsAction="always"
         />
 

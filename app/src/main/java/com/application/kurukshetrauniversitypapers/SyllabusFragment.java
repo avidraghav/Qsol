@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,12 +27,15 @@ import Adapters.SyllabusAdapter;
 
 public class SyllabusFragment extends Fragment {
     Button cse_syl,it_syl,me_syl,ee_syl,ec_syl,mb_syl,bb_syl,bc_syl,mc_syl,first_syl,second_syl,third_syl,fourth_syl,fifth_syl,sixth_syl,seventh_syl,eight_syl,session;
+    Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
+    Button ku,dp;
     String selected_branch_syllabus,selected_semester_syllabus;
     DatabaseReference databaseReference;
     ArrayList<String> subjects;
     List<uploadPDF> uploadPDFS;
     ListView listView;
     Button search_syl;
+    RelativeLayout ku_courses,ku_semesters,dp_courses,dp_semesters;
     
     public SyllabusFragment() {
         // Required empty public constructor
@@ -64,6 +69,24 @@ public class SyllabusFragment extends Fragment {
         listView=v.findViewById(R.id.list_syllabus);
         search_syl=v.findViewById(R.id.sy_search);
         session=v.findViewById(R.id.session_20_21);
+        ku_courses=v.findViewById(R.id.sy_ku_courses);
+        ku_semesters=v.findViewById(R.id.sy_ku_semesters);
+        dp_courses=v.findViewById(R.id.sy_dp_courses);
+        dp_semesters=v.findViewById(R.id.sy_dp_semesters);
+        ku=v.findViewById(R.id.sy_ku);
+        dp=v.findViewById(R.id.sy_dp);
+        dp_cse=v.findViewById(R.id.sy_dp_cse);
+        dp_cv=v.findViewById(R.id.sy_dp_cv);
+        dp_me=v.findViewById(R.id.sy_dp_me);
+        dp_ee=v.findViewById(R.id.sy_dp_ee);
+        dp_ec=v.findViewById(R.id.sy_dp_ec);
+        dp_dmlt=v.findViewById(R.id.sy_dp_dmlt);
+        dp_first=v.findViewById(R.id.sy_dp_first);
+        dp_second=v.findViewById(R.id.sy_dp_second);
+        dp_third=v.findViewById(R.id.sy_dp_third);
+        dp_fourth=v.findViewById(R.id.sy_dp_fourth);
+        dp_fifth=v.findViewById(R.id.sy_dp_fifth);
+        dp_sixth=v.findViewById(R.id.sy_dp_sixth);
 
        displayDefaultResults();
         cse_syl.setOnClickListener(new View.OnClickListener() {

@@ -34,6 +34,21 @@ public class Expendable_loader extends AppCompatActivity {
                 }
             }, SPLASH_SCREEN1);
         }
+        if(key.equals("diploma"))
+        {
+            ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
+            Sprite wave = new Wave();
+            progressBar.setIndeterminateDrawable(wave);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(Expendable_loader.this, Diploma_expendable_list.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+            }, SPLASH_SCREEN1);
+        }
         if(key.equals("management"))
             {
                 ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);

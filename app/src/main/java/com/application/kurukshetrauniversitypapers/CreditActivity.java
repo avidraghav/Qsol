@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 
 public class CreditActivity extends AppCompatActivity {
- TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14,p16,p17,p18;
+ TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14,p16,p17,p18,p19;
  Button contribute;
  LinearLayout linearLayout;
  AnimatorSet animatorSet;
@@ -43,6 +43,7 @@ public class CreditActivity extends AppCompatActivity {
         p16=findViewById(R.id.person16);
         p17=findViewById(R.id.person17);
         p18=findViewById(R.id.person18);
+        p19=findViewById(R.id.person19);
 
         contribute=findViewById(R.id.contribute);
 

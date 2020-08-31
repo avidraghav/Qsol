@@ -20,38 +20,38 @@ import java.util.List;
 import java.util.Map;
 
 import Adapters.MyExListAdapter;
-import CSE_subjectlists.Cse_eightsem_subjectlist;
-import CSE_subjectlists.Cse_fifthsem_subjectlist;
-import CSE_subjectlists.Cse_firstsem_subjectlist;
-import CSE_subjectlists.Cse_fourthsem_subjectlist;
-import CSE_subjectlists.Cse_secondsem_subjectlist;
-import CSE_subjectlists.Cse_seventhsem_subjectlist;
-import CSE_subjectlists.Cse_sixthsem_subjectlist;
-import CSE_subjectlists.Cse_thirdsem_subjectlist;
-import ECE_subjectlists.Ece_eightsem_subjectlist;
-import ECE_subjectlists.Ece_fifthsem_subjectlist;
-import ECE_subjectlists.Ece_fourthsem_subjectlist;
-import ECE_subjectlists.Ece_sixthsem_subjectlist;
-import ECE_subjectlists.Ece_seventhsem_subjectlist;
-import ECE_subjectlists.Ece_thirdsem_subjectlist;
-import ELE_subjectlists.Ele_eightsem_subjectlist;
-import ELE_subjectlists.Ele_fifthsem_subjectlist;
-import ELE_subjectlists.Ele_fourthsem_subjectlist;
-import ELE_subjectlists.Ele_seventhsem_subjectlist;
-import ELE_subjectlists.Ele_sixthsem_subjectlist;
-import ELE_subjectlists.Ele_thirdsem_subjectlist;
-import IT_subjectlists.It_eightsem_subjectlist;
-import IT_subjectlists.It_fifthsem_subjectlist;
-import IT_subjectlists.It_fourthsem_subjectlist;
-import IT_subjectlists.It_seventhsem_subjectlist;
-import IT_subjectlists.It_sixthsem_subjectlist;
-import IT_subjectlists.It_thirdsem_subjectlist;
-import ME_subjectlists.Me_eightsem_subjectlist;
-import ME_subjectlists.Me_fifthsem_subjectlist;
-import ME_subjectlists.Me_fourthsem_subjectlist;
-import ME_subjectlists.Me_seventhsem_subjectlist;
-import ME_subjectlists.Me_sixthsem_subjectlist;
-import ME_subjectlists.Me_thirdsem_subjectlist;
+import KU_CSE_subjectlists.Cse_eightsem_subjectlist;
+import KU_CSE_subjectlists.Cse_fifthsem_subjectlist;
+import KU_CSE_subjectlists.Cse_firstsem_subjectlist;
+import KU_CSE_subjectlists.Cse_fourthsem_subjectlist;
+import KU_CSE_subjectlists.Cse_secondsem_subjectlist;
+import KU_CSE_subjectlists.Cse_seventhsem_subjectlist;
+import KU_CSE_subjectlists.Cse_sixthsem_subjectlist;
+import KU_CSE_subjectlists.Cse_thirdsem_subjectlist;
+import KU_ECE_subjectlists.Ece_eightsem_subjectlist;
+import KU_ECE_subjectlists.Ece_fifthsem_subjectlist;
+import KU_ECE_subjectlists.Ece_fourthsem_subjectlist;
+import KU_ECE_subjectlists.Ece_sixthsem_subjectlist;
+import KU_ECE_subjectlists.Ece_seventhsem_subjectlist;
+import KU_ECE_subjectlists.Ece_thirdsem_subjectlist;
+import KU_ELE_subjectlists.Ele_eightsem_subjectlist;
+import KU_ELE_subjectlists.Ele_fifthsem_subjectlist;
+import KU_ELE_subjectlists.Ele_fourthsem_subjectlist;
+import KU_ELE_subjectlists.Ele_seventhsem_subjectlist;
+import KU_ELE_subjectlists.Ele_sixthsem_subjectlist;
+import KU_ELE_subjectlists.Ele_thirdsem_subjectlist;
+import KU_IT_subjectlists.It_eightsem_subjectlist;
+import KU_IT_subjectlists.It_fifthsem_subjectlist;
+import KU_IT_subjectlists.It_fourthsem_subjectlist;
+import KU_IT_subjectlists.It_seventhsem_subjectlist;
+import KU_IT_subjectlists.It_sixthsem_subjectlist;
+import KU_IT_subjectlists.It_thirdsem_subjectlist;
+import KU_ME_subjectlists.Me_eightsem_subjectlist;
+import KU_ME_subjectlists.Me_fifthsem_subjectlist;
+import KU_ME_subjectlists.Me_fourthsem_subjectlist;
+import KU_ME_subjectlists.Me_seventhsem_subjectlist;
+import KU_ME_subjectlists.Me_sixthsem_subjectlist;
+import KU_ME_subjectlists.Me_thirdsem_subjectlist;
 
 public class Btech_expendable_list extends AppCompatActivity {
 
@@ -1910,42 +1910,42 @@ public class Btech_expendable_list extends AppCompatActivity {
 
                 if((groupPosition)==4  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+cs01+")")) {
                     Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 1st semester");
+                    i.putExtra("key", "Electrical 1st semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4  && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+cs02+")")) {
                     Intent i=new Intent(getBaseContext(),Cse_secondsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 2nd semester");
+                    i.putExtra("key", "Electrical 2nd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+el03+")")) {
                     Intent i=new Intent(getBaseContext(),Ele_thirdsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 3rd semester");
+                    i.putExtra("key", "Electrical 3rd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+el04+")")) {
                     Intent i=new Intent(getBaseContext(),Ele_fourthsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 4th semester");
+                    i.putExtra("key", "Electrical 4th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+el05+")")) {
                     Intent i=new Intent(getBaseContext(),Ele_fifthsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 5th semester");
+                    i.putExtra("key", "Electrical 5th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+el06+")")) {
                     Intent i=new Intent(getBaseContext(),Ele_sixthsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 6th semester");
+                    i.putExtra("key", "Electrical 6th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Seventh semester "+"("+el07+")")) {
                     Intent i=new Intent(getBaseContext(),Ele_seventhsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 7th semester");
+                    i.putExtra("key", "Electrical 7th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Eight semester "+"("+el08+")")) {
                     Intent i=new Intent(getBaseContext(),Ele_eightsem_subjectlist.class);
-                    i.putExtra("key", "Electronics and comm. 8th semester");
+                    i.putExtra("key", "Electrical 8th semester");
                     startActivity(i);
                 }
 

@@ -21,14 +21,14 @@ import java.util.List;
 import java.util.Map;
 
 import Adapters.MyExListAdapter;
-import BBA_subjectlists.Bba_firstsem_subjectlist;
-import BBA_subjectlists.Bba_fourthsem_subjectlist;
-import BBA_subjectlists.Bba_secondsem_subjectlist;
-import BBA_subjectlists.Bba_thirdsem_subjectlist;
-import MBA_subjectlists.Mba_firstsem_subjectlist;
-import MBA_subjectlists.Mba_fourthsem_subjectlist;
-import MBA_subjectlists.Mba_secondsem_subjectlist;
-import MBA_subjectlists.Mba_thirdsem_subjectlist;
+import KU_BBA_subjectlists.Bba_firstsem_subjectlist;
+import KU_BBA_subjectlists.Bba_fourthsem_subjectlist;
+import KU_BBA_subjectlists.Bba_secondsem_subjectlist;
+import KU_BBA_subjectlists.Bba_thirdsem_subjectlist;
+import KU_MBA_subjectlists.Mba_firstsem_subjectlist;
+import KU_MBA_subjectlists.Mba_fourthsem_subjectlist;
+import KU_MBA_subjectlists.Mba_secondsem_subjectlist;
+import KU_MBA_subjectlists.Mba_thirdsem_subjectlist;
 
 public class Management_expendable_list extends AppCompatActivity {
 

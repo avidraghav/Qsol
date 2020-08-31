@@ -22,14 +22,14 @@ import java.util.Map;
 
 import Adapters.MyExListAdapter;
 
-import BCA_subjectlists.Bca_firstsem_subjectlist;
-import BCA_subjectlists.Bca_secondsem_subjectlist;
-import BCA_subjectlists.Bca_thirdsem_subjectlist;
-import MCA_subjectlists.Mca_fifthsem_subjectlist;
-import MCA_subjectlists.Mca_firstsem_subjectlist;
-import MCA_subjectlists.Mca_fourthsem_subjectlist;
-import MCA_subjectlists.Mca_secondsem_subjectlist;
-import MCA_subjectlists.Mca_thirdsem_subjectlist;
+import KU_BCA_subjectlists.Bca_firstsem_subjectlist;
+import KU_BCA_subjectlists.Bca_secondsem_subjectlist;
+import KU_BCA_subjectlists.Bca_thirdsem_subjectlist;
+import KU_MCA_subjectlists.Mca_fifthsem_subjectlist;
+import KU_MCA_subjectlists.Mca_firstsem_subjectlist;
+import KU_MCA_subjectlists.Mca_fourthsem_subjectlist;
+import KU_MCA_subjectlists.Mca_secondsem_subjectlist;
+import KU_MCA_subjectlists.Mca_thirdsem_subjectlist;
 
 public class ComputerApplications_expendable_list extends AppCompatActivity {
     ExpandableListView expandableListView;
