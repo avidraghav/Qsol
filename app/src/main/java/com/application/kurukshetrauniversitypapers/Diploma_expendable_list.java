@@ -577,7 +577,7 @@ public class Diploma_expendable_list extends AppCompatActivity {
 
             }
         });
-        // IT paper count
+        // Civil paper count
         ref1=FirebaseDatabase.getInstance().getReference("IN/HS/CV/03");
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
@@ -595,6 +595,9 @@ public class Diploma_expendable_list extends AppCompatActivity {
                     cv03=cv03+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("G1")) {
+                    cv03=cv03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("SS")) {
                     cv03=cv03+(int)dataSnapshot.getChildrenCount();
                 }
                 filldata();
@@ -682,16 +685,13 @@ public class Diploma_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("HE")) {
                     cv05=cv05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("SC")) {
-                    cv05=cv05+(int)dataSnapshot.getChildrenCount();
-                }
-                if(dataSnapshot.getKey().equals("CA")) {
-                    cv05=cv05+(int)dataSnapshot.getChildrenCount();
-                }
                 if(dataSnapshot.getKey().equals("SE")) {
                     cv05=cv05+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("SG")) {
+                if(dataSnapshot.getKey().equals("IG")) {
+                    cv05=cv05+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("RD")) {
                     cv05=cv05+(int)dataSnapshot.getChildrenCount();
                 }
                 filldata();
@@ -739,11 +739,9 @@ public class Diploma_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("CB")) {
                     cv06=cv06+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("EE")) {
-                    cv06=cv04+(int)dataSnapshot.getChildrenCount();
-                }
+
                 if(dataSnapshot.getKey().equals("PC")) {
-                    cv06=cv04+(int)dataSnapshot.getChildrenCount();
+                    cv06=cv06+(int)dataSnapshot.getChildrenCount();
                 }
                 total_cv=common01+common02+cv03+cv04+cv05+cv06;
                 filldata();
@@ -790,7 +788,10 @@ public class Diploma_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("H1")) {
                     el03=el03+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("CP")) {
+                if(dataSnapshot.getKey().equals("N1")) {
+                    el03=el03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("FE")) {
                     el03=el03+(int)dataSnapshot.getChildrenCount();
                 }
 
@@ -839,7 +840,16 @@ public class Diploma_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("IN")) {
                     el04=el04+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("ET")) {
+                if(dataSnapshot.getKey().equals("K1")) {
+                    el04=el04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("U1")) {
+                    el04=el04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("N2")) {
+                    el04=el04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("DE")) {
                     el04=el04+(int)dataSnapshot.getChildrenCount();
                 }
                 filldata();
@@ -884,6 +894,9 @@ public class Diploma_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("DM")) {
                     el05=el05+(int)dataSnapshot.getChildrenCount();
                 }
+                if(dataSnapshot.getKey().equals("K2")) {
+                    el05=el05+(int)dataSnapshot.getChildrenCount();
+                }
 
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
@@ -915,7 +928,7 @@ public class Diploma_expendable_list extends AppCompatActivity {
         ref1.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(dataSnapshot.getKey().equals("UE")) {
+                if(dataSnapshot.getKey().equals("U2")) {
                     el06=el06+(int)dataSnapshot.getChildrenCount();
                 }
                 if(dataSnapshot.getKey().equals("L2")) {
@@ -930,10 +943,7 @@ public class Diploma_expendable_list extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("OC")) {
                     el06=el06+(int)dataSnapshot.getChildrenCount();
                 }
-                if(dataSnapshot.getKey().equals("IQ")) {
-                    el06=el06+(int)dataSnapshot.getChildrenCount();
-                }
-                total_cv=common01+common02+el03+el04+el05+el06;
+                total_el=common01+common02+el03+el04+el05+el06;
                 filldata();
                 listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
                 expandableListView.setAdapter(listAdapter);
@@ -1199,23 +1209,23 @@ public class Diploma_expendable_list extends AppCompatActivity {
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+cv03+")")) {
-                    Intent i=new Intent(getBaseContext(), It_thirdsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), HS_CV_subjectlists.Cv_thirdsem_subjectlist.class);
                     i.putExtra("key", "Civil 3rd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+cv04+")")) {
-                    Intent i=new Intent(getBaseContext(), It_fourthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), HS_CV_subjectlists.Cv_fourthsem_subjectlist.class);
                     i.putExtra("key", "Civil 4th semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+cv05+")")) {
-                    Intent i=new Intent(getBaseContext(), It_fifthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), HS_CV_subjectlists.Cv_fifthsem_subjectlist.class);
                     i.putExtra("key", "Civil 5th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+cv06+")")) {
-                    Intent i=new Intent(getBaseContext(), It_sixthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), HS_CV_subjectlists.Cv_sixthsem_subjectlist.class);
                     i.putExtra("key", "Civil 6th semester");
                     startActivity(i);
                 }
@@ -1298,22 +1308,22 @@ public class Diploma_expendable_list extends AppCompatActivity {
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+el03+")")) {
-                    Intent i=new Intent(getBaseContext(), Ele_thirdsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), HS_ELE_subjectlists.Ele_thirdsem_subjectlist.class);
                     i.putExtra("key", "Electrical 3rd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+el04+")")) {
-                    Intent i=new Intent(getBaseContext(), Ele_fourthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),HS_ELE_subjectlists.Ele_fourthsem_subjectlist.class);
                     i.putExtra("key", "Electrical 4th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+el05+")")) {
-                    Intent i=new Intent(getBaseContext(), Ele_fifthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), HS_ELE_subjectlists.Ele_fifthsem_subjectlist.class);
                     i.putExtra("key", "Electrical 5th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+el06+")")) {
-                    Intent i=new Intent(getBaseContext(), Ele_sixthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), HS_ELE_subjectlists.Ele_sixthsem_subjectlist.class);
                     i.putExtra("key", "Electrical 6th semester");
                     startActivity(i);
                 }

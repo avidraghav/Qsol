@@ -1595,6 +1595,203 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                         download("IN/HS/CO/02/D2");
                     }
 
+                    if (subjectname.getText() == ("Electrical and electronics engineering materials")) {
+                        toast();
+                        download("IN/HS/EL/03/EM");
+                    }
+                    if (subjectname.getText() == ("Electrical measurements and measuring instruments")) {
+                        toast();
+                        download("IN/HS/EL/03/EI");
+                    }
+                    if (subjectname.getText() == ("Electronics-1")) {
+                        toast();
+                        download("IN/HS/EL/03/E1");
+                    }
+                    if (subjectname.getText() == ("Electrical engineering design and drawing-1")) {
+                        toast();
+                        download("IN/HS/EL/03/H1");
+                    }
+                    if (subjectname.getText() == ("Computer programming and application-1")) {
+                        toast();
+                        download("IN/HS/EL/03/N1");
+                    }
+                    if (subjectname.getText() == ("Fundamentals of electrical engineering")) {
+                        toast();
+                        download("IN/HS/EL/03/FE");
+                    }
+
+                    if (subjectname.getText() == ("Electrical machines-1")) {
+                        toast();
+                        download("IN/HS/EL/04/B1");
+                    }
+                    if (subjectname.getText() == ("Energy sources and management of electrical energy")) {
+                        toast();
+                        download("IN/HS/EL/04/ES");
+                    }
+                    if (subjectname.getText() == ("Electronics-2")) {
+                        toast();
+                        download("IN/HS/EL/04/E2");
+                    }
+                    if (subjectname.getText() == ("Electrical engineering design and drawing-2")) {
+                        toast();
+                        download("IN/HS/EL/04/H2");
+                    }
+                    if (subjectname.getText() == ("Instrumentation")) {
+                        toast();
+                        download("IN/HS/EL/04/IN");
+                    }
+                    if (subjectname.getText() == ("Estimating and costing in electrical engineering-1")) {
+                        toast();
+                        download("IN/HS/EL/04/K1");
+                    }
+                    if (subjectname.getText() == ("Utilization if electrical energy-1")) {
+                        toast();
+                        download("IN/HS/EL/04/U1");
+                    }
+                    if (subjectname.getText() == ("Computer programming and application-2")) {
+                        toast();
+                        download("IN/HS/EL/04/N2");
+                    }
+                    if (subjectname.getText() == ("Digital electronics")) {
+                        toast();
+                        download("IN/HS/EL/04/DE");
+                    }
+
+                    if (subjectname.getText() == ("Electrical machines-2")) {
+                        toast();
+                        download("IN/HS/EL/05/B2");
+                    }
+                    if (subjectname.getText() == ("Electrical power-1")) {
+                        toast();
+                        download("IN/HS/EL/05/L1");
+                    }
+                    if (subjectname.getText() == ("Industrial electronics and control of drives")) {
+                        toast();
+                        download("IN/HS/EL/05/EN");
+                    }
+                    if (subjectname.getText() == ("Digital electronics and microprocessors")) {
+                        toast();
+                        download("IN/HS/EL/05/DM");
+                    }
+                    if (subjectname.getText() == ("Estimating and costing in electrical engineering-2")) {
+                        toast();
+                        download("IN/HS/EL/05/K2");
+                    }
+
+                    if (subjectname.getText() == ("Utilization if electrical energy-2")) {
+                        toast();
+                        download("IN/HS/EL/06/U2");
+                    }
+                    if (subjectname.getText() == ("Electrical power-2")) {
+                        toast();
+                        download("IN/HS/EL/06/L2");
+                    }
+                    if (subjectname.getText() == ("Programmable logic controls")) {
+                        toast();
+                        download("IN/HS/EL/06/PL");
+                    }
+                    if (subjectname.getText() == ("Energy management")) {
+                        toast();
+                        download("IN/HS/EL/06/EY");
+                    }
+                    if (subjectname.getText() == ("Optical fibre communication")) {
+                        toast();
+                        download("IN/HS/EL/06/OC");
+                    }
+                    // civil subjects
+                    if (subjectname.getText() == ("Fluid mechanics")) {
+                        toast();
+                        download("IN/HS/CV/03/FM");
+                    }
+                    if (subjectname.getText() == ("Surveying-1")) {
+                        toast();
+                        download("IN/HS/CV/03/Y1");
+                    }
+                    if (subjectname.getText() == ("Construction materials")) {
+                        toast();
+                        download("IN/HS/CV/03/CM");
+                    }
+                    if (subjectname.getText() == ("Building construction")) {
+                        toast();
+                        download("IN/HS/CV/03/BC");
+                    }
+                    if (subjectname.getText() == ("Civil engineering drawing-1")) {
+                        toast();
+                        download("IN/HS/CV/03/G1");
+                    }
+                    if (subjectname.getText() == ("Structural mechanics")) {
+                        toast();
+                        if(globalClass.getSemester()==3)
+                        download("IN/HS/CV/03/SS");
+                        if(globalClass.getSemester()==4)
+                            download("IN/HS/CV/04/SS");
+                    }
+
+                    if (subjectname.getText() == ("Concrete technology")) {
+                        toast();
+                        download("IN/HS/CV/04/CT");
+                    }
+                    if (subjectname.getText() == ("Water supply and waste water management")) {
+                        toast();
+                        download("IN/HS/CV/04/WM");
+                    }
+                    if (subjectname.getText() == ("Irrigation engineering")) {
+                        toast();
+                        if(globalClass.getSemester()==4)
+                        download("IN/HS/CV/04/IG");
+                        if(globalClass.getSemester()==5)
+                            download("IN/HS/CV/05/IG");
+                    }
+                    if (subjectname.getText() == ("Rcc design")) {
+                        toast();
+                        if(globalClass.getSemester()==4)
+                        download("IN/HS/CV/04/RD");
+                        if(globalClass.getSemester()==5)
+                            download("IN/HS/CV/05/RD");
+                    }
+                    if (subjectname.getText() == ("Surveying-2")) {
+                        toast();
+                        download("IN/HS/CV/04/Y2");
+                    }
+                    if (subjectname.getText() == ("Street structure design")) {
+                        toast();
+                        download("IN/HS/CV/05/SD");
+                    }
+                    if (subjectname.getText() == ("Highway engineering")) {
+                        toast();
+                        download("IN/HS/CV/05/HE");
+                    }
+                    if (subjectname.getText() == ("Soil and foundation engineering")) {
+                        toast();
+                        download("IN/HS/CV/05/SE");
+                    }
+
+                    if (subjectname.getText() == ("Earthquake resistant building construction")) {
+                        toast();
+                        download("IN/HS/CV/06/EC");
+                    }
+                    if (subjectname.getText() == ("Railways bridges and tunnels")) {
+                        toast();
+                        download("IN/HS/CV/06/RT");
+                    }
+                    if (subjectname.getText() == ("Quantity surveying and valuation")) {
+                        toast();
+                        download("IN/HS/CV/06/QV");
+                    }
+                    if (subjectname.getText() == ("Construction management and accounts")) {
+                        toast();
+                        download("IN/HS/CV/06/CD");
+                    }
+                    if (subjectname.getText() == ("Repair and maintenance of building")) {
+                        toast();
+                        download("IN/HS/CV/06/CB");
+                    }
+                    if (subjectname.getText() == ("Prestressed concrete")) {
+                        toast();
+                        download("IN/HS/CV/06/PC");
+                    }
+
+
 
                 }
             }

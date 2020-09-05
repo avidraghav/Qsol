@@ -10,7 +10,15 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="HS_CO_subjectlists.Co_secondsem_subjectlist"></activity>
+        <activity android:name="HS_CV_subjectlists.Cv_sixthsem_subjectlist"></activity>
+        <activity android:name="HS_CV_subjectlists.Cv_fifthsem_subjectlist" />
+        <activity android:name="HS_CV_subjectlists.Cv_fourthsem_subjectlist" />
+        <activity android:name="HS_CV_subjectlists.Cv_thirdsem_subjectlist" />
+        <activity android:name="HS_ELE_subjectlists.Ele_sixthsem_subjectlist" />
+        <activity android:name="HS_ELE_subjectlists.Ele_fifthsem_subjectlist" />
+        <activity android:name="HS_ELE_subjectlists.Ele_fourthsem_subjectlist" />
+        <activity android:name="HS_ELE_subjectlists.Ele_thirdsem_subjectlist" />
+        <activity android:name="HS_CO_subjectlists.Co_secondsem_subjectlist" />
         <activity android:name="HS_CO_subjectlists.Co_firstsem_subjectlist" />
         <activity android:name="HS_ME_subjectlists.Me_sixthsem_subjectlist" />
         <activity android:name="HS_ME_subjectlists.Me_fifthsem_subjectlist" />
