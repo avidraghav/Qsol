@@ -191,8 +191,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     public void website(View view) {
-        Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.kuk.ac.in/"));
-        startActivity(Browserintent);
+       startActivity(new Intent(MainActivity.this,Websites.class));
     }
     public void checkConnection() {
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);

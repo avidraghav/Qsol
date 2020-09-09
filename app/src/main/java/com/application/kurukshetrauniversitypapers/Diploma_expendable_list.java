@@ -51,8 +51,8 @@ public class Diploma_expendable_list extends AppCompatActivity {
     List<String> branch;
     Map<String, List<String>> semester;
     ExpandableListAdapter listAdapter;
-    int common01,common02,cs03,cs04,cs05,cs06,ec03,ec04,ec05,ec06,cv03,cv04,cv05,cv06,el03,el05,el04,el06,me03,me04,me05,me06,dm03,dm04,dm05,dm06;
-    int total_cse,total_ece,total_it,total_el,total_me,total_cv;
+    int common01,common02,cs03,cs04,cs05,cs06,ec03,ec04,ec05,ec06,cv03,cv04,cv05,cv06,el03,el05,el04,el06,me03,me04,me05,me06,ml01,ml04,ml02,ml03;
+    int total_cse,total_ece,total_ml,total_el,total_me,total_cv;
     DatabaseReference ref1;
     TextView textView;
 
@@ -1147,6 +1147,188 @@ public class Diploma_expendable_list extends AppCompatActivity {
 
             }
         });
+
+        // MLT paper count
+        ref1=FirebaseDatabase.getInstance().getReference("IN/HS/ML/01");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("BY")) {
+                    ml01=ml01+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("O1")) {
+                    ml01=ml01+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("R1")) {
+                    ml01=ml01+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("Z1")) {
+                    ml01=ml01+(int)dataSnapshot.getChildrenCount();
+                }
+
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        ref1=FirebaseDatabase.getInstance().getReference("IN/HS/ML/02");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+//
+                if(dataSnapshot.getKey().equals("A2")) {
+                    ml02=ml02+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("O2")) {
+                    ml02=ml02+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("OY")) {
+                    ml02=ml02+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("R2")) {
+                    ml02=ml02+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("Z2")) {
+                    ml02=ml02+(int)dataSnapshot.getChildrenCount();
+                }
+
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        ref1=FirebaseDatabase.getInstance().getReference("IN/HS/ML/03");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("O3")) {
+                    ml03=ml03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("TN")) {
+                    ml03=ml03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("X1")) {
+                    ml03=ml03+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("Z3")) {
+                    ml03=ml03+(int)dataSnapshot.getChildrenCount();
+                }
+
+                filldata();
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        ref1=FirebaseDatabase.getInstance().getReference("IN/HS/ML/04");
+        ref1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if(dataSnapshot.getKey().equals("EV")) {
+                    ml04=ml04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("MN")) {
+                    ml04=ml04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("O4")) {
+                    ml04=ml04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("R4")) {
+                    ml04=ml04+(int)dataSnapshot.getChildrenCount();
+                }
+                if(dataSnapshot.getKey().equals("X2")) {
+                    ml04=ml04+(int)dataSnapshot.getChildrenCount();
+                }
+                filldata();
+                total_ml=ml01+ml02+ml03+ml04;
+                listAdapter=new MyExListAdapter(getBaseContext(),branch,semester);
+                expandableListView.setAdapter(listAdapter);
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
        
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1328,6 +1510,29 @@ public class Diploma_expendable_list extends AppCompatActivity {
                     startActivity(i);
                 }
 
+                if((groupPosition)==5  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+ml01+")")) {
+                    Intent i=new Intent(getBaseContext(),HS_ML_subjectlists.Ml_firstsem_subjectlist.class);
+                    i.putExtra("key", "MLT 1st semester");
+                    startActivity(i);
+                }
+                if((groupPosition)==5  && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+ml02+")")) {
+                    Intent i=new Intent(getBaseContext(),HS_ML_subjectlists.Ml_secondsem_subjectlist.class);
+                    i.putExtra("key", "MLT 2nd semester");
+                    startActivity(i);
+                }
+                if((groupPosition)==5 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+ml03+")")) {
+                    Intent i=new Intent(getBaseContext(), HS_ML_subjectlists.Ml_thirdsem_subjectlist.class);
+                    i.putExtra("key", "MLT 3rd semester");
+                    startActivity(i);
+                }
+                if((groupPosition)==5 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+ml04+")")) {
+                    Intent i=new Intent(getBaseContext(),HS_ML_subjectlists.Ml_fourthsem_subjectlist.class);
+                    i.putExtra("key", "MLT 4th semester");
+                    startActivity(i);
+                }
+
+
+
                 return false;
             }
         });
@@ -1341,12 +1546,14 @@ public class Diploma_expendable_list extends AppCompatActivity {
         branch.add("Mechanical Engineering "+"("+total_me+")");
         branch.add("Electronics and Communication Engg. "+"("+total_ece+")");
         branch.add("Electrical Engineering "+"("+total_el+")");
+        branch.add("Medical Lab Technology"+"("+total_ml+")");
 
         List<String> first=new ArrayList<>();
         List<String> second=new ArrayList<>();
         List<String> third=new ArrayList<>();
         List<String> fourth=new ArrayList<>();
         List<String> fifth=new ArrayList<>();
+        List<String> sixth=new ArrayList<>();
 
         first.add("First semester " +"("+common01+")");
         first.add("Second semester "+"("+common02+")");
@@ -1383,11 +1590,17 @@ public class Diploma_expendable_list extends AppCompatActivity {
         fifth.add("Fifth semester "+"("+el05+")");
         fifth.add("Sixth semester "+"("+el06+")");
 
+        sixth.add("First semester "+"("+ml01+")");
+        sixth.add("Second semester "+"("+ml02+")");
+        sixth.add("Third semester "+"("+ml03+")");
+        sixth.add("Fourth semester "+"("+ml04+")");
+
         semester.put(branch.get(0),first);
         semester.put(branch.get(1),second);
         semester.put(branch.get(2),third);
         semester.put(branch.get(3),fourth);
         semester.put(branch.get(4),fifth);
+        semester.put(branch.get(5),sixth);
 
     }
     @Override

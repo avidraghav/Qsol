@@ -22,7 +22,7 @@ public class PapersFragment extends Fragment {
     Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
     Button ku,dp;
     String selected_branch = "null",selected_semester = "null",semester_number="null",branch_for_intent="null";
-    String board="KU_";
+    String board="null";
     RelativeLayout ku_courses,ku_semesters,dp_courses,dp_semesters;
 
 //    ArrayAdapter<String> adapter;
@@ -89,7 +89,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Cse";
                 branch_for_intent="Computer science"; // for branches other than Cse when first or second sem is selected selected branch is
-                //setList();             // overriden to Cse
+                             // overriden to Cse
                 cse.setBackgroundResource(R.drawable.button_pressed);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -115,7 +115,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="It";
                 branch_for_intent="Information technology";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_pressed);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -139,7 +139,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Me";
                 branch_for_intent="Mechanical";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_pressed);
@@ -163,7 +163,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Ece";
                 branch_for_intent="Electronics and communication";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -187,7 +187,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Ele";
                 branch_for_intent="Electrical";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -211,7 +211,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Mba";
                 branch_for_intent="MBA";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -235,7 +235,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Bba";
                 branch_for_intent="BBA";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -259,7 +259,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Bca";
                 branch_for_intent="BCA";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -283,7 +283,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Mca";
                 branch_for_intent="MCA";
-                //setList();
+                
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -352,7 +352,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Ele";
                 branch_for_intent="Electrical"; // for branches other than Cse when first or second sem is selected selected branch is
-                //setList();             // overriden to Cse
+                             // overriden to Cse
                 dp_cse.setBackgroundResource(R.drawable.button_default);
                 dp_dmlt.setBackgroundResource(R.drawable.button_default);
                 dp_me.setBackgroundResource(R.drawable.button_default);
@@ -367,7 +367,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Ece";
                 branch_for_intent="Electronics and communication"; // for branches other than Cse when first or second sem is selected selected branch is
-                //setList();             // overriden to Cse
+                             // overriden to Cse
                 dp_cse.setBackgroundResource(R.drawable.button_default);
                 dp_dmlt.setBackgroundResource(R.drawable.button_default);
                 dp_me.setBackgroundResource(R.drawable.button_default);
@@ -382,7 +382,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Dmlt";
                 branch_for_intent="DMLT"; // for branches other than Cse when first or second sem is selected selected branch is
-                //setList();             // overriden to Cse
+                             // overriden to Cse
                 dp_cse.setBackgroundResource(R.drawable.button_default);
                 dp_dmlt.setBackgroundResource(R.drawable.button_pressed);
                 dp_me.setBackgroundResource(R.drawable.button_default);
@@ -398,7 +398,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="first";
                 semester_number="1";
-                //setList();
+                
                 first.setBackgroundResource(R.drawable.button_pressed);
                 second.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_default);
@@ -414,7 +414,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="second";
                 semester_number="2";
-                //setList();
                 first.setBackgroundResource(R.drawable.button_default);
                 second.setBackgroundResource(R.drawable.button_pressed);
                 third.setBackgroundResource(R.drawable.button_default);
@@ -430,7 +429,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="third";
                 semester_number="3";
-                //setList();
                 first.setBackgroundResource(R.drawable.button_default);
                 second.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_pressed);
@@ -446,7 +444,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="fourth";
                 semester_number="4";
-                //setList();
                 first.setBackgroundResource(R.drawable.button_default);
                 second.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_default);
@@ -463,7 +460,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="fifth";
                 semester_number="5";
-                //setList();
                 first.setBackgroundResource(R.drawable.button_default);
                 second.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_default);
@@ -479,7 +475,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="sixth";
                 semester_number="6";
-                //setList();
                 first.setBackgroundResource(R.drawable.button_default);
                 second.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_default);
@@ -495,7 +490,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="seventh";
                 semester_number="7";
-                //setList();
                 first.setBackgroundResource(R.drawable.button_default);
                 second.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_default);
@@ -512,7 +506,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="eight";
                 semester_number="8";
-                //setList();
                 first.setBackgroundResource(R.drawable.button_default);
                 second.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_default);
@@ -528,7 +521,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="first";
                 semester_number="1";
-                //setList();
                 dp_first.setBackgroundResource(R.drawable.button_pressed);
                 dp_second.setBackgroundResource(R.drawable.button_default);
                 dp_third.setBackgroundResource(R.drawable.button_default);
@@ -542,7 +534,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="second";
                 semester_number="2";
-                //setList();
                 dp_first.setBackgroundResource(R.drawable.button_default);
                 dp_second.setBackgroundResource(R.drawable.button_pressed);
                 dp_third.setBackgroundResource(R.drawable.button_default);
@@ -556,7 +547,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="third";
                 semester_number="3";
-                //setList();
                 dp_first.setBackgroundResource(R.drawable.button_default);
                 dp_second.setBackgroundResource(R.drawable.button_default);
                 dp_third.setBackgroundResource(R.drawable.button_pressed);
@@ -570,7 +560,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="fourth";
                 semester_number="4";
-                //setList();
                 dp_first.setBackgroundResource(R.drawable.button_default);
                 dp_second.setBackgroundResource(R.drawable.button_default);
                 dp_third.setBackgroundResource(R.drawable.button_default);
@@ -584,7 +573,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="fifth";
                 semester_number="5";
-                //setList();
                 dp_first.setBackgroundResource(R.drawable.button_default);
                 dp_second.setBackgroundResource(R.drawable.button_default);
                 dp_third.setBackgroundResource(R.drawable.button_default);
@@ -598,7 +586,6 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_semester="sixth";
                 semester_number="6";
-                //setList();
                 dp_first.setBackgroundResource(R.drawable.button_default);
                 dp_second.setBackgroundResource(R.drawable.button_default);
                 dp_third.setBackgroundResource(R.drawable.button_default);
@@ -611,134 +598,141 @@ public class PapersFragment extends Fragment {
         ku.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                board="KU_";
+                selected_semester="null";
+                selected_branch="null";
                 ku_courses.setVisibility(View.VISIBLE);
                 ku_semesters.setVisibility(View.VISIBLE);
                 dp_courses.setVisibility(View.GONE);
                 dp_semesters.setVisibility(View.GONE);
+                first.setBackgroundResource(R.drawable.button_default);
+                second.setBackgroundResource(R.drawable.button_default);
+                third.setBackgroundResource(R.drawable.button_default);
+                fourth.setBackgroundResource(R.drawable.button_default);
+                fifth.setBackgroundResource(R.drawable.button_default);
+                sixth.setBackgroundResource(R.drawable.button_default);
+                seventh.setBackgroundResource(R.drawable.button_default);
+                eight.setBackgroundResource(R.drawable.button_default);
+                cse.setBackgroundResource(R.drawable.button_default);
+                it.setBackgroundResource(R.drawable.button_default);
+                me.setBackgroundResource(R.drawable.button_default);
+                ec.setBackgroundResource(R.drawable.button_default);
+                ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
                 ku.setBackgroundResource(R.drawable.button_pressed);
                 dp.setBackgroundResource(R.drawable.button_default);
-                board="KU_";
+
             }
         });
         dp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                board="HS_";
+                selected_semester="null";
+                selected_branch="null";
                 ku_courses.setVisibility(View.GONE);
                 ku_semesters.setVisibility(View.GONE);
                 dp_courses.setVisibility(View.VISIBLE);
                 dp_semesters.setVisibility(View.VISIBLE);
+                dp_first.setBackgroundResource(R.drawable.button_default);
+                dp_second.setBackgroundResource(R.drawable.button_default);
+                dp_third.setBackgroundResource(R.drawable.button_default);
+                dp_fourth.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setBackgroundResource(R.drawable.button_default);
+                dp_sixth.setBackgroundResource(R.drawable.button_default);
+                dp_cse.setBackgroundResource(R.drawable.button_default);
+                dp_dmlt.setBackgroundResource(R.drawable.button_default);
+                dp_me.setBackgroundResource(R.drawable.button_default);
+                dp_ec.setBackgroundResource(R.drawable.button_default);
+                dp_ee.setBackgroundResource(R.drawable.button_default);
+                dp_cv.setBackgroundResource(R.drawable.button_default);
                 ku.setBackgroundResource(R.drawable.button_default);
                 dp.setBackgroundResource(R.drawable.button_pressed);
-                board="HS_";
+
             }
         });
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(selected_branch.equals("null") || selected_semester.equals("null"))
+                if(selected_branch.equals("null") || selected_semester.equals("null") || board.equals("null"))
                 {
-                    Toast.makeText(getActivity(), "Choose Course and semester", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Choose Board, Course and semester", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    if(selected_branch.equals("It")|| selected_branch.equals("Me")|| selected_branch.equals("Ece")|| selected_branch.equals("Ele"))
-                    {
-                        if (selected_semester.equals("first") || selected_semester.equals("second"))
-                        {
-                            selected_branch="Cse";
-                            Log.e("Selected branch",selected_branch);
-                            Intent intent = new Intent();
-                            intent.putExtra("key", branch_for_intent+" "+semester_number+"semester");
-                            intent.setClassName(getActivity(), board+selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
-                            startActivity(intent);
-                        }
-                        else
-                        {
-                            Log.e("Selected branch",selected_branch);
+                    if(board.equals("KU_")) {
+                        if (selected_branch.equals("It") || selected_branch.equals("Me") || selected_branch.equals("Ece") || selected_branch.equals("Ele")) {
+                            if (selected_semester.equals("first") || selected_semester.equals("second")) {
+                                selected_branch = "Cse";
+                                Log.e("Selected branch", selected_branch);
                                 Intent intent = new Intent();
                                 intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
-                                intent.setClassName(getActivity(), board+selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                                intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                                startActivity(intent);
+                            }
+                            else {
+                                Log.e("Selected branch", selected_branch);
+                                Intent intent = new Intent();
+                                intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                                intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
                                 startActivity(intent);
 
+                            }
                         }
-                    }
-                    else
-                    {
-                            Log.e("Selected branch",selected_branch);
+                        else {
+                            Log.e("Selected branch", selected_branch);
                             //classname = selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist";
                             Intent intent = new Intent();
                             intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
-                            intent.setClassName(getActivity(), board+selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                            intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
                             startActivity(intent);
 
+                        }
+                    }
+
+                    if(board.equals("HS_"))
+                    {
+                        if (selected_semester.equals("first") || selected_semester.equals("second") ) {
+                                selected_branch = "Co";
+                                Log.e("Selected branch", selected_branch);
+                                Intent intent = new Intent();
+                                intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                                intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                                startActivity(intent);
+                        }
+                        else {
+                            Log.e("Selected branch", selected_branch);
+                            Intent intent = new Intent();
+                            intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                            intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                            startActivity(intent);
+
+                        }
                     }
                 }
-               //startActivity(new Intent(getActivity(),selected_branch+selected_semester.class));
 
-//                Subjectcode subjectcode = new Subjectcode();
-//                subjectcode.setSubjectname(spinner.getSelectedItem().toString());
-//                if(selected_branch.equals("IT")|| selected_branch.equals("ME")|| selected_branch.equals("EC")|| selected_branch.equals("EL")){
-//                    if(selected_semester.equals("01") || selected_semester.equals("02")){
-//                        selected_branch = "CS";
-//                        Intent intent=new Intent(getActivity(), Pdflist.class);
-//                        intent.putExtra("subject","IN/KU/"+selected_branch+"/"+selected_semester+"/"+subjectcode.getcode());
-//                        startActivity(intent);
-//                    }
-//                    else {
-//                        Intent intent=new Intent(getActivity(), Pdflist.class);
-//                        intent.putExtra("subject","IN/KU/"+selected_branch+"/"+selected_semester+"/"+subjectcode.getcode());
-//                        startActivity(intent);
-//                    }
-//
-//                }
-//                else {
-//                    Intent intent=new Intent(getActivity(), Pdflist.class);
-//                    intent.putExtra("subject","IN/KU/"+selected_branch+"/"+selected_semester+"/"+subjectcode.getcode());
-//                    startActivity(intent);
-//                }
             }
         });
         return v;
                 }
 
-//    public void setList()
-//    {
-//        db = FirebaseDatabase.getInstance().getReference().child(selected_branch + selected_semester);
-//        listener=db.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                subjects.clear();
-//                for(DataSnapshot item: dataSnapshot.getChildren())
-//                {
-//                    subjects.add(item.getValue().toString());
-//                }
-//                adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//        adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, subjects);
-//        spinner.setAdapter(adapter);
-//        inflate();
-//
-//    }
-//
+
     public void setDefaultList()
     {
         ku_courses.setVisibility(View.VISIBLE);
         ku_semesters.setVisibility(View.VISIBLE);
         dp_courses.setVisibility(View.GONE);
         dp_semesters.setVisibility(View.GONE);
-        board="KU_";
-        selected_branch="Cse";
-        branch_for_intent="Computer science";
-        selected_semester="first";
-        semester_number="1";
-        ku.setBackgroundResource(R.drawable.button_pressed);
-        cse.setBackgroundResource(R.drawable.button_pressed);
-        first.setBackgroundResource(R.drawable.button_pressed);
+//        board="KU_";
+//        selected_branch="Cse";
+//        branch_for_intent="Computer science";
+//        selected_semester="first";
+//        semester_number="1";
+//        ku.setBackgroundResource(R.drawable.button_pressed);
+//        cse.setBackgroundResource(R.drawable.button_pressed);
+//        first.setBackgroundResource(R.drawable.button_pressed);
         session.setBackgroundResource(R.drawable.button_pressed);
 
     }

@@ -1527,7 +1527,10 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Environmental education")) {
                         toast();
+                        if(globalClass.getBranch().equals("ME"))
                         download("IN/HS/ME/05/EV");
+                        else
+                            download("IN/HS/ML/04/EV");
                     }
                     if (subjectname.getText() == ("Industrial engineering-1")) {
                         toast();
@@ -1790,6 +1793,83 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/HS/CV/06/PC");
                     }
+                    // mlt subjects
+                    if (subjectname.getText() == ("Basic chemistry")) {
+                        toast();
+                        download("IN/HS/ML/01/BY");
+                    }
+                    if (subjectname.getText() == ("Clinical microbiology-1")) {
+                        toast();
+                        download("IN/HS/ML/01/R1");
+                    }
+                    if (subjectname.getText() == ("Haematology-1")) {
+                        toast();
+                        download("IN/HS/ML/01/O1");
+                    }
+                    if (subjectname.getText() == ("Clinical biochemistry-1")) {
+                        toast();
+                        download("IN/HS/ML/01/Z1");
+                    }
+
+                    if (subjectname.getText() == ("Organic chemistry")) {
+                        toast();
+                        download("IN/HS/ML/02/OY");
+                    }
+                    if (subjectname.getText() == ("Anatomy and physiology-2")) {
+                        toast();
+                        download("IN/HS/ML/02/A2");
+                    }
+                    if (subjectname.getText() == ("Clinical microbiology-2")) {
+                        toast();
+                        download("IN/HS/ML/02/R2");
+                    }
+                    if (subjectname.getText() == ("Haematology-2")) {
+                        toast();
+                        download("IN/HS/ML/02/O2");
+                    }
+                    if (subjectname.getText() == ("Clinical biochemistry-2")) {
+                        toast();
+                        download("IN/HS/ML/02/Z2");
+                    }
+
+                    if (subjectname.getText() == ("Transfusion medicine")) {
+                        toast();
+                        download("IN/HS/ML/03/TN");
+                    }
+                    if (subjectname.getText() == ("Histopathology and cytology-1")) {
+                        toast();
+                        download("IN/HS/ML/03/X1");
+                    }
+                    if (subjectname.getText() == ("Haematology-3")) {
+                        toast();
+                        download("IN/HS/ML/03/O3");
+                    }
+                    if (subjectname.getText() == ("Clinical biochemistry-3")) {
+                        toast();
+                        download("IN/HS/ML/03/Z3");
+                    }
+
+                    if (subjectname.getText() == ("Clinical biochemistry-3")) {
+                        toast();
+                        download("IN/HS/ML/04/R4");
+                    }
+                    if (subjectname.getText() == ("Clinical biochemistry-3")) {
+                        toast();
+                        download("IN/HS/ML/04/O4");
+                    }
+                    if (subjectname.getText() == ("Clinical biochemistry-3")) {
+                        toast();
+                        download("IN/HS/ML/04/X2");
+                    }
+                    if (subjectname.getText() == ("Clinical biochemistry-3")) {
+                        toast();
+                        download("IN/HS/ML/04/MN");
+                    }
+
+
+
+
+
 
 
 
