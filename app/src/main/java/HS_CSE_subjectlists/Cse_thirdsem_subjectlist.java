@@ -124,27 +124,27 @@ public class Cse_thirdsem_subjectlist extends AppCompatActivity {
 
                 if(position==0) {
                     Intent intent=new Intent(Cse_thirdsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CV/03/HE");
+                    intent.putExtra("subject","IN/HS/CS/03/CI");
                     startActivity(intent);
                 }
                 if(position==1) {
                     Intent intent=new Intent(Cse_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CV/03/IG");
+                    intent.putExtra("subject","IN/HS/CS/03/DC");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Cse_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CV/03/RD");
+                    intent.putExtra("subject","IN/HS/CS/03/DE");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Cse_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CV/03/SD");
+                    intent.putExtra("subject","IN/HS/CS/03/IW");
                     startActivity(intent);
                 }
                 if(position==4) {
                     Intent intent=new Intent(Cse_thirdsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CV/03/SE");
+                    intent.putExtra("subject","IN/HS/CS/03/OS");
                     startActivity(intent);
                 }
 

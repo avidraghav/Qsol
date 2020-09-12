@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.application.kurukshetrauniversitypapers">
+    package="com.application.kurukshetrauniversitypapers" >
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".GlobalClass"
@@ -9,8 +12,12 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="HS_ML_subjectlists.Ml_fourthsem_subjectlist"></activity>
+        android:theme="@style/AppTheme" >
+        <activity android:name="HS_CSE_subjectlists.Cse_sixthsem_subjectlist" >
+        </activity>
+        <activity android:name="HS_CSE_subjectlists.Cse_fifthsem_subjectlist" />
+        <activity android:name="HS_CSE_subjectlists.Cse_fourthsem_subjectlist" />
+        <activity android:name="HS_ML_subjectlists.Ml_fourthsem_subjectlist" />
         <activity android:name="HS_ML_subjectlists.Ml_thirdsem_subjectlist" />
         <activity android:name="HS_ML_subjectlists.Ml_secondsem_subjectlist" />
         <activity android:name="HS_ML_subjectlists.Ml_firstsem_subjectlist" />
@@ -175,7 +182,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".WelcomeScreen"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -223,14 +230,11 @@
 
         <service
             android:name=".MyMessagingService"
-            android:exported="false">
+            android:exported="false" >
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

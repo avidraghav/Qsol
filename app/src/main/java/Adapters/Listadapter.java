@@ -1529,8 +1529,10 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                         toast();
                         if(globalClass.getBranch().equals("ME"))
                         download("IN/HS/ME/05/EV");
-                        else
+                        if(globalClass.getBranch().equals("ML"))
                             download("IN/HS/ML/04/EV");
+                        if(globalClass.getBranch().equals("CSE"))
+                            download("IN/HS/CS/05/EV");
                     }
                     if (subjectname.getText() == ("Industrial engineering-1")) {
                         toast();
@@ -1657,7 +1659,10 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Digital electronics")) {
                         toast();
+                        if(globalClass.getBranch().equals("ELE"))
                         download("IN/HS/EL/04/DE");
+                        if(globalClass.getBranch().equals("CSE"))
+                            download("IN/HS/CS/03/DE");
                     }
 
                     if (subjectname.getText() == ("Electrical machines-2")) {
@@ -1865,6 +1870,95 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                         toast();
                         download("IN/HS/ML/04/MN");
                     }
+                    if (subjectname.getText() == ("Basic electrical engineering")) {
+                        toast();
+                        if(globalClass.getSemester()==1)
+                        download("IN/HS/CS/01/BL");
+                        else download("IN/HS/CS/02/BL");
+                    }
+                    if (subjectname.getText() == ("Analog electronics-1")) {
+                        toast();
+                        download("IN/HS/CO/02/AX");
+                    }
+                    if (subjectname.getText() == ("Programming in C")) {
+                        toast();
+                        download("IN/HS/CO/02/PG");
+                    }
+                      // CSE SUBJECTS
+
+                    if (subjectname.getText() == ("Operating system")) {
+                        toast();
+                        download("IN/HS/CS/03/OS");
+                    }
+                    if (subjectname.getText() == ("Computer peripherals and interfacing")) {
+                        toast();
+                        download("IN/HS/CS/03/CI");
+                    }
+                    if (subjectname.getText() == ("Data communication")) {
+                        toast();
+                        download("IN/HS/CS/03/DC");
+                    }
+                    if (subjectname.getText() == ("Internet and web designing")) {
+                        toast();
+                        download("IN/HS/CS/03/IW");
+                    }
+
+                    if (subjectname.getText() == ("Data str. Using C")) {
+                        toast();
+                        download("IN/HS/CS/04/DS");
+                    }
+                    if (subjectname.getText() == ("Computer organization")) {
+                        toast();
+                        download("IN/HS/CS/04/CO");
+                    }
+                    if (subjectname.getText() == ("Data base management system")) {
+                        toast();
+                        download("IN/HS/CS/04/DB");
+                    }
+                    if (subjectname.getText() == ("Oops - c++")) {
+                        toast();
+                        download("IN/HS/CS/04/OP");
+                    }
+                    if (subjectname.getText() == ("Microprocessor and peripherals devices")) {
+                        toast();
+                        download("IN/HS/CS/04/MP");
+                    }
+
+                    if (subjectname.getText() == ("Computer networks")) {
+                        toast();
+                        download("IN/HS/CS/05/CW");
+                    }
+                    if (subjectname.getText() == ("Software engg.")) {
+                        toast();
+                        download("IN/HS/CS/05/ST");
+                    }
+                    if (subjectname.getText() == ("Relational DBMS")) {
+                        toast();
+                        download("IN/HS/CS/05/RS");
+                    }
+                    if (subjectname.getText() == ("Visual basic")) {
+                        toast();
+                        download("IN/HS/CS/05/VB");
+                    }
+                    if (subjectname.getText() == ("PHP")) {
+                        toast();
+                        download("IN/HS/CS/05/PH");
+                    }
+                    if (subjectname.getText() == ("Network security")) {
+                        toast();
+                        download("IN/HS/CS/06/NS");
+                    }
+                    if (subjectname.getText() == ("Distributed computing")) {
+                        toast();
+                        download("IN/HS/CS/06/DG");
+                    }
+                    if (subjectname.getText() == ("Programming in Java")) {
+                        toast();
+                        download("IN/HS/CS/06/PJ");
+                    }
+
+
+
 
 
 

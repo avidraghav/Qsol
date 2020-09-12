@@ -47,11 +47,12 @@
                 android:id="@+id/dp"
                 android:layout_width="170dp"
                 android:layout_height="35dp"
+                android:layout_below="@id/txt_board"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="10dp"
-                android:layout_below="@id/txt_board"
                 android:background="@drawable/button_default"
                 android:text="Diploma Haryana State"
+                android:singleLine="true"
                 android:textAllCaps="false" />
         </RelativeLayout>
     </RelativeLayout>
@@ -279,7 +280,7 @@
                 android:layout_marginTop="4dp"
                 android:singleLine="true"
                 android:background="@drawable/button_default"
-                android:text="DMLT"
+                android:text="MLT"
                 android:textAllCaps="false" />
             <Button
                 android:id="@+id/dp_ec"

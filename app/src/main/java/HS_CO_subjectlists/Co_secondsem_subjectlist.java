@@ -62,15 +62,25 @@ public class Co_secondsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
+                if(dataSnapshot.getKey().equals("AX")) {
+                    me_fourpapercount1=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Analog electronics-1", me_fourpapercount1+""));
+                }
+                if(dataSnapshot.getKey().equals("PG")) {
+                    me_fourpapercount1=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Programming in C", me_fourpapercount1+""));
+                }
+                if(dataSnapshot.getKey().equals("BL")) {
+                    me_fourpapercount1=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Basic electrical engineering", me_fourpapercount1+""));
+                }
                 if(dataSnapshot.getKey().equals("S2")) {
                     me_fourpapercount1=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Communication skills-2", me_fourpapercount1+""));
-
                 }
                 if(dataSnapshot.getKey().equals("M2")) {
                     me_fourpapercount5=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Applied mathematics-2", me_fourpapercount5+""));
-
                 }
                 if(dataSnapshot.getKey().equals("P2")) {
                     me_fourpapercount2=(int)dataSnapshot.getChildrenCount();
@@ -128,29 +138,45 @@ public class Co_secondsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CO/02/C2");
+                    intent.putExtra("subject","IN/HS/CO/02/AX");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CO/02/D2");
+                    intent.putExtra("subject","IN/HS/CO/02/BL");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CO/02/M2");
+                    intent.putExtra("subject","IN/HS/CO/02/C2");
                     startActivity(intent);
                 }
                 if(position==4) {
                     Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/HS/CO/02/P2");
+                    intent.putExtra("subject","IN/HS/CO/02/D2");
                     startActivity(intent);
                 }
                 if(position==5) {
                     Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/HS/CO/02/M2");
+                    startActivity(intent);
+                }
+                if(position==6) {
+                    Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/HS/CO/02/P2");
+                    startActivity(intent);
+                }
+                if(position==7) {
+                    Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/HS/CO/02/PG");
+                    startActivity(intent);
+                }
+                if(position==8) {
+                    Intent intent=new Intent(Co_secondsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/HS/CO/02/S2");
                     startActivity(intent);
                 }
+
 
 
             }

@@ -314,6 +314,8 @@ public class PapersFragment extends Fragment {
                 dp_ec.setBackgroundResource(R.drawable.button_default);
                 dp_ee.setBackgroundResource(R.drawable.button_default);
                 dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
                 Log.e("branch",selected_branch);
 
             }
@@ -329,6 +331,8 @@ public class PapersFragment extends Fragment {
                 dp_ec.setBackgroundResource(R.drawable.button_default);
                 dp_ee.setBackgroundResource(R.drawable.button_default);
                 dp_cv.setBackgroundResource(R.drawable.button_pressed);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
                 Log.e("branch",selected_branch);
 
             }
@@ -344,6 +348,8 @@ public class PapersFragment extends Fragment {
                 dp_ec.setBackgroundResource(R.drawable.button_default);
                 dp_ee.setBackgroundResource(R.drawable.button_default);
                 dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
                 Log.e("branch",selected_branch);
 
             }
@@ -359,6 +365,8 @@ public class PapersFragment extends Fragment {
                 dp_ec.setBackgroundResource(R.drawable.button_default);
                 dp_ee.setBackgroundResource(R.drawable.button_pressed);
                 dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
                 Log.e("branch",selected_branch);
 
             }
@@ -374,14 +382,16 @@ public class PapersFragment extends Fragment {
                 dp_ec.setBackgroundResource(R.drawable.button_pressed);
                 dp_ee.setBackgroundResource(R.drawable.button_default);
                 dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
                 Log.e("branch",selected_branch);
 
             }
         });
         dp_dmlt.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                selected_branch="Dmlt";
-                branch_for_intent="DMLT"; // for branches other than Cse when first or second sem is selected selected branch is
+                selected_branch="Ml";
+                branch_for_intent="MLT"; // for branches other than Cse when first or second sem is selected selected branch is
                              // overriden to Cse
                 dp_cse.setBackgroundResource(R.drawable.button_default);
                 dp_dmlt.setBackgroundResource(R.drawable.button_pressed);
@@ -389,6 +399,8 @@ public class PapersFragment extends Fragment {
                 dp_ec.setBackgroundResource(R.drawable.button_default);
                 dp_ee.setBackgroundResource(R.drawable.button_default);
                 dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.GONE);
+                dp_sixth.setVisibility(View.GONE);
                 Log.e("branch",selected_branch);
 
             }
@@ -694,21 +706,35 @@ public class PapersFragment extends Fragment {
 
                     if(board.equals("HS_"))
                     {
-                        if (selected_semester.equals("first") || selected_semester.equals("second") ) {
+                        if(selected_branch.equals("Ml")){
+                            if(selected_semester.equals("fifth") || selected_semester.equals("sixth"))
+                            {
+                                Toast.makeText(getActivity(), "Please select semester", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                Log.e("Selected branch", selected_branch);
+                                Intent intent = new Intent();
+                                intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                                intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                                startActivity(intent);
+                            }
+                        }
+                        else {
+                            if (selected_semester.equals("first") || selected_semester.equals("second")) {
                                 selected_branch = "Co";
                                 Log.e("Selected branch", selected_branch);
                                 Intent intent = new Intent();
                                 intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
                                 intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
                                 startActivity(intent);
-                        }
-                        else {
-                            Log.e("Selected branch", selected_branch);
-                            Intent intent = new Intent();
-                            intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
-                            intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
-                            startActivity(intent);
+                            } else {
+                                Log.e("Selected branch", selected_branch);
+                                Intent intent = new Intent();
+                                intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                                intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                                startActivity(intent);
 
+                            }
                         }
                     }
                 }
