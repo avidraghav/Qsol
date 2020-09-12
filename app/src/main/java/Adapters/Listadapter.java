@@ -1472,6 +1472,7 @@ public class Listadapter extends ArrayAdapter<Listdata> {
 
                 }
                 if(globalClass.getBoard().equals("HS"))  {
+
                     Log.e("Board","HS");
                     if (subjectname.getText() == ("Strength of materials")) {
                         toast();
@@ -1533,6 +1534,8 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                             download("IN/HS/ML/04/EV");
                         if(globalClass.getBranch().equals("CSE"))
                             download("IN/HS/CS/05/EV");
+                        if(globalClass.getBranch().equals("ECE"))
+                            download("IN/HS/EC/05/EV");
                     }
                     if (subjectname.getText() == ("Industrial engineering-1")) {
                         toast();
@@ -1618,7 +1621,10 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Computer programming and application-1")) {
                         toast();
+                        if(globalClass.getBranch().equals("ELE"))
                         download("IN/HS/EL/03/N1");
+                        if(globalClass.getBranch().equals("ECE"))
+                            download("IN/HS/EC/03/N1");
                     }
                     if (subjectname.getText() == ("Fundamentals of electrical engineering")) {
                         toast();
@@ -1627,7 +1633,10 @@ public class Listadapter extends ArrayAdapter<Listdata> {
 
                     if (subjectname.getText() == ("Electrical machines-1")) {
                         toast();
+                        if(globalClass.getBranch().equals("ELE"))
                         download("IN/HS/EL/04/B1");
+                        if(globalClass.getBranch().equals("ECE"))
+                            download("IN/HS/EC/03/B1");
                     }
                     if (subjectname.getText() == ("Energy sources and management of electrical energy")) {
                         toast();
@@ -1704,7 +1713,10 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                     }
                     if (subjectname.getText() == ("Optical fibre communication")) {
                         toast();
+                        if(globalClass.getBranch().equals("ELE"))
                         download("IN/HS/EL/06/OC");
+                        if(globalClass.getBranch().equals("ECE"))
+                            download("IN/HS/EC/05/OC");
                     }
                     // civil subjects
                     if (subjectname.getText() == ("Fluid mechanics")) {
@@ -1955,6 +1967,62 @@ public class Listadapter extends ArrayAdapter<Listdata> {
                     if (subjectname.getText() == ("Programming in Java")) {
                         toast();
                         download("IN/HS/CS/06/PJ");
+                    }
+
+                    if (subjectname.getText() == ("Computer programming and application-1")) {
+                        toast();
+                        download("IN/HS/EC/03/N1");
+                    }
+                    if (subjectname.getText() == ("Principles of communication engineering")) {
+                        toast();
+                        download("IN/HS/EC/03/PZ");
+                    }
+                    if (subjectname.getText() == ("Electrical machines-1")) {
+                        toast();
+                        download("IN/HS/EC/03/B1");
+                    }
+                    if (subjectname.getText() == ("Analog electronics-2")) {
+                        toast();
+                        download("IN/HS/EC/03/AS");
+                    }
+
+                    if (subjectname.getText() == ("Network filters and transmission lines")) {
+                        toast();
+                        download("IN/HS/EC/04/NL");
+                    }
+                    if (subjectname.getText() == ("Communication systems")) {
+                        toast();
+                        download("IN/HS/EC/04/CS");
+                    }
+                    if (subjectname.getText() == ("Digital electronics-2")) {
+                        toast();
+                        download("IN/HS/EC/04/T2");
+                    }
+
+                    if (subjectname.getText() == ("Consumer electronics")) {
+                        toast();
+                        download("IN/HS/EC/05/CE");
+                    }
+                    if (subjectname.getText() == ("Microwave and radar engineering")) {
+                        toast();
+                        download("IN/HS/EC/05/MR");
+                    }
+                    if (subjectname.getText() == ("Power electronics")) {
+                        toast();
+                        download("IN/HS/EC/05/PE");
+                    }
+
+                    if (subjectname.getText() == ("Maintenance of computer systems")) {
+                        toast();
+                        download("IN/HS/EC/06/MC");
+                    }
+                    if (subjectname.getText() == ("Wireless and mobile communication")) {
+                        toast();
+                        download("IN/HS/EC/06/WC");
+                    }
+                    if (subjectname.getText() == ("Medical electronics")) {
+                        toast();
+                        download("IN/HS/EC/06/ME");
                     }
 
 
