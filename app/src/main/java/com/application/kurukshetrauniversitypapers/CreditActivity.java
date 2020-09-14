@@ -66,13 +66,13 @@ public class CreditActivity extends AppCompatActivity {
         animatorSet.start();
 
 
-//        p1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/raghav-aggarwal-74b873143/"));
-//                startActivity(Browserintent);
-//            }
-//        });
+        p1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/company/qsoltech/"));
+                startActivity(Browserintent);
+            }
+        });
         p2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

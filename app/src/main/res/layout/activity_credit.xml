@@ -43,6 +43,7 @@
        android:layout_height="wrap_content"
        android:text="Team Qsol"
        android:drawablePadding="2dp"
+       android:drawableLeft="@drawable/linkedin"
        android:textSize="20sp"
        android:textColor="@color/fontColor"
        android:background="?attr/selectableItemBackground"

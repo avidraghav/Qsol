@@ -103,7 +103,6 @@
         android:layout_below="@id/board"
         >
         <RelativeLayout
-            android:visibility="gone"
             android:id="@+id/sy_ku_courses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -218,6 +217,7 @@
                 android:textAllCaps="false" />
         </RelativeLayout>
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/sy_dp_courses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

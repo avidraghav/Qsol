@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +30,7 @@ public class SyllabusFragment extends Fragment {
     Button cse_syl,it_syl,me_syl,ee_syl,ec_syl,mb_syl,bb_syl,bc_syl,mc_syl,first_syl,second_syl,third_syl,fourth_syl,fifth_syl,sixth_syl,seventh_syl,eight_syl,session;
     Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
     Button ku,dp;
+    String board;
     String selected_branch_syllabus,selected_semester_syllabus;
     DatabaseReference databaseReference;
     ArrayList<String> subjects;
@@ -92,7 +94,7 @@ public class SyllabusFragment extends Fragment {
         cse_syl.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 selected_branch_syllabus="CS";
-
+                kuBoard();
                 cse_syl.setBackgroundResource(R.drawable.button_pressed);
                 it_syl.setBackgroundResource(R.drawable.button_default);
                 me_syl.setBackgroundResource(R.drawable.button_default);
@@ -114,6 +116,7 @@ public class SyllabusFragment extends Fragment {
         it_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                kuBoard();
                 selected_branch_syllabus="IT";
 
                 cse_syl.setBackgroundResource(R.drawable.button_default);
@@ -136,6 +139,7 @@ public class SyllabusFragment extends Fragment {
         me_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                kuBoard();
                 selected_branch_syllabus="ME";
 
                 cse_syl.setBackgroundResource(R.drawable.button_default);
@@ -158,6 +162,7 @@ public class SyllabusFragment extends Fragment {
         ec_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                kuBoard();
                 selected_branch_syllabus="EC";
 
                 cse_syl.setBackgroundResource(R.drawable.button_default);
@@ -180,6 +185,7 @@ public class SyllabusFragment extends Fragment {
         ee_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                kuBoard();
                 selected_branch_syllabus="EL";
 
                 cse_syl.setBackgroundResource(R.drawable.button_default);
@@ -203,7 +209,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_branch_syllabus="MB";
-                //setList();
+                kuBoard();
                 cse_syl.setBackgroundResource(R.drawable.button_default);
                 it_syl.setBackgroundResource(R.drawable.button_default);
                 me_syl.setBackgroundResource(R.drawable.button_default);
@@ -226,8 +232,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_branch_syllabus="BB";
-
-                //setList();
+                kuBoard();
                 cse_syl.setBackgroundResource(R.drawable.button_default);
                 it_syl.setBackgroundResource(R.drawable.button_default);
                 me_syl.setBackgroundResource(R.drawable.button_default);
@@ -249,9 +254,8 @@ public class SyllabusFragment extends Fragment {
         bc_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                kuBoard();
                 selected_branch_syllabus="BC";
-
-                //setList();
                 cse_syl.setBackgroundResource(R.drawable.button_default);
                 it_syl.setBackgroundResource(R.drawable.button_default);
                 me_syl.setBackgroundResource(R.drawable.button_default);
@@ -273,9 +277,8 @@ public class SyllabusFragment extends Fragment {
         mc_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                kuBoard();
                 selected_branch_syllabus="MC";
-
-                //setList();
                 cse_syl.setBackgroundResource(R.drawable.button_default);
                 it_syl.setBackgroundResource(R.drawable.button_default);
                 me_syl.setBackgroundResource(R.drawable.button_default);
@@ -294,12 +297,100 @@ public class SyllabusFragment extends Fragment {
                 Log.e("branch",selected_branch_syllabus);
             }
         });
+        dp_cse.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                selected_branch_syllabus="CS";
+                hsBoard();
+                dp_cse.setBackgroundResource(R.drawable.button_pressed);
+                dp_dmlt.setBackgroundResource(R.drawable.button_default);
+                dp_me.setBackgroundResource(R.drawable.button_default);
+                dp_ec.setBackgroundResource(R.drawable.button_default);
+                dp_ee.setBackgroundResource(R.drawable.button_default);
+                dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        dp_cv.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                hsBoard();
+                selected_branch_syllabus="CV";
+                dp_cse.setBackgroundResource(R.drawable.button_default);
+                dp_dmlt.setBackgroundResource(R.drawable.button_default);
+                dp_me.setBackgroundResource(R.drawable.button_default);
+                dp_ec.setBackgroundResource(R.drawable.button_default);
+                dp_ee.setBackgroundResource(R.drawable.button_default);
+                dp_cv.setBackgroundResource(R.drawable.button_pressed);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        dp_me.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                hsBoard();
+                selected_branch_syllabus="ME";
+                dp_cse.setBackgroundResource(R.drawable.button_default);
+                dp_dmlt.setBackgroundResource(R.drawable.button_default);
+                dp_me.setBackgroundResource(R.drawable.button_pressed);
+                dp_ec.setBackgroundResource(R.drawable.button_default);
+                dp_ee.setBackgroundResource(R.drawable.button_default);
+                dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
+            }
+        });
+        dp_ee.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                hsBoard();
+                selected_branch_syllabus="EL";
+                dp_cse.setBackgroundResource(R.drawable.button_default);
+                dp_dmlt.setBackgroundResource(R.drawable.button_default);
+                dp_me.setBackgroundResource(R.drawable.button_default);
+                dp_ec.setBackgroundResource(R.drawable.button_default);
+                dp_ee.setBackgroundResource(R.drawable.button_pressed);
+                dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
+            }
+        });
+        dp_ec.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                hsBoard();
+                selected_branch_syllabus="EC";
+                dp_cse.setBackgroundResource(R.drawable.button_default);
+                dp_dmlt.setBackgroundResource(R.drawable.button_default);
+                dp_me.setBackgroundResource(R.drawable.button_default);
+                dp_ec.setBackgroundResource(R.drawable.button_pressed);
+                dp_ee.setBackgroundResource(R.drawable.button_default);
+                dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.VISIBLE);
+                dp_sixth.setVisibility(View.VISIBLE);
+            }
+        });
+        dp_dmlt.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                hsBoard();
+                selected_branch_syllabus="ML";
+                dp_cse.setBackgroundResource(R.drawable.button_default);
+                dp_dmlt.setBackgroundResource(R.drawable.button_pressed);
+                dp_me.setBackgroundResource(R.drawable.button_default);
+                dp_ec.setBackgroundResource(R.drawable.button_default);
+                dp_ee.setBackgroundResource(R.drawable.button_default);
+                dp_cv.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setVisibility(View.GONE);
+                dp_sixth.setVisibility(View.GONE);
+            }
+        });
 
         first_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus = "01";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_pressed);
                 second_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setBackgroundResource(R.drawable.button_default);
@@ -314,7 +405,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus="02";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_default);
                 second_syl.setBackgroundResource(R.drawable.button_pressed);
                 third_syl.setBackgroundResource(R.drawable.button_default);
@@ -329,7 +420,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus="03";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_default);
                 second_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setBackgroundResource(R.drawable.button_pressed);
@@ -344,7 +435,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus="04";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_default);
                 second_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setBackgroundResource(R.drawable.button_default);
@@ -360,7 +451,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus="05";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_default);
                 second_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setBackgroundResource(R.drawable.button_default);
@@ -375,7 +466,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus="06";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_default);
                 second_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setBackgroundResource(R.drawable.button_default);
@@ -390,7 +481,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus="07";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_default);
                 second_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setBackgroundResource(R.drawable.button_default);
@@ -406,7 +497,7 @@ public class SyllabusFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 selected_semester_syllabus="08";
-
+                kuBoard();
                 first_syl.setBackgroundResource(R.drawable.button_default);
                 second_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setBackgroundResource(R.drawable.button_default);
@@ -417,30 +508,173 @@ public class SyllabusFragment extends Fragment {
                 eight_syl.setBackgroundResource(R.drawable.button_pressed);
             }
         });
+        dp_first.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester_syllabus="01";
+                hsBoard();
+                dp_first.setBackgroundResource(R.drawable.button_pressed);
+                dp_second.setBackgroundResource(R.drawable.button_default);
+                dp_third.setBackgroundResource(R.drawable.button_default);
+                dp_fourth.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setBackgroundResource(R.drawable.button_default);
+                dp_sixth.setBackgroundResource(R.drawable.button_default);
+            }
+        });
+        dp_second.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester_syllabus="02";
+                hsBoard();
+                dp_first.setBackgroundResource(R.drawable.button_default);
+                dp_second.setBackgroundResource(R.drawable.button_pressed);
+                dp_third.setBackgroundResource(R.drawable.button_default);
+                dp_fourth.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setBackgroundResource(R.drawable.button_default);
+                dp_sixth.setBackgroundResource(R.drawable.button_default);
+            }
+        });
+        dp_third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester_syllabus="03";
+                hsBoard();
+                dp_first.setBackgroundResource(R.drawable.button_default);
+                dp_second.setBackgroundResource(R.drawable.button_default);
+                dp_third.setBackgroundResource(R.drawable.button_pressed);
+                dp_fourth.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setBackgroundResource(R.drawable.button_default);
+                dp_sixth.setBackgroundResource(R.drawable.button_default);
+            }
+        });
+        dp_fourth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester_syllabus="04";
+                hsBoard();
+                dp_first.setBackgroundResource(R.drawable.button_default);
+                dp_second.setBackgroundResource(R.drawable.button_default);
+                dp_third.setBackgroundResource(R.drawable.button_default);
+                dp_fourth.setBackgroundResource(R.drawable.button_pressed);
+                dp_fifth.setBackgroundResource(R.drawable.button_default);
+                dp_sixth.setBackgroundResource(R.drawable.button_default);
+            }
+        });
+        dp_fifth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester_syllabus="05";
+                hsBoard();
+                dp_first.setBackgroundResource(R.drawable.button_default);
+                dp_second.setBackgroundResource(R.drawable.button_default);
+                dp_third.setBackgroundResource(R.drawable.button_default);
+                dp_fourth.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setBackgroundResource(R.drawable.button_pressed);
+                dp_sixth.setBackgroundResource(R.drawable.button_default);
+            }
+        });
+        dp_sixth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester_syllabus="06";
+                hsBoard();
+                dp_first.setBackgroundResource(R.drawable.button_default);
+                dp_second.setBackgroundResource(R.drawable.button_default);
+                dp_third.setBackgroundResource(R.drawable.button_default);
+                dp_fourth.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setBackgroundResource(R.drawable.button_default);
+                dp_sixth.setBackgroundResource(R.drawable.button_pressed);
+            }
+        });
+        ku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                board="KU_";
+                selected_semester_syllabus="null";
+                selected_branch_syllabus="null";
+                ku_courses.setVisibility(View.VISIBLE);
+                ku_semesters.setVisibility(View.VISIBLE);
+                dp_courses.setVisibility(View.GONE);
+                dp_semesters.setVisibility(View.GONE);
+                first_syl.setBackgroundResource(R.drawable.button_default);
+                second_syl.setBackgroundResource(R.drawable.button_default);
+                third_syl.setBackgroundResource(R.drawable.button_default);
+                fourth_syl.setBackgroundResource(R.drawable.button_default);
+                fifth_syl.setBackgroundResource(R.drawable.button_default);
+                sixth_syl.setBackgroundResource(R.drawable.button_default);
+                seventh_syl.setBackgroundResource(R.drawable.button_default);
+                eight_syl.setBackgroundResource(R.drawable.button_default);
+                cse_syl.setBackgroundResource(R.drawable.button_default);
+                it_syl.setBackgroundResource(R.drawable.button_default);
+                me_syl.setBackgroundResource(R.drawable.button_default);
+                ec_syl.setBackgroundResource(R.drawable.button_default);
+                ee_syl.setBackgroundResource(R.drawable.button_default);
+                mb_syl.setBackgroundResource(R.drawable.button_default);
+                bb_syl.setBackgroundResource(R.drawable.button_default);
+                bc_syl.setBackgroundResource(R.drawable.button_default);
+                mc_syl.setBackgroundResource(R.drawable.button_default);
+                ku.setBackgroundResource(R.drawable.button_pressed);
+                dp.setBackgroundResource(R.drawable.button_default);
+
+            }
+        });
+        dp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                board="HS_";
+                selected_semester_syllabus="null";
+                selected_branch_syllabus="null";
+                ku_courses.setVisibility(View.GONE);
+                ku_semesters.setVisibility(View.GONE);
+                dp_courses.setVisibility(View.VISIBLE);
+                dp_semesters.setVisibility(View.VISIBLE);
+                dp_first.setBackgroundResource(R.drawable.button_default);
+                dp_second.setBackgroundResource(R.drawable.button_default);
+                dp_third.setBackgroundResource(R.drawable.button_default);
+                dp_fourth.setBackgroundResource(R.drawable.button_default);
+                dp_fifth.setBackgroundResource(R.drawable.button_default);
+                dp_sixth.setBackgroundResource(R.drawable.button_default);
+                dp_cse.setBackgroundResource(R.drawable.button_default);
+                dp_dmlt.setBackgroundResource(R.drawable.button_default);
+                dp_me.setBackgroundResource(R.drawable.button_default);
+                dp_ec.setBackgroundResource(R.drawable.button_default);
+                dp_ee.setBackgroundResource(R.drawable.button_default);
+                dp_cv.setBackgroundResource(R.drawable.button_default);
+                ku.setBackgroundResource(R.drawable.button_default);
+                dp.setBackgroundResource(R.drawable.button_pressed);
+
+            }
+        });
 
         search_syl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-                singleDownloadClass.setBranch(selected_branch_syllabus);
-                singleDownloadClass.setSemester(selected_semester_syllabus);
-                databaseReference = FirebaseDatabase.getInstance().getReference("IN/KU/" + selected_branch_syllabus + "/" + selected_semester_syllabus + "/" + "Syllabus");
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        uploadPDFS.clear();
-                        for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
-                            uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
-                            uploadPDFS.add(uploadPDF);
+                if (selected_semester_syllabus.equals("null") || selected_branch_syllabus.equals("null")) {
+                    Toast.makeText(getActivity(), "Select branch and semester", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
+                    singleDownloadClass.setBranch(selected_branch_syllabus);
+                    singleDownloadClass.setSemester(selected_semester_syllabus);
+                    databaseReference = FirebaseDatabase.getInstance().getReference("IN/" + board + "/" + selected_branch_syllabus + "/" + selected_semester_syllabus + "/" + "Syllabus");
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            uploadPDFS.clear();
+                            for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
+                                uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
+                                uploadPDFS.add(uploadPDF);
+                            }
+                            SyllabusAdapter adapter = new SyllabusAdapter(getActivity(), uploadPDFS);
+                            listView.setAdapter(adapter);
                         }
-                        SyllabusAdapter adapter = new SyllabusAdapter(getActivity(), uploadPDFS);
-                        listView.setAdapter(adapter);
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+                }
             }
         });
         
@@ -477,30 +711,16 @@ public class SyllabusFragment extends Fragment {
     {
         selected_branch_syllabus="CS";
         selected_semester_syllabus="01";
+        board="KU";
         cse_syl.setBackgroundResource(R.drawable.button_pressed);
         first_syl.setBackgroundResource(R.drawable.button_pressed);
         session.setBackgroundResource(R.drawable.button_pressed);
-
-//        SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-//        singleDownloadClass.setBranch(selected_branch_syllabus);
-//        singleDownloadClass.setSemester(selected_semester);
-//        databaseReference = FirebaseDatabase.getInstance().getReference("IN/KU/" + selected_branch_syllabus + "/" + selected_semester + "/" + "Syllabus");
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                uploadPDFS.clear();
-//                for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
-//                    uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
-//                    uploadPDFS.add(uploadPDF);
-//                }
-//
-//                SyllabusAdapter adapter = new SyllabusAdapter(getActivity(), uploadPDFS);
-//                listView.setAdapter(adapter);
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
+        ku.setBackgroundResource(R.drawable.button_pressed);
+    }
+    public void kuBoard(){
+        board="KU";
+    }
+    public void hsBoard(){
+        board="HS";
     }
 }

@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else
-            total_papers.setText("1074");
+            total_papers.setText("1542");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     public void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 1074);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 1542);
         animator.setDuration(2000);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -228,13 +228,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.quick:
                 startActivity(new Intent(MainActivity.this,Filters.class));
                 break;
-//            case R.id.contri:
-//                Intent intent = new Intent(Intent.ACTION_VIEW,
-//                        Uri.parse("mailto:" + "qsol.info@gmail.com"));
-//                intent.putExtra(Intent.EXTRA_SUBJECT, "My contribution to Qsol");
-//                intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Attaching previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
-//                startActivity(intent);
-//                break;
+//
             default:
                 return super.onOptionsItemSelected(item);
 
