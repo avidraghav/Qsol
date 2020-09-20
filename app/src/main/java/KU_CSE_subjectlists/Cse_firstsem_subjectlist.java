@@ -59,8 +59,8 @@ String key;
 
          GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("KU");
-        globalClass.setBranch("CSE");
-        globalClass.setSemester(1);
+        globalClass.setBranch("CS");
+        globalClass.setSemester("01");
 
 
         subjectlist = new ArrayList<>();

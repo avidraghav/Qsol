@@ -1728,180 +1728,180 @@ public class Btech_expendable_list extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+cs01+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_firstsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_firstsem_subjectlist.class);
                     i.putExtra("key", "Computer science 1st semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+cs02+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_secondsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_secondsem_subjectlist.class);
                     i.putExtra("key", "Computer science 2nd semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester " +"("+cs03+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_thirdsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_thirdsem_subjectlist.class);
                     i.putExtra("key", "Computer science 3rd semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester " +"("+cs04+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_fourthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_fourthsem_subjectlist.class);
                     i.putExtra("key", "Computer science 4th semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester " +"("+cs05+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_fifthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_fifthsem_subjectlist.class);
                     i.putExtra("key", "Computer science 5th semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester " +"("+cs06+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_sixthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_sixthsem_subjectlist.class);
                     i.putExtra("key", "Computer science 6th semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Seventh semester " +"("+cs07+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_seventhsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_seventhsem_subjectlist.class);
                     i.putExtra("key", "Computer science 7th semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
                 if((groupPosition)==0 && listAdapter.getChild(groupPosition,childPosition).equals("Eight semester " +"("+cs08+")")) {
-                    Intent i=new Intent(getBaseContext(), Cse_eightsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_CSE_subjectlists.Cse_eightsem_subjectlist.class);
                     i.putExtra("key", "Computer science 8th semester");
                     startActivity(i);
                     Toast.makeText(Btech_expendable_list.this, "Loading", Toast.LENGTH_SHORT).show();
                 }
 
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+cs01+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_firstsem_subjectlist.class);
                     i.putExtra("key", "Information technology 1st semester");
                     startActivity(i);
 
 //
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+cs02+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_secondsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_secondsem_subjectlist.class);
                     i.putExtra("key", "Information technology 2nd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+it03+")")) {
-                    Intent i=new Intent(getBaseContext(), It_thirdsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_IT_subjectlists.It_thirdsem_subjectlist.class);
                     i.putExtra("key", "Information technology 3rd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+it04+")")) {
-                    Intent i=new Intent(getBaseContext(), It_fourthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_IT_subjectlists.It_fourthsem_subjectlist.class);
                     i.putExtra("key", "Information technology 4th semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+it05+")")) {
-                    Intent i=new Intent(getBaseContext(), It_fifthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_IT_subjectlists.It_fifthsem_subjectlist.class);
                     i.putExtra("key", "Information technology 5th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+it06+")")) {
-                    Intent i=new Intent(getBaseContext(), It_sixthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_IT_subjectlists.It_sixthsem_subjectlist.class);
                     i.putExtra("key", "Information technology 6th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Seventh semester "+"("+it07+")")) {
-                    Intent i=new Intent(getBaseContext(), It_seventhsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_IT_subjectlists.It_seventhsem_subjectlist.class);
                     i.putExtra("key", "Information technology 7th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==1 && listAdapter.getChild(groupPosition,childPosition).equals("Eight semester "+"("+it08+")")) {
-                    Intent i=new Intent(getBaseContext(), It_eightsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(), KU_IT_subjectlists.It_eightsem_subjectlist.class);
                     i.putExtra("key", "Information technology 8th semester");
                     startActivity(i);
                 }
 
                 if((groupPosition)==2  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+cs01+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_firstsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 1st semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==2  && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+cs02+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_secondsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_secondsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 2nd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+me03+")")) {
-                    Intent i=new Intent(getBaseContext(),Me_thirdsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ME_subjectlists.Me_thirdsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 3rd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+me04+")")) {
-                    Intent i=new Intent(getBaseContext(),Me_fourthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ME_subjectlists.Me_fourthsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 4th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+me05+")")) {
-                    Intent i=new Intent(getBaseContext(),Me_fifthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ME_subjectlists.Me_fifthsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 5th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+me06+")")) {
-                    Intent i=new Intent(getBaseContext(),Me_sixthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ME_subjectlists.Me_sixthsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 6th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Seventh semester "+"("+me07+")")) {
-                    Intent i=new Intent(getBaseContext(),Me_seventhsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ME_subjectlists.Me_seventhsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 7th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==2 && listAdapter.getChild(groupPosition,childPosition).equals("Eight semester "+"("+me08+")")) {
-                    Intent i=new Intent(getBaseContext(),Me_eightsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ME_subjectlists.Me_eightsem_subjectlist.class);
                     i.putExtra("key", "Mechanical 8th semester");
                     startActivity(i);
                 }
 
                 if((groupPosition)==3  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+cs01+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_firstsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 1st semester");
                     startActivity(i);
                 }
                 if((groupPosition)==3  && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+cs02+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_secondsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_secondsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 2nd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==3 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+ec03+")")) {
-                    Intent i=new Intent(getBaseContext(),Ece_thirdsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ECE_subjectlists.Ece_thirdsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 3rd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==3 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+ec04+")")) {
-                    Intent i=new Intent(getBaseContext(),Ece_fourthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ECE_subjectlists.Ece_fourthsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 4th semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==3 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+ec05+")")) {
-                    Intent i=new Intent(getBaseContext(),Ece_fifthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ECE_subjectlists.Ece_fifthsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 5th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==3 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+ec06+")")) {
-                    Intent i=new Intent(getBaseContext(),Ece_sixthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ECE_subjectlists.Ece_sixthsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 6th semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==3 && listAdapter.getChild(groupPosition,childPosition).equals("Seventh semester "+"("+ec07+")")) {
-                    Intent i=new Intent(getBaseContext(),Ece_seventhsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ECE_subjectlists.Ece_seventhsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 7th semester");
                     startActivity(i);
 
                 }
                 if((groupPosition)==3 && listAdapter.getChild(groupPosition,childPosition).equals("Eight semester "+"("+ec08+")")) {
-                    Intent i=new Intent(getBaseContext(),Ece_eightsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ECE_subjectlists.Ece_eightsem_subjectlist.class);
                     i.putExtra("key", "Electronics and comm. 8th semester");
                     startActivity(i);
                 }
@@ -1909,42 +1909,42 @@ public class Btech_expendable_list extends AppCompatActivity {
 
 
                 if((groupPosition)==4  && listAdapter.getChild(groupPosition,childPosition).equals("First semester " +"("+cs01+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_firstsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_firstsem_subjectlist.class);
                     i.putExtra("key", "Electrical 1st semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4  && listAdapter.getChild(groupPosition,childPosition).equals("Second semester " +"("+cs02+")")) {
-                    Intent i=new Intent(getBaseContext(),Cse_secondsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_CSE_subjectlists.Cse_secondsem_subjectlist.class);
                     i.putExtra("key", "Electrical 2nd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Third semester "+"("+el03+")")) {
-                    Intent i=new Intent(getBaseContext(),Ele_thirdsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ELE_subjectlists.Ele_thirdsem_subjectlist.class);
                     i.putExtra("key", "Electrical 3rd semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Fourth semester "+"("+el04+")")) {
-                    Intent i=new Intent(getBaseContext(),Ele_fourthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ELE_subjectlists.Ele_fourthsem_subjectlist.class);
                     i.putExtra("key", "Electrical 4th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Fifth semester "+"("+el05+")")) {
-                    Intent i=new Intent(getBaseContext(),Ele_fifthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ELE_subjectlists.Ele_fifthsem_subjectlist.class);
                     i.putExtra("key", "Electrical 5th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Sixth semester "+"("+el06+")")) {
-                    Intent i=new Intent(getBaseContext(),Ele_sixthsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ELE_subjectlists.Ele_sixthsem_subjectlist.class);
                     i.putExtra("key", "Electrical 6th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Seventh semester "+"("+el07+")")) {
-                    Intent i=new Intent(getBaseContext(),Ele_seventhsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ELE_subjectlists.Ele_seventhsem_subjectlist.class);
                     i.putExtra("key", "Electrical 7th semester");
                     startActivity(i);
                 }
                 if((groupPosition)==4 && listAdapter.getChild(groupPosition,childPosition).equals("Eight semester "+"("+el08+")")) {
-                    Intent i=new Intent(getBaseContext(),Ele_eightsem_subjectlist.class);
+                    Intent i=new Intent(getBaseContext(),KU_ELE_subjectlists.Ele_eightsem_subjectlist.class);
                     i.putExtra("key", "Electrical 8th semester");
                     startActivity(i);
                 }

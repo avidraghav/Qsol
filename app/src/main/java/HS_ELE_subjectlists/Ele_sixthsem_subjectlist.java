@@ -55,7 +55,7 @@ public class Ele_sixthsem_subjectlist extends AppCompatActivity {
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("HS");
         globalClass.setBranch("EL");
-        globalClass.setSemester(3);
+        globalClass.setSemester("06");
 
         Log.e("Bord",globalClass.getBoard());
 

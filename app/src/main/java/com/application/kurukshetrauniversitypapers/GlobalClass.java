@@ -5,7 +5,7 @@ import android.app.Application;
 public class GlobalClass extends Application {
     static String board;
     static String branch;
-    static int semester;
+    static String semester;
 
 
 
@@ -19,7 +19,7 @@ public class GlobalClass extends Application {
     public void setBoard(String board) {
         this.board = board;
     }
-    public int getSemester() {
+    public String getSemester() {
         return semester;
     }
 
@@ -27,7 +27,7 @@ public class GlobalClass extends Application {
         this.branch = branch;
     }
 
-    public void setSemester(int semester) {
+    public void setSemester(String semester) {
         this.semester = semester;
     }
 }

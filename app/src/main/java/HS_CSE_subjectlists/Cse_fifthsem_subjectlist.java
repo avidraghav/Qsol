@@ -55,7 +55,7 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("HS");
         globalClass.setBranch("CS");
-        globalClass.setSemester(4);
+        globalClass.setSemester("05");
 
         Log.e("Bord",globalClass.getBoard());
 

@@ -51,8 +51,8 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
 
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("KU");
-        globalClass.setBranch("CSE");
-        globalClass.setSemester(2);
+        globalClass.setBranch("CS");
+        globalClass.setSemester("02");
 
 
 

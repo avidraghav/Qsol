@@ -34,7 +34,7 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int me_fourpapercount1, me_fourpapercount2, me_fourpapercount3, me_fourpapercount4, me_fourpapercount5;
+    static int me_fourpapercount1, me_fourpapercount2, me_fourpapercount5;
     DatabaseReference ref;
 
     @Override
@@ -55,7 +55,7 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("HS");
         globalClass.setBranch("CS");
-        globalClass.setSemester(4);
+        globalClass.setSemester("06");
 
         Log.e("Bord",globalClass.getBoard());
 

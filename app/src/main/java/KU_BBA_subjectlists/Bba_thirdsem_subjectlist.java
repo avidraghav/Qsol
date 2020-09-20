@@ -51,8 +51,8 @@ public class Bba_thirdsem_subjectlist extends AppCompatActivity {
         textView.setText(key);
 
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
-        globalClass.setBranch("BBA");
-        globalClass.setSemester(3);
+        globalClass.setBranch("BB");
+        globalClass.setSemester("03");
         globalClass.setBoard("KU");
 
         subjectlist = new ArrayList<>();

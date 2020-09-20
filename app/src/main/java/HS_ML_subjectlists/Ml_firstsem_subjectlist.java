@@ -56,7 +56,7 @@ public class Ml_firstsem_subjectlist extends AppCompatActivity {
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("HS");
         globalClass.setBranch("ML");
-        globalClass.setSemester(1);
+        globalClass.setSemester("01");
 
         Log.e("Bord",globalClass.getBoard());
 

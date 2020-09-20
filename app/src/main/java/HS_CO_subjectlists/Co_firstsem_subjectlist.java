@@ -55,7 +55,7 @@ import Adapters.Listadapter;
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("HS");
         globalClass.setBranch("CO");
-        globalClass.setSemester(1);
+        globalClass.setSemester("01");
 
         ref= FirebaseDatabase.getInstance().getReference("IN/HS/CO/01");
         ref.addChildEventListener(new ChildEventListener() {

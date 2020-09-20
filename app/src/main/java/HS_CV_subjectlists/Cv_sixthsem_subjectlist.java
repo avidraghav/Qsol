@@ -55,7 +55,7 @@ public class Cv_sixthsem_subjectlist extends AppCompatActivity {
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("HS");
         globalClass.setBranch("CV");
-        globalClass.setSemester(6);
+        globalClass.setSemester("06");
 
         Log.e("Bord",globalClass.getBoard());
 

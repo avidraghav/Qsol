@@ -55,7 +55,7 @@ public class Ml_secondsem_subjectlist extends AppCompatActivity {
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("HS");
         globalClass.setBranch("ML");
-        globalClass.setSemester(2);
+        globalClass.setSemester("02");
 
         ref= FirebaseDatabase.getInstance().getReference("IN/HS/ML/02");
         ref.addChildEventListener(new ChildEventListener() {

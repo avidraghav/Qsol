@@ -53,8 +53,8 @@ public class Bca_secondsem_subjectlist extends AppCompatActivity {
 
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("KU");
-        globalClass.setBranch("BCA");
-        globalClass.setSemester(2);
+        globalClass.setBranch("BC");
+        globalClass.setSemester("02");
 
         subjectlist = new ArrayList<>();
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/BC/02");
