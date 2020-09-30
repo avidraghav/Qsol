@@ -1,7 +1,6 @@
 package com.application.kurukshetrauniversitypapers;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -27,10 +26,7 @@ public class Filters extends AppCompatActivity {
 
        // setSupportActionBar(toolbar);
         setupViewPager(viewPager);
-
         tabLayout.setupWithViewPager(viewPager);
-
-
 
     }
     private void setupViewPager(ViewPager viewPager)
@@ -38,8 +34,8 @@ public class Filters extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new PapersFragment(),"Papers");
         viewPagerAdapter.addFragment(new SyllabusFragment(),"Syllabus");
+        viewPagerAdapter.addFragment(new VideoFragment(),"Videos");
         viewPager.setAdapter(viewPagerAdapter);
-
     }
     @Override
     public void onBackPressed()
@@ -50,6 +46,5 @@ public class Filters extends AppCompatActivity {
         intent.putExtra("EXIT", true);
         startActivity(intent);
         finish();
-
     }
 }

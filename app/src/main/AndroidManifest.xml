@@ -10,7 +10,11 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="HS_ECE_subjectlists.Ece_fifthsem_subjectlist"></activity>
+        <activity android:name=".VideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
+            ></activity>
+        <activity android:name=".AutomataVideos" />
+        <activity android:name="HS_ECE_subjectlists.Ece_fifthsem_subjectlist" />
         <activity android:name="HS_ECE_subjectlists.Ece_sixthsem_subjectlist" />
         <activity android:name="HS_ECE_subjectlists.Ece_fourthsem_subjectlist" />
         <activity android:name="HS_ECE_subjectlists.Ece_thirdsem_subjectlist" />
@@ -237,8 +241,9 @@
         </service>
     </application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
