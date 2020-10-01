@@ -2,6 +2,8 @@
 
 ### One destination for all previous year papers of Kurukshetra university.
 
+### At Time of Prepration Student's need to practice the paper and face difficluty to collect all paper's.
+
 
 ### Features
 ```Plain
