@@ -1,6 +1,7 @@
 package Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.application.kurukshetrauniversitypapers.VideoActivity;
 import com.application.kurukshetrauniversitypapers.Videoinfo;
 import com.application.kurukshetrauniversitypapers.R;
 import com.google.firebase.auth.FirebaseAuth;
