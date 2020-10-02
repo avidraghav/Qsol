@@ -4,25 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Adapters.Listadapter;
 import Adapters.VideoAdapter2;
-import Adapters.VideoListAdapter;
-import HS_CSE_subjectlists.Cse_fifthsem_subjectlist;
+import models_youtubeapi.Apimodel;
+import models_youtubeapi.VideoYT;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -210,5 +200,6 @@ public class AutomataVideos extends AppCompatActivity {
             }
         });
     }
+
 
 }

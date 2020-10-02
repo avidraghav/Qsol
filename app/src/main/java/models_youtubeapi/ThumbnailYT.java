@@ -1,4 +1,4 @@
-package com.application.kurukshetrauniversitypapers;
+package models_youtubeapi;
 
 public class ThumbnailYT {
     private MediumThumb medium;

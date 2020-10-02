@@ -1,20 +1,24 @@
 package Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.application.kurukshetrauniversitypapers.R;
-import com.application.kurukshetrauniversitypapers.VideoYT;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import models_youtubeapi.VideoYT;
+
+import com.application.kurukshetrauniversitypapers.VideoActivity;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -33,12 +37,14 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         ImageView thumbnail;
         TextView t1,t2;
+        RelativeLayout relativeLayout;
 
         public YoutubeHolder(@NonNull View itemView) {
             super(itemView);
             thumbnail=itemView.findViewById(R.id.iv_thumbnail);
             t1=itemView.findViewById(R.id.t1);
             t2=itemView.findViewById(R.id.t2);
+            relativeLayout=itemView.findViewById(R.id.relativeLayout);
 
         }
 
@@ -49,21 +55,14 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
              t1.setText(getT1);
              t2.setText(getT2);
-            Picasso.get().load(getThumb)
-                    .placeholder(R.mipmap.ic_launcher)
-                    .fit()
-                    .centerCrop()
-                    .into(thumbnail, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            Log.d(TAG, "success" );
-                        }
 
-                        @Override
-                        public void onError(Exception e) {
-                            Log.d(TAG, "failure",e);
-                        }
-                    });
+            Glide
+                    .with(context)
+                    .load(getThumb)
+                    .centerCrop()
+                    .placeholder(R.mipmap.ic_launcher)
+                    .into(thumbnail);
+
         }
     }
     @NonNull
@@ -76,9 +75,20 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-VideoYT videoYT= videoList.get(position);
-YoutubeHolder yth = (YoutubeHolder) holder;
-yth.setData(videoYT);
+            VideoYT videoYT= videoList.get(position);
+           YoutubeHolder yth = (YoutubeHolder) holder;
+              yth.setData(videoYT);
+
+              ((YoutubeHolder) holder).relativeLayout.setOnClickListener(new View.OnClickListener() {
+                  @Override
+                  public void onClick(View view) {
+                      Intent intent=new Intent(context,VideoActivity.class);
+                      intent.putExtra("videoId","dmIfFIHnKsk");
+                      context.startActivity(intent);
+                  }
+              });
+
+
     }
 
     @Override

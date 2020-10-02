@@ -1,4 +1,6 @@
-package com.application.kurukshetrauniversitypapers;
+package models_youtubeapi;
+
+import models_youtubeapi.ThumbnailYT;
 
 public class SnippetYT {
     private String title;

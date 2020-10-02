@@ -1,8 +1,8 @@
-package com.application.kurukshetrauniversitypapers;
+package models_youtubeapi;
 
 public class VideoYT {
     private String id;
-    private  SnippetYT snippet;
+    private SnippetYT snippet;
 
     public VideoYT() {
     }
