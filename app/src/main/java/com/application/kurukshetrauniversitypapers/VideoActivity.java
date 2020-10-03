@@ -31,6 +31,7 @@ public class VideoActivity extends AppCompatActivity {
     private YouTubePlayerView youTubePlayerView;
     private FullScreenHelper fullScreenHelper = new FullScreenHelper(this);
     float currentSeconds;
+    private YouTubePlayer youTubePlayer;
 
     // a list of videos not available in some countries, to test if they're handled gracefully.
     // private String[] nonPlayableVideoIds = { "sop2V_MREEI" };
@@ -72,70 +73,117 @@ public class VideoActivity extends AppCompatActivity {
         getLifecycle().addObserver(youTubePlayerView);
 
         youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+
             @Override
-            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+            public void onReady(@NonNull YouTubePlayer player) {
+                youTubePlayer=player;
                 YouTubePlayerUtils.loadOrCueVideo(
                         youTubePlayer,
                         getLifecycle(),
                         videoid,
                         0f
                 );
-
-                youTubePlayer.addListener(new YouTubePlayerListener() {
-                    @Override
-                    public void onReady(@NotNull YouTubePlayer youTubePlayer) {
-
-                    }
-
-                    @Override
-                    public void onStateChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlayerState playerState) {
-
-                    }
-
-                    @Override
-                    public void onPlaybackQualityChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlaybackQuality playbackQuality) {
-
-                    }
-
-                    @Override
-                    public void onPlaybackRateChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlaybackRate playbackRate) {
-
-                    }
-
-                    @Override
-                    public void onError(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlayerError playerError) {
-
-                    }
-
-                    @Override
-                    public void onCurrentSecond(@NotNull YouTubePlayer youTubePlayer, float v ) {
-
-                    }
-
-                    @Override
-                    public void onVideoDuration(@NotNull YouTubePlayer youTubePlayer, float v) {
-                        currentSeconds=v;
-
-                    }
-
-                    @Override
-                    public void onVideoLoadedFraction(@NotNull YouTubePlayer youTubePlayer, float v) {
-
-                    }
-
-                    @Override
-                    public void onVideoId(@NotNull YouTubePlayer youTubePlayer, @NotNull String s) {
-
-                    }
-
-                    @Override
-                    public void onApiChange(@NotNull YouTubePlayer youTubePlayer) {
-
-                    }
-                });
+//                youTubePlayer.addListener(new YouTubePlayerListener() {
+//                    @Override
+//                    public void onReady(@NotNull YouTubePlayer youTubePlayer) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onStateChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlayerState playerState) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onPlaybackQualityChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlaybackQuality playbackQuality) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onPlaybackRateChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlaybackRate playbackRate) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onError(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlayerError playerError) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onCurrentSecond(@NotNull YouTubePlayer youTubePlayer, float v ) {
+//                        currentSeconds=v;
+//                    }
+//
+//                    @Override
+//                    public void onVideoDuration(@NotNull YouTubePlayer youTubePlayer, float v) {
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onVideoLoadedFraction(@NotNull YouTubePlayer youTubePlayer, float v) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onVideoId(@NotNull YouTubePlayer youTubePlayer, @NotNull String s) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onApiChange(@NotNull YouTubePlayer youTubePlayer) {
+//
+//                    }
+//                })
                 addFullScreenListenerToPlayer();
                 //setPlayNextVideoButtonClickListener(youTubePlayer);
             }
+            @Override
+            public void onApiChange(@NotNull YouTubePlayer youTubePlayer) {
+                super.onApiChange(youTubePlayer);
+            }
+
+            @Override
+            public void onCurrentSecond(@NotNull YouTubePlayer youTubePlayer, float second) {
+                currentSeconds = second;
+            }
+
+            @Override
+            public void onError(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlayerError error) {
+                super.onError(youTubePlayer, error);
+            }
+
+            @Override
+            public void onPlaybackQualityChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlaybackQuality playbackQuality) {
+                super.onPlaybackQualityChange(youTubePlayer, playbackQuality);
+            }
+
+            @Override
+            public void onPlaybackRateChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlaybackRate playbackRate) {
+                super.onPlaybackRateChange(youTubePlayer, playbackRate);
+            }
+
+            @Override
+            public void onStateChange(@NotNull YouTubePlayer youTubePlayer, @NotNull PlayerConstants.PlayerState state) {
+                super.onStateChange(youTubePlayer, state);
+            }
+
+            @Override
+            public void onVideoDuration(@NotNull YouTubePlayer youTubePlayer, float duration) {
+                super.onVideoDuration(youTubePlayer, duration);
+            }
+
+            @Override
+            public void onVideoId(@NotNull YouTubePlayer youTubePlayer, @NotNull String videoId) {
+                super.onVideoId(youTubePlayer, videoId);
+            }
+
+            @Override
+            public void onVideoLoadedFraction(@NotNull YouTubePlayer youTubePlayer, float loadedFraction) {
+                super.onVideoLoadedFraction(youTubePlayer, loadedFraction);
+            }
+
+
         });
     }
 
@@ -184,11 +232,11 @@ public class VideoActivity extends AppCompatActivity {
 
 
         youTubePlayerView.getPlayerUiController().setCustomAction1(customAction1Icon, view ->
-                Toast.makeText(this, " ", Toast.LENGTH_SHORT).show());
+                youTubePlayer.seekTo(currentSeconds-10));
 
 
         youTubePlayerView.getPlayerUiController().setCustomAction2(customAction2Icon, view ->
-                youTubePlayer.seekTo(currentSeconds+10)
+               youTubePlayer.seekTo(currentSeconds+10)
 
                 );
     }
