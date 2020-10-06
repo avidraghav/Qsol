@@ -6,6 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:descendantFocusability="blocksDescendants">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
     <TextView
         android:id="@+id/topicname"
         android:layout_width="wrap_content"
@@ -36,12 +40,12 @@
         android:id="@+id/duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/teacher"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_below="@id/topicname"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="6dp"
         android:textColor="#0C0C0C"
         app:autoSizeTextType="uniform"
         />
-
+</RelativeLayout>
 </RelativeLayout>

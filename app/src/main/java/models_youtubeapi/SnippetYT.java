@@ -6,13 +6,15 @@ public class SnippetYT {
     private String title;
     private String description;
     private ThumbnailYT thumbnails;
+    private ResourceID resourceId;
 
     public SnippetYT(){}
 
-    public SnippetYT(String title, String description, ThumbnailYT thumbnails) {
+    public SnippetYT(String title, String description, ThumbnailYT thumbnails,ResourceID resourceId) {
         this.title = title;
         this.description = description;
         this.thumbnails = thumbnails;
+        this.resourceId = resourceId;
     }
 
     public String getTitle() {
@@ -37,5 +39,13 @@ public class SnippetYT {
 
     public void setThumbnails(ThumbnailYT thumbnails) {
         this.thumbnails = thumbnails;
+    }
+
+    public ResourceID getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(ResourceID resourceId) {
+        this.resourceId = resourceId;
     }
 }

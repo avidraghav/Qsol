@@ -4,32 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Adapters.VideoAdapter2;
 import Adapters.VideoListAdapter;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import static android.content.ContentValues.TAG;
 
 public class VideoFragment extends Fragment {
     ListView listView;
@@ -52,14 +38,24 @@ public class VideoFragment extends Fragment {
         teacher_name=v.findViewById(R.id.papercount);
         video_info = new ArrayList<>();
         video_info.add(new Videoinfo("Formal Language and Automata theory", "Dr. Shilpi Harnal","Jmit Radaur"));
+        video_info.add(new Videoinfo("Design & analysis of algorithm", "Abdul Bari",""));
         VideoListAdapter adapter = new VideoListAdapter(getActivity(), R.layout.videos_available_row, video_info);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                 if(position==0)
-                     startActivity(new Intent(getActivity(),AutomataVideos.class));
+                 if(position==0) {
+                     Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                     intent.putExtra("Playlistid","PLUhzUGU9G_1tZiY0Ec7qMk2yt1CbCZjh6");
+                     startActivity(intent);
+                 }
+                if(position==1) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O");
+                    startActivity(intent);
+                }
+
             }
         });
 

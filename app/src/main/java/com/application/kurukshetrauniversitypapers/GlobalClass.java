@@ -6,8 +6,15 @@ public class GlobalClass extends Application {
     static String board;
     static String branch;
     static String semester;
+    static String videoId;
 
+    public String getVideoId() {
+        return videoId;
+    }
 
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
+    }
 
     public String getBranch() {
         return branch;

@@ -12,8 +12,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".VideoActivity"
+            android:theme="@style/VideoActivityTheme"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout" />
-        <activity android:name=".AutomataVideos" />
+        <activity android:name=".VideosListActivity" />
         <activity android:name="HS_ECE_subjectlists.Ece_fifthsem_subjectlist" />
         <activity android:name="HS_ECE_subjectlists.Ece_sixthsem_subjectlist" />
         <activity android:name="HS_ECE_subjectlists.Ece_fourthsem_subjectlist" />

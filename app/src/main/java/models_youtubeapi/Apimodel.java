@@ -3,15 +3,19 @@ package models_youtubeapi;
 import java.util.List;
 
 public class Apimodel {
+
 private String nextPageToken;
 private List<VideoYT> items;
+private PageDetails pageInfo;
 
     public Apimodel() {
     }
 
-    public Apimodel(String nextPageToken, List<VideoYT> items) {
+    public Apimodel(String nextPageToken, List<VideoYT> items, PageDetails pageInfo)
+    {
         this.nextPageToken = nextPageToken;
         this.items = items;
+        this.pageInfo = pageInfo;
     }
 
     public String getNextPageToken() {
@@ -28,5 +32,13 @@ private List<VideoYT> items;
 
     public void setItems(List<VideoYT> items) {
         this.items = items;
+    }
+
+    public PageDetails getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageDetails pageInfo) {
+        this.pageInfo = pageInfo;
     }
 }
