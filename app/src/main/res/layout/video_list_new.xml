@@ -9,16 +9,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/l1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+           >
 
             <TextView
                 android:id="@+id/textViewName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@id/video_icon"
                 android:text="Iron Man"
+                android:layout_marginLeft="4dp"
                 android:textColor="@color/fontColor"
                 android:textStyle="bold"
 
@@ -26,45 +29,57 @@
 
             <TextView
                 android:id="@+id/reveal"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="details"
-                android:textAlignment="center"/>
+               android:layout_alignParentRight="true"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_angle_arrow_down"
+                />
+            <TextView
+                android:id="@+id/video_icon"
+                android:layout_alignParentLeft="true"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_video_icon"
+                />
             <View
                 android:id="@+id/divider1"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_below="@id/textViewName"
                android:background="?attr/dividerHorizontal"
                 />
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/linearLayout"
+                android:layout_below="@id/divider1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
                 android:orientation="vertical"
-                android:visibility="gone">
+               >
 
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    />
+                    android:contentDescription="Thumbnail" />
 
                 <TextView
                     android:id="@+id/description"
+                    android:layout_below="@id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <View
                     android:id="@+id/divider2"
+                    android:layout_below="@id/description"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:background="#000" />
 
-            </LinearLayout>
+            </RelativeLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
 

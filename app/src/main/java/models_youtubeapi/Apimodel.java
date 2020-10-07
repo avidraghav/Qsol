@@ -1,10 +1,13 @@
 package models_youtubeapi;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Apimodel {
 
-private String nextPageToken;
+    @SerializedName("nextPageToken")
+    private String nextPageToken;
 private List<VideoYT> items;
 private PageDetails pageInfo;
 

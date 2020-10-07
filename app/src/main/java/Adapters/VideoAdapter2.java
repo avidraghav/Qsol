@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.application.kurukshetrauniversitypapers.R;
 
 import models_youtubeapi.Apimodel;
+import models_youtubeapi.Token;
 import models_youtubeapi.VideoYT;
 
 import com.application.kurukshetrauniversitypapers.VideoActivity;
@@ -48,50 +49,34 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         VideoYT videoYT= videoList.get(position);
+        //Token token= token2.get(position);
         YoutubeHolder yth = (YoutubeHolder) holder;
+//       Log.e("token",token);
 
-       yth.description.setText(videoYT.getSnippet().getDescription());
+        yth.description.setText(videoYT.getSnippet().getDescription());
         yth.textViewName.setText(videoYT.getSnippet().getTitle());
         Glide.with(context).load(videoYT.getSnippet().getThumbnails().getMedium().getUrl()).into(yth.imageView);
-        yth.linearLayout.setVisibility(View.GONE);
+        yth.relativeLayout.setVisibility(View.GONE);
 
-        //if the position is equals to the item position which is to be expanded
-        // currentPosition = position;
-        Log.e("cur",currentPosition+"");
-        Log.e("pos",position+"");
         if (currentPosition == position) {
-            Log.e("info",currentPosition+"");
-            Log.e("info",position+"");
-            //creating an animation
             Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.reveal_details);
-
-            //toggling visibility
-            yth.linearLayout.setVisibility(View.VISIBLE);
-
-            //adding sliding effect
-            yth.linearLayout.startAnimation(slideDown);
+            yth.relativeLayout.setVisibility(View.VISIBLE);
+            yth.relativeLayout.startAnimation(slideDown);
         }
-        yth.reveal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                currentPosition = position;
-                //reloding the list
-                notifyDataSetChanged();
+        yth.reveal.setOnClickListener(view -> {
+            currentPosition = position;
+            notifyDataSetChanged();
 
-            }
         });
 
 
 
         String getId= videoYT.getSnippet().getResourceId().getVideoId();
 
-        yth.textViewName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(context, VideoActivity.class);
-                i.putExtra("videoId", getId);
-                context.startActivity(i);
-            }
+        yth.textViewName.setOnClickListener(v -> {
+            Intent i = new Intent(context, VideoActivity.class);
+            i.putExtra("videoId", getId);
+            context.startActivity(i);
         });
 
 
@@ -104,53 +89,22 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
     class YoutubeHolder extends RecyclerView.ViewHolder{
 
-//        ImageView thumbnail;
-////        TextView t1,t2;
-////        TextView hidden_view;
-////        RelativeLayout relativeLayout;
 
-        TextView textViewName, textViewRealName, textViewTeam, textViewFirstAppearance,
-                textViewCreatedBy, textViewPublisher, textViewBio,reveal,description;
+        TextView textViewName, reveal,description;
         ImageView imageView;
-        LinearLayout linearLayout;
+        RelativeLayout relativeLayout;
 
         public YoutubeHolder(@NonNull View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.textViewName);
             description=itemView.findViewById(R.id.description);
-//            textViewRealName = itemView.findViewById(R.id.textViewRealName);
-//            textViewTeam = itemView.findViewById(R.id.textViewTeam);
-//            textViewFirstAppearance = itemView.findViewById(R.id.textViewFirstAppearance);
-//            textViewCreatedBy = itemView.findViewById(R.id.textViewCreatedBy);
-//            textViewPublisher = itemView.findViewById(R.id.textViewPublisher);
-//            textViewBio = itemView.findViewById(R.id.textViewBio);
             imageView = itemView.findViewById(R.id.imageView);
             reveal=itemView.findViewById(R.id.reveal);
 
-
-            linearLayout = itemView.findViewById(R.id.linearLayout);
-
-        }
-
-        public void setData(VideoYT hero,Apimodel data2,int position)
-        {
-
-
-//
-//             t1.setText(getT1);
-//             t2.setText(getT2);
-//           //  hidden_view.setText(next_page_token);
-//
-//
-//
-//            Glide
-//                    .with(context)
-//                    .load(getThumb)
-//                    .centerCrop()
-//                    .placeholder(R.mipmap.ic_launcher)
-//                    .into(thumbnail);
+            relativeLayout = itemView.findViewById(R.id.linearLayout);
 
         }
+
     }
 
 }

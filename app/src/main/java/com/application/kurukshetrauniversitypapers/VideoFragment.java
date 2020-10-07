@@ -39,6 +39,7 @@ public class VideoFragment extends Fragment {
         video_info = new ArrayList<>();
         video_info.add(new Videoinfo("Formal Language and Automata theory", "Dr. Shilpi Harnal","Jmit Radaur"));
         video_info.add(new Videoinfo("Design & analysis of algorithm", "Abdul Bari",""));
+        video_info.add(new Videoinfo("toc", "neso",""));
         VideoListAdapter adapter = new VideoListAdapter(getActivity(), R.layout.videos_available_row, video_info);
         listView.setAdapter(adapter);
 
@@ -53,6 +54,11 @@ public class VideoFragment extends Fragment {
                 if(position==1) {
                     Intent intent = new Intent(getActivity(), VideosListActivity.class);
                     intent.putExtra("Playlistid","PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O");
+                    startActivity(intent);
+                }
+                if(position==2) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PLBlnK6fEyqRgp46KUv4ZY69yXmpwKOIev");
                     startActivity(intent);
                 }
 
