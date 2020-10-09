@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,31 +43,16 @@ public class VideoListAdapter extends ArrayAdapter<Videoinfo> {
         final TextView topic = view.findViewById(R.id.topicname);
         final TextView teacher = view.findViewById(R.id.teacher);
         final TextView duration = view.findViewById(R.id.duration);
+        final ImageView imageView=view.findViewById(R.id.teacher_image);
 
         Videoinfo videoinfo = subjectlist.get(position);
         topic.setText(videoinfo.getTopic());
         teacher.setText(videoinfo.getTeacher());
         duration.setText(videoinfo.getDuration());
+        imageView.setImageResource(videoinfo.getImage());
 
         mAuth=FirebaseAuth.getInstance();
 
-//        topic.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(final View v) {
-//                switch (topic.getText().toString()) {
-//                    case "Advance computer network and applications":
-//                        videoid="PLUhzUGU9G_1tZiY0Ec7qMk2yt1CbCZjh6&index=1";
-//                        break;
-//                    case "test":
-//                        System.out.println("Got it");
-//                        break;
-//                }
-//                Intent intent=new Intent(getContext(), VideoActivity.class);
-//                intent.putExtra("videoId",videoid);
-//                context.startActivity(intent);
-//
-//            }
-//        });
 
 
         

@@ -25,6 +25,7 @@
         android:layout_marginBottom="5dp"
         android:gravity="center"
         android:text="Load more"
+        android:background="@drawable/button_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

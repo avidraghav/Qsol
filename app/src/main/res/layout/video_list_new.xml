@@ -19,13 +19,15 @@
                 android:id="@+id/textViewName"
                 android:layout_width="350dp"
                 android:layout_height="40dp"
-                android:layout_toRightOf="@id/video_icon"
-                android:text="Iron Man"
                 android:layout_marginLeft="4dp"
-                android:textColor="@color/fontColor"
-                android:textStyle="bold"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_video_icon"
 
-                />
+                android:drawablePadding="4dp"
+                android:text="Iron Man"
+                android:textAlignment="viewStart"
+                android:textColor="@color/fontColor"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/reveal"
@@ -34,13 +36,13 @@
                 android:layout_height="30dp"
                 android:background="@drawable/ic_angle_arrow_down"
                 />
-            <TextView
-                android:id="@+id/video_icon"
-                android:layout_alignParentLeft="true"
-                android:layout_width="20dp"
-                android:layout_height="30dp"
-                android:background="@drawable/ic_video_icon"
-                />
+<!--            <TextView-->
+<!--                android:id="@+id/video_icon"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:background="@drawable/ic_video_icon"-->
+<!--                />-->
             <View
                 android:id="@+id/divider1"
                 android:layout_width="match_parent"
