@@ -36,7 +36,7 @@ Help maintaing the application.
 
 ### Everyone can contribute to Qsol by
 ```
-Sending previous year exam papers at jmit.raghav@gmail.com
+Sending previous year exam papers at qsol.info@gmail.com
 Giving feedback, finding bugs and suggesting new features.
 Help maintaing the application.
 ```
