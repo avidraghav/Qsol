@@ -1,14 +1,19 @@
 package com.application.kurukshetrauniversitypapers;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +36,7 @@ public class VideosListActivity extends AppCompatActivity {
     private static float totalresults;
     private static final float resultsperpage=50;
     private String playlist_id;
+    private Button rate;
     Button next;
     String url;
 
@@ -53,20 +59,33 @@ public class VideosListActivity extends AppCompatActivity {
 
         rv.setAdapter(adapter);
         rv.setLayoutManager(manager);
-
+        rate=findViewById(R.id.rate_btn);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
 
         if(videoList.size()== 0){
             getJson("null");
         }
 
-          next.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View view) {
-                  totalresults=totalresults-resultsperpage;
-                  Log.e("results",totalresults+"");
-                  getJson(token);
-              }
+          next.setOnClickListener(view -> {
+              totalresults=totalresults-resultsperpage;
+              Log.e("results",totalresults+"");
+              getJson(token);
+              Toast.makeText(VideosListActivity.this, "Scroll", Toast.LENGTH_SHORT).show();
           });
+
+        rate.setOnClickListener(view -> {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=" + getPackageName())));
+
+            } catch (ActivityNotFoundException e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+            }
+        });
+
 
     }
 

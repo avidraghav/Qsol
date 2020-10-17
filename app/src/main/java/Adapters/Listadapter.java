@@ -20,10 +20,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 
-import com.application.kurukshetrauniversitypapers.GlobalClass;
-import com.application.kurukshetrauniversitypapers.Listdata;
+import utils.GlobalClass;
+import utils.Listdata;
 import com.application.kurukshetrauniversitypapers.R;
-import com.application.kurukshetrauniversitypapers.Subjectcode;
+import utils.Subjectcode;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;

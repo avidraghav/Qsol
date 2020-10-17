@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.application.kurukshetrauniversitypapers.GlobalClass;
-import com.application.kurukshetrauniversitypapers.Listdata;
+import utils.GlobalClass;
+import utils.Listdata;
 import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.R;
 import com.google.firebase.database.ChildEventListener;
@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.Listadapter;
-import HS_CV_subjectlists.Cv_fifthsem_subjectlist;
 
 public class Cse_thirdsem_subjectlist extends AppCompatActivity {
     ListView listView;

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.VideoListAdapter;
+import utils.Videoinfo;
 
 public class VideoFragment extends Fragment {
     ListView listView;
@@ -56,6 +57,14 @@ public class VideoFragment extends Fragment {
         video_info.add(new Videoinfo("Organisational behaviour", "PPC learning","",R.drawable.ppc));
         video_info.add(new Videoinfo("Operating systems", "Knowledge Gate","",R.drawable.kg));
         video_info.add(new Videoinfo("Operating systems", "Gate Smashers","",R.drawable.gs));
+
+        video_info.add(new Videoinfo("Programming for problems solving", "MySirG.com","",R.drawable.jv));
+        video_info.add(new Videoinfo("Matrices", "Dr.Gajendra Purohit","",R.drawable.gp));
+        video_info.add(new Videoinfo("Differential calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
+        video_info.add(new Videoinfo("Integral calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
+        video_info.add(new Videoinfo("Engineering Graphics and designs", "Manas Patnaik","",R.drawable.mp));
+        video_info.add(new Videoinfo("Probability and statistics", "Dr.Gajendra Purohit","",R.drawable.gp));
+
 
         VideoListAdapter adapter = new VideoListAdapter(getActivity(), R.layout.videos_available_row, video_info);
         listView.setAdapter(adapter);
@@ -141,6 +150,37 @@ public class VideoFragment extends Fragment {
                 if(position==15) {
                     Intent intent = new Intent(getActivity(), VideosListActivity.class);
                     intent.putExtra("Playlistid","PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p");
+                    startActivity(intent);
+                }
+
+                if(position==16) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PL7ersPsTyYt2Q-SqZxTA1D-melSfqBRMW");
+                    startActivity(intent);
+                }
+                if(position==17) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PLU6SqdYcYsfI34zVjDYDCZ6KLAifHmN1v");
+                    startActivity(intent);
+                }
+                if(position==18) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PLU6SqdYcYsfIJRl8mo2Rv1MpdvmVD0YyI");
+                    startActivity(intent);
+                }
+                if(position==19) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PLU6SqdYcYsfLoKyzF_dwxAQf8lIi6VC54");
+                    startActivity(intent);
+                }
+                if(position==20) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PLIhUrsYr8yHwTgo_zu_ELqOC1ypcp5Gr9");
+                    startActivity(intent);
+                }
+                if(position==21) {
+                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+                    intent.putExtra("Playlistid","PLU6SqdYcYsfLRq3tu-g_hvkHDcorrtcBK");
                     startActivity(intent);
                 }
 

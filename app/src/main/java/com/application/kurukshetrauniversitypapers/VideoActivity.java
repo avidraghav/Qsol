@@ -2,36 +2,38 @@ package com.application.kurukshetrauniversitypapers;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
-import android.media.MediaExtractor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerUtils;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import org.jetbrains.annotations.NotNull;
 
+import utils.FullScreenHelper;
+
 
 public class VideoActivity extends AppCompatActivity {
+    private Toolbar toolbar;
     private YouTubePlayerView youTubePlayerView;
     private FullScreenHelper fullScreenHelper = new FullScreenHelper(this);
     float currentSeconds;
     private YouTubePlayer youTubePlayer;
+
 
     // a list of videos not available in some countries, to test if they're handled gracefully.
     // private String[] nonPlayableVideoIds = { "sop2V_MREEI" };
@@ -49,6 +51,10 @@ public class VideoActivity extends AppCompatActivity {
         videoid=intent1.getStringExtra("videoId");
         Log.e("id",videoid);
         youTubePlayerView = findViewById(R.id.youtube_player_view);
+
+        toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
 
 
         initYouTubePlayerView();
@@ -86,7 +92,7 @@ public class VideoActivity extends AppCompatActivity {
                 );
 
                 addFullScreenListenerToPlayer();
-                //setPlayNextVideoButtonClickListener(youTubePlayer);
+                setPlayNextVideoButtonClickListener(youTubePlayer);
             }
             @Override
             public void onApiChange(@NotNull YouTubePlayer youTubePlayer) {
@@ -155,7 +161,7 @@ public class VideoActivity extends AppCompatActivity {
             public void onYouTubePlayerEnterFullScreen() {
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                 fullScreenHelper.enterFullScreen();
-
+                    toolbar.setVisibility(View.GONE);
                 addCustomActionsToPlayer();
             }
 
@@ -163,8 +169,8 @@ public class VideoActivity extends AppCompatActivity {
             public void onYouTubePlayerExitFullScreen() {
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
                 fullScreenHelper.exitFullScreen();
-
-                removeCustomActionsFromPlayer();
+                toolbar.setVisibility(View.VISIBLE);
+                //removeCustomActionsFromPlayer();
             }
         });
     }
@@ -199,15 +205,22 @@ public class VideoActivity extends AppCompatActivity {
     /**
      * Set a click listener on the "Play next video" button
      */
-//    private void setPlayNextVideoButtonClickListener(final YouTubePlayer youTubePlayer) {
-//        Button playNextVideoButton = findViewById(R.id.next_video_button);
-//
+    private void setPlayNextVideoButtonClickListener(final YouTubePlayer youTubePlayer) {
+        Button playNextVideoButton = findViewById(R.id.next_video_button);
+
+        playNextVideoButton.setOnClickListener(view -> {
+            Intent intent=new Intent(VideoActivity.this,MainActivity.class);
+            intent.putExtra("run counter","no");
+            startActivity(intent);
+
+        });
 //        playNextVideoButton.setOnClickListener(view ->
+//                startActivity(new Intent(this,MainActivity.class));
 //                YouTubePlayerUtils.loadOrCueVideo(
 //                        youTubePlayer, getLifecycle(),
-//                        VideoIdsProvider.getNextVideoId(),0f
-//                ));
-//    }
+////                        VideoIdsProvider.getNextVideoId(),0f
+//                );
+    }
 
     /**
      * This method is here just for reference, it is not being used because the IFrame player already shows the title of the video.

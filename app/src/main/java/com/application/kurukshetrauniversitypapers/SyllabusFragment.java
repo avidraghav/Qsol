@@ -24,7 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.SyllabusAdapter;
-import Adapters.SyllabusAdapter;
+import utils.SingleDownloadClass;
+import utils.uploadPDF;
 
 public class SyllabusFragment extends Fragment {
     Button cse_syl,it_syl,me_syl,ee_syl,ec_syl,mb_syl,bb_syl,bc_syl,mc_syl,first_syl,second_syl,third_syl,fourth_syl,fifth_syl,sixth_syl,seventh_syl,eight_syl,session;

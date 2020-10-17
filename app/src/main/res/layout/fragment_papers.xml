@@ -502,7 +502,6 @@
         android:text="Search"
         android:layout_centerInParent="true"
         android:textAllCaps="false"
-        android:textColor="#fff"
         android:textSize="18sp"
         />
 <!--    <ListView-->

@@ -22,8 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.application.kurukshetrauniversitypapers.LoginActivity;
 import com.application.kurukshetrauniversitypapers.R;
-import com.application.kurukshetrauniversitypapers.SingleDownloadClass;
-import com.application.kurukshetrauniversitypapers.uploadPDF;
+import utils.SingleDownloadClass;
+import utils.uploadPDF;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;

@@ -3,7 +3,7 @@
     package="com.application.kurukshetrauniversitypapers">
 
     <application
-        android:name=".GlobalClass"
+        android:name="utils.GlobalClass"
         android:allowBackup="true"
         android:icon="@drawable/newlogo2"
         android:label="@string/app_name"
@@ -14,7 +14,8 @@
             android:name=".VideoActivity"
             android:theme="@style/VideoActivityTheme"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout" />
-        <activity android:name=".VideosListActivity" />
+        <activity android:name=".VideosListActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="HS_ECE_subjectlists.Ece_fifthsem_subjectlist" />
         <activity android:name="HS_ECE_subjectlists.Ece_sixthsem_subjectlist" />
         <activity android:name="HS_ECE_subjectlists.Ece_fourthsem_subjectlist" />
@@ -234,7 +235,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <service
-            android:name=".MyMessagingService"
+            android:name="utils.MyMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
