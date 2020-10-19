@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/white"
+        android:padding="10dp"
         android:gravity="center"
         android:text="TextView"
         android:textAlignment="center"
@@ -21,6 +22,7 @@
         tools:layout_editor_absoluteY="0dp">
 
     </TextView>
+
 
 
 </RelativeLayout>

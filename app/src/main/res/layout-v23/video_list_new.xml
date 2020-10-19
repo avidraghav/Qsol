@@ -28,9 +28,8 @@
                 android:textAlignment="viewStart"
                 android:textColor="@color/fontColor"
                 android:textStyle="bold"
-                android:focusable="true"
-                app:drawableStartCompat="@drawable/ic_video_icon" />
-
+                app:drawableLeftCompat="@drawable/ic_video_icon"
+                android:focusable="true" />
 
             <Button
                 android:id="@+id/reveal"
@@ -38,6 +37,7 @@
                 android:layout_height="20dp"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/ic_angle_arrow_down"
+                android:foreground="?attr/selectableItemBackground"
                 />
             <View
                 android:id="@+id/divider1"

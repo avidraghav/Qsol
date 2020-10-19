@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -32,8 +33,8 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private Context context;
     private List<VideoYT> videoList;
     private String token;
-    private int currentPosition = 999;   // any number greater than the number of videos in playlist
-
+    private int currentPosition = 999; // any number greater than the number of videos in playlist
+    private boolean expansion_state=false;
     public VideoAdapter2(Context context, List<VideoYT> videoList,String token) {
         this.context = context;
         this.videoList = videoList;
@@ -49,50 +50,65 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         VideoYT videoYT= videoList.get(position);
-        //Token token= token2.get(position);
+
         YoutubeHolder yth = (YoutubeHolder) holder;
-//       Log.e("token",token);
 
         yth.description.setText(videoYT.getSnippet().getDescription());
         yth.textViewName.setText(videoYT.getSnippet().getTitle());
         Glide.with(context).load(videoYT.getSnippet().getThumbnails().getMedium().getUrl()).into(yth.imageView);
         yth.relativeLayout.setVisibility(View.GONE);
 
+
         if (currentPosition == position) {
-            Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.reveal_details);
-            yth.relativeLayout.setVisibility(View.VISIBLE);
-            yth.relativeLayout.startAnimation(slideDown);
+            if(expansion_state) {
+                Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.reveal_details);
+                yth.relativeLayout.setVisibility(View.VISIBLE);
+                yth.relativeLayout.startAnimation(slideDown);
+                yth.divider1.setVisibility(View.GONE);
+                yth.reveal.setBackgroundResource(R.drawable.ic_up_arrow);
+            }
+            else {
+                Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.hide_details);
+                yth.relativeLayout.setVisibility(View.GONE);
+                yth.relativeLayout.startAnimation(slideUp);
+                yth.divider1.setVisibility(View.VISIBLE);
+                yth.reveal.setBackgroundResource(R.drawable.ic_angle_arrow_down);
+            }
+
         }
         yth.reveal.setOnClickListener(view -> {
+            expansion_state=!expansion_state;
             currentPosition = position;
             notifyDataSetChanged();
-
         });
-
 
 
         String getId= videoYT.getSnippet().getResourceId().getVideoId();
-
         yth.textViewName.setOnClickListener(v -> {
-            Intent i = new Intent(context, VideoActivity.class);
-            i.putExtra("videoId", getId);
-            context.startActivity(i);
+            startVideo(getId);
         });
-
-
-
+        yth.relativeLayout.setOnClickListener(view -> {
+            startVideo(getId);
+        });
     }
     @NonNull
     @Override
     public int getItemCount() {
         return videoList.size();
     }
+    public void startVideo(String getId){
+        Intent i = new Intent(context, VideoActivity.class);
+        i.putExtra("videoId", getId);
+        context.startActivity(i);
+    }
     class YoutubeHolder extends RecyclerView.ViewHolder{
 
 
-        TextView textViewName, reveal,description;
+        TextView textViewName, description;
         ImageView imageView;
         RelativeLayout relativeLayout;
+        View divider1;
+        Button reveal;
 
         public YoutubeHolder(@NonNull View itemView) {
             super(itemView);
@@ -100,6 +116,7 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             description=itemView.findViewById(R.id.description);
             imageView = itemView.findViewById(R.id.imageView);
             reveal=itemView.findViewById(R.id.reveal);
+            divider1=itemView.findViewById(R.id.divider1);
 
             relativeLayout = itemView.findViewById(R.id.linearLayout);
 
