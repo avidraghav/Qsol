@@ -11,7 +11,7 @@ public class YoutubeAPI {
 
     public static final String BASE_URL= "https://www.googleapis.com/youtube/v3/";
     public static final String request="playlistItems?part=snippet&maxResults=50&playlistId=";
-    public static final String apikey=  "&key=AIzaSyA8xvey8P0i0ymbt3x1jyPVe3iTtgTmTvw";
+    public static final String apikey=  "&key=";
     public static final String nextpage="&pageToken=";
 
 

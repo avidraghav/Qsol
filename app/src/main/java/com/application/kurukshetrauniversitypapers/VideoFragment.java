@@ -41,33 +41,33 @@ public class VideoFragment extends Fragment {
         teacher_name=v.findViewById(R.id.papercount);
         image=v.findViewById(R.id.teacher_image);
         video_info = new ArrayList<>();
-        video_info.add(new Videoinfo("Formal Language and Automata theory", "Dr. Shilpi Harnal","Jmit Radaur",R.drawable.unnamed));
-        video_info.add(new Videoinfo("Design & analysis of algorithm", "Abdul Bari","",R.drawable.ab));
-        video_info.add(new Videoinfo("Computer organization & architecture", "Gate Smashers","",R.drawable.gs));
-        video_info.add(new Videoinfo("Essentials of information technology", "Java by Saurabh Shukla Sir","",R.drawable.jv));
-        video_info.add(new Videoinfo("Database management system", "Gate Smashers","",R.drawable.gs));
-        video_info.add(new Videoinfo("Digital electronics", "Neso Academy","",R.drawable.ns));
-        video_info.add(new Videoinfo("Sequence & series", "Dr.Gajendra Purohit","",R.drawable.gp));
-        video_info.add(new Videoinfo("Multivariable calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-        video_info.add(new Videoinfo("Vector calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-        video_info.add(new Videoinfo("Object-oriented programming using C++", "C++ by Saurabh Shukla sir","",R.drawable.jv));
-        video_info.add(new Videoinfo("Business Intelligence and entrepreneurship", "PPC learning","",R.drawable.ppc));
-        video_info.add(new Videoinfo("Design & analysis of algorithm", "The Insight Coders","",R.drawable.ic));
-        video_info.add(new Videoinfo("Discrete Mathematics", "Group Theory","",R.drawable.gp));
-        video_info.add(new Videoinfo("Organisational behaviour", "PPC learning","",R.drawable.ppc));
-        video_info.add(new Videoinfo("Operating systems", "Knowledge Gate","",R.drawable.kg));
-        video_info.add(new Videoinfo("Operating systems", "Gate Smashers","",R.drawable.gs));
+//        video_info.add(new Videoinfo("Formal Language and Automata theory", "Dr. Shilpi Harnal","Jmit Radaur",R.drawable.unnamed));
+//        video_info.add(new Videoinfo("Design & analysis of algorithm", "Abdul Bari","",R.drawable.ab));
+//        video_info.add(new Videoinfo("Computer organization & architecture", "Gate Smashers","",R.drawable.gs));
+//        video_info.add(new Videoinfo("Essentials of information technology", "Java by Saurabh Shukla Sir","",R.drawable.jv));
+//        video_info.add(new Videoinfo("Database management system", "Gate Smashers","",R.drawable.gs));
+//        video_info.add(new Videoinfo("Digital electronics", "Neso Academy","",R.drawable.ns));
+//        video_info.add(new Videoinfo("Sequence & series", "Dr.Gajendra Purohit","",R.drawable.gp));
+//        video_info.add(new Videoinfo("Multivariable calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
+//        video_info.add(new Videoinfo("Vector calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
+//        video_info.add(new Videoinfo("Object-oriented programming using C++", "C++ by Saurabh Shukla sir","",R.drawable.jv));
+//        video_info.add(new Videoinfo("Business Intelligence and entrepreneurship", "PPC learning","",R.drawable.ppc));
+//        video_info.add(new Videoinfo("Design & analysis of algorithm", "The Insight Coders","",R.drawable.ic));
+//        video_info.add(new Videoinfo("Discrete Mathematics", "Group Theory","",R.drawable.gp));
+//        video_info.add(new Videoinfo("Organisational behaviour", "PPC learning","",R.drawable.ppc));
+//        video_info.add(new Videoinfo("Operating systems", "Knowledge Gate","",R.drawable.kg));
+//        video_info.add(new Videoinfo("Operating systems", "Gate Smashers","",R.drawable.gs));
+//
+//        video_info.add(new Videoinfo("Programming for problems solving", "MySirG.com","",R.drawable.jv));
+//        video_info.add(new Videoinfo("Matrices", "Dr.Gajendra Purohit","",R.drawable.gp));
+//        video_info.add(new Videoinfo("Differential calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
+//        video_info.add(new Videoinfo("Integral calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
+//        video_info.add(new Videoinfo("Engineering Graphics and designs", "Manas Patnaik","",R.drawable.mp));
+//        video_info.add(new Videoinfo("Probability and statistics", "Dr.Gajendra Purohit","",R.drawable.gp));
 
-        video_info.add(new Videoinfo("Programming for problems solving", "MySirG.com","",R.drawable.jv));
-        video_info.add(new Videoinfo("Matrices", "Dr.Gajendra Purohit","",R.drawable.gp));
-        video_info.add(new Videoinfo("Differential calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-        video_info.add(new Videoinfo("Integral calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-        video_info.add(new Videoinfo("Engineering Graphics and designs", "Manas Patnaik","",R.drawable.mp));
-        video_info.add(new Videoinfo("Probability and statistics", "Dr.Gajendra Purohit","",R.drawable.gp));
 
-
-        VideoListAdapter adapter = new VideoListAdapter(getActivity(), R.layout.videos_available_row, video_info);
-        listView.setAdapter(adapter);
+      //  VideoListAdapter adapter = new VideoListAdapter(getActivity(), R.layout.videos_available_row, video_info);
+       // listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

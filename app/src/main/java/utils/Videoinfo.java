@@ -1,47 +1,51 @@
 package utils;
 
 public class Videoinfo {
-    String topic;
-    String teacher;
-    String duration;
-    int image;
+    private String subjectname;
+    private String channelname;
+    private String playlistid;
+    private String imageurl;
 
-
-    public Videoinfo( String topic, String teacher,String duration,int image) {
-        this.topic = topic;
-        this.teacher = teacher;
-        this.duration = duration;
-        this.image=image;
-
-    }
-    public Videoinfo(){
+    public Videoinfo() {
 
     }
 
-
-    public String getTopic() {
-
-        return topic;
-
+    public Videoinfo(String subjectname, String channelname, String imageurl,String playlistid) {
+        this.subjectname = subjectname;
+        this.channelname = channelname;
+        this.imageurl = imageurl;
+        this.playlistid=playlistid;
     }
 
-    public String getTeacher() {
-        return teacher;
+    public String getSubjectname() {
+        return subjectname;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setSubjectname(String subjectname) {
+        this.subjectname = subjectname;
     }
 
-    public String getDuration() {
-        return duration;
+    public String getChannelname() {
+        return channelname;
     }
 
-    public int getImage() {
-        return image;
+    public void setChannelname(String channelname) {
+        this.channelname = channelname;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
+    }
+
+    public String getPlaylistid() {
+        return playlistid;
+    }
+
+    public void setPlaylistid(String playlistid) {
+        this.playlistid = playlistid;
     }
 }
