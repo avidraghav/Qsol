@@ -69,123 +69,123 @@ public class VideoFragment extends Fragment {
       //  VideoListAdapter adapter = new VideoListAdapter(getActivity(), R.layout.videos_available_row, video_info);
        // listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                 if(position==0) {
-                     Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                     intent.putExtra("Playlistid","PLUhzUGU9G_1tZiY0Ec7qMk2yt1CbCZjh6");
-                     startActivity(intent);
-                 }
-                if(position==1) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O");
-                    startActivity(intent);
-                }
-                if(position==2) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX");
-                    startActivity(intent);
-                }
-                if(position==3) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLX9Zi6XTqOKQ7TdRz0QynGIKuMV9Q2H8E");
-                    startActivity(intent);
-                }
-                if(position==4) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y");
-                    startActivity(intent);
-                }
-                if(position==5) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm");
-                    startActivity(intent);
-                }
-                if(position==6) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfJuoOCgUCVRLvoiQNUhdO-P");
-                    startActivity(intent);
-                }
-                if(position==7) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfIIEY1wEAsVWdW-R_A1-KBJ");
-                    startActivity(intent);
-                }
-                if(position==8) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfJz9FAzbgocIjlkw4NXAar-");
-                    startActivity(intent);
-                }
-                if(position==9) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF");
-                    startActivity(intent);
-                }
-                if(position==10) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLanB6xNfkPv4u7_-JDjM-Tl6Fhde11l7u");
-                    startActivity(intent);
-                }
-                if(position==11) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLgjc0A1c-mohs7cCIJLk9rB8qTkLb8n-j");
-                    startActivity(intent);
-                }
-                if(position==12) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfKqtoZ2uDwgMya5m_x6cbOG");
-                    startActivity(intent);
-                }
-                if(position==13) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLanB6xNfkPv5gp8FUx9SDBeg7ur7lUk1d");
-                    startActivity(intent);
-                }
-                if(position==14) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLmXKhU9FNesSFvj6gASuWmQd23Ul5omtD");
-                    startActivity(intent);
-                }
-                if(position==15) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p");
-                    startActivity(intent);
-                }
-
-                if(position==16) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PL7ersPsTyYt2Q-SqZxTA1D-melSfqBRMW");
-                    startActivity(intent);
-                }
-                if(position==17) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfI34zVjDYDCZ6KLAifHmN1v");
-                    startActivity(intent);
-                }
-                if(position==18) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfIJRl8mo2Rv1MpdvmVD0YyI");
-                    startActivity(intent);
-                }
-                if(position==19) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfLoKyzF_dwxAQf8lIi6VC54");
-                    startActivity(intent);
-                }
-                if(position==20) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLIhUrsYr8yHwTgo_zu_ELqOC1ypcp5Gr9");
-                    startActivity(intent);
-                }
-                if(position==21) {
-                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
-                    intent.putExtra("Playlistid","PLU6SqdYcYsfLRq3tu-g_hvkHDcorrtcBK");
-                    startActivity(intent);
-                }
-
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                 if(position==0) {
+//                     Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                     intent.putExtra("Playlistid","PLUhzUGU9G_1tZiY0Ec7qMk2yt1CbCZjh6");
+//                     startActivity(intent);
+//                 }
+//                if(position==1) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O");
+//                    startActivity(intent);
+//                }
+//                if(position==2) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX");
+//                    startActivity(intent);
+//                }
+//                if(position==3) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLX9Zi6XTqOKQ7TdRz0QynGIKuMV9Q2H8E");
+//                    startActivity(intent);
+//                }
+//                if(position==4) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y");
+//                    startActivity(intent);
+//                }
+//                if(position==5) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm");
+//                    startActivity(intent);
+//                }
+//                if(position==6) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfJuoOCgUCVRLvoiQNUhdO-P");
+//                    startActivity(intent);
+//                }
+//                if(position==7) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfIIEY1wEAsVWdW-R_A1-KBJ");
+//                    startActivity(intent);
+//                }
+//                if(position==8) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfJz9FAzbgocIjlkw4NXAar-");
+//                    startActivity(intent);
+//                }
+//                if(position==9) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLLYz8uHU480j37APNXBdPz7YzAi4XlQUF");
+//                    startActivity(intent);
+//                }
+//                if(position==10) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLanB6xNfkPv4u7_-JDjM-Tl6Fhde11l7u");
+//                    startActivity(intent);
+//                }
+//                if(position==11) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLgjc0A1c-mohs7cCIJLk9rB8qTkLb8n-j");
+//                    startActivity(intent);
+//                }
+//                if(position==12) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfKqtoZ2uDwgMya5m_x6cbOG");
+//                    startActivity(intent);
+//                }
+//                if(position==13) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLanB6xNfkPv5gp8FUx9SDBeg7ur7lUk1d");
+//                    startActivity(intent);
+//                }
+//                if(position==14) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLmXKhU9FNesSFvj6gASuWmQd23Ul5omtD");
+//                    startActivity(intent);
+//                }
+//                if(position==15) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p");
+//                    startActivity(intent);
+//                }
+//
+//                if(position==16) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PL7ersPsTyYt2Q-SqZxTA1D-melSfqBRMW");
+//                    startActivity(intent);
+//                }
+//                if(position==17) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfI34zVjDYDCZ6KLAifHmN1v");
+//                    startActivity(intent);
+//                }
+//                if(position==18) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfIJRl8mo2Rv1MpdvmVD0YyI");
+//                    startActivity(intent);
+//                }
+//                if(position==19) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfLoKyzF_dwxAQf8lIi6VC54");
+//                    startActivity(intent);
+//                }
+//                if(position==20) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLIhUrsYr8yHwTgo_zu_ELqOC1ypcp5Gr9");
+//                    startActivity(intent);
+//                }
+//                if(position==21) {
+//                    Intent intent = new Intent(getActivity(), VideosListActivity.class);
+//                    intent.putExtra("Playlistid","PLU6SqdYcYsfLRq3tu-g_hvkHDcorrtcBK");
+//                    startActivity(intent);
+//                }
+//
+//            }
+//        });
 
 
 

@@ -81,15 +81,7 @@ public class Bba_firstsem_subjectlist extends AppCompatActivity {
                     bb_onepapercount5 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Hindi", bb_onepapercount5+""));
                 }
-//
-//                if(dataSnapshot.getKey().equals("BO")) {
-//                    bb_onepapercount7 =(int)dataSnapshot.getChildrenCount();
-//                    subjectlist.add(new Listdata("Business organisation", bb_onepapercount7+""));
-//                }
-//                if(dataSnapshot.getKey().equals("PM")) {
-//                    bb_onepapercount8 =(int)dataSnapshot.getChildrenCount();
-//                    subjectlist.add(new Listdata("Principles of management", bb_onepapercount8+""));
-//                }
+
                 if(dataSnapshot.getKey().equals("CF")) {
                     bb_onepapercount9 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Computer fundamentals", bb_onepapercount9+""));
