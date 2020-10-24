@@ -78,6 +78,7 @@
                     android:textColor="#2b74cc"
                     android:textSize="90sp"
                     android:textStyle="bold"
+                    tools:text="1234"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
