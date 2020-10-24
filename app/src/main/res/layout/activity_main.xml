@@ -48,7 +48,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="12dp"
                         android:background="@drawable/actionbar_signup_buttonshape"
-                        android:text="Sign up"
+                        android:text="@string/sign_up"
                         android:textAllCaps="false"
                         android:textColor="#1E5A54"
                         android:textSize="13sp" />
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="16dp"
-                    android:text="Papers Available"
+                    android:text="@string/papers_available"
                     android:textColor="@color/fontColor"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -129,7 +129,7 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="10dp"
-                            android:text="Quick Search"
+                            android:text="@string/quick_search"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -178,7 +178,7 @@
                             android:layout_below="@+id/imageview6"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="10dp"
-                            android:text="University websites"
+                            android:text="@string/university_websites"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -228,7 +228,7 @@
                             android:layout_below="@+id/imageview8"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="10dp"
-                            android:text="Diploma"
+                            android:text="@string/diploma"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -277,7 +277,7 @@
                             android:layout_below="@+id/imageview1"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="10dp"
-                            android:text="B.Tech"
+                            android:text="@string/b_tech"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -328,7 +328,7 @@
                             android:layout_below="@+id/imageview5"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="10dp"
-                            android:text="BBA/MBA"
+                            android:text="@string/bba_mba"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -377,7 +377,7 @@
                             android:layout_below="@+id/imageview3"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="10dp"
-                            android:text="BCA/MCA"
+                            android:text="@string/bca_mca"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
