@@ -5,18 +5,15 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -24,10 +21,6 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
-                android:theme="@style/AppTheme"
-                app:contentInsetLeft="0dp"
-                app:contentInsetStart="0dp"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <RelativeLayout
@@ -35,27 +28,24 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
+                        android:layout_width="64dp"
+                        android:layout_height="match_parent"
                         android:layout_alignParentStart="true"
                         android:contentDescription="@string/id_qsol_logo"
                         android:src="@drawable/qslow" />
 
                     <Button
                         android:id="@+id/actionbar_signup"
-                        android:layout_width="60dp"
-                        android:layout_height="28dp"
+                        android:layout_width="64dp"
+                        android:layout_height="32dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="12dp"
                         android:background="@drawable/actionbar_signup_buttonshape"
                         android:text="@string/sign_up"
                         android:textAllCaps="false"
-                        android:textColor="#1E5A54"
-                        android:textSize="13sp" />
-
+                        android:textColor="#1E5A54" />
 
                 </RelativeLayout>
-
             </androidx.appcompat.widget.Toolbar>
 
             <FrameLayout
@@ -74,12 +64,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:fontFamily="sans-serif-smallcaps"
-                    android:gravity="center"
+                    android:textAlignment="center"
                     android:textColor="#2b74cc"
                     android:textSize="90sp"
                     android:textStyle="bold"
-                    tools:text="1234"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1234" />
 
                 <TextView
                     android:id="@+id/tv_total_papers_text"
@@ -99,11 +89,8 @@
                     android:id="@+id/quick_cardview"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
-                    android:layout_gravity="center"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
@@ -117,9 +104,10 @@
 
                         <ImageView
                             android:id="@+id/imageview7"
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_filter_icon"
                             android:src="@drawable/filter2" />
 
@@ -129,7 +117,6 @@
                             android:layout_below="@+id/imageview7"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="10dp"
                             android:text="@string/quick_search"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
@@ -148,11 +135,8 @@
                     android:id="@+id/ku_cardview"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
-                    android:layout_gravity="center"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="32dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
@@ -166,10 +150,10 @@
 
                         <ImageView
                             android:id="@+id/imageview6"
-                            android:layout_width="match_parent"
+                            android:layout_width="100dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_university_icon"
                             android:src="@drawable/ku" />
 
@@ -178,7 +162,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imageview6"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/university_websites"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
@@ -200,10 +184,8 @@
                     android:id="@+id/diploma_cardview"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
-                    android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
@@ -217,9 +199,10 @@
 
                         <ImageView
                             android:id="@+id/imageview8"
-                            android:layout_width="match_parent"
-                            android:layout_height="90dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_diploma_icon"
                             android:src="@drawable/diploma" />
 
@@ -228,7 +211,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imageview8"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/diploma"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
@@ -250,8 +233,6 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
@@ -265,10 +246,10 @@
 
                         <ImageView
                             android:id="@+id/imageview1"
-                            android:layout_width="match_parent"
-                            android:layout_height="90dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_btech_icon"
                             android:src="@drawable/btechnew" />
 
@@ -277,7 +258,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imageview1"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/b_tech"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
@@ -299,10 +280,8 @@
                     android:id="@+id/mb_cardview"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
-                    android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_weight="1"
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
@@ -316,10 +295,10 @@
 
                         <ImageView
                             android:id="@+id/imageview5"
-                            android:layout_width="match_parent"
-                            android:layout_height="90dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_bba_mba_icon"
                             android:src="@drawable/management4" />
 
@@ -328,7 +307,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imageview5"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/bba_mba"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
@@ -351,8 +330,6 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
@@ -366,9 +343,10 @@
 
                         <ImageView
                             android:id="@+id/imageview3"
-                            android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_bca_mca_icon"
                             android:src="@drawable/computerapplications" />
 
@@ -377,7 +355,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/imageview3"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="8dp"
                             android:text="@string/bca_mca"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
@@ -390,9 +368,7 @@
                             android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
-
                 </androidx.cardview.widget.CardView>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
