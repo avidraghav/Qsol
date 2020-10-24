@@ -1,14 +1,5 @@
 package com.application.kurukshetrauniversitypapers;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.animation.ValueAnimator;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -31,6 +22,15 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -40,7 +40,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btechbtn,quicksearch, computer_applications_btn, managementbtn, kubtn,actionbar_signup,diploma_btn;
+    Button actionbar_signup;
     FirebaseAuth mAuth;
     private DrawerLayout drawer;
     TextView total_papers;
@@ -49,17 +49,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Animation fadein;
     CardView btech_cardView,ca_cardview,ku_cardview,mb_cardview,quick_cardview,diploma_cardview;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btechbtn = findViewById(R.id.bt_btech);
-        quicksearch=findViewById(R.id.bt_quick_search);
-        computer_applications_btn = findViewById(R.id.bt_bca_mca);
-        managementbtn = findViewById(R.id.bt_bba_mba);
-        kubtn = findViewById(R.id.bt_university_websites);
         total_papers = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -69,10 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mb_cardview=findViewById(R.id.cv_bba_mba);
         quick_cardview=findViewById(R.id.cv_quick_search);
         actionbar_signup=findViewById(R.id.bt_sign_up);
-        diploma_btn=findViewById(R.id.bt_diploma);
         diploma_cardview = findViewById(R.id.cv_diploma);
-
-
 
         fadein = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 
@@ -124,56 +114,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
 
+    private void startActivity(@NonNull Class<?> clazz) {
+        startActivity(new Intent(MainActivity.this, clazz));
+    }
 
-        managementbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Management_expendable_list.class));
-            }
-        });
-        btechbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Btech_expendable_list.class));
-            }
-        });
-        computer_applications_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,ComputerApplications_expendable_list.class));
-            }
-        });
-        quicksearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Filters.class));
-            }
-        });
-        diploma_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Diploma_expendable_list.class));
-            }
-        });
-        actionbar_signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                    startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-
-            }
-        });
-
-
+    public void onItemClicked(View view) {
+        Class<?> clazz = null;
+        switch (view.getId()) {
+            case R.id.bt_quick_search:
+                clazz = Filters.class;
+                break;
+            case R.id.bt_university_websites:
+                clazz = Websites.class;
+                break;
+            case R.id.bt_diploma:
+                clazz = Diploma_expendable_list.class;
+                break;
+            case R.id.bt_btech:
+                clazz = Btech_expendable_list.class;
+                break;
+            case R.id.bt_bba_mba:
+                clazz = Management_expendable_list.class;
+                break;
+            case R.id.bt_bca_mca:
+                clazz = ComputerApplications_expendable_list.class;
+                break;
+            case R.id.bt_sign_up:
+                clazz = RegisterActivity.class;
+        }
+        if (clazz == null) return;
+        startActivity(clazz);
     }
 
     public void updateNavHeader() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nv_main);
+        NavigationView navigationView = findViewById(R.id.nv_main);
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.username);
         TextView navWelcome = headerView.findViewById(R.id.txt_welcome);
-        if (mAuth.getCurrentUser() != null)
-        {
+        if (mAuth.getCurrentUser() != null) {
             navWelcome.setVisibility(View.VISIBLE);
             actionbar_signup.setVisibility(View.INVISIBLE);
             navUsername.setText(mAuth.getCurrentUser().getEmail());
@@ -189,9 +169,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigationView.getMenu().findItem(R.id.action_logout).setVisible(false);
         }
     }
-    public void website(View view) {
-       startActivity(new Intent(MainActivity.this,Websites.class));
-    }
+
     public void checkConnection() {
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activenetwork = manager.getActiveNetworkInfo();
@@ -258,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             if (which == 0) {
-                                mAuth.getInstance().signOut();
+                                FirebaseAuth.getInstance().signOut();
                                 updateNavHeader();
                                 Toast.makeText(MainActivity.this, "You have been logged out", Toast.LENGTH_SHORT).show();
                             }

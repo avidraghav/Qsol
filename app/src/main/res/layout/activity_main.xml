@@ -126,6 +126,7 @@
                             android:id="@+id/bt_quick_search"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:onClick="onItemClicked"
                             android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
@@ -174,7 +175,7 @@
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground"
                             android:focusable="true"
-                            android:onClick="website" />
+                            android:onClick="onItemClicked" />
 
                     </RelativeLayout>
 
@@ -221,6 +222,7 @@
                             android:id="@+id/bt_diploma"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:onClick="onItemClicked"
                             android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
@@ -269,6 +271,7 @@
                             android:id="@+id/bt_btech"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:onClick="onItemClicked"
                             android:background="?attr/selectableItemBackground"
                             android:focusable="true" />
 
@@ -317,6 +320,7 @@
                             android:id="@+id/bt_bba_mba"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:onClick="onItemClicked"
                             android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
@@ -365,6 +369,7 @@
                             android:id="@+id/bt_bca_mca"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:onClick="onItemClicked"
                             android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
