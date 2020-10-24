@@ -27,73 +27,37 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button actionbar_signup;
-    FirebaseAuth mAuth;
+    public static final String KEY_RUN_COUNTER = "run counter";
+
+    private Button signUpButton;
+    private FirebaseAuth mAuth;
+    private Toolbar toolbar;
     private DrawerLayout drawer;
-    TextView total_papers;
-    private FirebaseAnalytics mFirebaseAnalytics;
-    String key;
-    Animation fadein;
-    CardView btech_cardView,ca_cardview,ku_cardview,mb_cardview,quick_cardview,diploma_cardview;
+    private TextView totalPapersTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        total_papers = findViewById(R.id.tv_total_papers);
+
+        totalPapersTextView = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        btech_cardView=findViewById(R.id.cv_btech);
-        ca_cardview=findViewById(R.id.cv_bca_mca);
-        ku_cardview=findViewById(R.id.cv_university_websites);
-        mb_cardview=findViewById(R.id.cv_bba_mba);
-        quick_cardview=findViewById(R.id.cv_quick_search);
-        actionbar_signup=findViewById(R.id.bt_sign_up);
-        diploma_cardview = findViewById(R.id.cv_diploma);
+        signUpButton = findViewById(R.id.bt_sign_up);
 
-        fadein = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-
-        Intent intent=getIntent();
-        key=intent.getStringExtra("run counter");
-        if(key.equals("yes")){
-            startCountAnimation();
-            btech_cardView.setAnimation(fadein);
-            ca_cardview.setAnimation(fadein);
-            ku_cardview.setAnimation(fadein);
-            mb_cardview.setAnimation(fadein);
-            quick_cardview.setAnimation(fadein);
-            diploma_cardview.setAnimation(fadein);
-
-        }
-        else
-            total_papers.setText("1542");
-
-        Toolbar toolbar = findViewById(R.id.tb_main);
-        toolbar.setTitle("");
-       // toolbar.setLogo(R.drawable.qslow);
-        //toolbar.setBackground(getResources().getDrawable( R.drawable.actionbar_shape));
-        setSupportActionBar(toolbar);
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nv_main);
-        navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
+        handleAnimations();
+        setupToolbar();
+        setupDrawer();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel =
@@ -101,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
-
         }
+
         FirebaseMessaging.getInstance().subscribeToTopic("general")
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -116,12 +80,79 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 });
     }
 
-    private void startActivity(@NonNull Class<?> clazz) {
+    /**
+     * Instantiates and sets up the toolbar of the activity
+     */
+    private void setupToolbar() {
+        toolbar = findViewById(R.id.tb_main);
+        toolbar.setTitle("");
+        // toolbar.setLogo(R.drawable.qslow);
+        //toolbar.setBackground(getResources().getDrawable( R.drawable.actionbar_shape));
+        setSupportActionBar(toolbar);
+    }
+
+    /**
+     * Instantiates and sets up the drawer of the activity
+     */
+    private void setupDrawer() {
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nv_main);
+        navigationView.setNavigationItemSelectedListener(this);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+    }
+
+    /**
+     * If {@link #KEY_RUN_COUNTER} is "yes", execute count animation and fade in animation
+     * of card views. Otherwise only the total papers text is set and no animation is triggered.
+     */
+    private void handleAnimations() {
+        Intent intent = getIntent();
+        String runCounter = intent.getStringExtra(KEY_RUN_COUNTER);
+        if ("yes".equals(runCounter)) {
+            Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+            startCountAnimation();
+            findViewById(R.id.cv_btech).setAnimation(fadeIn);
+            findViewById(R.id.cv_bca_mca).setAnimation(fadeIn);
+            findViewById(R.id.cv_university_websites).setAnimation(fadeIn);
+            findViewById(R.id.cv_bba_mba).setAnimation(fadeIn);
+            findViewById(R.id.cv_quick_search).setAnimation(fadeIn);
+            findViewById(R.id.cv_diploma).setAnimation(fadeIn);
+        } else totalPapersTextView.setText("1542");
+    }
+
+    /**
+     * Starts animation that counts upwards in {@link #totalPapersTextView}.
+     */
+    private void startCountAnimation() {
+        ValueAnimator animator = ValueAnimator.ofInt(0, 1542);
+        animator.setDuration(2000);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                totalPapersTextView.setText(animation.getAnimatedValue().toString());
+            }
+        });
+        animator.start();
+    }
+
+    /**
+     * Starts an activity.
+     *
+     * @param clazz the class of the activity to start. Needs to be an extension of {@link AppCompatActivity}.
+     */
+    private void startActivity(@NonNull Class<? extends AppCompatActivity> clazz) {
         startActivity(new Intent(MainActivity.this, clazz));
     }
 
+    /**
+     * Handles menu items / button clicks that start a new activity.
+     *
+     * @param view the menu item or button that was clicked
+     */
     public void onItemClicked(View view) {
-        Class<?> clazz = null;
+        Class<? extends AppCompatActivity> clazz = null;
         switch (view.getId()) {
             case R.id.bt_quick_search:
                 clazz = Filters.class;
@@ -155,55 +186,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView navWelcome = headerView.findViewById(R.id.txt_welcome);
         if (mAuth.getCurrentUser() != null) {
             navWelcome.setVisibility(View.VISIBLE);
-            actionbar_signup.setVisibility(View.INVISIBLE);
+            signUpButton.setVisibility(View.INVISIBLE);
             navUsername.setText(mAuth.getCurrentUser().getEmail());
             navigationView.getMenu().findItem(R.id.action_signin).setVisible(false);
             navigationView.getMenu().findItem(R.id.action_logout).setVisible(true);
-        }
-        else
-            {
+        } else {
             navWelcome.setVisibility(View.INVISIBLE);
-            actionbar_signup.setVisibility(View.VISIBLE);
+            signUpButton.setVisibility(View.VISIBLE);
             navUsername.setText("Sign in to Share Papers");
             navigationView.getMenu().findItem(R.id.action_signin).setVisible(true);
             navigationView.getMenu().findItem(R.id.action_logout).setVisible(false);
         }
     }
 
-    public void checkConnection() {
+    private void checkConnection() {
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activenetwork = manager.getActiveNetworkInfo();
         if (null != activenetwork) {
 
             if (activenetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-               // Toast.makeText(this, "Internet connected", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this, "Internet connected", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(this, "Turn on internet connection", Toast.LENGTH_SHORT).show();
 
         }
     }
-    public void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 1542);
-        animator.setDuration(2000);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            public void onAnimationUpdate(ValueAnimator animation) {
-                total_papers.setText(animation.getAnimatedValue().toString());
-            }
-        });
-        animator.start();
-    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.option_menu2, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.quick:
-                startActivity(new Intent(MainActivity.this,Filters.class));
+                startActivity(new Intent(MainActivity.this, Filters.class));
                 break;
 //
             default:
@@ -212,6 +233,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -225,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     break;
                 }
             case R.id.action_logout:
-                if((mAuth.getCurrentUser() == null)) {
+                if ((mAuth.getCurrentUser() == null)) {
                     Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
                     break;
                 } else {
@@ -249,7 +271,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     break;
                 }
             case R.id.credits:
-                startActivity(new Intent(MainActivity.this,CreditActivity.class));
+                startActivity(new Intent(MainActivity.this, CreditActivity.class));
                 break;
             case R.id.rate:
                 try {
@@ -274,21 +296,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
+
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START))
-        {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-        else{
-        if (getIntent().getBooleanExtra("EXIT", false))
-        {
+        } else {
+            if (getIntent().getBooleanExtra("EXIT", false)) {
+                finish();
+            }
             finish();
         }
-           finish();
-        }
-
     }
+
     @Override
     protected void onStart() {
         updateNavHeader();
