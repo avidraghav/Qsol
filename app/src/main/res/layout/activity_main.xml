@@ -38,6 +38,7 @@
                         android:layout_width="70dp"
                         android:layout_height="60dp"
                         android:layout_alignParentStart="true"
+                        android:contentDescription="@string/id_qsol_logo"
                         android:src="@drawable/qslow" />
 
                     <Button
@@ -118,6 +119,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
                             android:layout_marginTop="10dp"
+                            android:contentDescription="@string/id_filter_icon"
                             android:src="@drawable/filter2" />
 
                         <TextView
@@ -167,6 +169,7 @@
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
+                            android:contentDescription="@string/id_university_icon"
                             android:src="@drawable/ku" />
 
                         <TextView
@@ -216,6 +219,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="90dp"
                             android:layout_marginTop="10dp"
+                            android:contentDescription="@string/id_diploma_icon"
                             android:src="@drawable/diploma" />
 
                         <TextView
@@ -264,6 +268,7 @@
                             android:layout_height="90dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
+                            android:contentDescription="@string/id_btech_icon"
                             android:src="@drawable/btechnew" />
 
                         <TextView
@@ -314,6 +319,7 @@
                             android:layout_height="90dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
+                            android:contentDescription="@string/id_bba_mba_icon"
                             android:src="@drawable/management4" />
 
                         <TextView
@@ -362,6 +368,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="100dp"
                             android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/id_bca_mca_icon"
                             android:src="@drawable/computerapplications" />
 
                         <TextView

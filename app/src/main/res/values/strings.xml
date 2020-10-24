@@ -11,4 +11,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="return_to_home">Return to Home</string>
 
+
+    <!-- Image descriptors -->
+    <string name="id_qsol_logo">QSOL logo</string>
+    <string name="id_filter_icon">filter icon</string>
+    <string name="id_university_icon">university icon</string>
+    <string name="id_diploma_icon">diploma icon</string>
+    <string name="id_btech_icon">b.tech icon</string>
+    <string name="id_bba_mba_icon">BBA/MBA icon</string>
+    <string name="id_bca_mca_icon">BCA/MCA icon</string>
+
+    <!-- Unsorted Strings -->
+    <string name="placeholder">Some placeholder string</string>
 </resources>
