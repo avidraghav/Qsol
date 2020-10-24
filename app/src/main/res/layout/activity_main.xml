@@ -9,17 +9,15 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true">
-
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
@@ -39,8 +37,7 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="60dp"
-                        android:layout_alignParentLeft="true"
-
+                        android:layout_alignParentStart="true"
                         android:src="@drawable/qslow" />
 
                     <Button
@@ -48,10 +45,8 @@
                         android:layout_width="60dp"
                         android:layout_height="28dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
                         android:layout_marginTop="12dp"
                         android:background="@drawable/actionbar_signup_buttonshape"
-                        android:foreground="?attr/selectableItemBackground"
                         android:text="Sign up"
                         android:textAllCaps="false"
                         android:textColor="#1E5A54"
@@ -141,7 +136,7 @@
                             android:id="@+id/quick_search"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent" />
+                            android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
@@ -183,16 +178,14 @@
                             android:text="University websites"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
-
                             android:textStyle="bold" />
 
                         <Button
                             android:id="@+id/kubtn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
+                            android:background="?attr/selectableItemBackground"
                             android:focusable="true"
-                            android:foreground="?attr/selectableItemBackground"
                             android:onClick="website" />
 
                     </RelativeLayout>
@@ -234,14 +227,13 @@
                             android:text="Diploma"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
-
                             android:textStyle="bold" />
 
                         <Button
                             android:id="@+id/diploma_btn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent" />
+                            android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
@@ -252,7 +244,6 @@
                     android:layout_height="128dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="4dp"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
                     android:orientation="vertical"
@@ -291,9 +282,8 @@
                             android:id="@+id/btechbtn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:focusable="true"
-                            android:foreground="?attr/selectableItemBackground" />
+                            android:background="?attr/selectableItemBackground"
+                            android:focusable="true" />
 
                     </RelativeLayout>
 
@@ -341,8 +331,7 @@
                             android:id="@+id/managementbtn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:foreground="?attr/selectableItemBackground" />
+                            android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
 
@@ -390,8 +379,7 @@
                             android:id="@+id/computer_applications_btn"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:foreground="?attr/selectableItemBackground" />
+                            android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
 
@@ -401,7 +389,6 @@
 
         </LinearLayout>
     </ScrollView>
-
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
