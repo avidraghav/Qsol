@@ -16,7 +16,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -56,22 +55,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btechbtn = findViewById(R.id.btechbtn);
-        quicksearch=findViewById(R.id.quick_search);
-        computer_applications_btn = findViewById(R.id.computer_applications_btn);
-        managementbtn = findViewById(R.id.managementbtn);
-        kubtn = findViewById(R.id.kubtn);
-        total_papers = findViewById(R.id.total_papers);
+        btechbtn = findViewById(R.id.bt_btech);
+        quicksearch=findViewById(R.id.bt_quick_search);
+        computer_applications_btn = findViewById(R.id.bt_bca_mca);
+        managementbtn = findViewById(R.id.bt_bba_mba);
+        kubtn = findViewById(R.id.bt_university_websites);
+        total_papers = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        btech_cardView=findViewById(R.id.btech_cardview);
-        ca_cardview=findViewById(R.id.ca_cardview);
-        ku_cardview=findViewById(R.id.ku_cardview);
-        mb_cardview=findViewById(R.id.mb_cardview);
-        quick_cardview=findViewById(R.id.quick_cardview);
-        actionbar_signup=findViewById(R.id.actionbar_signup);
-        diploma_btn=findViewById(R.id.diploma_btn);
-        diploma_cardview = findViewById(R.id.diploma_cardview);
+        btech_cardView=findViewById(R.id.cv_btech);
+        ca_cardview=findViewById(R.id.cv_bca_mca);
+        ku_cardview=findViewById(R.id.cv_university_websites);
+        mb_cardview=findViewById(R.id.cv_bba_mba);
+        quick_cardview=findViewById(R.id.cv_quick_search);
+        actionbar_signup=findViewById(R.id.bt_sign_up);
+        diploma_btn=findViewById(R.id.bt_diploma);
+        diploma_cardview = findViewById(R.id.cv_diploma);
 
 
 
@@ -92,13 +91,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else
             total_papers.setText("1542");
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.tb_main);
         toolbar.setTitle("");
        // toolbar.setLogo(R.drawable.qslow);
         //toolbar.setBackground(getResources().getDrawable( R.drawable.actionbar_shape));
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nv_main);
         navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -169,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void updateNavHeader() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nv_main);
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.username);
         TextView navWelcome = headerView.findViewById(R.id.txt_welcome);

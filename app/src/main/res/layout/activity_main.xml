@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/tb_main"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -35,7 +35,7 @@
                         android:src="@drawable/qslow" />
 
                     <Button
-                        android:id="@+id/actionbar_signup"
+                        android:id="@+id/bt_sign_up"
                         android:layout_width="64dp"
                         android:layout_height="32dp"
                         android:layout_alignParentEnd="true"
@@ -49,7 +49,7 @@
             </androidx.appcompat.widget.Toolbar>
 
             <FrameLayout
-                android:id="@+id/fragment_container"
+                android:id="@+id/fl_fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -59,7 +59,7 @@
                 android:layout_margin="16dp">
 
                 <TextView
-                    android:id="@+id/total_papers"
+                    android:id="@+id/tv_total_papers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
@@ -83,10 +83,10 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/total_papers" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_papers" />
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/quick_cardview"
+                    android:id="@+id/cv_quick_search"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_marginTop="32dp"
@@ -94,7 +94,7 @@
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@id/ku_cardview"
+                    app:layout_constraintEnd_toStartOf="@id/cv_university_websites"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_total_papers_text">
 
@@ -103,7 +103,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageview7"
+                            android:id="@+id/iv_filter"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
@@ -114,7 +114,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageview7"
+                            android:layout_below="@+id/iv_filter"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/quick_search"
@@ -123,7 +123,7 @@
                             android:textStyle="bold" />
 
                         <Button
-                            android:id="@+id/quick_search"
+                            android:id="@+id/bt_quick_search"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground" />
@@ -132,7 +132,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/ku_cardview"
+                    android:id="@+id/cv_university_websites"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_marginStart="4dp"
@@ -141,7 +141,7 @@
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/quick_cardview"
+                    app:layout_constraintStart_toEndOf="@id/cv_quick_search"
                     app:layout_constraintTop_toBottomOf="@id/tv_total_papers_text">
 
                     <RelativeLayout
@@ -149,7 +149,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageview6"
+                            android:id="@+id/iv_university"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
@@ -160,7 +160,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageview6"
+                            android:layout_below="@+id/iv_university"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/university_websites"
@@ -169,7 +169,7 @@
                             android:textStyle="bold" />
 
                         <Button
-                            android:id="@+id/kubtn"
+                            android:id="@+id/bt_university_websites"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground"
@@ -181,7 +181,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/diploma_cardview"
+                    android:id="@+id/cv_diploma"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_marginTop="8dp"
@@ -189,16 +189,16 @@
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@id/btech_cardview"
+                    app:layout_constraintEnd_toStartOf="@id/cv_btech"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/quick_cardview">
+                    app:layout_constraintTop_toBottomOf="@id/cv_quick_search">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageview8"
+                            android:id="@+id/iv_diploma"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
@@ -209,7 +209,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageview8"
+                            android:layout_below="@+id/iv_diploma"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/diploma"
@@ -218,7 +218,7 @@
                             android:textStyle="bold" />
 
                         <Button
-                            android:id="@+id/diploma_btn"
+                            android:id="@+id/bt_diploma"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground" />
@@ -227,7 +227,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/btech_cardview"
+                    android:id="@+id/cv_btech"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_gravity="center"
@@ -237,15 +237,15 @@
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/diploma_cardview"
-                    app:layout_constraintTop_toBottomOf="@id/quick_cardview">
+                    app:layout_constraintStart_toEndOf="@id/cv_diploma"
+                    app:layout_constraintTop_toBottomOf="@id/cv_quick_search">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageview1"
+                            android:id="@+id/iv_btech"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
@@ -256,7 +256,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageview1"
+                            android:layout_below="@+id/iv_btech"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/b_tech"
@@ -266,7 +266,7 @@
 
 
                         <Button
-                            android:id="@+id/btechbtn"
+                            android:id="@+id/bt_btech"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground"
@@ -277,7 +277,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/mb_cardview"
+                    android:id="@+id/cv_bba_mba"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_marginTop="8dp"
@@ -285,16 +285,16 @@
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@id/ca_cardview"
+                    app:layout_constraintEnd_toStartOf="@id/cv_bca_mca"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/diploma_cardview">
+                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageview5"
+                            android:id="@+id/iv_bba_mba"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
@@ -305,7 +305,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageview5"
+                            android:layout_below="@+id/iv_bba_mba"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/bba_mba"
@@ -314,7 +314,7 @@
                             android:textStyle="bold" />
 
                         <Button
-                            android:id="@+id/managementbtn"
+                            android:id="@+id/bt_bba_mba"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground" />
@@ -324,7 +324,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/ca_cardview"
+                    android:id="@+id/cv_bca_mca"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_gravity="center"
@@ -334,15 +334,15 @@
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/mb_cardview"
-                    app:layout_constraintTop_toBottomOf="@id/diploma_cardview">
+                    app:layout_constraintStart_toEndOf="@id/cv_bba_mba"
+                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageview3"
+                            android:id="@+id/iv_bca_mca"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
@@ -353,7 +353,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/imageview3"
+                            android:layout_below="@+id/iv_bca_mca"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/bca_mca"
@@ -362,7 +362,7 @@
                             android:textStyle="bold" />
 
                         <Button
-                            android:id="@+id/computer_applications_btn"
+                            android:id="@+id/bt_bca_mca"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground" />
@@ -375,7 +375,7 @@
     </ScrollView>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/nv_main"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
