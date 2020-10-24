@@ -118,14 +118,13 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:layout_gravity="center"
-                            android:background="@drawable/tileshape"
+                            app:cardBackgroundColor="#dbf7ff"
+                            app:cardCornerRadius="40dp"
                             android:orientation="vertical">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/cardview_shape"
-                                >
+                                android:layout_height="match_parent">
 
                                 <ImageView
                                     android:id="@+id/imageview7"
@@ -159,12 +158,13 @@
                             android:layout_weight="1"
                             android:layout_gravity="center"
                             android:orientation="vertical"
+                            app:cardBackgroundColor="#dbf7ff"
+                            app:cardCornerRadius="40dp"
                             android:layout_marginStart="5dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/cardview_shape">
+                                android:layout_height="match_parent">
 
                                 <ImageView
                                     android:id="@+id/imageview6"
@@ -211,15 +211,15 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            app:cardBackgroundColor="#dbf7ff"
+                            app:cardCornerRadius="40dp"
                             android:layout_gravity="center"
 
                             android:orientation="vertical">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/cardview_shape"
-                                >
+                                android:layout_height="match_parent">
 
                                 <ImageView
                                     android:id="@+id/imageview8"
@@ -254,12 +254,12 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
                             android:orientation="vertical"
-                            >
+                            app:cardBackgroundColor="#dbf7ff"
+                            app:cardCornerRadius="40dp">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/cardview_shape">
+                                android:layout_height="match_parent">
 
                                 <ImageView
                                     android:id="@+id/imageview1"
@@ -308,14 +308,14 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            app:cardBackgroundColor="#dbf7ff"
+                            app:cardCornerRadius="40dp"
                             android:layout_gravity="center"
                             android:orientation="vertical">
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/cardview_shape"
-                                >
+                                android:layout_height="match_parent">
 
                                 <ImageView
                                     android:id="@+id/imageview5"
@@ -349,6 +349,8 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            app:cardBackgroundColor="#dbf7ff"
+                            app:cardCornerRadius="40dp"
                             android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
                             android:orientation="vertical"
@@ -356,9 +358,7 @@
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/cardview_shape"
-                                >
+                                android:layout_height="match_parent">
 
                                 <ImageView
                                     android:id="@+id/imageview3"
