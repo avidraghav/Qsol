@@ -1,8 +1,5 @@
 package com.application.kurukshetrauniversitypapers;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +9,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -27,50 +26,57 @@ import Adapters.Pdflistadapter;
 import utils.SingleDownloadClass;
 import utils.uploadPDF;
 
-public class Pdflist extends AppCompatActivity  {
-     ListView listView;
-     DatabaseReference databaseReference;
-     List<uploadPDF> uploadPDFS;
-     TextView textViewName;
-     Button download_single;
-     FirebaseAuth mAuth;
+public class Pdflist extends AppCompatActivity {
 
-     String key;
-     String board,branch,semester,subjectcode;
+    public static final String KEY_BOARD = "board";
+    public static final String KEY_BRANCH = "branch";
+    public static final String KEY_SEMESTER = "semester";
+    public static final String KEY_SUBJECT = "subject";
+
+    ListView listView;
+    DatabaseReference databaseReference;
+    List<uploadPDF> uploadPDFS;
+    TextView textViewName;
+    Button download_single;
+    FirebaseAuth mAuth;
+
+    String key;
+    String board, branch, semester, subjectcode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdflist);
-        mAuth=FirebaseAuth.getInstance();
-        listView=findViewById(R.id.pdflist);
-        textViewName=findViewById(R.id.pdfname);
-        download_single=findViewById(R.id.download_single);
-        uploadPDFS= new ArrayList<>();
+        mAuth = FirebaseAuth.getInstance();
+        listView = findViewById(R.id.pdflist);
+        textViewName = findViewById(R.id.pdfname);
+        download_single = findViewById(R.id.download_single);
+        uploadPDFS = new ArrayList<>();
 
 
-        Intent intent1=getIntent();
-        key=intent1.getStringExtra("subject");
-        board=key.substring(3,5);
-        branch=key.substring(6,8);
-        semester=key.substring(9,11);
-        subjectcode=key.substring(12);
+        Intent intent1 = getIntent();
+        key = intent1.getStringExtra("subject");
+        board = key.substring(3, 5);
+        branch = key.substring(6, 8);
+        semester = key.substring(9, 11);
+        subjectcode = key.substring(12);
 
 
         SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
         singleDownloadClass.setBoard(board);
-          singleDownloadClass.setBranch(branch);
-          singleDownloadClass.setSemester(semester);
-          singleDownloadClass.setCode(subjectcode);
+        singleDownloadClass.setBranch(branch);
+        singleDownloadClass.setSemester(semester);
+        singleDownloadClass.setCode(subjectcode);
 
-         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                uploadPDF uploadPDF=uploadPDFS.get(position);
-                Intent intent=new Intent();
+                uploadPDF uploadPDF = uploadPDFS.get(position);
+                Intent intent = new Intent();
                 intent.setType(Intent.ACTION_VIEW);
-                Uri uri=Uri.parse(uploadPDF.getUrl());
-                if(uri.toString().contains(".pdf")) {
-                    intent.setDataAndType(uri,"application/pdf");
+                Uri uri = Uri.parse(uploadPDF.getUrl());
+                if (uri.toString().contains(".pdf")) {
+                    intent.setDataAndType(uri, "application/pdf");
                 }
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -85,19 +91,19 @@ public class Pdflist extends AppCompatActivity  {
     @Override
     protected void onStart() {
         super.onStart();
-        Intent intent=getIntent();
-        key=intent.getStringExtra("subject");
-        databaseReference= FirebaseDatabase.getInstance().getReference(key);
+        Intent intent = getIntent();
+        key = intent.getStringExtra("subject");
+        databaseReference = FirebaseDatabase.getInstance().getReference(key);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 uploadPDFS.clear();
-                for(DataSnapshot pdfSnapshot: dataSnapshot.getChildren()){
-                    uploadPDF uploadPDF=pdfSnapshot.getValue(uploadPDF.class);
+                for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
+                    uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
                     uploadPDFS.add(uploadPDF);
                 }
 
-                 Pdflistadapter adapter= new Pdflistadapter(Pdflist.this,uploadPDFS);
+                Pdflistadapter adapter = new Pdflistadapter(Pdflist.this, uploadPDFS);
                 listView.setAdapter(adapter);
             }
 
@@ -108,7 +114,6 @@ public class Pdflist extends AppCompatActivity  {
         });
 
     }
-
 
 
 }

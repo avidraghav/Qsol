@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="56dp">
+
+    <ImageView
+        android:id="@+id/iv_expand_arrow"
+        android:layout_width="24dp"
+        android:layout_height="16dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/arrow_expanded_collapsed"
+        app:layout_constraintBottom_toBottomOf="@id/tv_branch_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_branch_name"
+        app:tint="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/tv_branch_name"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        android:singleLine="false"
+        android:textColor="@color/fontColor"
+        app:layout_constraintEnd_toStartOf="@id/tv_paper_count"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/iv_expand_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Computer Science Engineering" />
+
+    <TextView
+        android:id="@+id/tv_paper_count"
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/fontColor"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@id/tv_branch_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_branch_name"
+        tools:text="140" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_semesters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_branch_name"
+        tools:itemCount="7"
+        tools:listitem="@layout/list_item_expanded_semester"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

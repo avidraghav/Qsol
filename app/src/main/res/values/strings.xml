@@ -28,6 +28,7 @@
     <string name="id_btech_icon">b.tech icon</string>
     <string name="id_bba_mba_icon">BBA/MBA icon</string>
     <string name="id_bca_mca_icon">BCA/MCA icon</string>
+    <string name="id_download_button_icon">download button icon</string>
 
     <!-- Unsorted Strings -->
     <string name="placeholder">Some placeholder string</string>
