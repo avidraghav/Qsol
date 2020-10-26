@@ -10,5 +10,25 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="return_to_home">Return to Home</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="papers_available">Papers Available</string>
+    <string name="quick_search">Quick Search</string>
+    <string name="university_websites">University Websites</string>
+    <string name="diploma">Diploma</string>
+    <string name="b_tech">B.Tech</string>
+    <string name="bba_mba">BBA/MBA</string>
+    <string name="bca_mca">BCA/MCA</string>
 
+
+    <!-- Image descriptors -->
+    <string name="id_qsol_logo">QSOL logo</string>
+    <string name="id_filter_icon">filter icon</string>
+    <string name="id_university_icon">university icon</string>
+    <string name="id_diploma_icon">diploma icon</string>
+    <string name="id_btech_icon">b.tech icon</string>
+    <string name="id_bba_mba_icon">BBA/MBA icon</string>
+    <string name="id_bca_mca_icon">BCA/MCA icon</string>
+
+    <!-- Unsorted Strings -->
+    <string name="placeholder">Some placeholder string</string>
 </resources>
