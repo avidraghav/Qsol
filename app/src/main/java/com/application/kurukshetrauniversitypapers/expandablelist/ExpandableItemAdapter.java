@@ -18,7 +18,7 @@ import java.util.Locale;
 
 import model.Semester;
 
-import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SEMESTER;
+import static com.application.kurukshetrauniversitypapers.filelist.FileListActivity.KEY_SEMESTER;
 
 public class ExpandableItemAdapter extends RecyclerView.Adapter<ExpandableItemAdapter.SemesterViewHolder> {
 

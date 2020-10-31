@@ -107,6 +107,7 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
         return subjectList.size();
     }
 
+    // TODO Unify all recyclerview item click listeners with a java generic
     public interface OnSubjectItemClickListener {
         void onClick(Subject subject);
     }

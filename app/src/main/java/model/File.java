@@ -15,6 +15,7 @@ public class File {
     private DocumentReference semester;
     private DocumentReference subject;
     private String name;
+    private String fileName;
     private String code;
     private String url;
     private String year;

@@ -52,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Pdflist"
+            android:name=".filelist.FileListActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"

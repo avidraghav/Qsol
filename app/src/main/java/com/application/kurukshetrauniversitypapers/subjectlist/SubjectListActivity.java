@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.R;
+import com.application.kurukshetrauniversitypapers.filelist.FileListActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -22,8 +22,8 @@ import java.util.List;
 
 import model.Subject;
 
-import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SEMESTER;
-import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SUBJECT;
+import static com.application.kurukshetrauniversitypapers.filelist.FileListActivity.KEY_SEMESTER;
+import static com.application.kurukshetrauniversitypapers.filelist.FileListActivity.KEY_SUBJECT;
 
 public class SubjectListActivity extends AppCompatActivity implements SubjectListAdapter.OnSubjectItemClickListener {
 
@@ -82,9 +82,7 @@ public class SubjectListActivity extends AppCompatActivity implements SubjectLis
 
     @Override
     public void onClick(Subject subject) {
-        Intent intent = new Intent(SubjectListActivity.this, Pdflist.class);
-
-        intent.putExtra(KEY_SEMESTER, semesterId);
+        Intent intent = new Intent(SubjectListActivity.this, FileListActivity.class);
         intent.putExtra(KEY_SUBJECT, subject.getId());
         startActivity(intent);
     }
