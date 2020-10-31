@@ -25,7 +25,7 @@ import model.Subject;
 import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SEMESTER;
 import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SUBJECT;
 
-public class SubjectListActivity extends AppCompatActivity implements SubjectListAdapter.OnLectureItemClickListener {
+public class SubjectListActivity extends AppCompatActivity implements SubjectListAdapter.OnSubjectItemClickListener {
 
     public static final String KEY_TITLE = "key";
     List<Subject> subjectList;

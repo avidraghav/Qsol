@@ -26,17 +26,17 @@ import model.Subject;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
-public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.LectureViewHolder> {
+public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.SubjectViewHolder> {
 
     private static final String TAG = "SubjectListAdapter";
 
     private Context context;
     private List<Subject> subjectList;
     private String semester;
-    private OnLectureItemClickListener listener;
+    private OnSubjectItemClickListener listener;
     private FirebaseFirestore db;
 
-    public SubjectListAdapter(Context context, List<Subject> subjectList, OnLectureItemClickListener listener) {
+    public SubjectListAdapter(Context context, List<Subject> subjectList, OnSubjectItemClickListener listener) {
         this.context = context;
         this.subjectList = subjectList;
         this.listener = listener;
@@ -84,13 +84,13 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
 
     @NonNull
     @Override
-    public LectureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SubjectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.list_item_subject, parent, false);
-        return new LectureViewHolder(view);
+        return new SubjectViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LectureViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SubjectViewHolder holder, int position) {
         Subject subject = subjectList.get(position);
         holder.itemView.setOnClickListener(v -> {
             listener.onClick(subject);
@@ -107,17 +107,17 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
         return subjectList.size();
     }
 
-    public interface OnLectureItemClickListener {
+    public interface OnSubjectItemClickListener {
         void onClick(Subject subject);
     }
 
-    public static class LectureViewHolder extends RecyclerView.ViewHolder {
+    public static class SubjectViewHolder extends RecyclerView.ViewHolder {
 
         TextView subjectNameTextView;
         TextView paperCountTextView;
         ImageButton downloadButton;
 
-        public LectureViewHolder(@NonNull View itemView) {
+        public SubjectViewHolder(@NonNull View itemView) {
             super(itemView);
             this.subjectNameTextView = itemView.findViewById(R.id.tv_subject_name);
             this.paperCountTextView = itemView.findViewById(R.id.tv_paper_count);
