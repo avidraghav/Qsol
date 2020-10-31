@@ -99,7 +99,6 @@ public class ExpandableListActivity extends AppCompatActivity {
         DocumentReference branchRef = db.collection("branches").document(branch.getId());
         db.collection("semesters")
                 .whereEqualTo("branch", branchRef)
-                .whereEqualTo("isSyllabus", false)
                 .orderBy("key").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
