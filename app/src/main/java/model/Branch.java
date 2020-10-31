@@ -15,8 +15,9 @@ public class Branch {
     private String id;
     private String key;
     private String name;
+    private String group;
     private DocumentReference board;
-    private long semesterCount;
+    private long semestersCount;
     private long papersCount;
     private List<Semester> semesters = new ArrayList<>();
 }

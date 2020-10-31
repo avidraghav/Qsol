@@ -31,10 +31,7 @@ public class ExpandableListActivity extends AppCompatActivity {
     private TextView refreshTextView;
     private RecyclerView expandableRecyclerView;
     private ExpandableListAdapter adapter;
-
-    private String boardId;
     private List<Branch> branches = new ArrayList<>();
-
     private FirebaseFirestore db;
 
     @Override
@@ -44,14 +41,13 @@ public class ExpandableListActivity extends AppCompatActivity {
 
         Log.d(TAG, "onCreate: Started");
 
-        // TODO Replace with all necessary data from intent
-        boardId = "CfWBxI3tij0D2Mfwh6na";
-
         refreshTextView = findViewById(R.id.tv_refresh);
         expandableRecyclerView = findViewById(R.id.rv_expandable_list);
 
         db = FirebaseFirestore.getInstance();
-        getBranches();
+        // TODO Replace string extra key with constant
+        String group = getIntent().getStringExtra("reference");
+        getBranchesByGroup(group);
 
         adapter = new ExpandableListAdapter(this, branches);
         expandableRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -68,15 +64,17 @@ public class ExpandableListActivity extends AppCompatActivity {
 //        });
     }
 
-    private void getBranches() {
-        Log.d(TAG, "getBranches: called.");
+    /**
+     * @param group the group of the branches to show
+     */
+    private void getBranchesByGroup(String group) {
+        if (group == null) return;
+
         // TODO Replace strings of collections with constants
-        DocumentReference boardRef = db.collection("boards").document(boardId);
-        db.collection("branches").whereEqualTo("board", boardRef).get()
+        db.collection("branches").whereEqualTo("group", group).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot snapshots) {
-                        Log.d(TAG, "onSuccess: successfully.");
                         List<Branch> dbBranches = snapshots.toObjects(Branch.class);
                         for (Branch branch : dbBranches) {
                             if (branch != null) {
@@ -96,6 +94,7 @@ public class ExpandableListActivity extends AppCompatActivity {
 
     private void getSemesters(@NonNull Branch branch) {
         // TODO Replace strings of collections with constants
+        Log.d(TAG, "getSemesters: Branch id: " + branch.getId());
         DocumentReference branchRef = db.collection("branches").document(branch.getId());
         db.collection("semesters")
                 .whereEqualTo("branch", branchRef)
@@ -113,7 +112,7 @@ public class ExpandableListActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(ExpandableListActivity.this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("run counter", "no");
         intent.putExtra("EXIT", true);

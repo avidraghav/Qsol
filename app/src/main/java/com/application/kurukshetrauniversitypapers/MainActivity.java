@@ -37,6 +37,11 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import static model.BranchGroup.GROUP_BTECH;
+import static model.BranchGroup.GROUP_COMPUTER_APPLICATIONS;
+import static model.BranchGroup.GROUP_DIPLOMA;
+import static model.BranchGroup.GROUP_MANAGEMENT;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String KEY_RUN_COUNTER = "run counter";
@@ -145,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private void startActivity(@NonNull Class<? extends AppCompatActivity> clazz, String reference) {
         Intent intent = new Intent(this, clazz);
+        // TODO Replace string extra key with constant
         intent.putExtra("reference", reference);
         startActivity(intent);
     }
@@ -166,19 +172,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.bt_diploma:
                 clazz = ExpandableListActivity.class;
-                reference = "diploma";
+                reference = GROUP_DIPLOMA;
                 break;
             case R.id.bt_btech:
                 clazz = ExpandableListActivity.class;
-                reference = "btech";
+                reference = GROUP_BTECH;
                 break;
             case R.id.bt_bba_mba:
                 clazz = ExpandableListActivity.class;
-                reference = "management";
+                reference = GROUP_MANAGEMENT;
                 break;
             case R.id.bt_bca_mca:
                 clazz = ExpandableListActivity.class;
-                reference = "computer_applications";
+                reference = GROUP_COMPUTER_APPLICATIONS;
                 break;
             case R.id.bt_sign_up:
                 clazz = RegisterActivity.class;
