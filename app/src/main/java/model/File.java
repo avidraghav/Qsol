@@ -6,14 +6,18 @@ import com.google.firebase.firestore.DocumentReference;
 import lombok.Data;
 
 @Data
-public class Semester {
+public class File {
 
     @DocumentId
     private String id;
-    private String key;
     private DocumentReference board;
     private DocumentReference branch;
-    private long subjectsCount;
+    private DocumentReference semester;
+    private DocumentReference subject;
+    private String name;
+    private String code;
+    private String url;
+    private String year;
+    private boolean isSyllabus;
     private long papersCount;
-    private long syllabusesCount;
 }

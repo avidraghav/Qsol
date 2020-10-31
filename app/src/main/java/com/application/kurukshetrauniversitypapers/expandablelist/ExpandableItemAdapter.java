@@ -16,22 +16,18 @@ import com.application.kurukshetrauniversitypapers.subjectlist.SubjectListActivi
 import java.util.List;
 import java.util.Locale;
 
-import model.Branch;
 import model.Semester;
+
+import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SEMESTER;
 
 public class ExpandableItemAdapter extends RecyclerView.Adapter<ExpandableItemAdapter.SemesterViewHolder> {
 
     private Context context;
-    private Branch branch;
     private List<Semester> semesters;
-    private List<Object> listItems;
-    private int expandedItemPosition = -1;
-    private SemesterViewHolder expandedHolder;
 
-    public ExpandableItemAdapter(Context context, Branch branch) {
+    public ExpandableItemAdapter(Context context, List<Semester> semesters) {
         this.context = context;
-        this.branch = branch;
-        this.semesters = branch.getSemesters();
+        this.semesters = semesters;
     }
 
     @NonNull
@@ -44,13 +40,14 @@ public class ExpandableItemAdapter extends RecyclerView.Adapter<ExpandableItemAd
     @Override
     public void onBindViewHolder(@NonNull SemesterViewHolder holder, int position) {
         Semester semester = semesters.get(position);
-        holder.titleTextView.setText(semester.getId());
+        String semesterName = context.getString(R.string.semester) + " " + semester.getKey().replaceFirst("^0+(?!$)", "");
+        holder.titleTextView.setText(semesterName);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // TODO Handle click event
                 Intent i = new Intent(context, SubjectListActivity.class);
-                i.putExtra("key", branch.getId() + semester.getId());
+                i.putExtra(KEY_SEMESTER, semester.getId());
                 context.startActivity(i);
             }
         });

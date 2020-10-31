@@ -3,30 +3,26 @@ package com.application.kurukshetrauniversitypapers.subjectlist;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.application.kurukshetrauniversitypapers.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 import java.util.Locale;
 
-import model.Lecture;
+import model.File;
+import model.Subject;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
@@ -35,19 +31,16 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
     private static final String TAG = "SubjectListAdapter";
 
     private Context context;
-    private List<Lecture> subjectList;
-    private String board;
-    private String branch;
+    private List<Subject> subjectList;
     private String semester;
     private OnLectureItemClickListener listener;
+    private FirebaseFirestore db;
 
-    public SubjectListAdapter(Context context, String board, String branch, String semester, List<Lecture> subjectList, OnLectureItemClickListener listener) {
+    public SubjectListAdapter(Context context, List<Subject> subjectList, OnLectureItemClickListener listener) {
         this.context = context;
-        this.board = board;
-        this.branch = branch;
-        this.semester = semester;
         this.subjectList = subjectList;
         this.listener = listener;
+        db = FirebaseFirestore.getInstance();
     }
 
     /**
@@ -56,35 +49,21 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
      *
      * @param subject the subject from which to download the files
      */
-    private void download(final Lecture subject) {
+    private void download(final Subject subject) {
 
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference("IN")
-                .child(board).child(branch).child(semester).child(subject.getId());
-        DatabaseReference rootref = FirebaseDatabase.getInstance().getReference("IN")
-                .child(board).child(branch).child(semester).child(subject.getId());
-
-        rootref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (final DataSnapshot paper : dataSnapshot.getChildren()) {
-                    // TODO Improve this part of code
-                    Object file = paper.child("name").getValue();
-                    storageReference.child(file.toString() + ".pdf")
-                            .getDownloadUrl().addOnSuccessListener(uri -> {
-                        String url = uri.toString();
-                        downloadFile(file.toString(), url);
-                    }).addOnFailureListener(e -> {
-                        Toast.makeText(context, "Unable to download now, try later", Toast.LENGTH_SHORT).show();
-                        Log.e(TAG, "Failed to get download URL.", e);
-                    });
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // TODO Handle cancellation
-            }
-        });
+        // TODO Replace strings of collections with constants
+        DocumentReference subjectRef = db.collection("subjects").document(subject.getId());
+        db.collection("files").whereEqualTo("subject", subjectRef).get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot snapshots) {
+                        List<File> files = snapshots.toObjects(File.class);
+                        for (File file : files) {
+                            String fileName = file.getName() + ".pdf";
+                            downloadFile(fileName, file.getUrl());
+                        }
+                    }
+                });
     }
 
     /**
@@ -112,12 +91,12 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull LectureViewHolder holder, int position) {
-        Lecture lecture = subjectList.get(position);
+        Subject subject = subjectList.get(position);
         holder.itemView.setOnClickListener(v -> {
-            listener.onClick(lecture);
+            listener.onClick(subject);
         });
-        holder.subjectNameTextView.setText(lecture.getName());
-        holder.paperCountTextView.setText(String.format(Locale.getDefault(), "%d", lecture.getPapersCount()));
+        holder.subjectNameTextView.setText(subject.getName());
+        holder.paperCountTextView.setText(String.format(Locale.getDefault(), "%d", subject.getPapersCount()));
         holder.downloadButton.setOnClickListener(v -> {
             download(subjectList.get(position));
         });
@@ -129,7 +108,7 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
     }
 
     public interface OnLectureItemClickListener {
-        void onClick(Lecture lecture);
+        void onClick(Subject subject);
     }
 
     public static class LectureViewHolder extends RecyclerView.ViewHolder {

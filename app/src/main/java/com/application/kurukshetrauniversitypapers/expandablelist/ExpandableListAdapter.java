@@ -39,10 +39,10 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<ExpandableListAd
     @Override
     public void onBindViewHolder(@NonNull BranchViewHolder holder, int position) {
         Branch branch = branches.get(position);
-        holder.titleTextView.setText(branch.getId());
+        holder.titleTextView.setText(branch.getName());
         holder.paperCountTextView.setText(String.format(Locale.getDefault(), "%d", branch.getPapersCount()));
         holder.semestersRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-        holder.semestersRecyclerView.setAdapter(new ExpandableItemAdapter(context, branch));
+        holder.semestersRecyclerView.setAdapter(new ExpandableItemAdapter(context, branch.getSemesters()));
         // TODO Optimize the adapter instantiation
         if (expandedItemPosition == position) {
             holder.semestersRecyclerView.setVisibility(View.VISIBLE);

@@ -11,41 +11,45 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Lecture;
+import model.Subject;
 
-import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_BOARD;
-import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_BRANCH;
 import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SEMESTER;
 import static com.application.kurukshetrauniversitypapers.Pdflist.KEY_SUBJECT;
 
 public class SubjectListActivity extends AppCompatActivity implements SubjectListAdapter.OnLectureItemClickListener {
 
     public static final String KEY_TITLE = "key";
-    List<Lecture> subjectList;
+    List<Subject> subjectList;
     SubjectListAdapter adapter;
-    private String boardId;
-    private String branchId;
     private String semesterId;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject_list);
 
+        db = FirebaseFirestore.getInstance();
+
         loadMetaData();
 
         RecyclerView subjectsRecyclerView = findViewById(R.id.rv_subject_list);
 
         subjectList = new ArrayList<>();
-        adapter = new SubjectListAdapter(this, boardId, branchId, semesterId, subjectList, this);
+        adapter = new SubjectListAdapter(this, subjectList, this);
         subjectsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         subjectsRecyclerView.setAdapter(adapter);
 
-        getData();
+        getSubjects();
     }
 
     private void loadMetaData() {
@@ -53,71 +57,35 @@ public class SubjectListActivity extends AppCompatActivity implements SubjectLis
         String key = intent.getStringExtra(KEY_TITLE);
         ((TextView) findViewById(R.id.tv_title)).setText(key);
 
-        boardId = intent.getStringExtra(KEY_BOARD);
-        branchId = intent.getStringExtra(KEY_BRANCH);
         semesterId = intent.getStringExtra(KEY_SEMESTER);
     }
 
-    private void getData() {
-//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("IN");
-//        ref = ref.child(boardId).child(branchId).child(semesterId);
-//        ref.addChildEventListener(new ChildEventListener() {
-//
-//            @Override
-//            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String s) {
-//                String id = dataSnapshot.getKey();
-//                String subjectName = dataSnapshot.child("subject_name").getValue(String.class);
-//                long paperCount = dataSnapshot.getChildrenCount();
-//
-//                subjectList.add(new Lecture(id, subjectName, paperCount));
-//                adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, String s) {
-//                // TODO Update single child with notifyItemChanged(int position)
-//                //  instead of notifyDataSetChanged()
-//                adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-//                // TODO Remove single child with notifyItemRemoved(int position)
-//                //  instead of notifyDataSetChanged()
-//                adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, String s) {
-//                // TODO Move child with notifyItemMoved(int startPosition, int endPosition)
-//                //  instead of notifyDataSetChanged()
-//                adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                // TODO Handle cancellation?
-//            }
-//        });
-
-        subjectList.add(new Lecture("diuasbd", "Advanced web technology", 3));
-        subjectList.add(new Lecture("23321313", "Cloud computing", 23));
-        subjectList.add(new Lecture("236313", "Compiler design", 2));
-        subjectList.add(new Lecture("23323413", "Computer architecture and parallel processing", 4));
-        subjectList.add(new Lecture("23445313", "Computer graphics", 1));
-        subjectList.add(new Lecture("2337913", "Mobile apps development", 7));
-        subjectList.add(new Lecture("23283313", "Linux and shell programming", 8));
-        adapter.notifyDataSetChanged();
+    private void getSubjects() {
+        // TODO Replace strings of collections with constants
+        DocumentReference semesterRef = db.collection("semesters").document(semesterId);
+        db.collection("subjects").whereEqualTo("semester", semesterRef).get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot snapshots) {
+                        List<DocumentSnapshot> subjectDocuments = snapshots.getDocuments();
+                        for (DocumentSnapshot subjectDoc : subjectDocuments) {
+                            Subject subject = subjectDoc.toObject(Subject.class);
+                            if (subject != null) {
+                                subjectList.add(subject);
+                                adapter.notifyDataSetChanged();
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                });
     }
 
     @Override
-    public void onClick(Lecture lecture) {
+    public void onClick(Subject subject) {
         Intent intent = new Intent(SubjectListActivity.this, Pdflist.class);
 
-        intent.putExtra(KEY_BOARD, boardId);
-        intent.putExtra(KEY_BRANCH, branchId);
         intent.putExtra(KEY_SEMESTER, semesterId);
-        intent.putExtra(KEY_SUBJECT, lecture.getId());
+        intent.putExtra(KEY_SUBJECT, subject.getId());
         startActivity(intent);
     }
 }
