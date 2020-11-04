@@ -12,6 +12,8 @@ public class Subjectcode {
     }
     public String getcode() {
         GlobalClass globalClass=new GlobalClass();
+
+
         if(globalClass.getBoard().equals("KU")) {
 
             if (subjectname.equals("Applied chemistry")) {

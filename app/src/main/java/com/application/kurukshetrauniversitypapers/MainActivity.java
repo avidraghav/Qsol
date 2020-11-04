@@ -33,6 +33,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private TextView totalPapersTextView;
+    private Snackbar snackbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +57,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAuth = FirebaseAuth.getInstance();
         signUpButton = findViewById(R.id.bt_sign_up);
 
+
         handleAnimations();
         setupToolbar();
         setupDrawer();
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel =
@@ -205,10 +209,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (null != activenetwork) {
 
             if (activenetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
-                // Toast.makeText(this, "Internet connected", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(this, "Turn on internet connection", Toast.LENGTH_SHORT).show();
+            View view =findViewById(R.id.drawer_layout);
+            snackbar = Snackbar.make(view,"No Internet Connection!", Snackbar.LENGTH_SHORT);
+            snackbar.setDuration(3000);
+            snackbar.show();
 
         }
     }
