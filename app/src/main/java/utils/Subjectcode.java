@@ -936,6 +936,42 @@ public class Subjectcode {
             if (subjectname.equals("Information theory and coding")) {
                 code = "II";
             }
+            // Civil subjects
+            if (subjectname.equals("Structural analysis 2")) {
+                code = "Z1";
+            }
+            if (subjectname.equals("Design of steel structure 1")) {
+                code = "Z2";
+            }
+            if (subjectname.equals("Fluid mechanics 2")) {
+                code = "Z3";
+            }
+            if (subjectname.equals("Soil mechanics")) {
+                code = "Z4";
+            }
+            if (subjectname.equals("Surveying 2")) {
+                code = "Z5";
+            }
+            if (subjectname.equals("Transportation engineering 1")) {
+                code = "Z0";
+            }
+            if (subjectname.equals("Water supply and treatment")) {
+                code = "X0";
+            }
+            if (subjectname.equals("Design of steel structure 2")) {
+                code = "Z6";
+            }
+            if (subjectname.equals("Irrigation engineering 1")) {
+                code = "Z7";
+            }
+            if (subjectname.equals("Water resources and system engineering")) {
+                code = "Z8";
+            }
+            if (subjectname.equals("Geotechnology 2")) {
+                code = "Z9";
+            }
+
+
 
 
         }

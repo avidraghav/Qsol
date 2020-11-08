@@ -10,9 +10,9 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VideosAvailableActivity">
-
-        </activity>
+        <activity android:name="KU_CV_subjectlists.Cv_sixthsem_subjectlist"></activity>
+        <activity android:name="KU_CV_subjectlists.Cv_fourthsem_subjectlist" />
+        <activity android:name=".VideosAvailableActivity" />
         <activity
             android:name=".VideoActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
@@ -246,10 +246,10 @@
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

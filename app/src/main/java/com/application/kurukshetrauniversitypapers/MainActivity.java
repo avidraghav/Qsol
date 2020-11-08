@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             findViewById(R.id.cv_bba_mba).setAnimation(fadeIn);
             findViewById(R.id.cv_quick_search).setAnimation(fadeIn);
             findViewById(R.id.cv_diploma).setAnimation(fadeIn);
-        } else totalPapersTextView.setText("1542");
+        } else totalPapersTextView.setText("1575");
     }
 
     /**
