@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      * Starts animation that counts upwards in {@link #totalPapersTextView}.
      */
     private void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 1542);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 1575);
         animator.setDuration(2000);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             public void onAnimationUpdate(ValueAnimator animation) {

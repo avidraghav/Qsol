@@ -9,6 +9,7 @@ public class SingleDownloadClass extends Application {
     static String code;
 
 
+
     public String getBranch() {
         return branch;
     }

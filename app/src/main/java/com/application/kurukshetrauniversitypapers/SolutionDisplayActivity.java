@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,29 +23,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.Pdflistadapter;
+import Adapters.SolutionDisplayActivityAdapter;
+import utils.Listdata;
 import utils.SingleDownloadClass;
 import utils.uploadPDF;
 
-public class Pdflist extends AppCompatActivity  {
-     ListView listView;
-     DatabaseReference databaseReference;
-     List<uploadPDF> uploadPDFS;
-     TextView textViewName;
-     Button download_single;
-     FirebaseAuth mAuth;
+public class SolutionDisplayActivity extends AppCompatActivity {
+    ListView listView;
+    DatabaseReference databaseReference;
+    List<uploadPDF> uploadPDFS;
+    TextView textViewName;
+    Button download_single;
+    FirebaseAuth mAuth;
 
-     String key;
-     String board,branch,semester,subjectcode;
+    String key;
+    String board,branch,semester,subjectcode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdflist);
+        setContentView(R.layout.activity_solution_display);
         mAuth=FirebaseAuth.getInstance();
         listView=findViewById(R.id.pdflist);
         textViewName=findViewById(R.id.pdfname);
         download_single=findViewById(R.id.download_single);
         uploadPDFS= new ArrayList<>();
-
 
         Intent intent1=getIntent();
         key=intent1.getStringExtra("subject");
@@ -55,31 +56,14 @@ public class Pdflist extends AppCompatActivity  {
         semester=key.substring(9,11);
         subjectcode=key.substring(12);
 
-
         SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
         singleDownloadClass.setBoard(board);
-          singleDownloadClass.setBranch(branch);
-          singleDownloadClass.setSemester(semester);
-          singleDownloadClass.setCode(subjectcode);
+        singleDownloadClass.setBranch(branch);
+        singleDownloadClass.setSemester(semester);
+        singleDownloadClass.setCode(subjectcode);
 
-         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                uploadPDF uploadPDF=uploadPDFS.get(position);
-                Intent intent=new Intent();
-                intent.setType(Intent.ACTION_VIEW);
-                Uri uri=Uri.parse(uploadPDF.getUrl());
-                if(uri.toString().contains(".pdf")) {
-                    intent.setDataAndType(uri,"application/pdf");
-                }
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-
-            }
-        });
-
-//
     }
+
 
     @Override
     protected void onStart() {
@@ -96,7 +80,7 @@ public class Pdflist extends AppCompatActivity  {
                     uploadPDFS.add(uploadPDF);
                 }
 
-                 Pdflistadapter adapter= new Pdflistadapter(Pdflist.this,uploadPDFS);
+                SolutionDisplayActivityAdapter adapter= new SolutionDisplayActivityAdapter(SolutionDisplayActivity.this,uploadPDFS);
                 listView.setAdapter(adapter);
             }
 
@@ -107,7 +91,6 @@ public class Pdflist extends AppCompatActivity  {
         });
 
     }
-
 
 
 }

@@ -34,7 +34,8 @@ public class Filters extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter=new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new PapersFragment(),"Papers");
         viewPagerAdapter.addFragment(new SyllabusFragment(),"Syllabus");
-        viewPagerAdapter.addFragment(new VideoFragment(),"Videos");
+      //  viewPagerAdapter.addFragment(new VideoFragment(),"Videos");
+        viewPagerAdapter.addFragment(new SolutionsFragment(),"Solutions");
         viewPager.setAdapter(viewPagerAdapter);
     }
     @Override

@@ -55,10 +55,32 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:singleLine="true"
-        android:text="Testers/Advisers"
+        android:text="Open Source Contributors"
         android:textAlignment="center"
         android:textColor="#0C0C0C"
         android:textSize="16sp" />
+        <TextView
+            android:id="@+id/person20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Christos Malliaridis"
+            android:drawablePadding="2dp"
+            android:drawableLeft="@drawable/linkedin"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:background="?attr/selectableItemBackground"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:labelFor="@+id/person2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="Testers/Advisers"
+            android:textAlignment="center"
+            android:textColor="#0C0C0C"
+            android:textSize="16sp" />
     <TextView
         android:id="@+id/person2"
         android:layout_width="wrap_content"
