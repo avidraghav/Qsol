@@ -18,7 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
-import com.application.kurukshetrauniversitypapers.LoginActivity;
+import com.application.kurukshetrauniversitypapers.LoginActivity2;
 import com.application.kurukshetrauniversitypapers.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -38,6 +38,7 @@ import utils.uploadPDF;
 
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
+
 public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
     private Activity context;
     List<uploadPDF> pdflist;
@@ -49,13 +50,14 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
     private String branch;
     private String semester;
     private String code;
-    private String SOLUTION="Model Solution of";
+
 
     public SolutionDisplayActivityAdapter(Activity context, List<uploadPDF> pdflist) {
         super(context, R.layout.pdflist_row, pdflist);
         this.context = context;
         this.pdflist = pdflist;
     }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
@@ -65,13 +67,19 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
         Button btndownload = (Button) listViewItem.findViewById(R.id.download_single);
         Button btnshare =(Button) listViewItem.findViewById(R.id.share);
         uploadPDF uploadPDF = pdflist.get(position);
-        textViewName.setText(SOLUTION+" "+uploadPDF.getName());
+        textViewName.setText("Model Solution of "+uploadPDF.getName());
         mAuth=FirebaseAuth.getInstance();
 
         textViewName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewFiles(position);
+                if((mAuth.getCurrentUser()!=null && mAuth.getCurrentUser().isEmailVerified())){
+                    viewFiles(position);
+                }
+                else {
+                    checkAuthentication();
+
+                }
 
             }
         });
@@ -80,26 +88,7 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
             @Override
             public void onClick(View v) {
 
-                if((mAuth.getCurrentUser()==null)){
-                    String[] items = {"Yes", "No"};
-                    AlertDialog.Builder dialog= new AlertDialog.Builder(getContext());
-                    dialog.setTitle("To share you need to login");
-                    dialog.setItems(items, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if(which==0){
-                                Intent intent=new Intent(getContext(), LoginActivity.class);
-                                context.startActivity(intent);
-                            }
-                            if(which ==1){
-
-                            }
-                        }
-                    });
-                    dialog.create().show();
-                }
-
-                else {
+                if((mAuth.getCurrentUser()!=null && mAuth.getCurrentUser().isEmailVerified())){
                     Uri uri = getLink(position);
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
@@ -108,6 +97,10 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                     context.startActivity(Intent.createChooser(shareIntent, "Share Using"));
+
+                }
+                else {
+                    checkAuthentication();
                 }
 
 
@@ -118,15 +111,19 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
             @Override
             public void onClick(final View view) {
 
-                SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-                board= singleDownloadClass.getBoard();
-                branch = singleDownloadClass.getBranch();
-                semester = singleDownloadClass.getSemester();
-                code = singleDownloadClass.getCode();
-                toast();
-                download("IN/"+board+ "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
-                Log.e("dir", "IN/"+board + "/" + branch + "/" + semester + "/" + code);
-                Log.e("name",textViewName.getText().toString());
+                if((mAuth.getCurrentUser()!=null && mAuth.getCurrentUser().isEmailVerified())){
+                    SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
+                    board = singleDownloadClass.getBoard();
+                    branch = singleDownloadClass.getBranch();
+                    semester = singleDownloadClass.getSemester();
+                    code = singleDownloadClass.getCode();
+                    toast();
+                    download("IN/" + board + "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
+
+                }
+                else {
+                    checkAuthentication();
+                }
 
             }
         });
@@ -135,7 +132,7 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
 
     public Uri getLink(int position){
         uploadPDF uploadPDF = pdflist.get(position);
-        return ( Uri.parse(uploadPDF.getSolution_url()) );
+        return ( Uri.parse(uploadPDF.getUrl()) );
 
     }
 
@@ -162,10 +159,12 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 myref = storageReference.child(filename+".pdf");
+                Log.e(filename,filename+".pdf");
                 myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
                         String url = uri.toString();
+                        Log.e("url",url);
                         downloadfiles(getContext(),filename, ".pdf", DIRECTORY_DOWNLOADS, url);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -182,8 +181,7 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
         });
 
     }
-    public void toast(){
-        Toast.makeText(context, "Downloading, notification will arrive soon!", Toast.LENGTH_LONG).show();}
+    public void toast(){Toast.makeText(context, "downloading", Toast.LENGTH_LONG).show();}
 
     public void downloadfiles(Context context, String file, String fileExtension, String destinationDirectory, String url)
     {
@@ -195,4 +193,26 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
         downloadmanager.enqueue(request);
     }
 
+    public void checkAuthentication(){
+
+        String[] items = {"Yes", "No"};
+        AlertDialog.Builder dialog= new AlertDialog.Builder(getContext());
+        dialog.setTitle("To View, Share or Download you need to Login");
+        dialog.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(which==0){
+                    Intent intent=new Intent(getContext(), LoginActivity2.class);
+                    context.startActivity(intent);
+                }
+                if(which ==1){
+                    // do nothing
+                }
+            }
+        });
+        dialog.create().show();
+
+    }
 }
+
+

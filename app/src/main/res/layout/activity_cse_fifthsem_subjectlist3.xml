@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist">
+<include
+    layout="@layout/subjects_layout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

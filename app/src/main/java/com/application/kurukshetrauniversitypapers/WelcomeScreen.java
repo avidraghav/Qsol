@@ -16,7 +16,7 @@ ImageView imageView;
 TextView textView2;
 Animation top, bottom;
 
-    private  static  int SPLASH_SCREEN =1000;
+    private  static  int SPLASH_SCREEN =2000;
 
 
     @Override

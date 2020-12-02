@@ -43,6 +43,7 @@
                         android:background="@drawable/actionbar_signup_buttonshape"
                         android:text="@string/sign_up"
                         android:textAllCaps="false"
+                        android:onClick="onItemClicked"
                         android:textColor="#1E5A54" />
 
                 </RelativeLayout>

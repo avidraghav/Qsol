@@ -386,7 +386,6 @@
                 android:layout_below="@+id/first"
                 android:layout_marginTop="4dp"
                 android:text="Fifth"
-                android:enabled="false"
                 android:background="@drawable/button_default"/>
             <Button
                 android:id="@+id/sixth"

@@ -102,6 +102,14 @@ public class SolutionsFragment extends Fragment {
                 third.setBackgroundResource(R.drawable.button_pressed);
             }
         });
+        fifth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selected_semester="fifth";
+                semester_number="5";
+                fifth.setBackgroundResource(R.drawable.button_pressed);
+            }
+        });
 
 
         ku.setOnClickListener(new View.OnClickListener() {
@@ -112,10 +120,7 @@ public class SolutionsFragment extends Fragment {
                 ku_semesters.setVisibility(View.VISIBLE);
                 dp_courses.setVisibility(View.GONE);
                 dp_semesters.setVisibility(View.GONE);
-//
-//
                 ku.setBackgroundResource(R.drawable.button_pressed);
-//
 
             }
         });
@@ -128,8 +133,9 @@ public class SolutionsFragment extends Fragment {
                     Toast.makeText(getActivity(), "Choose Board, Course and semester", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Intent intent = new Intent(getActivity(), SolutionDisplayActivity.class);
-                    intent.putExtra("subject", "IN/KU/CS/03/M3");
+                    Intent intent = new Intent();
+                    intent.putExtra("key", "Solutions");
+                    intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_solution_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
                     startActivity(intent);
                 }
 

@@ -37,6 +37,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import utils.AppUpdateChecker;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String KEY_RUN_COUNTER = "run counter";
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         totalPapersTextView = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
@@ -82,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void checkUpdate() {
+        AppUpdateChecker appUpdateChecker=new AppUpdateChecker(this);  //pass the activity in constructure
+        appUpdateChecker.checkForUpdate(false); //mannual check false here
     }
 
     /**
@@ -177,7 +185,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 clazz = ComputerApplications_expendable_list.class;
                 break;
             case R.id.bt_sign_up:
-                clazz = RegisterActivity.class;
+                clazz = RegisterActivity2.class;
+
         }
         if (clazz == null) return;
         startActivity(clazz);
@@ -188,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = headerView.findViewById(R.id.username);
         TextView navWelcome = headerView.findViewById(R.id.txt_welcome);
-        if (mAuth.getCurrentUser() != null) {
+        if (mAuth.getCurrentUser() != null && mAuth.getCurrentUser().isEmailVerified()) {
             navWelcome.setVisibility(View.VISIBLE);
             signUpButton.setVisibility(View.INVISIBLE);
             navUsername.setText(mAuth.getCurrentUser().getEmail());
@@ -232,7 +241,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.quick:
                 startActivity(new Intent(MainActivity.this, Filters.class));
                 break;
-//
             default:
                 return super.onOptionsItemSelected(item);
 
@@ -245,8 +253,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
             case R.id.action_signin:
-                if (mAuth.getCurrentUser() == null) {
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                if (signUpButton.getVisibility()==View.VISIBLE) {
+                    startActivity(new Intent(MainActivity.this, LoginActivity2.class));
                     break;
                 } else {
                     Toast.makeText(this, "You are already logged in", Toast.LENGTH_SHORT).show();
@@ -317,6 +325,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onStart() {
+        checkUpdate();
         updateNavHeader();
         checkConnection();
         super.onStart();

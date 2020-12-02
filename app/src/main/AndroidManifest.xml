@@ -10,7 +10,13 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SolutionDisplayActivity"></activity>
+        <activity android:name="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist"></activity>
+        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".LoginActivity2" />
+        <activity android:name=".VerifyPhoneActivity" />
+        <activity android:name=".RegisterActivity2" />
+        <activity android:name="KU_CSE_solution_subjectlists.Cse_thirdsem_subjectlist" />
+        <activity android:name=".SolutionDisplayActivity" />
         <activity android:name="KU_CV_subjectlists.Cv_sixthsem_subjectlist" />
         <activity android:name="KU_CV_subjectlists.Cv_fourthsem_subjectlist" />
         <activity android:name=".VideosAvailableActivity" />
@@ -247,10 +253,10 @@
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
