@@ -77,6 +77,103 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:singleLine="true"
+            android:text="Solution Contributors"
+            android:textAlignment="center"
+            android:textColor="#0C0C0C"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/person21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prachi Garg (9 solutions)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Taksh Mehta"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mayank Arora"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
+            android:text="Paper contribution"
+            android:textAlignment="center"
+            android:textColor="#0C0C0C"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/person4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aashima Nanda (40 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prachi Garg (11 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person10"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:background="?attr/selectableItemBackground"
+            android:drawablePadding="2dp"
+            android:text="Kartar (3 papers)"
+            android:textColor="@color/fontColor"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/person11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Khyati (3 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:labelFor="@+id/person2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:singleLine="true"
             android:text="Testers/Advisers"
             android:textAlignment="center"
             android:textColor="#0C0C0C"
@@ -192,60 +289,7 @@
             android:textSize="20sp"
             android:textColor="@color/fontColor"
             android:layout_gravity="center_horizontal"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:singleLine="true"
-        android:text="Paper contribution"
-        android:textAlignment="center"
-        android:textColor="#0C0C0C"
-        android:textSize="16sp" />
-    <TextView
-        android:id="@+id/person4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Aashima Nanda (40 papers)"
-        android:drawableLeft="@drawable/linkedin"
-        android:drawablePadding="2dp"
-        android:background="?attr/selectableItemBackground"
-        android:textSize="20sp"
-        android:textColor="@color/fontColor"
-        android:layout_gravity="center_horizontal"/>
-    <TextView
-        android:id="@+id/person5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Prachi Garg (11 papers)"
-        android:drawableLeft="@drawable/linkedin"
-        android:drawablePadding="2dp"
-        android:background="?attr/selectableItemBackground"
-        android:textSize="20sp"
-        android:textColor="@color/fontColor"
-        android:layout_gravity="center_horizontal"/>
 
-        <TextView
-            android:id="@+id/person10"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_gravity="center_horizontal"
-            android:background="?attr/selectableItemBackground"
-            android:drawablePadding="2dp"
-            android:text="Kartar (3 papers)"
-            android:textColor="@color/fontColor"
-            android:textSize="20sp" />
- <TextView
-     android:id="@+id/person11"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:text="Khyati (3 papers)"
-     android:drawableLeft="@drawable/linkedin"
-     android:drawablePadding="2dp"
-     android:background="?attr/selectableItemBackground"
-     android:textSize="20sp"
-     android:textColor="@color/fontColor"
-     android:layout_gravity="center_horizontal"/>
  <TextView
      android:layout_marginTop="10dp"
      android:layout_width="match_parent"

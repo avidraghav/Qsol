@@ -20,7 +20,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
-import com.application.kurukshetrauniversitypapers.LoginActivity;
+import com.application.kurukshetrauniversitypapers.LoginActivity2;
 import com.application.kurukshetrauniversitypapers.R;
 import utils.SingleDownloadClass;
 import utils.uploadPDF;
@@ -83,26 +83,7 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
             @Override
             public void onClick(View v) {
 
-                if((mAuth.getCurrentUser()==null)){
-                    String[] items = {"Yes", "No"};
-                    AlertDialog.Builder dialog= new AlertDialog.Builder(getContext());
-                    dialog.setTitle("To share you need to login");
-                    dialog.setItems(items, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if(which==0){
-                                Intent intent=new Intent(getContext(), LoginActivity.class);
-                               context.startActivity(intent);
-                            }
-                            if(which ==1){
-
-                            }
-                        }
-                    });
-                    dialog.create().show();
-                }
-
-                else {
+                if((mAuth.getCurrentUser()!=null && mAuth.getCurrentUser().isEmailVerified())){
                     Uri uri = getLink(position);
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
@@ -111,9 +92,32 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                     context.startActivity(Intent.createChooser(shareIntent, "Share Using"));
+
+                }
+                else {
+                    checkAuthentication();
                 }
 
 
+            }
+
+            private void checkAuthentication() {
+                String[] items = {"Yes", "No"};
+                AlertDialog.Builder dialog= new AlertDialog.Builder(getContext());
+                dialog.setTitle("To Share you need to Login");
+                dialog.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(which==0){
+                            Intent intent=new Intent(getContext(), LoginActivity2.class);
+                            context.startActivity(intent);
+                        }
+                        if(which ==1){
+                            // do nothing
+                        }
+                    }
+                });
+                dialog.create().show();
             }
         });
 
