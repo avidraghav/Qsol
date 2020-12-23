@@ -43,33 +43,37 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
         subjectlist.add(new Listdata("Automata theory", "3"));
         subjectlist.add(new Listdata("Computer organisation and architecture", "3"));
         subjectlist.add(new Listdata("Essentials of information technology", "3"));
+        subjectlist.add(new Listdata("Microprocessors and Interfacing", "1"));
         SolutionSubjectsAdapter adapter = new SolutionSubjectsAdapter(getBaseContext(), R.layout.solution_subjects_row, subjectlist);
         listView.setAdapter(adapter);
 
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position==0) {
-                    Intent intent=new Intent(KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
-                    intent.putExtra("subject","IN/KU/CS/05/AT");
-                    startActivity(intent);
-                    Toast.makeText(KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==1) {
-                    Intent intent=new Intent(KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
-                    intent.putExtra("subject","IN/KU/CS/05/CO");
-                    startActivity(intent);
-                    Toast.makeText(KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==2) {
-                    Intent intent=new Intent(KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
-                    intent.putExtra("subject","IN/KU/CS/05/EO");
-                    startActivity(intent);
-                    Toast.makeText(KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            if(position==0) {
+                Intent intent1 =new Intent(Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
+                intent1.putExtra("subject","IN/KU/CS/05/AT");
+                startActivity(intent1);
+                Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
             }
+            if(position==1) {
+                Intent intent1 =new Intent(Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
+                intent1.putExtra("subject","IN/KU/CS/05/CO");
+                startActivity(intent1);
+                Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==2) {
+                Intent intent1 =new Intent(Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
+                intent1.putExtra("subject","IN/KU/CS/05/EO");
+                startActivity(intent1);
+                Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==3) {
+                Intent intent1 =new Intent(Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
+                intent1.putExtra("subject","IN/KU/CS/05/MS");
+                startActivity(intent1);
+                Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+
         });
 
     }

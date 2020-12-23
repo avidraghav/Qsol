@@ -92,14 +92,13 @@ public class SolutionsFragment extends Fragment {
             }
         });
 
-
-
         third.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selected_semester="third";
                 semester_number="3";
                 third.setBackgroundResource(R.drawable.button_pressed);
+                fifth.setBackgroundResource(R.drawable.button_default);
             }
         });
         fifth.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +107,7 @@ public class SolutionsFragment extends Fragment {
                 selected_semester="fifth";
                 semester_number="5";
                 fifth.setBackgroundResource(R.drawable.button_pressed);
+                third.setBackgroundResource(R.drawable.button_default);
             }
         });
 
