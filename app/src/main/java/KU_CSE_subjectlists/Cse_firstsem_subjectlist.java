@@ -56,7 +56,6 @@ String key;
         textView.setText(key);
 
          semester=textView.getText().toString();
-
          GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("KU");
         globalClass.setBranch("CS");
@@ -69,13 +68,10 @@ String key;
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-//
                 if(dataSnapshot.getKey().equals("BI")) {
                     onepapercount4=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Biology", onepapercount4+""));
-
                 }
-//
                 if(dataSnapshot.getKey().equals("CU")) {
                     onepapercount6 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Calculus and linear algebra", onepapercount6+""));
@@ -84,13 +80,10 @@ String key;
                     onepapercount7 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Chemistry", onepapercount7+""));
                 }
-
                 if(dataSnapshot.getKey().equals("EE")) {
                     onepapercount8 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Electrical engineering", onepapercount8+""));
                 }
-//
-
                 if(dataSnapshot.getKey().equals("ED")) {
                     onepapercount10=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Engineering drawing", onepapercount10+""));
@@ -99,8 +92,6 @@ String key;
                     onepapercount11 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("English", onepapercount11+""));
                 }
-//
-
                 if(dataSnapshot.getKey().equals("PP")) {
                     onepapercount16 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Programming for problem solving", onepapercount16+""));
@@ -109,7 +100,6 @@ String key;
                     onepapercount17 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Semiconductor physics", onepapercount17+""));
                 }
-
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listview.setAdapter(adapter);
 
@@ -137,60 +127,57 @@ String key;
             }
         });
 
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position==0) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/BI");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==1) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/CH");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==2) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/CU");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==3) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/ED");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/EE");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==5) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/EH");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==6) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/PP");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==7) {
-                    Intent intent=new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/01/SH");
-                    startActivity(intent);
-                    Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-
-
+        listview.setOnItemClickListener((parent, view, position, id) -> {
+            if(position==0) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this, Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/BI");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
             }
+            if(position==1) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/CH");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==2) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this, Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/CU");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==3) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/ED");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==4) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/EE");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==5) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/EH");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==6) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/PP");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==7) {
+                Intent intent1 =new Intent(Cse_firstsem_subjectlist.this,Pdflist.class);
+                intent1.putExtra("subject","IN/KU/CS/01/SH");
+                startActivity(intent1);
+                Toast.makeText(Cse_firstsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+
+
         });
 
 

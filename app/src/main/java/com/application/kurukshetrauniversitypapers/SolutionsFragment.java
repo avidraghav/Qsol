@@ -91,13 +91,24 @@ public class SolutionsFragment extends Fragment {
                 cse.setBackgroundResource(R.drawable.button_pressed);
             }
         });
+        first.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selected_semester="first";
+                semester_number="1";
+                first.setBackgroundResource(R.drawable.button_pressed);
+                third.setBackgroundResource(R.drawable.button_default);
+                fifth.setBackgroundResource(R.drawable.button_default);
 
+            }
+        });
         third.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selected_semester="third";
                 semester_number="3";
                 third.setBackgroundResource(R.drawable.button_pressed);
+                first.setBackgroundResource(R.drawable.button_default);
                 fifth.setBackgroundResource(R.drawable.button_default);
             }
         });
@@ -107,6 +118,7 @@ public class SolutionsFragment extends Fragment {
                 selected_semester="fifth";
                 semester_number="5";
                 fifth.setBackgroundResource(R.drawable.button_pressed);
+                first.setBackgroundResource(R.drawable.button_default);
                 third.setBackgroundResource(R.drawable.button_default);
             }
         });

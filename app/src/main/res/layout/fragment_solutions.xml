@@ -344,7 +344,6 @@
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/button_default"
                 android:text="First"
-                android:enabled="false"
                 android:textAllCaps="false" />
             <Button
                 android:layout_below="@+id/txt_semester"

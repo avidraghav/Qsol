@@ -10,7 +10,8 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist"></activity>
+        <activity android:name="KU_CSE_solution_subjectlists.Cse_firstsem_subjectlist"></activity>
+        <activity android:name="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".LoginActivity2" />
         <activity android:name=".VerifyPhoneActivity" />
@@ -253,10 +254,10 @@
             </intent-filter>
         </service>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

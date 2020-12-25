@@ -43,7 +43,7 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
         subjectlist.add(new Listdata("Automata theory", "3"));
         subjectlist.add(new Listdata("Computer organisation and architecture", "3"));
         subjectlist.add(new Listdata("Essentials of information technology", "3"));
-        subjectlist.add(new Listdata("Microprocessors and Interfacing", "1"));
+        subjectlist.add(new Listdata("Microprocessors and Interfacing", "2"));
         SolutionSubjectsAdapter adapter = new SolutionSubjectsAdapter(getBaseContext(), R.layout.solution_subjects_row, subjectlist);
         listView.setAdapter(adapter);
 
