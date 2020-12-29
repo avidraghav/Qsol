@@ -28,6 +28,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/text_logo"
                         android:layout_width="64dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentStart="true"
@@ -46,6 +47,7 @@
                         android:onClick="onItemClicked"
                         android:textColor="#1E5A54" />
 
+
                 </RelativeLayout>
             </androidx.appcompat.widget.Toolbar>
 
@@ -58,6 +60,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp">
+
+                    <TextView
+                        android:id="@+id/notification_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="notificationClicked"
+                        android:text=" "
+                        android:padding="2dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/fontColor"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_total_papers"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
 
                 <TextView
                     android:id="@+id/tv_total_papers"
@@ -77,7 +94,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
                     android:text="@string/papers_available"
                     android:textColor="@color/fontColor"
                     android:textSize="18sp"

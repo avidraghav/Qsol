@@ -389,10 +389,7 @@
       android:background="@color/fontColor"
       android:alpha="0.1"
       android:orientation="vertical"
-      android:layout_centerInParent="true">
-
-  </LinearLayout>
-
+      android:layout_centerInParent="true"/>
   <Button
       android:id="@+id/contribute"
       android:layout_width="match_parent"
@@ -402,6 +399,8 @@
       android:background="@android:color/transparent"
    android:text="Contribute to Qsol"/>
  </RelativeLayout>
+
+
     </LinearLayout>
 </ScrollView>
 </LinearLayout>

@@ -1,5 +1,9 @@
 package com.application.kurukshetrauniversitypapers;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -19,6 +23,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,20 +40,29 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import utils.AppUpdateChecker;
+import utils.NotificationGetter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String KEY_RUN_COUNTER = "run counter";
+    public static final String KEY_NOTIFICATION_TEXT="notification text";
+    public static final String KEY_NOTIFICATION_URL="notification url";
 
     private Button signUpButton;
     private FirebaseAuth mAuth;
     private Toolbar toolbar;
     private DrawerLayout drawer;
-    private TextView totalPapersTextView;
-    private Snackbar snackbar;
+    private TextView totalPapersTextView,newNotificationsTextView;
+    private String notificationUrl;
+    public String notificationText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +73,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         totalPapersTextView = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
         signUpButton = findViewById(R.id.bt_sign_up);
+        newNotificationsTextView=findViewById(R.id.notification_textview);
 
-
+        handleNotification();
         handleAnimations();
         setupToolbar();
         setupDrawer();
@@ -124,14 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent = getIntent();
         String runCounter = intent.getStringExtra(KEY_RUN_COUNTER);
         if ("yes".equals(runCounter)) {
-            Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
             startCountAnimation();
-            findViewById(R.id.cv_btech).setAnimation(fadeIn);
-            findViewById(R.id.cv_bca_mca).setAnimation(fadeIn);
-            findViewById(R.id.cv_university_websites).setAnimation(fadeIn);
-            findViewById(R.id.cv_bba_mba).setAnimation(fadeIn);
-            findViewById(R.id.cv_quick_search).setAnimation(fadeIn);
-            findViewById(R.id.cv_diploma).setAnimation(fadeIn);
         } else totalPapersTextView.setText("1575");
     }
 
@@ -141,11 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void startCountAnimation() {
         ValueAnimator animator = ValueAnimator.ofInt(0, 1575);
         animator.setDuration(2000);
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            public void onAnimationUpdate(ValueAnimator animation) {
-                totalPapersTextView.setText(animation.getAnimatedValue().toString());
-            }
-        });
+        animator.addUpdateListener(animation -> totalPapersTextView.setText(animation.getAnimatedValue().toString()));
         animator.start();
     }
 
@@ -186,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.bt_sign_up:
                 clazz = RegisterActivity2.class;
+            case R.id.notification_textview:
 
         }
         if (clazz == null) return;
@@ -221,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         } else {
             View view =findViewById(R.id.drawer_layout);
-            snackbar = Snackbar.make(view,"No Internet Connection!", Snackbar.LENGTH_SHORT);
+            Snackbar snackbar = Snackbar.make(view, "No Internet Connection!", Snackbar.LENGTH_SHORT);
             snackbar.setDuration(3000);
             snackbar.show();
 
@@ -292,7 +297,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("market://details?id=" + getPackageName())));
                     break;
-                } catch (ActivityNotFoundException e) {
+                }
+                catch (ActivityNotFoundException e) {
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
                     break;
@@ -322,7 +328,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             finish();
         }
     }
-
     @Override
     protected void onStart() {
         checkUpdate();
@@ -331,4 +336,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStart();
     }
 
+    public void handleNotification() {
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("IN/Notifications/");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                NotificationGetter notificationGetter = dataSnapshot.getValue(NotificationGetter.class);
+                notificationText=notificationGetter.getText();
+                if(notificationText.equals(" ")){
+                    // do nothing
+                }
+                else{
+                    findViewById(R.id.notification_textview).setBackgroundResource(R.drawable.notification_textview_shape);
+                    Animation fadeIn = AnimationUtils.loadAnimation(getBaseContext(), R.anim.reveal_details);
+                    findViewById(R.id.notification_textview).setAnimation(fadeIn);
+                }
+                newNotificationsTextView.setText(notificationText);
+                notificationUrl=notificationGetter.getUrl();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(MainActivity.this, databaseError.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+    public void notificationClicked(View view) {
+        if(newNotificationsTextView.getText().equals(" ")){
+
+        }
+        else {
+            Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse(notificationUrl));
+            startActivity(Browserintent);
+        }
+    }
 }
