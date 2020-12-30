@@ -13,9 +13,11 @@ Help maintaing the application.
 
 ### Features
 ```Plain
-1. Quick and free access to previous year exam papers
-2. All papers of a particular subject can be download with just a click which saves a lot of time.
-3. Users can also view the papers in the app
+1. Quick and free access to previous year exam papers, syllabuses and solutions.
+2. Model Solutions of various subjects also available
+3. App covers Kurukshetra University and Haryana State Board of Technical Education.
+4. All papers of a particular subject can be downloaded with just a click which saves a lot of time.
+5. Users can also view the papers in the app
 
 ```
 
