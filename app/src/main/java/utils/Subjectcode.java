@@ -448,7 +448,6 @@ public class Subjectcode {
                 code = "NC";
             }
             if (subjectname.equals("High voltage engineering")) {
-
                 code = "HV";
             }
 
@@ -469,35 +468,27 @@ public class Subjectcode {
                 code = "DY";
             }
             if (subjectname.equals("Fluid mechanics")) {
-
                 code = "FM";
             }
             if (subjectname.equals("Material science")) {
-
                 code = "MT";
             }
             if (subjectname.equals("Mechanics of solids")) {
-
                 code = "MO";
             }
             if (subjectname.equals("Production technology")) {
-
                 code = "PT";
             }
             if (subjectname.equals("Strength of materials")) {
-
                 code = "SL";
             }
             if (subjectname.equals("Steam generator and power")) {
-
                 code = "SG";
             }
             if (subjectname.equals("Computer aided design and manufacturing")) {
-
                 code = "CF";
             }
             if (subjectname.equals("Machine design")) {
-
                 code = "MN";
             }
             if (subjectname.equals("Mechanical vibrations")) {
@@ -505,23 +496,18 @@ public class Subjectcode {
                 code = "MV";
             }
             if (subjectname.equals("Refrigeration and air conditioning")) {
-
                 code = "RC";
             }
             if (subjectname.equals("Tribology")) {
-
                 code = "TY";
             }
             if (subjectname.equals("Theory of machines")) {
-
                 code = "TM";
             }
             if (subjectname.equals("Optics and waves")) {
-
                 code = "OW";
             }
-            if (subjectname.equals("Basics of economics and management")) {
-
+            if (subjectname.equals("Basic electronics engineering")) {
                 code = "BF";
             }
 
