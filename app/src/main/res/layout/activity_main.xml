@@ -105,7 +105,6 @@
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_marginTop="32dp"
-                    android:layout_marginEnd="4dp"
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
@@ -116,6 +115,13 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/bt_quick_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?attr/selectableItemBackground"
+                            android:onClick="onItemClicked" />
 
                         <ImageView
                             android:id="@+id/iv_filter"
@@ -136,13 +142,6 @@
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
-
-                        <Button
-                            android:id="@+id/bt_quick_search"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:onClick="onItemClicked"
-                            android:background="?attr/selectableItemBackground" />
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
@@ -255,7 +254,7 @@
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_diploma"
-                    app:layout_constraintTop_toBottomOf="@id/cv_quick_search">
+                    app:layout_constraintTop_toBottomOf="@id/cv_university_websites">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -293,7 +292,53 @@
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_bca_mca"
+                    android:layout_width="0dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    app:cardBackgroundColor="#dbf7ff"
+                    app:cardCornerRadius="40dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cv_bba_mba"
+                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_bca_mca"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:contentDescription="@string/id_bca_mca_icon"
+                            android:src="@drawable/computerapplications" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv_bca_mca"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/bca_mca"
+                            android:textColor="@color/fontColor"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/bt_bca_mca"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:onClick="onItemClicked"
+                            android:background="?attr/selectableItemBackground" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_bba_mba"
                     android:layout_width="0dp"
@@ -342,53 +387,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_bca_mca"
-                    android:layout_width="0dp"
-                    android:layout_height="128dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="8dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cv_bba_mba"
-                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/iv_bca_mca"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:contentDescription="@string/id_bca_mca_icon"
-                            android:src="@drawable/computerapplications" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_bca_mca"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/bca_mca"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <Button
-                            android:id="@+id/bt_bca_mca"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:onClick="onItemClicked"
-                            android:background="?attr/selectableItemBackground" />
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

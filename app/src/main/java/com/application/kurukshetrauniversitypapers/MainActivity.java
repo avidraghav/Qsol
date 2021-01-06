@@ -369,8 +369,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else {
-            Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse(notificationUrl));
-            startActivity(Browserintent);
+            startActivity(new Intent(MainActivity.this,DatesheetsActivity.class));
         }
     }
 }

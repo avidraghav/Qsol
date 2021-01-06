@@ -20,7 +20,7 @@ import utils.uploadPDF;
 
 
 public class PapersFragment extends Fragment {
-    Button cse,it,me,ee,ec,mb,bb,bc,mc,first,second,third,fourth,fifth,sixth,seventh,eight,session;
+    Button cse,it,me,ee,ec,mb,bb,bc,mc,cv,first,second,third,fourth,fifth,sixth,seventh,eight,session;
     Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
     Button ku,dp;
     String selected_branch = "null",selected_semester = "null",semester_number="null",branch_for_intent="null";
@@ -55,6 +55,7 @@ public class PapersFragment extends Fragment {
         bb=v.findViewById(R.id.bb);
         bc=v.findViewById(R.id.bc);
         mc=v.findViewById(R.id.mc);
+        cv=v.findViewById(R.id.cv);
         first=v.findViewById(R.id.first);
         second=v.findViewById(R.id.second);
         third=v.findViewById(R.id.third);
@@ -92,6 +93,7 @@ public class PapersFragment extends Fragment {
                 selected_branch="Cse";
                 branch_for_intent="Computer science"; // for branches other than Cse when first or second sem is selected selected branch is
                              // overriden to Cse
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_pressed);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -111,13 +113,12 @@ public class PapersFragment extends Fragment {
 
             }
         });
-
         it.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selected_branch="It";
                 branch_for_intent="Information technology";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_pressed);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -141,7 +142,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Me";
                 branch_for_intent="Mechanical";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_pressed);
@@ -165,7 +166,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Ece";
                 branch_for_intent="Electronics and communication";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -184,12 +185,36 @@ public class PapersFragment extends Fragment {
                 Log.e("branch",selected_branch);
             }
         });
+        cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_branch="Cv";
+                branch_for_intent="Civil Engineering";
+                cv.setBackgroundResource(R.drawable.button_pressed);
+                cse.setBackgroundResource(R.drawable.button_default);
+                it.setBackgroundResource(R.drawable.button_default);
+                me.setBackgroundResource(R.drawable.button_default);
+                ec.setBackgroundResource(R.drawable.button_default);
+                ee.setBackgroundResource(R.drawable.button_default);
+                mb.setBackgroundResource(R.drawable.button_default);
+                bb.setBackgroundResource(R.drawable.button_default);
+                bc.setBackgroundResource(R.drawable.button_default);
+                mc.setBackgroundResource(R.drawable.button_default);
+                third.setEnabled(false);
+                fifth.setEnabled(false);
+                fourth.setEnabled(true);
+                sixth.setEnabled(true);
+                seventh.setEnabled(false);
+                eight.setEnabled(false);
+                Log.e("branch",selected_branch);
+            }
+        });
         ee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selected_branch="Ele";
                 branch_for_intent="Electrical";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -213,7 +238,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Mba";
                 branch_for_intent="MBA";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -237,7 +262,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Bba";
                 branch_for_intent="BBA";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -261,7 +286,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Bca";
                 branch_for_intent="BCA";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -285,7 +310,7 @@ public class PapersFragment extends Fragment {
             public void onClick(View v) {
                 selected_branch="Mca";
                 branch_for_intent="MCA";
-                
+                cv.setBackgroundResource(R.drawable.button_default);
                 cse.setBackgroundResource(R.drawable.button_default);
                 it.setBackgroundResource(R.drawable.button_default);
                 me.setBackgroundResource(R.drawable.button_default);
@@ -304,6 +329,7 @@ public class PapersFragment extends Fragment {
                 Log.e("branch",selected_branch);
             }
         });
+
 
         dp_cse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -632,6 +658,7 @@ public class PapersFragment extends Fragment {
                 me.setBackgroundResource(R.drawable.button_default);
                 ec.setBackgroundResource(R.drawable.button_default);
                 ee.setBackgroundResource(R.drawable.button_default);
+                cv.setBackgroundResource(R.drawable.button_default);
                 mb.setBackgroundResource(R.drawable.button_default);
                 bb.setBackgroundResource(R.drawable.button_default);
                 bc.setBackgroundResource(R.drawable.button_default);
@@ -677,7 +704,7 @@ public class PapersFragment extends Fragment {
                 }
                 else{
                     if(board.equals("KU_")) {
-                        if (selected_branch.equals("It") || selected_branch.equals("Me") || selected_branch.equals("Ece") || selected_branch.equals("Ele")) {
+                        if (selected_branch.equals("It") || selected_branch.equals("Me") || selected_branch.equals("Ece") || selected_branch.equals("Ele") || selected_branch.equals("Cv")) {
                             if (selected_semester.equals("first") || selected_semester.equals("second")) {
                                 selected_branch = "Cse";
                                 Log.e("Selected branch", selected_branch);

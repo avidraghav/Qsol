@@ -98,7 +98,6 @@
         android:layout_marginTop="5dp"
         >
         <RelativeLayout
-            android:visibility="gone"
             android:id="@+id/ku_courses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -167,14 +166,26 @@
             android:background="@drawable/button_default"
             android:text="Electro. and comm."
             android:textAllCaps="false" />
+            <Button
+                android:id="@+id/cv"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/ec"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@+id/ee"
+                android:singleLine="true"
+                android:background="@drawable/button_default"
+                android:text="Civil Engg."
+                android:textAllCaps="false" />
         <Button
             android:id="@+id/mb"
             android:layout_width="170dp"
             android:layout_height="35dp"
-            android:layout_below="@+id/ec"
+            android:layout_below="@+id/cv"
             android:layout_toRightOf="@+id/bb"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="42dp"
+            android:layout_marginTop="5dp"
             android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="MBA"
@@ -217,6 +228,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:visibility="gone"
             >
             <TextView
                 android:layout_alignParentTop="true"
