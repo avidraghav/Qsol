@@ -44,6 +44,7 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
         subjectlist.add(new Listdata("Computer organisation and architecture", "3"));
         subjectlist.add(new Listdata("Essentials of information technology", "3"));
         subjectlist.add(new Listdata("Microprocessors and Interfacing", "2"));
+        subjectlist.add(new Listdata("Database management system", "3"));
         SolutionSubjectsAdapter adapter = new SolutionSubjectsAdapter(getBaseContext(), R.layout.solution_subjects_row, subjectlist);
         listView.setAdapter(adapter);
 
@@ -70,6 +71,12 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
             if(position==3) {
                 Intent intent1 =new Intent(Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
                 intent1.putExtra("subject","IN/KU/CS/05/MS");
+                startActivity(intent1);
+                Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+            }
+            if(position==4) {
+                Intent intent1 =new Intent(Cse_fifthsem_subjectlist.this, SolutionDisplayActivity.class);
+                intent1.putExtra("subject","IN/KU/CS/05/DM");
                 startActivity(intent1);
                 Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
             }

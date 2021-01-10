@@ -309,7 +309,6 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
                         <ImageView
                             android:id="@+id/iv_bca_mca"
                             android:layout_width="80dp"
@@ -318,7 +317,6 @@
                             android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_bca_mca_icon"
                             android:src="@drawable/computerapplications" />
-
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -329,7 +327,6 @@
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
-
                         <Button
                             android:id="@+id/bt_bca_mca"
                             android:layout_width="match_parent"

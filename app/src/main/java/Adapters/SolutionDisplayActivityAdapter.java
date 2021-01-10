@@ -181,7 +181,7 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> {
         });
 
     }
-    public void toast(){Toast.makeText(context, "downloading", Toast.LENGTH_LONG).show();}
+    public void toast(){Toast.makeText(context, "File will be downloaded, see notification panel", Toast.LENGTH_LONG).show();}
 
     public void downloadfiles(Context context, String file, String fileExtension, String destinationDirectory, String url)
     {
