@@ -6,6 +6,7 @@
     <color name="white">#fff</color>
     <color name="fontColor">#2b74cc</color>
     <color name="gold">	#FFD700</color>
+    <color name="colorPressed">#7ec0ee</color>
     <drawable name="pressed_color">#7ec0ee</drawable> <!--custom color for pressed state -->
     <drawable name="normal_color">#00FFFFFF</drawable> <!--transperent color for normal state -->
 </resources>
