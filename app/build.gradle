@@ -7,14 +7,14 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
-    defaultConfig {
-        applicationId "com.application.kurukshetrauniversitypapers"
+        defaultConfig {
         minSdkVersion 17
         targetSdkVersion 29
-        versionCode 24
-        versionName "2.3.3"
+        versionCode 27
+        versionName "2.3.5"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+            applicationId "com.application.kurukshetrauniversitypapers"
     }
 
     buildTypes {
@@ -63,7 +63,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.jsoup:jsoup:1.10.2'
-    def htextview_version = "0.1.6"
-    implementation "com.hanks:htextview-base:$htextview_version"
-    implementation "com.hanks:htextview-scale:$htextview_version"
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
 }
