@@ -108,7 +108,6 @@
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@id/cv_university_websites"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_total_papers_text">
 
@@ -146,243 +145,250 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_university_websites"
-                    android:layout_width="0dp"
-                    android:layout_height="128dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="32dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cv_quick_search"
-                    app:layout_constraintTop_toBottomOf="@id/tv_total_papers_text">
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/cv_university_websites"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="128dp"-->
+<!--                    android:layout_marginStart="4dp"-->
+<!--                    android:layout_marginTop="32dp"-->
+<!--                    app:cardBackgroundColor="#dbf7ff"-->
+<!--                    app:cardCornerRadius="40dp"-->
+<!--                    app:cardElevation="0dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/cv_quick_search"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/tv_total_papers_text">-->
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
 
-                        <ImageView
-                            android:id="@+id/iv_university"
-                            android:layout_width="100dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:contentDescription="@string/id_university_icon"
-                            android:src="@drawable/ku" />
+<!--                        <ImageView-->
+<!--                            android:id="@+id/iv_university"-->
+<!--                            android:layout_width="100dp"-->
+<!--                            android:layout_height="80dp"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:contentDescription="@string/id_university_icon"-->
+<!--                            android:src="@drawable/ku" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_university"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/university_websites"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@+id/iv_university"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:text="@string/university_websites"-->
+<!--                            android:textColor="@color/fontColor"-->
+<!--                            android:textSize="16sp"-->
+<!--                            android:textStyle="bold" />-->
 
-                        <Button
-                            android:id="@+id/bt_university_websites"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="?attr/selectableItemBackground"
-                            android:focusable="true"
-                            android:onClick="onItemClicked" />
+<!--                        <Button-->
+<!--                            android:id="@+id/bt_university_websites"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="?attr/selectableItemBackground"-->
+<!--                            android:focusable="true"-->
+<!--                            android:onClick="onItemClicked" />-->
 
-                    </RelativeLayout>
+<!--                    </RelativeLayout>-->
 
-                </androidx.cardview.widget.CardView>
+<!--                </androidx.cardview.widget.CardView>-->
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_diploma"
-                    android:layout_width="0dp"
-                    android:layout_height="128dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="4dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@id/cv_btech"
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/cv_diploma"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="128dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:layout_marginEnd="4dp"-->
+<!--                    app:cardBackgroundColor="#dbf7ff"-->
+<!--                    app:cardCornerRadius="40dp"-->
+<!--                    app:cardElevation="0dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/cv_btech"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/cv_quick_search">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/iv_diploma"-->
+<!--                            android:layout_width="80dp"-->
+<!--                            android:layout_height="80dp"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:contentDescription="@string/id_diploma_icon"-->
+<!--                            android:src="@drawable/diploma" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@+id/iv_diploma"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:text="@string/diploma"-->
+<!--                            android:textColor="@color/fontColor"-->
+<!--                            android:textSize="16sp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/bt_diploma"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:onClick="onItemClicked"-->
+<!--                            android:background="?attr/selectableItemBackground" />-->
+
+<!--                    </RelativeLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/cv_btech"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="128dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginStart="4dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    app:cardBackgroundColor="#dbf7ff"-->
+<!--                    app:cardCornerRadius="40dp"-->
+<!--                    app:cardElevation="0dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/cv_diploma"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/cv_university_websites">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/iv_btech"-->
+<!--                            android:layout_width="80dp"-->
+<!--                            android:layout_height="80dp"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:contentDescription="@string/id_btech_icon"-->
+<!--                            android:src="@drawable/btechnew" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@+id/iv_btech"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:text="@string/b_tech"-->
+<!--                            android:textColor="@color/fontColor"-->
+<!--                            android:textSize="16sp"-->
+<!--                            android:textStyle="bold" />-->
+
+
+<!--                        <Button-->
+<!--                            android:id="@+id/bt_btech"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:onClick="onItemClicked"-->
+<!--                            android:background="?attr/selectableItemBackground"-->
+<!--                            android:focusable="true" />-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </androidx.cardview.widget.CardView>-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/cv_bca_mca"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="128dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginStart="4dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    app:cardBackgroundColor="#dbf7ff"-->
+<!--                    app:cardCornerRadius="40dp"-->
+<!--                    app:cardElevation="0dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/cv_bba_mba"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
+<!--                        <ImageView-->
+<!--                            android:id="@+id/iv_bca_mca"-->
+<!--                            android:layout_width="80dp"-->
+<!--                            android:layout_height="80dp"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:contentDescription="@string/id_bca_mca_icon"-->
+<!--                            android:src="@drawable/computerapplications" />-->
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@+id/iv_bca_mca"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:text="@string/bca_mca"-->
+<!--                            android:textColor="@color/fontColor"-->
+<!--                            android:textSize="16sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                        <Button-->
+<!--                            android:id="@+id/bt_bca_mca"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:onClick="onItemClicked"-->
+<!--                            android:background="?attr/selectableItemBackground" />-->
+
+<!--                    </RelativeLayout>-->
+<!--                </androidx.cardview.widget.CardView>-->
+<!--                <androidx.cardview.widget.CardView-->
+<!--                    android:id="@+id/cv_bba_mba"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="128dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:layout_marginEnd="4dp"-->
+<!--                    app:cardBackgroundColor="#dbf7ff"-->
+<!--                    app:cardCornerRadius="40dp"-->
+<!--                    app:cardElevation="0dp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/cv_bca_mca"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/iv_bba_mba"-->
+<!--                            android:layout_width="80dp"-->
+<!--                            android:layout_height="80dp"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:contentDescription="@string/id_bba_mba_icon"-->
+<!--                            android:src="@drawable/management4" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@+id/iv_bba_mba"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:text="@string/bba_mba"-->
+<!--                            android:textColor="@color/fontColor"-->
+<!--                            android:textSize="16sp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/bt_bba_mba"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:onClick="onItemClicked"-->
+<!--                            android:background="?attr/selectableItemBackground" />-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </androidx.cardview.widget.CardView>-->
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="256dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cv_quick_search">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/iv_diploma"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:contentDescription="@string/id_diploma_icon"
-                            android:src="@drawable/diploma" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_diploma"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/diploma"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <Button
-                            android:id="@+id/bt_diploma"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:onClick="onItemClicked"
-                            android:background="?attr/selectableItemBackground" />
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_btech"
-                    android:layout_width="0dp"
-                    android:layout_height="128dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="8dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cv_diploma"
-                    app:layout_constraintTop_toBottomOf="@id/cv_university_websites">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/iv_btech"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:contentDescription="@string/id_btech_icon"
-                            android:src="@drawable/btechnew" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_btech"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/b_tech"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-
-                        <Button
-                            android:id="@+id/bt_btech"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:onClick="onItemClicked"
-                            android:background="?attr/selectableItemBackground"
-                            android:focusable="true" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_bca_mca"
-                    android:layout_width="0dp"
-                    android:layout_height="128dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="8dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cv_bba_mba"
-                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                        <ImageView
-                            android:id="@+id/iv_bca_mca"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:contentDescription="@string/id_bca_mca_icon"
-                            android:src="@drawable/computerapplications" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_bca_mca"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/bca_mca"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-                        <Button
-                            android:id="@+id/bt_bca_mca"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:onClick="onItemClicked"
-                            android:background="?attr/selectableItemBackground" />
-
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_bba_mba"
-                    android:layout_width="0dp"
-                    android:layout_height="128dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="4dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@id/cv_bca_mca"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cv_diploma">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/iv_bba_mba"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:contentDescription="@string/id_bba_mba_icon"
-                            android:src="@drawable/management4" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_bba_mba"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:text="@string/bba_mba"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <Button
-                            android:id="@+id/bt_bba_mba"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:onClick="onItemClicked"
-                            android:background="?attr/selectableItemBackground" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
+                    app:layout_constraintTop_toBottomOf="@id/cv_quick_search" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

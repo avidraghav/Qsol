@@ -11,6 +11,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -35,6 +36,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -46,6 +54,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import utils.AppUpdateChecker;
 import utils.NotificationGetter;
@@ -63,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView totalPapersTextView,newNotificationsTextView;
     private String notificationUrl;
     public String notificationText;
+    PieData pieData;
+    PieDataSet pieDataSet;
+    ArrayList pieEntries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,11 +88,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAuth = FirebaseAuth.getInstance();
         signUpButton = findViewById(R.id.bt_sign_up);
         newNotificationsTextView=findViewById(R.id.notification_textview);
+        PieChart pieChart = (PieChart) findViewById(R.id.chart);
+
+
 
         handleNotification();
         handleAnimations();
         setupToolbar();
         setupDrawer();
+        getEntries();
+
+        pieDataSet = new PieDataSet(pieEntries, " ");
+        pieData= new PieData(pieDataSet);
+        pieChart.setData(pieData);
+        pieChart.setCenterText("Paper distribution in Percentage");
+        pieChart.animate().setDuration(2000);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setDrawSliceText(false);
+        pieChart.setUsePercentValues(true);
+        pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        pieDataSet.setColors(new int[] { R.color.colorPrimary, R.color.fontColor, R.color.colorAccent, R.color.colorPressed }, getBaseContext());
+        pieDataSet.setValueTextColor(Color.BLACK);
+        pieDataSet.setValueTextSize(16f);
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -173,21 +204,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.bt_quick_search:
                 clazz = Filters.class;
                 break;
-            case R.id.bt_university_websites:
-                clazz = Websites.class;
-                break;
-            case R.id.bt_diploma:
-                clazz = Diploma_expendable_list.class;
-                break;
-            case R.id.bt_btech:
-                clazz = Btech_expendable_list.class;
-                break;
-            case R.id.bt_bba_mba:
-                clazz = Management_expendable_list.class;
-                break;
-            case R.id.bt_bca_mca:
-                clazz = ComputerApplications_expendable_list.class;
-                break;
+//            case R.id.bt_university_websites:
+//                clazz = Websites.class;
+//                break;
+//            case R.id.bt_diploma:
+//                clazz = Diploma_expendable_list.class;
+//                break;
+//            case R.id.bt_btech:
+//                clazz = Btech_expendable_list.class;
+//                break;
+//            case R.id.bt_bba_mba:
+//                clazz = Management_expendable_list.class;
+//                break;
+//            case R.id.bt_bca_mca:
+//                clazz = ComputerApplications_expendable_list.class;
+//                break;
             case R.id.bt_sign_up:
                 clazz = RegisterActivity2.class;
             case R.id.notification_textview:
@@ -371,5 +402,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else {
             startActivity(new Intent(MainActivity.this,DatesheetsActivity.class));
         }
+    }
+    private void getEntries(){
+        pieEntries = new ArrayList<>();
+        pieEntries.add(new PieEntry(791, "B.tech"));
+        pieEntries.add(new PieEntry(468, "Diploma"));
+        pieEntries.add(new PieEntry(111, "MBA/BBA"));
+        pieEntries.add(new PieEntry(82,  "BCA/MCA"));
+
     }
 }
