@@ -1,9 +1,5 @@
 package com.application.kurukshetrauniversitypapers;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -17,8 +13,6 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -36,13 +30,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -55,8 +42,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+
 
 import utils.AppUpdateChecker;
 import utils.NotificationGetter;
@@ -64,19 +50,14 @@ import utils.NotificationGetter;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String KEY_RUN_COUNTER = "run counter";
-    public static final String KEY_NOTIFICATION_TEXT="notification text";
-    public static final String KEY_NOTIFICATION_URL="notification url";
+
 
     private Button signUpButton;
     private FirebaseAuth mAuth;
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private TextView totalPapersTextView,newNotificationsTextView;
-    private String notificationUrl;
     public String notificationText;
-    PieData pieData;
-    PieDataSet pieDataSet;
-    ArrayList pieEntries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,30 +69,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mAuth = FirebaseAuth.getInstance();
         signUpButton = findViewById(R.id.bt_sign_up);
         newNotificationsTextView=findViewById(R.id.notification_textview);
-        PieChart pieChart = (PieChart) findViewById(R.id.chart);
-
 
 
         handleNotification();
         handleAnimations();
         setupToolbar();
         setupDrawer();
-        getEntries();
 
-        pieDataSet = new PieDataSet(pieEntries, " ");
-        pieData= new PieData(pieDataSet);
-        pieChart.setData(pieData);
-        pieChart.setCenterText("Paper distribution in Percentage");
-        pieChart.animate().setDuration(2000);
-        pieChart.getDescription().setEnabled(false);
-        pieChart.setDrawSliceText(false);
-        pieChart.setUsePercentValues(true);
-        pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        pieDataSet.setColors(new int[] { R.color.colorPrimary, R.color.fontColor, R.color.colorAccent, R.color.colorPressed }, getBaseContext());
-        pieDataSet.setValueTextColor(Color.BLACK);
-        pieDataSet.setValueTextSize(16f);
-
-
+      // To setup Firebase Notification Service
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel =
                     new NotificationChannel("MyNotifications", "MyNotifications", NotificationManager.IMPORTANCE_DEFAULT);
@@ -228,6 +193,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(clazz);
     }
 
+    /** Update the Navigation bar header depending upon whether the user is Logged in or not*/
     public void updateNavHeader() {
         NavigationView navigationView = findViewById(R.id.nv_main);
         View headerView = navigationView.getHeaderView(0);
@@ -248,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    /** Check Internet Connection*/
     private void checkConnection() {
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activenetwork = manager.getActiveNetworkInfo();
@@ -367,6 +334,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStart();
     }
 
+    /** Display Notification text received from Database and animate*/
     public void handleNotification() {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("IN/Notifications/");
@@ -384,7 +352,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     findViewById(R.id.notification_textview).setAnimation(fadeIn);
                 }
                 newNotificationsTextView.setText(notificationText);
-                notificationUrl=notificationGetter.getUrl();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -395,20 +362,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    /**  Handle notification textview click event*/
     public void notificationClicked(View view) {
         if(newNotificationsTextView.getText().equals(" ")){
-
+            // do nothing
         }
         else {
             startActivity(new Intent(MainActivity.this,DatesheetsActivity.class));
         }
     }
-    private void getEntries(){
-        pieEntries = new ArrayList<>();
-        pieEntries.add(new PieEntry(791, "B.tech"));
-        pieEntries.add(new PieEntry(468, "Diploma"));
-        pieEntries.add(new PieEntry(111, "MBA/BBA"));
-        pieEntries.add(new PieEntry(82,  "BCA/MCA"));
 
-    }
 }
