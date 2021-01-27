@@ -169,21 +169,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.bt_quick_search:
                 clazz = Filters.class;
                 break;
-//            case R.id.bt_university_websites:
-//                clazz = Websites.class;
-//                break;
-//            case R.id.bt_diploma:
-//                clazz = Diploma_expendable_list.class;
-//                break;
-//            case R.id.bt_btech:
-//                clazz = Btech_expendable_list.class;
-//                break;
-//            case R.id.bt_bba_mba:
-//                clazz = Management_expendable_list.class;
-//                break;
-//            case R.id.bt_bca_mca:
-//                clazz = ComputerApplications_expendable_list.class;
-//                break;
+            case R.id.bt_university_websites:
+                clazz = Websites.class;
+                break;
+            case R.id.bt_diploma:
+                clazz = Diploma_expendable_list.class;
+                break;
+            case R.id.bt_btech:
+                clazz = Btech_expendable_list.class;
+                break;
+            case R.id.bt_bba_mba:
+                clazz = Management_expendable_list.class;
+                break;
+            case R.id.bt_bca_mca:
+                clazz = ComputerApplications_expendable_list.class;
+                break;
             case R.id.bt_sign_up:
                 clazz = RegisterActivity2.class;
             case R.id.notification_textview:

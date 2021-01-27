@@ -30,7 +30,6 @@ Animation top, bottom;
         imageView = findViewById(R.id.imageView);
        // textView = findViewById(R.id.textView);
 
-
         top = AnimationUtils.loadAnimation(this, R.anim.top);
         bottom = AnimationUtils.loadAnimation(this, R.anim.bottom);
         imageView.setAnimation(top);

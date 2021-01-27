@@ -117,7 +117,6 @@ public class VideoAdapter2 extends RecyclerView.Adapter<RecyclerView.ViewHolder>
             imageView = itemView.findViewById(R.id.imageView);
             reveal=itemView.findViewById(R.id.reveal);
             divider1=itemView.findViewById(R.id.divider1);
-
             relativeLayout = itemView.findViewById(R.id.linearLayout);
 
         }
