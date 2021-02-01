@@ -2,13 +2,14 @@ package utils;
 
 import java.util.List;
 
-public class DatesheetListApiModel {
+public class DatesheetsApiModel {
     private List<DatesheetsInfo> items;
 
-    public DatesheetListApiModel() {
-    }
+    public DatesheetsApiModel(){}
 
-    public DatesheetListApiModel(List<DatesheetsInfo> items) {
+
+    public DatesheetsApiModel(List<DatesheetsInfo> items)
+    {
         this.items = items;
     }
 
@@ -19,4 +20,6 @@ public class DatesheetListApiModel {
     public void setItems(List<DatesheetsInfo> items) {
         this.items = items;
     }
+
 }
+

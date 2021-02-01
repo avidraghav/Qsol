@@ -6,25 +6,26 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Url;
 
-public class DatesheetApiHandler {
+public class DatesheetsApiHandler {
     public static  final String BASE_URL ="https://secret-wave-90209.herokuapp.com/products/";
 
-    public interface DatesheetApiInterface{
+    public interface DemoInterface{
         @GET
-        Call<DatesheetListApiModel> getMessage(@Url String url);
+        Call<DatesheetsApiModel> getMessage(@Url String url);
     }
-    private static DatesheetApiInterface datesheetApiInterface=null;
+    private static DemoInterface demoInterface=null;
 
-    public  static DatesheetApiInterface getDatesheetApiInterface(){
+    public  static DemoInterface getDemoInterface(){
 
-        if(datesheetApiInterface==null){
+        if(demoInterface==null){
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-            datesheetApiInterface =retrofit.create(DatesheetApiInterface.class);
+            demoInterface =retrofit.create(DemoInterface.class);
         }
-        return datesheetApiInterface;
+        return demoInterface;
     }
 }
+
