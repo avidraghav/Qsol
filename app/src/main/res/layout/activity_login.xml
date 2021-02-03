@@ -112,23 +112,7 @@
                     android:textColor="#fff"
                     android:textSize="18sp"/>
 
-<!--                <TextView-->
-<!--                    android:id="@+id/text_view"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:text="Don't have an account?"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/text_view_register"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:textColor="@color/colorPrimary"-->
-<!--                    android:text="@string/ask_register"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
+
             </LinearLayout>
 
         </RelativeLayout>
@@ -152,15 +136,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-<!--    <TextView-->
-<!--        android:id="@+id/login_title"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        android:text="Account Login"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="26sp"-->
-<!--        android:textStyle="bold" />-->
+
 
 </RelativeLayout>

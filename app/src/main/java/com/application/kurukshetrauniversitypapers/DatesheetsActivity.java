@@ -7,6 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
+
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Wave;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +37,7 @@ public class DatesheetsActivity extends AppCompatActivity {
         RecyclerView rv= findViewById(R.id.rv);
         adapter=new DatesheetActivityAdapter(DatesheetsActivity.this,videoList);
         manager=new LinearLayoutManager(DatesheetsActivity.this);
+
         rv.setAdapter(adapter);
         rv.setLayoutManager(manager);
         if(videoList.size()== 0){
@@ -40,6 +45,9 @@ public class DatesheetsActivity extends AppCompatActivity {
         }
     }
     private void getJson() {
+        ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
+        Sprite wave = new Wave();
+        progressBar.setIndeterminateDrawable(wave);
         url = DatesheetsApiHandler.BASE_URL;
         Log.e("url",url);
         Call<DatesheetsApiModel> data = DatesheetsApiHandler.getDemoInterface().getMessage(url);
@@ -53,12 +61,14 @@ public class DatesheetsActivity extends AppCompatActivity {
                     DatesheetsApiModel am=response.body();
                     videoList.addAll(am.getItems());
                     adapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<DatesheetsApiModel> call, Throwable t) {
                 Log.e(TAG,"onFailure ",t);
+                progressBar.setVisibility(View.GONE);
             }
         });
     }
