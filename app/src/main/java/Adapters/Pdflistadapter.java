@@ -143,7 +143,6 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
     public Uri getLink(int position){
         uploadPDF uploadPDF = pdflist.get(position);
         return ( Uri.parse(uploadPDF.getUrl()) );
-
     }
 
     public void viewFiles(int position){

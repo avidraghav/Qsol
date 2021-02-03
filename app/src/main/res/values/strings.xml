@@ -31,4 +31,5 @@
 
     <!-- Unsorted Strings -->
     <string name="placeholder">Some placeholder string</string>
+    <string name="solutions">Solutions</string>
 </resources>

@@ -20,6 +20,7 @@ import utils.uploadPDF;
 
 public class SolutionsFragment extends Fragment {
 
+
     Button cse,it,me,ee,ec,mb,bb,bc,mc,first,second,third,fourth,fifth,sixth,seventh,eight,session;
     Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
     Button ku,dp;
@@ -40,6 +41,8 @@ public class SolutionsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_solutions, container, false);
         cse=v.findViewById(R.id.cse);

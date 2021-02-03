@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Url;
 
 public class DatesheetsApiHandler {
-    public static  final String BASE_URL ="https://secret-wave-90209.herokuapp.com/products/";
+    public static  final String BASE_URL ="https://secret-wave-90209.herokuapp.com/datesheets/";
 
     public interface DemoInterface{
         @GET

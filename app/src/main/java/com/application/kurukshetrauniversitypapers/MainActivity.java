@@ -13,6 +13,8 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -186,7 +188,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.bt_sign_up:
                 clazz = RegisterActivity2.class;
-            case R.id.notification_textview:
+                break;
+            case R.id.bt_solution:
+                Intent intent = new Intent(MainActivity.this, Filters.class);
+                intent.putExtra("position", 2);
+                startActivity(intent);
 
         }
         if (clazz == null) return;
@@ -241,7 +247,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
 //        switch (item.getItemId()) {
-//            case R.id.quick:
+//            case R.id.solution:
 //                startActivity(new Intent(MainActivity.this, Filters.class));
 //                break;
 //            default:
