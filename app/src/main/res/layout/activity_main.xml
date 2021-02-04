@@ -58,6 +58,7 @@
                         android:textAllCaps="false"
                         android:onClick="onItemClicked"
                         android:textColor="#1E5A54"
+                        android:drawableStart="@drawable/qsol_solution_32"
                          />
 
                 </RelativeLayout>

@@ -125,6 +125,135 @@
             android:textColor="#0C0C0C"
             android:textSize="16sp" />
         <TextView
+            android:id="@+id/person25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hritik Khurana (32 papers)"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pratik Singhal (22 papers)"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abhishek Braru (6 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lakshay Nandal (2 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mayank Kamboj (4 papers)"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prabhat Mahal (3 papers)"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rajat Sharma (2 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ram Kumar (2 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sahil (1 paper)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sarthak Pal (4 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Astha Malhotra (4 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sugandha Malhotra (6 papers)"
+            android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
             android:id="@+id/person4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -160,7 +289,7 @@
             android:id="@+id/person11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Khyati (3 papers)"
+            android:text="Khyati (8 papers)"
             android:drawableLeft="@drawable/linkedin"
             android:drawablePadding="2dp"
             android:background="?attr/selectableItemBackground"
@@ -282,7 +411,7 @@
             android:id="@+id/person19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Abhishek Bararu"
+            android:text="Abhishek Braru"
             android:drawableLeft="@drawable/linkedin"
             android:drawablePadding="2dp"
             android:background="?attr/selectableItemBackground"
