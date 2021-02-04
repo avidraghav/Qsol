@@ -169,7 +169,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Class<? extends AppCompatActivity> clazz = null;
         switch (view.getId()) {
             case R.id.bt_quick_search:
-                clazz = Filters.class;
+                Intent intent1 = new Intent(MainActivity.this, Filters.class);
+                intent1.putExtra("position", 0);
+                startActivity(intent1);
                 break;
             case R.id.bt_university_websites:
                 clazz = Websites.class;

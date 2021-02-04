@@ -20,7 +20,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tb_main"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
                 <RelativeLayout
@@ -38,28 +38,26 @@
                         android:id="@+id/bt_sign_up"
                         android:layout_width="64dp"
                         android:layout_height="32dp"
-                        android:layout_toLeftOf="@id/bt_solution"
+                        android:layout_toStartOf="@id/bt_solution"
                         android:layout_marginEnd="14dp"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="24dp"
                         android:text="@string/sign_up"
                         android:textAllCaps="false"
                         android:onClick="onItemClicked"
                         android:textColor="#1E5A54"
                         android:background="?attr/selectableItemBackground"/>
-                    <Button
+                    <ImageButton
                         android:id="@+id/bt_solution"
-                        android:layout_width="wrap_content"
-                        android:layout_height="32dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="14dp"
                         android:layout_marginTop="12dp"
                         android:background="?attr/selectableItemBackground"
-                        android:text="@string/solutions"
                         android:textAllCaps="false"
                         android:onClick="onItemClicked"
-                        android:textColor="#1E5A54"
-                        android:drawableStart="@drawable/qsol_solution_32"
-                         />
+                        android:src="@drawable/ic_qsolsolution_64"
+                        android:contentDescription="@string/qsol_solution_logo" />
 
                 </RelativeLayout>
             </androidx.appcompat.widget.Toolbar>
