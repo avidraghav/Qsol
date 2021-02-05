@@ -66,16 +66,15 @@ public class SyllabusAdapter extends ArrayAdapter<uploadPDF> {
         Button btnshare =(Button) listViewItem.findViewById(R.id.share);
         uploadPDF uploadPDF = pdflist.get(position);
         textViewName.setText(uploadPDF.getName());
+        Log.e("",uploadPDF.getName());
         mAuth=FirebaseAuth.getInstance();
 
         textViewName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 viewFiles(position);
-
             }
         });
-
         btnshare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,7 +116,6 @@ public class SyllabusAdapter extends ArrayAdapter<uploadPDF> {
                 dialog.create().show();
             }
         });
-
         syllabus_download.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View view) {

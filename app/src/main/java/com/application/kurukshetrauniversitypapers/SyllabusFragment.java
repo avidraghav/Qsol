@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.SyllabusAdapter;
+import utils.DynamicHeightForListViewHelper;
 import utils.SingleDownloadClass;
 import utils.uploadPDF;
 
@@ -668,6 +669,7 @@ public class SyllabusFragment extends Fragment {
                             }
                             SyllabusAdapter adapter = new SyllabusAdapter(getActivity(), uploadPDFS);
                             listView.setAdapter(adapter);
+                            DynamicHeightForListViewHelper.setListViewHeightBasedOnChildren(listView);
                         }
 
                         @Override
@@ -682,32 +684,6 @@ public class SyllabusFragment extends Fragment {
         return v;
     }
 
-
-    
-//    public void displayResults()
-//    {
-//        SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-//        singleDownloadClass.setBranch(selected_branch_syllabus);
-//        singleDownloadClass.setSemester(selected_semester);
-//        databaseReference = FirebaseDatabase.getInstance().getReference("IN/KU/" + selected_branch_syllabus + "/" + selected_semester + "/" + "Syllabus");
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                uploadPDFS.clear();
-//                for (DataSnapshot pdfSnapshot : dataSnapshot.getChildren()) {
-//                    uploadPDF uploadPDF = pdfSnapshot.getValue(uploadPDF.class);
-//                    uploadPDFS.add(uploadPDF);
-//                }
-//
-//                SyllabusAdapter adapter = new SyllabusAdapter(getActivity(), uploadPDFS);
-//                listView.setAdapter(adapter);
-//            }
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
     public void displayDefaultResults()
     {
         selected_branch_syllabus="CS";

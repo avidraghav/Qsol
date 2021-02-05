@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Wave;
@@ -68,6 +69,7 @@ public class DatesheetsActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<DatesheetsApiModel> call, Throwable t) {
                 Log.e(TAG,"onFailure ",t);
+                Toast.makeText(DatesheetsActivity.this, "Kindly go back to previous screen and enter again.", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.GONE);
             }
         });
