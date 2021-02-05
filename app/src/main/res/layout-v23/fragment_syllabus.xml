@@ -168,6 +168,19 @@
                 android:textAllCaps="false"
                 android:foreground="?attr/selectableItemBackground"/>
             <Button
+                android:id="@+id/cv_syl"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_below="@+id/ec_syl"
+                android:layout_toEndOf="@id/ee_syl"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="10dp"
+                android:singleLine="true"
+                android:background="@drawable/button_default"
+                android:text="Civil Engg,"
+                android:textAllCaps="false"
+                android:foreground="?attr/selectableItemBackground"/>
+            <Button
                 android:id="@+id/ec_syl"
                 android:layout_width="170dp"
                 android:layout_height="35dp"
@@ -184,10 +197,10 @@
                 android:id="@+id/mb_syl"
                 android:layout_width="170dp"
                 android:layout_height="35dp"
-                android:layout_below="@+id/ec_syl"
+                android:layout_below="@+id/cv_syl"
                 android:layout_toEndOf="@+id/bb_syl"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="42dp"
+                android:layout_marginTop="5dp"
                 android:singleLine="true"
                 android:background="@drawable/button_default"
                 android:text="MBA"

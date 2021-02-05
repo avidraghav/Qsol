@@ -29,7 +29,7 @@ import utils.SingleDownloadClass;
 import utils.uploadPDF;
 
 public class SyllabusFragment extends Fragment {
-    Button cse_syl,it_syl,me_syl,ee_syl,ec_syl,mb_syl,bb_syl,bc_syl,mc_syl,first_syl,second_syl,third_syl,fourth_syl,fifth_syl,sixth_syl,seventh_syl,eight_syl,session;
+    Button cse_syl,it_syl,me_syl,ee_syl,ec_syl,cv_syl,mb_syl,bb_syl,bc_syl,mc_syl,first_syl,second_syl,third_syl,fourth_syl,fifth_syl,sixth_syl,seventh_syl,eight_syl,session;
     Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
     Button ku,dp;
     String board;
@@ -56,6 +56,7 @@ public class SyllabusFragment extends Fragment {
         me_syl=v.findViewById(R.id.me_syl);
         ee_syl=v.findViewById(R.id.ee_syl);
         ec_syl=v.findViewById(R.id.ec_syl);
+        cv_syl=v.findViewById(R.id.cv_syl);
         bb_syl=v.findViewById(R.id.bb_syl);
         mb_syl=v.findViewById(R.id.mb_syl);
         bc_syl=v.findViewById(R.id.bc_syl);
@@ -106,6 +107,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(true);
                 fourth_syl.setEnabled(true);
                 fifth_syl.setEnabled(true);
@@ -130,6 +132,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(true);
                 fifth_syl.setEnabled(true);
                 fourth_syl.setEnabled(true);
@@ -153,12 +156,36 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(true);
                 fifth_syl.setEnabled(true);
                 fourth_syl.setEnabled(true);
                 sixth_syl.setEnabled(true);
                 seventh_syl.setEnabled(true);
                 eight_syl.setEnabled(true);
+            }
+        });
+        cv_syl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                kuBoard();
+                selected_branch_syllabus="CV";
+                cv_syl.setBackgroundResource(R.drawable.button_pressed);
+                cse_syl.setBackgroundResource(R.drawable.button_default);
+                it_syl.setBackgroundResource(R.drawable.button_default);
+                me_syl.setBackgroundResource(R.drawable.button_default);
+                ec_syl.setBackgroundResource(R.drawable.button_default);
+                ee_syl.setBackgroundResource(R.drawable.button_default);
+                mb_syl.setBackgroundResource(R.drawable.button_default);
+                bb_syl.setBackgroundResource(R.drawable.button_default);
+                bc_syl.setBackgroundResource(R.drawable.button_default);
+                mc_syl.setBackgroundResource(R.drawable.button_default);
+                third_syl.setEnabled(false);
+                fourth_syl.setEnabled(false);
+                fifth_syl.setEnabled(false);
+                sixth_syl.setEnabled(true);
+                seventh_syl.setEnabled(false);
+                eight_syl.setEnabled(false);
             }
         });
         ec_syl.setOnClickListener(new View.OnClickListener() {
@@ -176,6 +203,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(true);
                 fifth_syl.setEnabled(true);
                 fourth_syl.setEnabled(true);
@@ -199,6 +227,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(false);
                 fifth_syl.setEnabled(false);
                 fourth_syl.setEnabled(true);
@@ -221,6 +250,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(false);
                 fourth_syl.setEnabled(false);
                 fifth_syl.setEnabled(false);
@@ -244,6 +274,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_pressed);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(true);
                 fourth_syl.setEnabled(true);
                 fifth_syl.setEnabled(true);
@@ -267,6 +298,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_pressed);
                 mc_syl.setBackgroundResource(R.drawable.button_default);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(true);
                 fourth_syl.setEnabled(true);
                 fifth_syl.setEnabled(true);
@@ -290,6 +322,7 @@ public class SyllabusFragment extends Fragment {
                 bb_syl.setBackgroundResource(R.drawable.button_default);
                 bc_syl.setBackgroundResource(R.drawable.button_default);
                 mc_syl.setBackgroundResource(R.drawable.button_pressed);
+                cv_syl.setBackgroundResource(R.drawable.button_default);
                 third_syl.setEnabled(false);
                 fourth_syl.setEnabled(false);
                 fifth_syl.setEnabled(false);
