@@ -70,26 +70,10 @@ public class Me_fifthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Tribology and mechanical vibration", me_fourpapercount2+""));
 
                 }
-
                 if(dataSnapshot.getKey().equals("HT")) {
                     me_fourpapercount3=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Heat transfer", me_fourpapercount3+""));
                 }
-//                if(dataSnapshot.getKey().equals("IE")) {
-//                    me_fourpapercount4=(int)dataSnapshot.getChildrenCount();
-//                    subjectlist.add(new Listdata("Industrial engineering", me_fourpapercount4+""));
-//
-//                }
-//                if(dataSnapshot.getKey().equals("MN")) {
-//                    me_fourpapercount5=(int)dataSnapshot.getChildrenCount();
-//                    subjectlist.add(new Listdata("Machine design", me_fourpapercount5+""));
-//
-//                }
-//                if(dataSnapshot.getKey().equals("SG")) {
-//                    me_fourpapercount6=(int)dataSnapshot.getChildrenCount();
-//                    subjectlist.add(new Listdata("Steam generator and power", me_fourpapercount6+""));
-//
-//                }
 
                 if(dataSnapshot.getKey().equals("PT")) {
                     me_fourpapercount7 =(int)dataSnapshot.getChildrenCount();
@@ -139,12 +123,12 @@ public class Me_fifthsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==2) {
                     Intent intent=new Intent(Me_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/06/PT");
+                    intent.putExtra("subject","IN/KU/ME/05/PT");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Me_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/08/TV");
+                    intent.putExtra("subject","IN/KU/ME/05/TV");
                     startActivity(intent);
                 }
 

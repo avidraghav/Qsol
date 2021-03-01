@@ -65,26 +65,35 @@ public class Me_seventhsem_subjectlist extends AppCompatActivity {
                 if(dataSnapshot.getKey().equals("AF")) {
                     me_sevenpapercount1=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Advanced manufacturing tech", me_sevenpapercount1+""));
-
+                }
+                if(dataSnapshot.getKey().equals("EP")) {
+                    me_sevenpapercount1=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Entrepreneurship", me_sevenpapercount1+""));
                 }
                 if(dataSnapshot.getKey().equals("CF")) {
                     me_sevenpapercount2=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Computer aided design and manufacturing", me_sevenpapercount2+""));
-
                 }
                 if(dataSnapshot.getKey().equals("PI")) {
                     me_sevenpapercount3=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Powerplant engineering", me_sevenpapercount3+""));
-
                 }
                 if(dataSnapshot.getKey().equals("MR")) {
                     me_sevenpapercount4=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Measurement and control", me_sevenpapercount4+""));
-
                 }
                 if(dataSnapshot.getKey().equals("SQ")) {
                     me_sevenpapercount5=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Statistical quality control and reliability", me_sevenpapercount5+""));
+                }
+                if(dataSnapshot.getKey().equals("M6")) {
+                    me_sevenpapercount5=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Mechatronics", me_sevenpapercount5+""));
+
+                }
+                if(dataSnapshot.getKey().equals("M4")) {
+                    me_sevenpapercount5=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Non conventional machining", me_sevenpapercount5+""));
 
                 }
 
@@ -126,20 +135,35 @@ public class Me_seventhsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(Me_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/07/AG");
+                    intent.putExtra("subject","IN/KU/ME/07/CF");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Me_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/07/MG");
+                    intent.putExtra("subject","IN/KU/ME/07/EP");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Me_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/07/MR");
+                    intent.putExtra("subject","IN/KU/ME/07/M4");
                     startActivity(intent);
                 }
                 if(position==4) {
+                    Intent intent=new Intent(Me_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/ME/07/M6");
+                    startActivity(intent);
+                }
+                if(position==5) {
+                    Intent intent=new Intent(Me_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/ME/07/MR");
+                    startActivity(intent);
+                }
+                if(position==6) {
+                    Intent intent=new Intent(Me_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/ME/07/PI");
+                    startActivity(intent);
+                }
+                if(position==6) {
                     Intent intent=new Intent(Me_seventhsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/ME/07/SQ");
                     startActivity(intent);

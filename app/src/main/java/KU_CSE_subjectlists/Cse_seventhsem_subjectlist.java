@@ -81,6 +81,10 @@ public class Cse_seventhsem_subjectlist extends AppCompatActivity {
                     sevenpapercount8 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Unix and Linux prog", sevenpapercount8+""));
                 }
+                if(dataSnapshot.getKey().equals("WZ")) {
+                sevenpapercount8 =(int)dataSnapshot.getChildrenCount();
+                subjectlist.add(new Listdata("Object Oriented Software Engineering", sevenpapercount8+""));
+            }
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
@@ -135,36 +139,13 @@ public class Cse_seventhsem_subjectlist extends AppCompatActivity {
                     startActivity(intent);
                     Toast.makeText(Cse_seventhsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-//                if(position==4) {
-//                    Intent intent=new Intent(Cse_seventhsem_subjectlist.this,Pdflist.class);
-//                    intent.putExtra("subject","IN/KU/CS/07/SC");
-//                    startActivity(intent);
-//                    Toast.makeText(Cse_seventhsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(position==5) {
-//                    Intent intent=new Intent(Cse_seventhsem_subjectlist.this,Pdflist.class);
-//                    intent.putExtra("subject","IN/KU/CS/07/SP");
-//                    startActivity(intent);
-//                    Toast.makeText(Cse_seventhsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(position==6) {
-//                    Intent intent=new Intent(Cse_seventhsem_subjectlist.this,Pdflist.class);
-//                    intent.putExtra("subject","IN/KU/CS/07/SM");
-//                    startActivity(intent);
-//                    Toast.makeText(Cse_seventhsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(position==7) {
-//                    Intent intent=new Intent(Cse_seventhsem_subjectlist.this,Pdflist.class);
-//                    intent.putExtra("subject","IN/KU/CS/07/UL");
-//                    startActivity(intent);
-//                    Toast.makeText(Cse_seventhsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-//                }
-//                if(position==8) {
-//                    Intent intent=new Intent(Cse_seventhsem_subjectlist.this,Pdflist.class);
-//                    intent.putExtra("subject","IN/KU/CS/07/WE");
-//                    startActivity(intent);
-//                    Toast.makeText(Cse_seventhsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-//                }
+                if(position==4) {
+                    Intent intent=new Intent(Cse_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/CS/07/WZ");
+                    startActivity(intent);
+                    Toast.makeText(Cse_seventhsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

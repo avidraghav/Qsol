@@ -78,6 +78,7 @@ public class Listadapter extends ArrayAdapter<Listdata> {
             GlobalClass globalClass=new GlobalClass();
             Subjectcode subjectcode=new Subjectcode();
             subjectcode.setSubjectname(subjectname.getText().toString());
+            Log.e(subjectname.getText().toString(),subjectname.getText().toString());
             Log.e("Board",globalClass.getBoard());
             Log.e("branch",globalClass.getBranch());
             Log.e("semester",globalClass.getSemester()+"");

@@ -94,6 +94,14 @@ public class Ece_seventhsem_subjectlist extends AppCompatActivity {
                     ece_sevenpapercount7 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Microcontrollers and applications", ece_sevenpapercount7+""));
                 }
+                if(dataSnapshot.getKey().equals("NC")) {
+                    ece_sevenpapercount7 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Non conventional sources of energy and management", ece_sevenpapercount7+""));
+                }
+                if(dataSnapshot.getKey().equals("D9")) {
+                    ece_sevenpapercount7 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Digital image processing", ece_sevenpapercount7+""));
+                }
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -132,30 +140,40 @@ public class Ece_seventhsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/ME");
+                    intent.putExtra("subject","IN/KU/EC/07/D9");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/MP");
+                    intent.putExtra("subject","IN/KU/EC/07/ME");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/OC");
+                    intent.putExtra("subject","IN/KU/EC/07/MP");
                     startActivity(intent);
                 }
                 if(position==4) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/RE");
+                    intent.putExtra("subject","IN/KU/EC/07/NC");
                     startActivity(intent);
                 }
                 if(position==5) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/07/TE");
+                    intent.putExtra("subject","IN/KU/EC/07/OC");
                     startActivity(intent);
                 }
                 if(position==6) {
+                    Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/07/RE");
+                    startActivity(intent);
+                }
+                if(position==7) {
+                    Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EC/07/TE");
+                    startActivity(intent);
+                }
+                if(position==8) {
                     Intent intent=new Intent(Ece_seventhsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/EC/07/VL");
                     startActivity(intent);

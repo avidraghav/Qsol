@@ -27,13 +27,11 @@ public class PapersFragment extends Fragment {
     String board="null";
     RelativeLayout ku_courses,ku_semesters,dp_courses,dp_semesters;
 
-//    ArrayAdapter<String> adapter;
-//    DatabaseReference db,databaseReference;
     ArrayList<String> subjects;
     List<uploadPDF> uploadPDFS;
-  //  ListView listView;
+
     Button search;
-  //  ValueEventListener listener;
+
 
     public PapersFragment() {
         // Required empty public constructor

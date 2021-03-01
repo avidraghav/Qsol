@@ -62,7 +62,7 @@ public class Mba_thirdsem_subjectlist extends AppCompatActivity {
             {
                 if(dataSnapshot.getKey().equals("BL")) {
                     mb_threepapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Business legislation ", mb_threepapercount1+""));
+                    subjectlist.add(new Listdata("Business legislation", mb_threepapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("LF")) {

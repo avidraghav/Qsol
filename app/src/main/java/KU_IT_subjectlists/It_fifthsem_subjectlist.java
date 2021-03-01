@@ -80,6 +80,14 @@ public class It_fifthsem_subjectlist extends AppCompatActivity {
                     it_sixpapercount8 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Java programming", it_sixpapercount8+""));
                 }
+                if(dataSnapshot.getKey().equals("I9")) {
+                    it_sixpapercount8 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Internet and web technology", it_sixpapercount8+""));
+                }
+                if(dataSnapshot.getKey().equals("CN")) {
+                    it_sixpapercount8 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Computer networks", it_sixpapercount8+""));
+                }
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -119,17 +127,29 @@ public class It_fifthsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(It_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/05/CO");
+                    intent.putExtra("subject","IN/KU/IT/05/CN");
                     startActivity(intent);
                     Toast.makeText(It_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
                     Intent intent=new Intent(It_fifthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/05/IU");
+                    intent.putExtra("subject","IN/KU/IT/05/CO");
                     startActivity(intent);
                     Toast.makeText(It_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==3) {
+                    Intent intent=new Intent(It_fifthsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/IT/05/I9");
+                    startActivity(intent);
+                    Toast.makeText(It_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                }
+                if(position==4) {
+                    Intent intent=new Intent(It_fifthsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/IT/05/IU");
+                    startActivity(intent);
+                    Toast.makeText(It_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                }
+                if(position==5) {
                     Intent intent=new Intent(It_fifthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/IT/05/JP");
                     startActivity(intent);

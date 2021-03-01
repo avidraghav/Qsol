@@ -1,5 +1,7 @@
 package utils;
 
+import android.util.Log;
+
 import utils.GlobalClass;
 
 public class Subjectcode {
@@ -208,6 +210,10 @@ public class Subjectcode {
 
                 code = "ES";
             }
+            if (subjectname.equals("Object Oriented Software Engineering")) {
+
+                code = "WZ";
+            }
             if (subjectname.equals("Security and cryptography")) {
 
                 code = "SC";
@@ -306,6 +312,9 @@ public class Subjectcode {
             if (subjectname.equals("Optical communication")) {
                 code = "OC";
             }
+            if (subjectname.equals("Soft skills and interpersonal skills")) {
+                code = "SZ";
+            }
             if (subjectname.equals("Reliability")) {
 
                 code = "RE";
@@ -322,6 +331,9 @@ public class Subjectcode {
             }
             if (subjectname.equals("VLSI design")) {
                 code = "VL";
+            }
+            if (subjectname.equals("Digital image processing")) {
+                code = "D9";
             }
 
             if (subjectname.equals("Embedded system design")) {
@@ -446,6 +458,22 @@ public class Subjectcode {
             if (subjectname.equals("Non conventional sources of energy and management")) {
 
                 code = "NC";
+            }
+            if (subjectname.equals("Power system")) {
+
+                code = "P9";
+            }
+            if (subjectname.equals("Microprocessors")) {
+
+                code = "M9";
+            }
+            if (subjectname.equals("Electrical drives")) {
+
+                code = "E9";
+            }
+            if (subjectname.equals("Power systems operation and control")) {
+
+                code = "P5";
             }
             if (subjectname.equals("High voltage engineering")) {
                 code = "HV";
@@ -676,27 +704,21 @@ public class Subjectcode {
                 code = "SG";
             }
             if (subjectname.equals("Human resource planning and development")) {
-
                 code = "MX";
             }
             if (subjectname.equals("Financial derivative")) {
-
                 code = "FT";
             }
             if (subjectname.equals("International financial management")) {
-
                 code = "IA";
             }
             if (subjectname.equals("Strategies and systems")) {
-
                 code = "SI";
             }
             if (subjectname.equals("Business legislation")) {
-
                 code = "BL";
             }
             if (subjectname.equals("Legal framework governing human relations")) {
-
                 code = "LF";
             }
             if (subjectname.equals("Manpower development for technological change")) {
@@ -956,9 +978,18 @@ public class Subjectcode {
             if (subjectname.equals("Geotechnology 2")) {
                 code = "Z9";
             }
-
-
-
+            if (subjectname.equals("Advanced computer networks")) {
+                code = "A9";
+            }
+            if (subjectname.equals("Mechatronics")) {
+                code = "M6";
+            }
+            if(subjectname.equals("Non conventional machining")){
+                code="M4";
+            }
+            if(subjectname.equals("Parallel and distributed computing")){
+                code="P3";
+            }
 
         }
         if(globalClass.getBoard().equals("HS")){
@@ -1467,7 +1498,6 @@ public class Subjectcode {
             {
                 code = "MN";
             }
-
 
         }
         return code;

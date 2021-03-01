@@ -84,6 +84,10 @@ public class Ele_seventhsem_subjectlist extends AppCompatActivity {
                     el_sevenpapercount5 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Transducer and their applications", el_sevenpapercount5+""));
                 }
+                if(dataSnapshot.getKey().equals("P5")) {
+                    el_sevenpapercount5 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Power systems operation and control", el_sevenpapercount5+""));
+                }
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -136,6 +140,11 @@ public class Ele_seventhsem_subjectlist extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(position==4) {
+                    Intent intent=new Intent(Ele_seventhsem_subjectlist.this,Pdflist.class);
+                    intent.putExtra("subject","IN/KU/EL/07/P5");
+                    startActivity(intent);
+                }
+                if(position==5) {
                     Intent intent=new Intent(Ele_seventhsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/EL/07/TA");
                     startActivity(intent);

@@ -76,6 +76,18 @@ public class Ece_fifthsem_subjectlist extends AppCompatActivity {
                     el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Digital signal processing", el_eightpapercount1 + ""));
                 }
+                if (dataSnapshot.getKey().equals("CS")) {
+                    el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Control system engineering", el_eightpapercount1 + ""));
+                }
+                if (dataSnapshot.getKey().equals("SZ")) {
+                    el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Soft skills and interpersonal skills", el_eightpapercount1 + ""));
+                }
+                if (dataSnapshot.getKey().equals("VL")) {
+                    el_eightpapercount1 = (int) dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("VLSI design", el_eightpapercount1 + ""));
+                }
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -112,19 +124,34 @@ public class Ece_fifthsem_subjectlist extends AppCompatActivity {
                     intent.putExtra("subject", "IN/KU/EC/05/CO");
                     startActivity(intent);
                 }
-                if (position == 1) {
+                if (position == 2) {
                     Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
                     intent.putExtra("subject", "IN/KU/EC/05/DP");
                     startActivity(intent);
                 }
-                if (position == 2) {
+                if (position == 1) {
                     Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject", "IN/KU/EC/05/EW");
+                    intent.putExtra("subject", "IN/KU/EC/05/CS");
                     startActivity(intent);
                 }
                 if (position == 3) {
                     Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject", "IN/KU/EC/05/EW");
+                    startActivity(intent);
+                }
+                if (position == 4) {
+                    Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
                     intent.putExtra("subject", "IN/KU/EC/05/II");
+                    startActivity(intent);
+                }
+                if (position == 5) {
+                    Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject", "IN/KU/EC/05/SZ");
+                    startActivity(intent);
+                }
+                if (position == 6) {
+                    Intent intent = new Intent(Ece_fifthsem_subjectlist.this, Pdflist.class);
+                    intent.putExtra("subject", "IN/KU/EC/05/VL");
                     startActivity(intent);
                 }
 
