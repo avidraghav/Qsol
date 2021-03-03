@@ -62,11 +62,7 @@ public class It_fourthsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("IU")) {
-                    it_fourpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Introduction to digital data communication", it_fourpapercount1+""));
 
-                }
                 if(dataSnapshot.getKey().equals("DC")) {
                     it_fourpapercount2=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Discrete structure", it_fourpapercount2+""));
@@ -82,13 +78,13 @@ public class It_fourthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Database management system", it_fourpapercount4+""));
 
                 }
-                if(dataSnapshot.getKey().equals("MM")) {
+                if(dataSnapshot.getKey().equals("MI")) {
                     it_fourpapercount5 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Management information system", it_fourpapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("FR")) {
                     it_fourpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Fundamentals of microprocessor interfacing", it_fourpapercount6+""));
+                    subjectlist.add(new Listdata("Microprocessor interfacing and application", it_fourpapercount6+""));
                 }
                
 
@@ -142,22 +138,17 @@ public class It_fourthsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==3) {
                     Intent intent=new Intent(It_fourthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/04/IU");
+                    intent.putExtra("subject","IN/KU/IT/04/MI");
                     startActivity(intent);
                     Toast.makeText(It_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==4) {
                     Intent intent=new Intent(It_fourthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/IT/04/MM");
-                    startActivity(intent);
-                    Toast.makeText(It_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==5) {
-                    Intent intent=new Intent(It_fourthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/IT/04/OS");
                     startActivity(intent);
                     Toast.makeText(It_fourthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
+
 
             }
         });

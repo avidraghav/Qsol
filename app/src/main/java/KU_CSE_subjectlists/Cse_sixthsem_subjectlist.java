@@ -34,8 +34,7 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-
-    static int sixpapercount1,sixpapercount2,sixpapercount3,sixpapercount4,sixpapercount5,sixpapercount6,sixpapercount7,sixpapercount8;
+    static int sixpapercount2,sixpapercount5,sixpapercount8;
     DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,44 +59,26 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("AD")) {
-                    sixpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Advanced database systems", sixpapercount1+""));
 
-                }
                 if(dataSnapshot.getKey().equals("CD")) {
                     sixpapercount2=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Compiler design", sixpapercount2+""));
-
                 }
-                if(dataSnapshot.getKey().equals("CN")) {
-                    sixpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer hardware technologies", sixpapercount3+""));
-
-                }
-                if(dataSnapshot.getKey().equals("CT")) {
+                if(dataSnapshot.getKey().equals("MC")) {
                     sixpapercount5 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Mobile computing", sixpapercount5+""));
                 }
-                if(dataSnapshot.getKey().equals("MC")) {
-                    sixpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Network management and security", sixpapercount6+""));
-                }
-                if(dataSnapshot.getKey().equals("NM")) {
-                    sixpapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Software engineering", sixpapercount7+""));
-                }
-                if(dataSnapshot.getKey().equals("SE")) {
-                    sixpapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Web engineering", sixpapercount8+""));
-                }
-                if(dataSnapshot.getKey().equals("UL")) {
+                if(dataSnapshot.getKey().equals("CN")) {
                     sixpapercount8 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Computer networks", sixpapercount8+""));
                 }
-                if(dataSnapshot.getKey().equals("WE")) {
+                if(dataSnapshot.getKey().equals("UL")) {
                     sixpapercount8 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Unix and Linux programming", sixpapercount8+""));
+                }
+                if(dataSnapshot.getKey().equals("MI")) {
+                    sixpapercount8 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Management information system", sixpapercount8+""));
                 }
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
@@ -132,53 +113,34 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Cse_sixthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/AD");
+                    intent.putExtra("subject","IN/KU/CS/06/CD");
                     startActivity(intent);
                     Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==1) {
                     Intent intent=new Intent(Cse_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/CD");
+                    intent.putExtra("subject","IN/KU/CS/06/CN");
                     startActivity(intent);
                     Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
                     Intent intent=new Intent(Cse_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/CN");
+                    intent.putExtra("subject","IN/KU/CS/06/MC");
                     startActivity(intent);
                     Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==3) {
                     Intent intent=new Intent(Cse_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/CT");
+                    intent.putExtra("subject","IN/KU/CS/06/MI");
                     startActivity(intent);
                     Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==4) {
-                    Intent intent=new Intent(Cse_sixthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/MC");
-                    startActivity(intent);
-                    Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==5) {
                     Intent intent=new Intent(Cse_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/NM");
+                    intent.putExtra("subject","IN/KU/CS/06/UL");
                     startActivity(intent);
                     Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==6) {
-                    Intent intent=new Intent(Cse_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/SE");
-                    startActivity(intent);
-                    Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==7) {
-                    Intent intent=new Intent(Cse_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/06/WE");
-                    startActivity(intent);
-                    Toast.makeText(Cse_sixthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-
             }
         });
 

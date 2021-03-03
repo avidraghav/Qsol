@@ -120,7 +120,11 @@ public class Subjectcode {
                 code = "CA";
 
             }
-            if (subjectname.equals("Microprocessor and interfacing")) {
+            if (subjectname.equals("Microprocessors and interfacing")) {
+
+                code = "MS";
+            }
+            if (subjectname.equals("Management information system")) {
 
                 code = "MI";
             }
@@ -165,9 +169,9 @@ public class Subjectcode {
                 code = "EO";
 
             }
-            if (subjectname.equals("Advanced database systems")) {
+            if (subjectname.equals("Advance database system")) {
 
-                code = "AD";
+                code = "AV";
             }
 
             if (subjectname.equals("Computer hardware technologies")) {
@@ -303,10 +307,8 @@ public class Subjectcode {
             }
             if (subjectname.equals("Digital signal processing")) {
                 code = "DP";
-
             }
-            if (subjectname.equals("Vhdl and digital systems")) {
-
+            if (subjectname.equals("VHDL and digital systems")) {
                 code = "VD";
             }
             if (subjectname.equals("Optical communication")) {
@@ -316,7 +318,6 @@ public class Subjectcode {
                 code = "SZ";
             }
             if (subjectname.equals("Reliability")) {
-
                 code = "RE";
             }
             if (subjectname.equals("Television engineering")) {
@@ -353,17 +354,12 @@ public class Subjectcode {
                 code = "WI";
             }
             //IT SUBJECTS
-            if (subjectname.equals("Fundamentals of up interfacing")) {
-
-                code = "FI";
+            if (subjectname.equals("Microprocessor interfacing and application")) {
+                code = "FR";
             }
             if (subjectname.equals("Computer graphics")) {
 
                 code = "CM";
-            }
-            if (subjectname.equals("Management information system")) {
-
-                code = "MM";
             }
             if (subjectname.equals("Introduction to microcontroller")) {
 
@@ -918,7 +914,7 @@ public class Subjectcode {
                 code = "IE";
             }
             if (subjectname.equals("Linux operating system")) {
-                code = "LI";
+                code = "LX";
             }
             if (subjectname.equals("Introduction to digital data communication")) {
                 code = "IU";

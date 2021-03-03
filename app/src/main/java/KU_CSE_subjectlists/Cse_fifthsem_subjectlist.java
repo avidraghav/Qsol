@@ -76,13 +76,10 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
                     fivepapercount5=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Microprocessors and interfacing", fivepapercount5+""));
                 }
-
                 if(dataSnapshot.getKey().equals("P3")) {
                     fivepapercount6 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Parallel and distributed computing", fivepapercount6+""));
                 }
-//
-
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
@@ -140,11 +137,8 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
                     startActivity(intent);
                     Toast.makeText(Cse_fifthsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-//
             }
         });
-
-
     }
     @Override
     public void onBackPressed() {

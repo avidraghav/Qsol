@@ -34,7 +34,7 @@ public class Ece_sixthsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int ece_sixpapercount1,ece_sixpapercount2,ece_sixpapercount3,ece_sixpapercount4,ece_sixpapercount6,ece_sixpapercount5;
+    static int ece_sixpapercount2,ece_sixpapercount6;
     DatabaseReference ref;
 
 
@@ -63,29 +63,18 @@ public class Ece_sixthsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("CE")) {
-                    ece_sixpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer communication network", ece_sixpapercount1+""));
 
-                }
                 if(dataSnapshot.getKey().equals("CS")) {
                     ece_sixpapercount2=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Control system engineering", ece_sixpapercount2+""));
-
                 }
-                if(dataSnapshot.getKey().equals("DI")) {
-                    ece_sixpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Digital design using verilog", ece_sixpapercount3+""));
-
+                if(dataSnapshot.getKey().equals("OB")) {
+                    ece_sixpapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Organisational behaviour", ece_sixpapercount2+""));
                 }
-                if(dataSnapshot.getKey().equals("DO")) {
-                    ece_sixpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Digital communication", ece_sixpapercount4+""));
-
-                }
-                if(dataSnapshot.getKey().equals("DP")) {
-                    ece_sixpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Digital signal processing", ece_sixpapercount5+""));
+                if(dataSnapshot.getKey().equals("TA")) {
+                    ece_sixpapercount2=(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Transducer and their applications", ece_sixpapercount2+""));
                 }
                 if(dataSnapshot.getKey().equals("VD")) {
                     ece_sixpapercount6 =(int)dataSnapshot.getChildrenCount();
@@ -124,30 +113,20 @@ public class Ece_sixthsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Ece_sixthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/06/CE");
+                    intent.putExtra("subject","IN/KU/EC/06/CS");
                     startActivity(intent);
                 }
                 if(position==1) {
                     Intent intent=new Intent(Ece_sixthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/06/CS");
+                    intent.putExtra("subject","IN/KU/EC/06/OB");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Ece_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/06/DI");
+                    intent.putExtra("subject","IN/KU/EC/06/TA");
                     startActivity(intent);
                 }
                 if(position==3) {
-                    Intent intent=new Intent(Ece_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/06/DO");
-                    startActivity(intent);
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Ece_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EC/06/DP");
-                    startActivity(intent);
-                }
-                if(position==5) {
                     Intent intent=new Intent(Ece_sixthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/EC/06/VD");
                     startActivity(intent);
