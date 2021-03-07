@@ -32,7 +32,7 @@ public class Me_eightsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int me_eightpapercount1, me_eightpapercount2, me_eightpapercount3, me_eightpapercount4, me_eightpapercount5, me_eightpapercount6, me_eightpapercount7;
+    static int me_eightpapercount1, me_eightpapercount2, me_eightpapercount3, me_eightpapercount4, me_eightpapercount5;
     DatabaseReference ref;
 
 
@@ -54,31 +54,16 @@ public class Me_eightsem_subjectlist extends AppCompatActivity {
         GlobalClass globalClass=(GlobalClass)getApplicationContext();
         globalClass.setBoard("KU");
         globalClass.setBranch("ME");
-        globalClass.setSemester("07");
+        globalClass.setSemester("08");
 
         ref= FirebaseDatabase.getInstance().getReference("IN/KU/ME/08");
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("EP")) {
+                if(dataSnapshot.getKey().equals("AG")) {
                     me_eightpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Entrepreneurship", me_eightpapercount1+""));
-
-                }
-                if(dataSnapshot.getKey().equals("MM")) {
-                    me_eightpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Management information system", me_eightpapercount2+""));
-
-                }
-                if(dataSnapshot.getKey().equals("NG")) {
-                    me_eightpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Non conventional manufacturing", me_eightpapercount3+""));
-
-                }
-                if(dataSnapshot.getKey().equals("OR")) {
-                    me_eightpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Operation research", me_eightpapercount4+""));
+                    subjectlist.add(new Listdata("Automobile engineering", me_eightpapercount1+""));
 
                 }
                 if(dataSnapshot.getKey().equals("PI")) {
@@ -120,29 +105,15 @@ public class Me_eightsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Me_eightsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/08/EP");
+                    intent.putExtra("subject","IN/KU/ME/08/AG");
                     startActivity(intent);
                 }
                 if(position==1) {
                     Intent intent=new Intent(Me_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/08/MM");
-                    startActivity(intent);
-                }
-                if(position==2) {
-                    Intent intent=new Intent(Me_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/08/NG");
-                    startActivity(intent);
-                }
-                if(position==3) {
-                    Intent intent=new Intent(Me_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/08/OR");
-                    startActivity(intent);
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Me_eightsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/ME/08/PI");
                     startActivity(intent);
                 }
+
 
             }
         });

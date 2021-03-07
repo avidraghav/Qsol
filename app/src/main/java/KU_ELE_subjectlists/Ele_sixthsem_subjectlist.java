@@ -32,7 +32,7 @@ public class Ele_sixthsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int el_sixpapercount1,el_sixpapercount2,el_sixpapercount3,el_sixpapercount4,el_sixpapercount6,el_sixpapercount7,el_sixpapercount8,el_sixpapercount9;
+    static int el_sixpapercount1,el_sixpapercount2,el_sixpapercount6;
     DatabaseReference ref;
 
     @Override
@@ -60,43 +60,22 @@ public class Ele_sixthsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("AE")) {
+                if(dataSnapshot.getKey().equals("EJ")) {
                     el_sixpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Advanced programming", el_sixpapercount1+""));
-
+                    subjectlist.add(new Listdata("Electrical measurements and measuring instruments", el_sixpapercount1+""));
                 }
-                if(dataSnapshot.getKey().equals("DP")) {
+                if(dataSnapshot.getKey().equals("E4")) {
                     el_sixpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Digital signal processing", el_sixpapercount2+""));
-
+                    subjectlist.add(new Listdata("Electrical engineering material", el_sixpapercount2+""));
                 }
-                if(dataSnapshot.getKey().equals("EN")) {
-                    el_sixpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical drives and traction", el_sixpapercount3+""));
-
-                }
-                if(dataSnapshot.getKey().equals("EZ")) {
-                    el_sixpapercount4=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Electrical machine design", el_sixpapercount4+""));
-
-                }
-                if(dataSnapshot.getKey().equals("MP")) {
+                if(dataSnapshot.getKey().equals("OB")) {
                     el_sixpapercount6 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Microcontrollers and applications", el_sixpapercount6+""));
-                }
-                if(dataSnapshot.getKey().equals("MS")) {
-                    el_sixpapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Microprocessors and interfacing", el_sixpapercount7+""));
-                }
-                if(dataSnapshot.getKey().equals("PE")) {
-                    el_sixpapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Power electronics", el_sixpapercount8+""));
+                    subjectlist.add(new Listdata("Organisational behaviour", el_sixpapercount6+""));
                 }
                 if(dataSnapshot.getKey().equals("PN")) {
-                    el_sixpapercount9 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Power system analysis and protection", el_sixpapercount9+""));
+                    el_sixpapercount6 =(int)dataSnapshot.getChildrenCount();
+                    subjectlist.add(new Listdata("Power system analysis and protection", el_sixpapercount6+""));
                 }
-
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -130,44 +109,25 @@ public class Ele_sixthsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Ele_sixthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/06/AE");
+                    intent.putExtra("subject","IN/KU/EL/06/E4");
                     startActivity(intent);
                 }
                 if(position==1) {
                     Intent intent=new Intent(Ele_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/06/DP");
+                    intent.putExtra("subject","IN/KU/EL/06/EJ");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Ele_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/06/EN");
+                    intent.putExtra("subject","IN/KU/EL/06/OB");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Ele_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/06/EZ");
-                    startActivity(intent);
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Ele_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/06/MP");
-                    startActivity(intent);
-                }
-                if(position==5) {
-                    Intent intent=new Intent(Ele_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/06/MS");
-                    startActivity(intent);
-                }
-                if(position==6) {
-                    Intent intent=new Intent(Ele_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/EL/06/PE");
-                    startActivity(intent);
-                }
-                if(position==7) {
-                    Intent intent=new Intent(Ele_sixthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/EL/06/PN");
                     startActivity(intent);
                 }
+
 
             }
         });

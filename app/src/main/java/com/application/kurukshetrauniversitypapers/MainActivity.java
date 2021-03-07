@@ -111,8 +111,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setupToolbar() {
         toolbar = findViewById(R.id.tb_main);
         toolbar.setTitle("");
-        // toolbar.setLogo(R.drawable.qslow);
-        //toolbar.setBackground(getResources().getDrawable( R.drawable.actionbar_shape));
         setSupportActionBar(toolbar);
     }
 

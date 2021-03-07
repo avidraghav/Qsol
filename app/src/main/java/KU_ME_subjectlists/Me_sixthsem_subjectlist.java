@@ -61,39 +61,26 @@ public class Me_sixthsem_subjectlist extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s)
             {
-                if(dataSnapshot.getKey().equals("CF")) {
-                    me_sixpapercount1=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Computer aided design and manufacturing", me_sixpapercount1+""));
-
-                }
-                if(dataSnapshot.getKey().equals("MN")) {
-                    me_sixpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Machine design", me_sixpapercount2+""));
-
-                }
-                if(dataSnapshot.getKey().equals("MV")) {
+                if(dataSnapshot.getKey().equals("GE")) {
                     me_sixpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Mechanical vibrations", me_sixpapercount3+""));
+                    subjectlist.add(new Listdata("IC engine and gas turbine", me_sixpapercount3+""));
                 }
                 if(dataSnapshot.getKey().equals("RC")) {
                     me_sixpapercount4=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Refrigeration and air conditioning", me_sixpapercount4+""));
 
                 }
-                if(dataSnapshot.getKey().equals("TY")) {
+                if(dataSnapshot.getKey().equals("AF")) {
                     me_sixpapercount5=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Tribology ", me_sixpapercount5+""));
+                    subjectlist.add(new Listdata("Advanced manufacturing tech", me_sixpapercount5+""));
 
                 }
-                if(dataSnapshot.getKey().equals("OR")) {
+                if(dataSnapshot.getKey().equals("OB")) {
                     me_sixpapercount6=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Operation research", me_sixpapercount6+""));
+                    subjectlist.add(new Listdata("Organisational behaviour", me_sixpapercount6+""));
 
                 }
-                if(dataSnapshot.getKey().equals("TV")) {
-                    me_sixpapercount7 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Tribology and mechanical vibration", me_sixpapercount7+""));
-                }
+
 
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
@@ -128,37 +115,22 @@ public class Me_sixthsem_subjectlist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position==0) {
                     Intent intent=new Intent(Me_sixthsem_subjectlist.this, Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/06/CF");
+                    intent.putExtra("subject","IN/KU/ME/06/AF");
                     startActivity(intent);
                 }
                 if(position==1) {
                     Intent intent=new Intent(Me_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/06/MN");
+                    intent.putExtra("subject","IN/KU/ME/06/GE");
                     startActivity(intent);
                 }
                 if(position==2) {
                     Intent intent=new Intent(Me_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/06/MV");
+                    intent.putExtra("subject","IN/KU/ME/06/OB");
                     startActivity(intent);
                 }
                 if(position==3) {
                     Intent intent=new Intent(Me_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/06/OR");
-                    startActivity(intent);
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Me_sixthsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/ME/06/RC");
-                    startActivity(intent);
-                }
-                if(position==5) {
-                    Intent intent=new Intent(Me_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/06/TV");
-                    startActivity(intent);
-                }
-                if(position==6) {
-                    Intent intent=new Intent(Me_sixthsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/ME/06/TY");
                     startActivity(intent);
                 }
 

@@ -67,24 +67,11 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Cloud computing", eightpapercount1+""));
 
                 }
-                if(dataSnapshot.getKey().equals("DW")) {
-                    eightpapercount2=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Data warehouse and data mining", eightpapercount2+""));
 
-                }
-                if(dataSnapshot.getKey().equals("IC")) {
-                    eightpapercount3=(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Interactive computer graphics", eightpapercount3+""));
-
-                }
                 if(dataSnapshot.getKey().equals("MD")) {
                     eightpapercount4=(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Mobile apps development", eightpapercount4+""));
 
-                }
-                if(dataSnapshot.getKey().equals("NO")) {
-                    eightpapercount5 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Neural network and fuzzy lose", eightpapercount5+""));
                 }
                 if(dataSnapshot.getKey().equals("NL")) {
                     eightpapercount6 =(int)dataSnapshot.getChildrenCount();
@@ -94,10 +81,7 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
                     eightpapercount7 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Software testing", eightpapercount7+""));
                 }
-                if(dataSnapshot.getKey().equals("SV")) {
-                    eightpapercount8 =(int)dataSnapshot.getChildrenCount();
-                    subjectlist.add(new Listdata("Software verification validation and testing", eightpapercount8+""));
-                }
+
 
                 Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
@@ -137,46 +121,23 @@ public class Cse_eightsem_subjectlist extends AppCompatActivity {
                 }
                 if(position==1) {
                     Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/08/DW");
+                    intent.putExtra("subject","IN/KU/CS/08/MD");
                     startActivity(intent);
                     Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==2) {
                     Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/08/IC");
+                    intent.putExtra("subject","IN/KU/CS/08/NL");
                     startActivity(intent);
                     Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
                 if(position==3) {
                     Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/08/MA");
-                    startActivity(intent);
-                    Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==4) {
-                    Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/08/NL");
-                    startActivity(intent);
-                    Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==5) {
-                    Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/08/NO");
-                    startActivity(intent);
-                    Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
-                if(position==6) {
-                    Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/KU/CS/08/ST");
                     startActivity(intent);
                     Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
-                if(position==7) {
-                    Intent intent=new Intent(Cse_eightsem_subjectlist.this,Pdflist.class);
-                    intent.putExtra("subject","IN/KU/CS/08/SV");
-                    startActivity(intent);
-                    Toast.makeText(Cse_eightsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
 

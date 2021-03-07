@@ -404,6 +404,10 @@ public class Subjectcode {
             if (subjectname.equals("Electrical measurements and measuring instruments")) {
                 code = "EJ";
             }
+            if(subjectname.equals("Electrical engineering material")){
+                code="E4";
+            }
+
             if (subjectname.equals("Power transmission and distribution")) {
                 code = "PO";
             }
@@ -543,8 +547,7 @@ public class Subjectcode {
 
                 code = "AF";
             }
-            if (subjectname.equals("Automobile engineering ")) {
-
+            if (subjectname.equals("Automobile engineering")) {
                 code = "AG";
             }
             if (subjectname.equals("Maintenance engineering")) {
@@ -1110,10 +1113,10 @@ public class Subjectcode {
             {
                 code = "I1";
             }
-            if (subjectname.equals("Automobile engineering"))
-            {
-                code = "AE";
-            }
+//            if (subjectname.equals("Automobile engineering"))
+//            {
+//                code = "AE";
+//            }
             if (subjectname.equals("Inspection and quality control"))
             {
                 code = "IC";
