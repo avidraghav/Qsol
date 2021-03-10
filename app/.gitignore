@@ -1,2 +1,4 @@
 /build
 /google-services.json
+/keystore.jks
+/upload_certificate.pem

@@ -136,14 +136,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String runCounter = intent.getStringExtra(KEY_RUN_COUNTER);
         if ("yes".equals(runCounter)) {
             startCountAnimation();
-        } else totalPapersTextView.setText("1575");
+        } else totalPapersTextView.setText("1775");
     }
 
     /**
      * Starts animation that counts upwards in {@link #totalPapersTextView}.
      */
     private void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 1575);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 1775);
         animator.setDuration(2000);
         animator.addUpdateListener(animation -> totalPapersTextView.setText(animation.getAnimatedValue().toString()));
         animator.start();
@@ -315,7 +315,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Attaching previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
                 startActivity(intent);
                 break;
-
+            case R.id.jmit_website:
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.jmit.ac.in/"));
+                startActivity(Browserintent);
 
         }
         return true;

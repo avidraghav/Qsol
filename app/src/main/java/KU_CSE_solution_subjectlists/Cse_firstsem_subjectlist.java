@@ -38,10 +38,9 @@ public class Cse_firstsem_subjectlist extends AppCompatActivity {
         textView.setText(key);
 
         subjectlist = new ArrayList<>();
-        subjectlist.add(new Listdata("Calculus and Linear Algebra", "1"));
+        subjectlist.add(new Listdata("Calculus and Linear Algebra", "2"));
         SolutionSubjectsAdapter adapter = new SolutionSubjectsAdapter(getBaseContext(), R.layout.solution_subjects_row, subjectlist);
         listView.setAdapter(adapter);
-
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             if(position==0) {
@@ -52,7 +51,6 @@ public class Cse_firstsem_subjectlist extends AppCompatActivity {
             }
 
         });
-
     }
 
     @Override
