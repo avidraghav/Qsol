@@ -12,6 +12,5 @@
 /captures
 .externalNativeBuild
 .cxx
-/keystore.jks
-/upload_certificate.pem
+
 
