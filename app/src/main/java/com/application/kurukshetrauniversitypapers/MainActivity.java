@@ -277,17 +277,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     String[] items = {"Yes", "No"};
                     androidx.appcompat.app.AlertDialog.Builder dialog = new AlertDialog.Builder(this);
                     dialog.setTitle("Are you sure to log out?");
-                    dialog.setItems(items, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (which == 0) {
-                                FirebaseAuth.getInstance().signOut();
-                                updateNavHeader();
-                                Toast.makeText(MainActivity.this, "You have been logged out", Toast.LENGTH_SHORT).show();
-                            }
-                            if (which == 1) {
+                    dialog.setItems(items, (dialog1, which) -> {
+                        if (which == 0) {
+                            FirebaseAuth.getInstance().signOut();
+                            updateNavHeader();
+                            Toast.makeText(MainActivity.this, "You have been logged out", Toast.LENGTH_SHORT).show();
+                        }
+                        if (which == 1) {
 
-                            }
                         }
                     });
                     dialog.create().show();

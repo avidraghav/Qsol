@@ -10,7 +10,7 @@ public class Videoinfo {
 
     }
 
-    public Videoinfo(String subjectname, String channelname, String imageurl,String playlistid) {
+    public Videoinfo(String subjectname, String channelname,String imageurl,String playlistid) {
         this.subjectname = subjectname;
         this.channelname = channelname;
         this.imageurl = imageurl;

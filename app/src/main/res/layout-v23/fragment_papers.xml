@@ -320,8 +320,6 @@
         </RelativeLayout>
 
     </RelativeLayout>
-    
-    
     <RelativeLayout
         android:layout_below="@id/courses"
         android:id="@+id/semesters"
@@ -512,8 +510,6 @@
         </RelativeLayout>
 
     </RelativeLayout>
-
-
     <Button
         android:id="@+id/search"
         android:layout_width="340dp"

@@ -1,12 +1,10 @@
 package Adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,9 +15,6 @@ import utils.Videoinfo;
 import com.application.kurukshetrauniversitypapers.R;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
@@ -29,12 +24,11 @@ public class VideoListAdapter extends ArrayAdapter<Videoinfo> {
 //    StorageReference storageReference,myref;
 //    FirebaseStorage firebaseStorage;
 //    DatabaseReference rootref;
-    private String videoid;
-    FirebaseAuth mAuth;
+    private String playlistid;
 
     public VideoListAdapter(Activity context, List<Videoinfo> subjectlist)
     {
-        super(context, R.layout.videos_available_row, subjectlist);
+        super(context, R.layout.subject_playlists_available_row, subjectlist);
         this.context = context;
         this.subjectlist = subjectlist;
     }
@@ -43,7 +37,7 @@ public class VideoListAdapter extends ArrayAdapter<Videoinfo> {
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.videos_available_row, null, false);
+        View view = layoutInflater.inflate(R.layout.subject_playlists_available_row, null, false);
 
 
         final TextView topic =  view.findViewById(R.id.topicname);
@@ -55,12 +49,6 @@ public class VideoListAdapter extends ArrayAdapter<Videoinfo> {
         topic.setText(videoinfo.getSubjectname());
         teacher.setText(videoinfo.getChannelname());
         Glide.with(context).load(videoinfo.getImageurl()).into(imageView);
-
-        mAuth=FirebaseAuth.getInstance();
-
-
-
-        
 
         return view;
     }

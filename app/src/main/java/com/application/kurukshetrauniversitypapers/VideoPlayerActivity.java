@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import utils.FullScreenHelper;
 
 
-public class VideoActivity extends AppCompatActivity {
+public class VideoPlayerActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private YouTubePlayerView youTubePlayerView;
     private FullScreenHelper fullScreenHelper = new FullScreenHelper(this);
@@ -46,7 +46,7 @@ public class VideoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
+        setContentView(R.layout.activity_video_player);
         Intent intent1=getIntent();
         videoid=intent1.getStringExtra("videoId");
         Log.e("id",videoid);
@@ -209,7 +209,7 @@ public class VideoActivity extends AppCompatActivity {
         Button playNextVideoButton = findViewById(R.id.next_video_button);
 
         playNextVideoButton.setOnClickListener(view -> {
-            Intent intent=new Intent(VideoActivity.this,MainActivity.class);
+            Intent intent=new Intent(VideoPlayerActivity.this,MainActivity.class);
             intent.putExtra("run counter","no");
             startActivity(intent);
 

@@ -15,6 +15,7 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PlaylistsAvailableActivity"></activity>
         <activity android:name=".DatesheetsActivity" />
         <activity android:name="KU_CSE_solution_subjectlists.Cse_firstsem_subjectlist" />
         <activity android:name="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist" />
@@ -28,7 +29,7 @@
         <activity android:name="KU_CV_subjectlists.Cv_fourthsem_subjectlist" />
         <activity android:name=".VideosAvailableActivity" />
         <activity
-            android:name=".VideoActivity"
+            android:name=".VideoPlayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:theme="@style/VideoActivityTheme" />
         <activity

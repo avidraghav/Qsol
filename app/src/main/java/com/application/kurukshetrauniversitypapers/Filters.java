@@ -33,9 +33,7 @@ public class Filters extends AppCompatActivity {
 
         setupViewPager(viewPager);
         tabLayout.setupWithViewPager(viewPager);
-
         viewPager.setCurrentItem(extrasPosition);
-
     }
 
     private void setupViewPager(ViewPager viewPager)
@@ -44,6 +42,7 @@ public class Filters extends AppCompatActivity {
         viewPagerAdapter.addFragment(new PapersFragment(),"Papers");
         viewPagerAdapter.addFragment(new SyllabusFragment(),"Syllabus");
         viewPagerAdapter.addFragment(new SolutionsFragment(),"Solutions");
+        viewPagerAdapter.addFragment(new VideoFragment(),"Videos");
         viewPager.setAdapter(viewPagerAdapter);
     }
 

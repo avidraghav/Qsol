@@ -10,9 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,7 +18,6 @@ import java.util.List;
 
 import Adapters.VideoAdapter2;
 import models_youtubeapi.Apimodel;
-import models_youtubeapi.Token;
 import models_youtubeapi.VideoYT;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,10 +44,10 @@ public class VideosListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video_list);
+        setContentView(R.layout.activity_playlist_video_list);
 
         Intent intent1=getIntent();
-        playlist_id=intent1.getStringExtra("Playlistid");
+        playlist_id=intent1.getStringExtra("PlaylistId");
 
         next=findViewById(R.id.nextpage);
         RecyclerView rv= findViewById(R.id.recyclerView);

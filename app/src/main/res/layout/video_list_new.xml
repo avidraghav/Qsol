@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/l1"
+            android:id="@+id/videoname_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
            >
@@ -49,7 +49,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/description_relativelayout"
                 android:layout_below="@id/divider1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

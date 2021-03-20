@@ -245,7 +245,7 @@
             android:id="@+id/person36"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sugandha Malhotra (6 papers)"
+            android:text="Sugandha Malhotra (17 papers)"
             android:drawableLeft="@drawable/linkedin"
             android:drawablePadding="2dp"
             android:background="?attr/selectableItemBackground"

@@ -33,4 +33,5 @@
     <string name="placeholder">Some placeholder string</string>
     <string name="solutions">Solutions</string>
     <string name="qsol_solution_logo">Qsol Solution logo</string>
+    <string name="video_name">Video name</string>
 </resources>

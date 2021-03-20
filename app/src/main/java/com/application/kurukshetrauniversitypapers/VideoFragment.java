@@ -5,29 +5,44 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.VideoListAdapter;
 import utils.Videoinfo;
+import utils.uploadPDF;
 
 public class VideoFragment extends Fragment {
-    ListView listView;
-    List<Videoinfo> video_info;
-    TextView subjectname;
-    TextView teacher_name;
-    ImageView image;
+    Button cse,first,second,third,fourth,fifth,sixth,session;
+    Button ku,dp,gj;
+    String selected_branch = "null",selected_semester = "null",semester_number="null",branch_for_intent="null";
+    String board="null";
+    RelativeLayout ku_courses,ku_semesters,dp_courses,dp_semesters;
+//    ArrayList<String> subjects;
+//    List<uploadPDF> uploadPDFS;
+    Button search;
+
+    // List<Videoinfo> video_info;
+//    TextView subjectname;
+//    TextView teacher_name;
+//    ImageView image;
 
 
-
+  public VideoFragment(){
+      //empty constructor
+  }
 
 
     @Override
@@ -36,39 +51,92 @@ public class VideoFragment extends Fragment {
         // Inflate the layout for this fragment
         
         View v= inflater.inflate(R.layout.fragment_videos, container, false);
-        listView=v.findViewById(R.id.list);
-        subjectname=v.findViewById(R.id.subjectname);
-        teacher_name=v.findViewById(R.id.papercount);
-        image=v.findViewById(R.id.teacher_image);
-        video_info = new ArrayList<>();
-//        video_info.add(new Videoinfo("Formal Language and Automata theory", "Dr. Shilpi Harnal","Jmit Radaur",R.drawable.unnamed));
-//        video_info.add(new Videoinfo("Design & analysis of algorithm", "Abdul Bari","",R.drawable.ab));
-//        video_info.add(new Videoinfo("Computer organization & architecture", "Gate Smashers","",R.drawable.gs));
-//        video_info.add(new Videoinfo("Essentials of information technology", "Java by Saurabh Shukla Sir","",R.drawable.jv));
-//        video_info.add(new Videoinfo("Database management system", "Gate Smashers","",R.drawable.gs));
-//        video_info.add(new Videoinfo("Digital electronics", "Neso Academy","",R.drawable.ns));
-//        video_info.add(new Videoinfo("Sequence & series", "Dr.Gajendra Purohit","",R.drawable.gp));
-//        video_info.add(new Videoinfo("Multivariable calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-//        video_info.add(new Videoinfo("Vector calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-//        video_info.add(new Videoinfo("Object-oriented programming using C++", "C++ by Saurabh Shukla sir","",R.drawable.jv));
-//        video_info.add(new Videoinfo("Business Intelligence and entrepreneurship", "PPC learning","",R.drawable.ppc));
-//        video_info.add(new Videoinfo("Design & analysis of algorithm", "The Insight Coders","",R.drawable.ic));
-//        video_info.add(new Videoinfo("Discrete Mathematics", "Group Theory","",R.drawable.gp));
-//        video_info.add(new Videoinfo("Organisational behaviour", "PPC learning","",R.drawable.ppc));
-//        video_info.add(new Videoinfo("Operating systems", "Knowledge Gate","",R.drawable.kg));
-//        video_info.add(new Videoinfo("Operating systems", "Gate Smashers","",R.drawable.gs));
+        cse=v.findViewById(R.id.cse);
+        first=v.findViewById(R.id.first);
+        third=v.findViewById(R.id.third);
+        sixth=v.findViewById(R.id.sixth);
+        search=v.findViewById(R.id.search);
+        ku_courses=v.findViewById(R.id.ku_courses);
+        ku_semesters=v.findViewById(R.id.ku_semesters);
+        ku=v.findViewById(R.id.ku);
+        session=v.findViewById(R.id.session_20_21);
+
+        setDefaultList();
+        cse.setOnClickListener(v1 -> {
+            selected_branch="Cse";
+            branch_for_intent="Computer science"; // for branches other than Cse when first or second sem is selected selected branch is
+            // overriden to Cse
+            cse.setBackgroundResource(R.drawable.button_pressed);
+            third.setEnabled(true);
+            sixth.setEnabled(true);
+            Log.e("branch",selected_branch);
+        });
+        first.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester="first";
+                semester_number="1";
+                first.setBackgroundResource(R.drawable.button_pressed);
+                third.setBackgroundResource(R.drawable.button_default);
+                sixth.setBackgroundResource(R.drawable.button_default);
+            }
+        });
+        third.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester="third";
+                semester_number="3";
+                first.setBackgroundResource(R.drawable.button_default);
+                third.setBackgroundResource(R.drawable.button_pressed);
+                sixth.setBackgroundResource(R.drawable.button_default);
+            }
+        });
+        sixth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selected_semester="sixth";
+                semester_number="6";
+                first.setBackgroundResource(R.drawable.button_default);
+                third.setBackgroundResource(R.drawable.button_default);
+                sixth.setBackgroundResource(R.drawable.button_pressed);
+            }
+        });
+
+        ku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                board="KU_";
+                selected_semester="null";
+                selected_branch="null";
+                ku_courses.setVisibility(View.VISIBLE);
+                ku_semesters.setVisibility(View.VISIBLE);
+                first.setBackgroundResource(R.drawable.button_default);
+                third.setBackgroundResource(R.drawable.button_default);
+                sixth.setBackgroundResource(R.drawable.button_default);
+                ku.setBackgroundResource(R.drawable.button_pressed);
+
+            }
+        });
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),PlaylistsAvailableActivity.class);
+                intent.putExtra("video_loc","IN/KU/CS/03/Videos/Business Intelligence and entrepreneurship");
+                startActivity(intent);
+            }
+        });
+//        listView=v.findViewById(R.id.list);
+//        subjectname=v.findViewById(R.id.topicname);
+//        teacher_name=v.findViewById(R.id.teacher);
+//        image=v.findViewById(R.id.teacher_image);
+//        video_info = new ArrayList<>();
+//        video_info.add(new Videoinfo("Formal Language and Automata theory", "Dr. Shilpi Harnal","Jmit Radaur"));
+//        video_info.add(new Videoinfo("Test", "Dr. abc","test"));
 //
-//        video_info.add(new Videoinfo("Programming for problems solving", "MySirG.com","",R.drawable.jv));
-//        video_info.add(new Videoinfo("Matrices", "Dr.Gajendra Purohit","",R.drawable.gp));
-//        video_info.add(new Videoinfo("Differential calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-//        video_info.add(new Videoinfo("Integral calculus", "Dr.Gajendra Purohit","",R.drawable.gp));
-//        video_info.add(new Videoinfo("Engineering Graphics and designs", "Manas Patnaik","",R.drawable.mp));
-//        video_info.add(new Videoinfo("Probability and statistics", "Dr.Gajendra Purohit","",R.drawable.gp));
-
-
-      //  VideoListAdapter adapter = new VideoListAdapter(getActivity(), R.layout.videos_available_row, video_info);
-       // listView.setAdapter(adapter);
-
+//
+//        VideoListAdapter adapter = new VideoListAdapter(getActivity(), video_info);
+//        listView.setAdapter(adapter);
+//
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -186,12 +254,15 @@ public class VideoFragment extends Fragment {
 //
 //            }
 //        });
-
-
-
         return v;
 
 
+    }
+    public void setDefaultList()
+    {
+        ku_courses.setVisibility(View.VISIBLE);
+        ku_semesters.setVisibility(View.VISIBLE);
+        session.setBackgroundResource(R.drawable.button_pressed);
     }
 
 
