@@ -11,12 +11,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Adapters.VideoAdapter2;
+import Adapters.VideoListAdapter;
 import models_youtubeapi.Apimodel;
 import models_youtubeapi.VideoYT;
 import retrofit2.Call;
@@ -26,16 +27,17 @@ import retrofit2.Response;
 import static android.content.ContentValues.TAG;
 
 public class VideosListActivity extends AppCompatActivity {
-    private VideoAdapter2 adapter;
-    private LinearLayoutManager manager;
+    private VideoListAdapter adapter;
     private List<VideoYT> videoList=new ArrayList<>();
     private static String token;
     private static float totalresults;
     private static final float resultsperpage=50;
     private String playlist_id;
-    private Button rate;
     Button next;
-    String url;
+    String playlistitems_url,durationfetcher_url;
+    TextView videocount;
+    String VIDEOS_AVAILABLE="Videos in Playlist: ";
+
 
     public VideosListActivity() {
         // Required empty public constructor
@@ -44,19 +46,20 @@ public class VideosListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_playlist_video_list);
+        setContentView(R.layout.activity_video_list);
 
         Intent intent1=getIntent();
         playlist_id=intent1.getStringExtra("PlaylistId");
 
         next=findViewById(R.id.nextpage);
+        videocount=findViewById(R.id.video_count);
         RecyclerView rv= findViewById(R.id.recyclerView);
-        adapter=new VideoAdapter2(VideosListActivity.this,videoList,token);
-        manager=new LinearLayoutManager(VideosListActivity.this);
+        adapter=new VideoListAdapter(VideosListActivity.this,videoList,token);
+        LinearLayoutManager manager = new LinearLayoutManager(VideosListActivity.this);
 
         rv.setAdapter(adapter);
         rv.setLayoutManager(manager);
-        rate=findViewById(R.id.rate_btn);
+        Button rate = findViewById(R.id.rate_btn);
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -83,19 +86,19 @@ public class VideosListActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void getJson(String nextpagetoken) {
         if(nextpagetoken.equals("null")) {
-             url = YoutubeAPI.BASE_URL + YoutubeAPI.request + playlist_id + YoutubeAPI.apikey;
-        }
-        else{
-             url = YoutubeAPI.BASE_URL + YoutubeAPI.request + playlist_id + YoutubeAPI.apikey+YoutubeAPI.nextpage+nextpagetoken;
+             playlistitems_url = YoutubeAPI.BASE_URL + YoutubeAPI.request + playlist_id + YoutubeAPI.apikey;
 
         }
-        Log.e("url",url);
-        Call<Apimodel> data =YoutubeAPI.getHomeVideo().getYT(url);
+        else{
+             playlistitems_url = YoutubeAPI.BASE_URL + YoutubeAPI.request + playlist_id + YoutubeAPI.apikey+YoutubeAPI.nextpage+nextpagetoken;
+        }
+
+        Log.e("playlistitems_url",playlistitems_url);
+        Call<Apimodel> data =YoutubeAPI.getHomeVideo().getYT(playlistitems_url);
         data.enqueue(new Callback<Apimodel>() {
             @Override
             public void onResponse(Call<Apimodel> call, Response<Apimodel> response) {
@@ -108,6 +111,7 @@ public class VideosListActivity extends AppCompatActivity {
                     videoList.addAll(am.getItems());
                     if(nextpagetoken.equals("null")) {
                         totalresults = am.getPageInfo().getTotalResults();
+                        videocount.setText(VIDEOS_AVAILABLE+(int) totalresults);
                     }
                      if(totalresults>resultsperpage)
                      {

@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/textViewName"
                 android:layout_width="350dp"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_toEndOf="@id/video_thumbnail"
                 android:clickable="true"
@@ -35,14 +35,24 @@
                 android:textAlignment="viewStart"
                 android:textColor="@color/fontColor"
                 android:textStyle="bold"
+
                 android:focusable="true" />
+            <TextView
+                android:id="@+id/position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewName"
+                android:layout_toEndOf="@id/video_thumbnail"
+                android:layout_marginStart="8dp"
+                android:textColor="#000"/>
 
             <Button
                 android:id="@+id/reveal"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_below="@id/textViewName"
+                android:layout_below="@id/position"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="4dp"
                 android:background="@drawable/ic_angle_arrow_down"
                 android:foreground="?attr/selectableItemBackground"
                 />
@@ -56,8 +66,7 @@
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"
                 android:orientation="vertical"
-               >
-
+                android:layout_marginTop="8dp">
 
                 <TextView
                     android:id="@+id/description"

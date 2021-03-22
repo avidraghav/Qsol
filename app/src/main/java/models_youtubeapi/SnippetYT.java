@@ -7,14 +7,24 @@ public class SnippetYT {
     private String description;
     private ThumbnailYT thumbnails;
     private ResourceID resourceId;
+    private int position;
 
     public SnippetYT(){}
 
-    public SnippetYT(String title, String description, ThumbnailYT thumbnails,ResourceID resourceId) {
+    public SnippetYT(String title, String description, ThumbnailYT thumbnails,ResourceID resourceId, int position) {
         this.title = title;
         this.description = description;
         this.thumbnails = thumbnails;
         this.resourceId = resourceId;
+        this.position = position;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public String getTitle() {

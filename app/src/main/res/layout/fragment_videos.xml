@@ -8,6 +8,13 @@
     android:background="@color/white"
     tools:context=".VideoFragment">
 
+        <TextView
+            android:id="@+id/textview_betafeature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beta feature\n(Know more)"
+            android:foreground="?attr/selectableItemBackground"/>
+
         <RelativeLayout
             android:layout_below="@id/session"
             android:id="@+id/board"
@@ -27,7 +34,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_marginBottom="5dp"
-                            android:text="Board/University"
+                            android:text="@string/board_university"
                             android:layout_centerHorizontal="true"
                             android:textColor="#000"
                             android:textSize="16sp"
@@ -43,7 +50,7 @@
                                     android:layout_width="112dp"
                                     android:layout_height="48dp"
                                     android:background="@drawable/button_default"
-                                    android:text="HSBTE"
+                                    android:text="@string/hsbte"
                                     android:textAllCaps="false"
                                     android:enabled="false"/>
                                 <Button
@@ -52,7 +59,7 @@
                                     android:layout_height="48dp"
                                     android:layout_marginStart="10dp"
                                     android:background="@drawable/button_default"
-                                    android:text="KUK University"
+                                    android:text="@string/kuk_university"
                                     android:textAllCaps="false" />
 
                                 <Button
@@ -62,7 +69,7 @@
                                     android:layout_height="48dp"
                                     android:layout_marginStart="10dp"
                                     android:background="@drawable/button_default"
-                                    android:text="GJU Hisar"
+                                    android:text="@string/gju_hisar"
                                     android:textAllCaps="false" />
                         </LinearLayout>
 
@@ -84,7 +91,7 @@
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="5dp"
-                            android:text="Session"
+                            android:text="@string/session"
                             android:textColor="#000"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -118,7 +125,7 @@
                             android:id="@+id/txt_branch"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Course"
+                            android:text="@string/course"
                             android:textStyle="bold"
                             android:textSize="16sp"
                             android:layout_marginBottom="5dp"
@@ -129,9 +136,9 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/txt_branch"
-                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:background="@drawable/button_default"
-                            android:text="Computer Science"
+                            android:text="@string/computer_science"
                             android:singleLine="true"
                             android:textAllCaps="false" />
                         <Button
@@ -139,18 +146,18 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/txt_branch"
-                            android:layout_marginLeft="10dp"
-                            android:layout_toRightOf="@+id/cse"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/cse"
                             android:background="@drawable/button_default"
                             android:singleLine="true"
-                            android:text="Information Tech."
+                            android:text="@string/information_tech"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
                             android:id="@+id/me"
                             android:layout_width="170dp"
                             android:layout_height="35dp"
-                            android:text="Mechanical Engg."
+                            android:text="@string/mechanical_engg"
                             android:layout_below="@+id/cse"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
@@ -165,7 +172,7 @@
                             android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="Electrical Engg."
+                            android:text="@string/electrical_engg"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
@@ -173,12 +180,12 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/it"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_toRightOf="@+id/me"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toEndOf="@+id/me"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="Electro. and comm."
+                            android:text="@string/electro_and_comm"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
@@ -186,12 +193,12 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/ec"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:layout_marginTop="4dp"
-                            android:layout_toRightOf="@+id/ee"
+                            android:layout_toEndOf="@+id/ee"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="Civil Engg."
+                            android:text="@string/civil_engg"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
@@ -199,12 +206,12 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/cv"
-                            android:layout_toRightOf="@+id/bb"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/bb"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="MBA"
+                            android:text="@string/mba"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
@@ -212,10 +219,10 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/ee"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="BBA"
+                            android:text="@string/bba"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
@@ -223,10 +230,10 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/bb"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="BCA"
+                            android:text="@string/bca"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
@@ -234,12 +241,12 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/mb"
-                            android:layout_toRightOf="@+id/bc"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/bc"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="MCA"
+                            android:text="@string/mca"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                 </RelativeLayout>
@@ -255,7 +262,7 @@
                             android:id="@+id/txt_branch2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Course"
+                            android:text="@string/course"
                             android:textStyle="bold"
                             android:textSize="16sp"
                             android:layout_marginBottom="5dp"
@@ -266,9 +273,9 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@id/txt_branch2"
-                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:background="@drawable/button_default"
-                            android:text="Computer Science"
+                            android:text="@string/computer_science"
                             android:singleLine="true"
                             android:textAllCaps="false" />
                         <Button
@@ -276,17 +283,17 @@
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@+id/txt_branch2"
-                            android:layout_marginLeft="10dp"
-                            android:layout_toRightOf="@id/dp_cse"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@id/dp_cse"
                             android:background="@drawable/button_default"
                             android:singleLine="true"
-                            android:text="Civil Engg."
+                            android:text="@string/civil_engg"
                             android:textAllCaps="false" />
                         <Button
                             android:id="@+id/dp_me"
                             android:layout_width="170dp"
                             android:layout_height="35dp"
-                            android:text="Mechanical Engg."
+                            android:text="@string/mechanical_engg"
                             android:layout_below="@id/dp_cse"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
@@ -300,31 +307,31 @@
                             android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="Electrical Engg."
+                            android:text="@string/electrical_engg"
                             android:textAllCaps="false" />
                         <Button
                             android:id="@+id/dp_dmlt"
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@id/dp_ec"
-                            android:layout_toRightOf="@id/dp_ee"
-                            android:layout_marginLeft="10dp"
+                            android:layout_toEndOf="@id/dp_ee"
+                            android:layout_marginStart="10dp"
                             android:layout_marginTop="4dp"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="MLT"
+                            android:text="@string/mlt"
                             android:textAllCaps="false" />
                         <Button
                             android:id="@+id/dp_ec"
                             android:layout_width="170dp"
                             android:layout_height="35dp"
                             android:layout_below="@id/dp_cv"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:layout_marginTop="5dp"
-                            android:layout_toRightOf="@id/dp_me"
+                            android:layout_toEndOf="@id/dp_me"
                             android:singleLine="true"
                             android:background="@drawable/button_default"
-                            android:text="Electro. and comm."
+                            android:text="@string/electro_and_comm"
                             android:textAllCaps="false" />
 
                 </RelativeLayout>
@@ -348,7 +355,7 @@
                             android:id="@+id/txt_semester"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Semester"
+                            android:text="@string/semester"
                             android:textStyle="bold"
                             android:layout_marginBottom="5dp"
                             android:textColor="#000"
@@ -361,18 +368,18 @@
                             android:id="@+id/first"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
-                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:background="@drawable/button_default"
-                            android:text="First"
+                            android:text="@string/first"
                             android:textAllCaps="false" />
                         <Button
                             android:layout_below="@+id/txt_semester"
                             android:id="@+id/second"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
-                            android:text="Second"
-                            android:layout_toRightOf="@+id/first"
-                            android:layout_marginLeft="4dp"
+                            android:text="@string/second"
+                            android:layout_toEndOf="@+id/first"
+                            android:layout_marginStart="4dp"
                             android:textAllCaps="false"
                             android:background="@drawable/button_default"
                             android:enabled="false"/>
@@ -381,10 +388,10 @@
                             android:id="@+id/third"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
-                            android:text="Third"
+                            android:text="@string/third"
                             android:textAllCaps="false"
-                            android:layout_marginLeft="4dp"
-                            android:layout_toRightOf="@+id/second"
+                            android:layout_marginStart="4dp"
+                            android:layout_toEndOf="@+id/second"
                             android:background="@drawable/button_default"/>
                         <Button
                             android:layout_below="@+id/txt_semester"
@@ -392,9 +399,9 @@
                             android:layout_width="76dp"
                             android:layout_height="32dp"
                             android:textAllCaps="false"
-                            android:layout_toRightOf="@+id/third"
-                            android:layout_marginLeft="4dp"
-                            android:text="Fourth"
+                            android:layout_toEndOf="@+id/third"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/fourth"
                             android:background="@drawable/button_default"
                             android:enabled="false"/>
                         <Button
@@ -404,7 +411,7 @@
                             android:textAllCaps="false"
                             android:layout_below="@+id/first"
                             android:layout_marginTop="4dp"
-                            android:text="Fifth"
+                            android:text="@string/fifth"
                             android:background="@drawable/button_default"
                             android:enabled="false"/>
                         <Button
@@ -412,34 +419,34 @@
                             android:layout_width="76dp"
                             android:layout_height="32dp"
                             android:layout_below="@id/second"
-                            android:layout_toRightOf="@+id/fifth"
+                            android:layout_toEndOf="@+id/fifth"
                             android:textAllCaps="false"
                             android:layout_marginTop="4dp"
-                            android:layout_marginLeft="4dp"
-                            android:text="Sixth"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/sixth"
                             android:background="@drawable/button_default"/>
                         <Button
                             android:id="@+id/seventh"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
                             android:layout_below="@+id/third"
-                            android:layout_toRightOf="@id/sixth"
+                            android:layout_toEndOf="@id/sixth"
                             android:background="@drawable/button_default"
                             android:layout_marginTop="4dp"
-                            android:layout_marginLeft="4dp"
-                            android:text="Seventh"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/seventh"
                             android:textAllCaps="false"
                             android:enabled="false"/>
                         <Button
                             android:id="@+id/eight"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
-                            android:layout_toRightOf="@id/seventh"
+                            android:layout_toEndOf="@id/seventh"
                             android:layout_below="@+id/fourth"
                             android:textAllCaps="false"
                             android:layout_marginTop="4dp"
-                            android:text="Eighth"
-                            android:layout_marginLeft="4dp"
+                            android:text="@string/eighth"
+                            android:layout_marginStart="4dp"
                             android:background="@drawable/button_default"
                             android:enabled="false"
                             />
@@ -455,7 +462,7 @@
                             android:id="@+id/txt_semester2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Semester"
+                            android:text="@string/semester"
                             android:textStyle="bold"
                             android:layout_marginBottom="5dp"
                             android:textColor="#000"
@@ -468,18 +475,18 @@
                             android:id="@+id/dp_first"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
-                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
                             android:background="@drawable/button_default"
-                            android:text="First"
+                            android:text="@string/first"
                             android:textAllCaps="false" />
                         <Button
                             android:layout_below="@id/txt_semester2"
                             android:id="@+id/dp_second"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
-                            android:text="Second"
-                            android:layout_toRightOf="@id/dp_first"
-                            android:layout_marginLeft="4dp"
+                            android:text="@string/second"
+                            android:layout_toEndOf="@id/dp_first"
+                            android:layout_marginStart="4dp"
                             android:textAllCaps="false"
                             android:background="@drawable/button_default"/>
                         <Button
@@ -487,10 +494,10 @@
                             android:id="@+id/dp_third"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
-                            android:text="Third"
+                            android:text="@string/third"
                             android:textAllCaps="false"
-                            android:layout_marginLeft="4dp"
-                            android:layout_toRightOf="@id/dp_second"
+                            android:layout_marginStart="4dp"
+                            android:layout_toEndOf="@id/dp_second"
                             android:background="@drawable/button_default"/>
                         <Button
                             android:layout_below="@+id/txt_semester2"
@@ -498,9 +505,9 @@
                             android:layout_width="76dp"
                             android:layout_height="32dp"
                             android:textAllCaps="false"
-                            android:layout_toRightOf="@id/dp_third"
-                            android:layout_marginLeft="4dp"
-                            android:text="Fourth"
+                            android:layout_toEndOf="@id/dp_third"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/fourth"
                             android:background="@drawable/button_default"/>
                         <Button
                             android:id="@+id/dp_fifth"
@@ -509,18 +516,18 @@
                             android:textAllCaps="false"
                             android:layout_below="@id/dp_first"
                             android:layout_marginTop="4dp"
-                            android:text="Fifth"
+                            android:text="@string/fifth"
                             android:background="@drawable/button_default"/>
                         <Button
                             android:id="@+id/dp_sixth"
                             android:layout_width="76dp"
                             android:layout_height="32dp"
                             android:layout_below="@id/dp_second"
-                            android:layout_toRightOf="@id/dp_fifth"
+                            android:layout_toEndOf="@id/dp_fifth"
                             android:textAllCaps="false"
                             android:layout_marginTop="4dp"
-                            android:layout_marginLeft="4dp"
-                            android:text="Sixth"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/sixth"
                             android:background="@drawable/button_default"/>
 
                 </RelativeLayout>
@@ -533,7 +540,7 @@
             android:layout_marginTop="10dp"
             android:layout_below="@id/semesters"
             android:background="@drawable/button_shape"
-            android:text="Search"
+            android:text="@string/search"
             android:layout_centerInParent="true"
             android:textAllCaps="false"
             android:foreground="?attr/selectableItemBackground"

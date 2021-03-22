@@ -14,6 +14,9 @@ public class YoutubeAPI {
     public static final String apikey=  "&key=AIzaSyA8xvey8P0i0ymbt3x1jyPVe3iTtgTmTvw";
     public static final String nextpage="&pageToken=";
 
+    public static final String DURATION_REQUEST_BASE_URL= "https://www.googleapis.com/youtube/v3/";
+    public static final String duration_request="videos?part=contentDetails&id=";
+
 
 public interface HomeVideo{
     @GET

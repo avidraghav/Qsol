@@ -5,22 +5,17 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -171,8 +166,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent1.putExtra("position", 0);
                 startActivity(intent1);
                 break;
-            case R.id.bt_university_websites:
-                clazz = Websites.class;
+            case R.id.bt_beta_feature:
+                Intent intent2 = new Intent(MainActivity.this, Filters.class);
+                intent2.putExtra("position", 3);
+                startActivity(intent2);
                 break;
             case R.id.bt_diploma:
                 clazz = Diploma_expendable_list.class;
@@ -190,9 +187,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 clazz = RegisterActivity2.class;
                 break;
             case R.id.bt_solution:
-                Intent intent = new Intent(MainActivity.this, Filters.class);
-                intent.putExtra("position", 2);
-                startActivity(intent);
+                Intent intent3 = new Intent(MainActivity.this, Filters.class);
+                intent3.putExtra("position", 2);
+                startActivity(intent3);
 
         }
         if (clazz == null) return;

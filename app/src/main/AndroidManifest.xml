@@ -27,7 +27,6 @@
         <activity android:name=".SolutionDisplayActivity" />
         <activity android:name="KU_CV_subjectlists.Cv_sixthsem_subjectlist" />
         <activity android:name="KU_CV_subjectlists.Cv_fourthsem_subjectlist" />
-        <activity android:name=".VideosAvailableActivity" />
         <activity
             android:name=".VideoPlayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"

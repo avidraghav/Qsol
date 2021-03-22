@@ -34,4 +34,40 @@
     <string name="solutions">Solutions</string>
     <string name="qsol_solution_logo">Qsol Solution logo</string>
     <string name="video_name">Video name</string>
+    <string name="video_tab_beta_feature">Video Tab (Beta Feature)</string>
+    <string name="video_tab_beta">Video Tab (Beta)</string>
+    <string name="qsol_logo">qsol logo</string>
+    <string name="rate_qsol">Rate Qsol</string>
+    <string name="load_more">Load more</string>
+    <string name="video_count">video count</string>
+    <string name="beta_feature">Beta feature</string>
+    <string name="board_university">Board/University</string>
+    <string name="hsbte">HSBTE</string>
+    <string name="kuk_university">KUK University</string>
+    <string name="gju_hisar">GJU Hisar</string>
+    <string name="session">Session</string>
+
+
+    <string name="information_tech">Information Tech.</string>
+    <string name="mba">MBA</string>
+    <string name="bba">BBA</string>
+    <string name="bca">BCA</string>
+    <string name="mca">MCA</string>
+    <string name="course">Course</string>
+    <string name="computer_science">Computer Science</string>
+    <string name="civil_engg">Civil Engg.</string>
+    <string name="mechanical_engg">Mechanical Engg.</string>
+    <string name="electrical_engg">Electrical Engg.</string>
+    <string name="mlt">MLT</string>
+    <string name="electro_and_comm">Electro. and comm.</string>
+    <string name="seventh">Seventh</string>
+    <string name="eighth">Eighth</string>
+    <string name="semester">Semester</string>
+    <string name="first">First</string>
+    <string name="second">Second</string>
+    <string name="third">Third</string>
+    <string name="fourth">Fourth</string>
+    <string name="fifth">Fifth</string>
+    <string name="sixth">Sixth</string>
+    <string name="search">Search</string>
 </resources>

@@ -7,6 +7,15 @@ public class GlobalClass extends Application {
     static String branch;
     static String semester;
     static String videoId;
+    static Float totalresults;
+
+    public Float getTotalresults() {
+        return totalresults;
+    }
+
+    public void setTotalresults(Float totalresults) {
+        this.totalresults = totalresults;
+    }
 
     public String getVideoId() {
         return videoId;

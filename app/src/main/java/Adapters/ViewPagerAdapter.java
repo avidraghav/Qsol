@@ -1,10 +1,15 @@
-package com.application.kurukshetrauniversitypapers;
+package Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+
+import com.application.kurukshetrauniversitypapers.PapersFragment;
+import com.application.kurukshetrauniversitypapers.SolutionsFragment;
+import com.application.kurukshetrauniversitypapers.SyllabusFragment;
+import com.application.kurukshetrauniversitypapers.VideoFragment;
 
 import java.util.ArrayList;
 

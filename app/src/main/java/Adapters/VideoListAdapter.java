@@ -1,55 +1,131 @@
 package Adapters;
 
-import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
-import utils.Videoinfo;
 import com.application.kurukshetrauniversitypapers.R;
+
+import models_youtubeapi.Apimodel;
+import models_youtubeapi.VideoYT;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import com.application.kurukshetrauniversitypapers.VideoPlayerActivity;
+import com.application.kurukshetrauniversitypapers.YoutubeAPI;
 import com.bumptech.glide.Glide;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
-public class VideoListAdapter extends ArrayAdapter<Videoinfo> {
-    List<Videoinfo> subjectlist;
-    private Activity context;
-//    StorageReference storageReference,myref;
-//    FirebaseStorage firebaseStorage;
-//    DatabaseReference rootref;
-    private String playlistid;
+import static android.content.ContentValues.TAG;
 
-    public VideoListAdapter(Activity context, List<Videoinfo> subjectlist)
-    {
-        super(context, R.layout.subject_playlists_available_row, subjectlist);
+public class VideoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private Context context;
+    private List<VideoYT> videoList;
+    private String token;
+    private int currentPosition = 999; // any number greater than the number of videos in playlist
+    private boolean expansion_state=false;
+
+
+    public VideoListAdapter(Context context, List<VideoYT> videoList, String token) {
         this.context = context;
-        this.subjectlist = subjectlist;
+        this.videoList = videoList;
+        this. token = token;
+    }
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.video_list_new,parent,false);
+        return  new YoutubeHolder(view);
+    }
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+        VideoYT videoYT= videoList.get(position);
+        YoutubeHolder yth = (YoutubeHolder) holder;
+        int video_number= videoYT.getSnippet().getPosition() + 1;
+        yth.description.setText(videoYT.getSnippet().getDescription());
+        yth.textViewName.setText(videoYT.getSnippet().getTitle());
+        yth.position.setText("Video "+video_number);
+        Glide.with(context).load(videoYT.getSnippet().getThumbnails().getMedium().getUrl()).into(yth.videoThumbnail);
+        yth.relativeLayout.setVisibility(View.GONE);
+
+        if (currentPosition == position) {
+            if(expansion_state) {
+                Log.e("info","inside if");
+                Animation slideDown = AnimationUtils.loadAnimation(context, R.anim.reveal_details);
+                yth.relativeLayout.setVisibility(View.VISIBLE);
+                yth.relativeLayout.startAnimation(slideDown);
+                yth.reveal.setBackgroundResource(R.drawable.ic_up_arrow);
+            }
+            else {
+                Log.e("info","inside else");
+                Animation slideUp = AnimationUtils.loadAnimation(context, R.anim.hide_details);
+                yth.relativeLayout.setVisibility(View.GONE);
+                yth.relativeLayout.startAnimation(slideUp);
+                yth.reveal.setBackgroundResource(R.drawable.ic_angle_arrow_down);
+            }
+        }
+        yth.reveal.setOnClickListener(view -> {
+            Log.e("info","inside listener");
+            expansion_state=!expansion_state;
+            currentPosition = position;
+            notifyDataSetChanged();
+        });
+        String getId= videoYT.getSnippet().getResourceId().getVideoId();
+
+
+        yth.textViewName.setOnClickListener(v -> {
+            startVideo(getId);
+        });
+        yth.relativeLayout.setOnClickListener(view -> {
+            startVideo(getId);
+        });
+
     }
     @NonNull
     @Override
-    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.subject_playlists_available_row, null, false);
-
-
-        final TextView topic =  view.findViewById(R.id.topicname);
-        final TextView teacher = view.findViewById(R.id.teacher);
-        //final TextView duration = view.findViewById(R.id.duration);
-        final ImageView imageView=view.findViewById(R.id.teacher_image);
-
-        Videoinfo videoinfo = subjectlist.get(position);
-        topic.setText(videoinfo.getSubjectname());
-        teacher.setText(videoinfo.getChannelname());
-        Glide.with(context).load(videoinfo.getImageurl()).into(imageView);
-
-        return view;
+    public int getItemCount() {
+        return videoList.size();
     }
+    public void startVideo(String getId){
+        Intent i = new Intent(context, VideoPlayerActivity.class);
+        i.putExtra("videoId", getId);
+        context.startActivity(i);
+    }
+    class YoutubeHolder extends RecyclerView.ViewHolder{
+
+
+        TextView textViewName, description,position;
+        ImageView videoThumbnail;
+        RelativeLayout relativeLayout;
+        Button reveal;
+
+        public YoutubeHolder(@NonNull View itemView) {
+            super(itemView);
+            textViewName = itemView.findViewById(R.id.textViewName);
+            position = itemView.findViewById(R.id.position);
+            description=itemView.findViewById(R.id.description);
+            videoThumbnail = itemView.findViewById(R.id.video_thumbnail);
+            reveal=itemView.findViewById(R.id.reveal);
+            relativeLayout = itemView.findViewById(R.id.description_relativelayout);
+
+        }
+
+    }
+
 }

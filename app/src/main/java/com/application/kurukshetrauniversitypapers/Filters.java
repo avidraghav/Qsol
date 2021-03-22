@@ -1,7 +1,6 @@
 package com.application.kurukshetrauniversitypapers;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -9,6 +8,8 @@ import android.os.Bundle;
 
 
 import com.google.android.material.tabs.TabLayout;
+
+import Adapters.ViewPagerAdapter;
 
 public class Filters extends AppCompatActivity {
 

@@ -8,9 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,18 +19,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import Adapters.Pdflistadapter;
-import Adapters.VideoListAdapter;
+import Adapters.PlaylistsAvailableAdapter;
 import utils.Videoinfo;
-import utils.uploadPDF;
 
 public class PlaylistsAvailableActivity extends AppCompatActivity {
-    ArrayList<String> subjects;
     ListView listView;
      List<Videoinfo> playlist_info;
-    TextView subjectname;
-    TextView teacher_name;
-    ImageView image;
     String directory;
     DatabaseReference databaseReference;
 
@@ -55,7 +47,7 @@ public class PlaylistsAvailableActivity extends AppCompatActivity {
                     Videoinfo playlistinfodata=playlistsnapshot.getValue(Videoinfo.class);
                     playlist_info.add(playlistinfodata);
                 }
-                VideoListAdapter adapter= new VideoListAdapter(PlaylistsAvailableActivity.this,playlist_info);
+                PlaylistsAvailableAdapter adapter= new PlaylistsAvailableAdapter(PlaylistsAvailableActivity.this,playlist_info);
                 listView.setAdapter(adapter);
             }
             @Override

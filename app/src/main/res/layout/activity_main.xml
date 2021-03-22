@@ -120,7 +120,7 @@
                     app:cardBackgroundColor="#dbf7ff"
                     app:cardCornerRadius="40dp"
                     app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@id/cv_university_websites"
+                    app:layout_constraintEnd_toStartOf="@id/cv_beta_feature"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_total_papers_text">
 
@@ -155,7 +155,7 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/cv_university_websites"
+                    android:id="@+id/cv_beta_feature"
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_marginStart="4dp"
@@ -170,26 +170,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <ImageView
-                            android:id="@+id/iv_university"
+                            android:id="@+id/iv_videotab"
                             android:layout_width="100dp"
                             android:layout_height="80dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:contentDescription="@string/id_university_icon"
-                            android:src="@drawable/ku" />
+                            android:src="@drawable/ic_video" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_university"
+                            android:layout_below="@+id/iv_videotab"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
-                            android:text="@string/university_websites"
+                            android:text="@string/video_tab_beta"
                             android:textColor="@color/fontColor"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <Button
-                            android:id="@+id/bt_university_websites"
+                            android:id="@+id/bt_beta_feature"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="?attr/selectableItemBackground"
@@ -259,7 +259,7 @@
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_diploma"
-                    app:layout_constraintTop_toBottomOf="@id/cv_university_websites">
+                    app:layout_constraintTop_toBottomOf="@id/cv_beta_feature">
 
                     <RelativeLayout
                         android:layout_width="match_parent"

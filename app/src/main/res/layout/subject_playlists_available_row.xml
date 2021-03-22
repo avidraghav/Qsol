@@ -35,15 +35,6 @@
         android:textColor="#0C0C0C"
         app:autoSizeTextType="uniform"
         />
-    <TextView
-        android:id="@+id/duration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/teacher"
-        android:textColor="#0C0C0C"
-        android:layout_marginLeft="5dp"
-        app:autoSizeTextType="uniform"
-        />
         <ImageView
             android:id="@+id/teacher_image"
             android:layout_width="80dp"
