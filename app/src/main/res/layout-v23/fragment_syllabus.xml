@@ -39,32 +39,43 @@
                 android:textColor="#000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-            <Button
-                android:id="@+id/sy_ku"
-                android:layout_width="170dp"
-                android:layout_height="35dp"
-                android:layout_below="@+id/txt_board"
-                android:layout_alignParentStart="true"
-                android:background="@drawable/button_default"
-                android:text="Kurukshetra University"
-                android:singleLine="true"
-
-                android:textAllCaps="false"
-                />
-            <Button
-                android:layout_toEndOf="@id/sy_ku"
-                android:id="@+id/sy_dp"
-                android:layout_width="170dp"
-                android:layout_height="35dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="10dp"
+            <LinearLayout
+                android:id="@+id/boards_linearlayout"
                 android:layout_below="@id/txt_board"
-                android:background="@drawable/button_default"
-                android:text="Diploma Haryana State"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/sy_dp"
+                    android:layout_width="112dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/button_default"
+                    android:text="HSBTE"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="8dp"/>
+                <Button
+                    android:id="@+id/sy_ku"
+                    android:layout_width="112dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/button_default"
+                    android:text="KUK University"
+                    android:textAllCaps="false" />
 
-                android:textAllCaps="false" />
+                <Button
+                    android:id="@+id/gju"
+                    android:enabled="false"
+                    android:layout_width="112dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/button_default"
+                    android:text="GJU Hisar"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
         </RelativeLayout>
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/session"
         android:layout_width="match_parent"
@@ -186,7 +197,7 @@
                 android:layout_height="35dp"
                 android:layout_below="@+id/it_syl"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:layout_toEndOf="@+id/me_syl"
                 android:singleLine="true"
                 android:background="@drawable/button_default"
@@ -200,7 +211,7 @@
                 android:layout_below="@+id/cv_syl"
                 android:layout_toEndOf="@+id/bb_syl"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:singleLine="true"
                 android:background="@drawable/button_default"
                 android:text="MBA"
@@ -211,7 +222,7 @@
                 android:layout_width="170dp"
                 android:layout_height="35dp"
                 android:layout_below="@+id/ee_syl"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:singleLine="true"
                 android:background="@drawable/button_default"
                 android:text="BBA"
@@ -222,7 +233,7 @@
                 android:layout_width="170dp"
                 android:layout_height="35dp"
                 android:layout_below="@+id/bb_syl"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:singleLine="true"
                 android:background="@drawable/button_default"
                 android:text="BCA"
@@ -235,7 +246,7 @@
                 android:layout_below="@+id/mb_syl"
                 android:layout_toRightOf="@+id/bc_syl"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="4dp"
                 android:singleLine="true"
                 android:background="@drawable/button_default"
                 android:text="MCA"

@@ -35,7 +35,7 @@
             <LinearLayout
                 android:id="@+id/boards_linearlayout"
                 android:layout_below="@id/txt_board"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
@@ -44,7 +44,8 @@
                     android:layout_height="48dp"
                     android:background="@drawable/button_default"
                     android:text="HSBTE"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:layout_marginStart="8dp"/>
                 <Button
                     android:id="@+id/ku"
                     android:layout_width="112dp"
@@ -67,6 +68,8 @@
 
         </RelativeLayout>
     </RelativeLayout>
+
+
     <RelativeLayout
         android:id="@+id/session"
         android:layout_width="match_parent"

@@ -6,13 +6,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +40,7 @@ public class VideosListActivity extends AppCompatActivity {
     private static final float resultsperpage=50;
     private String playlist_id;
     Button next;
-    String playlistitems_url,durationfetcher_url;
+    String playlistitems_url;
     TextView videocount;
     String VIDEOS_AVAILABLE="Videos in Playlist: ";
 
@@ -43,11 +49,13 @@ public class VideosListActivity extends AppCompatActivity {
         // Required empty public constructor
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_list);
 
+        checkConnection();
         Intent intent1=getIntent();
         playlist_id=intent1.getStringExtra("PlaylistId");
 
@@ -69,6 +77,7 @@ public class VideosListActivity extends AppCompatActivity {
         }
 
           next.setOnClickListener(view -> {
+              checkConnection();
               totalresults=totalresults-resultsperpage;
               Log.e("results",totalresults+"");
               getJson(token);
@@ -87,6 +96,7 @@ public class VideosListActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void getJson(String nextpagetoken) {
         if(nextpagetoken.equals("null")) {
@@ -136,6 +146,18 @@ public class VideosListActivity extends AppCompatActivity {
             }
         });
     }
-
+    private void checkConnection() {
+        ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activenetwork = manager.getActiveNetworkInfo();
+        if (null != activenetwork) {
+            if (activenetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+            }
+        } else {
+            View view =findViewById(R.id.videolistactivity_constraintlayout);
+            Snackbar snackbar = Snackbar.make(view, "Kindly Enable Internet Connection To View Results", Snackbar.LENGTH_LONG);
+            snackbar.setDuration(5000);
+            snackbar.show();
+        }
+    }
 
 }

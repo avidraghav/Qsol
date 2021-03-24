@@ -19,19 +19,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.application.kurukshetrauniversitypapers.R;
 
-import models_youtubeapi.Apimodel;
 import models_youtubeapi.VideoYT;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 import com.application.kurukshetrauniversitypapers.VideoPlayerActivity;
-import com.application.kurukshetrauniversitypapers.YoutubeAPI;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-
-import static android.content.ContentValues.TAG;
 
 public class VideoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
@@ -49,7 +42,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.video_list_new,parent,false);
+        View view = inflater.inflate(R.layout.video_list_row,parent,false);
         return  new YoutubeHolder(view);
     }
     @Override

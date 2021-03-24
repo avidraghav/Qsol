@@ -19,11 +19,11 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class VideoFragment extends Fragment {
-    Button cse,first,second,third,fourth,fifth,sixth,session;
+    Button cse,first,third,sixth,session;
     Button ku;
-    String selected_branch = "null",selected_semester = "null",semester_number="null",branch_for_intent="null";
+    String selected_branch = "null",selected_semester = "null";
     String board="null";
-    RelativeLayout ku_courses,ku_semesters,dp_courses,dp_semesters;
+    RelativeLayout ku_courses,ku_semesters;
 
     Button search;
     TextView betafetaure;
@@ -50,6 +50,7 @@ public class VideoFragment extends Fragment {
         session=v.findViewById(R.id.session_20_21);
         betafetaure=v.findViewById(R.id.textview_betafeature);
 
+        
         setDefaultList();
         cse.setOnClickListener(v1 -> {
             selected_branch="CS";
