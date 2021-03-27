@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist">
-<include
-    layout="@layout/subjects_layout"/>
+    tools:context="GJ_CSE_subjectlists.Cse_firstsem_subjectlist">
+
+    <include
+        layout="@layout/subjects_layout"/>
+
 </RelativeLayout>

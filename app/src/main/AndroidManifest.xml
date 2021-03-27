@@ -15,7 +15,8 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlaylistsAvailableActivity"></activity>
+        <activity android:name="GJ_CSE_subjectlists.Cse_firstsem_subjectlist"></activity>
+        <activity android:name=".PlaylistsAvailableActivity" />
         <activity android:name=".DatesheetsActivity" />
         <activity android:name="KU_CSE_solution_subjectlists.Cse_firstsem_subjectlist" />
         <activity android:name="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist" />

@@ -7,7 +7,39 @@
     android:padding="10dp"
     android:background="@color/white"
     tools:context=".PapersFragment">
+    <RelativeLayout
+        android:id="@+id/session"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
 
+            <TextView
+                android:id="@+id/txt_session"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:text="Session"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/session_20_21"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/txt_session"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/button_default"
+                android:text="2020-2021"
+                android:singleLine="true"
+                android:textAllCaps="false" />
+        </RelativeLayout>
+
+    </RelativeLayout>
     <RelativeLayout
         android:layout_below="@id/session"
         android:id="@+id/board"
@@ -57,7 +89,7 @@
 
                 <Button
                     android:id="@+id/gju"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:layout_width="112dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="10dp"
@@ -69,40 +101,6 @@
         </RelativeLayout>
     </RelativeLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/session"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
-
-            <TextView
-                android:id="@+id/txt_session"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="5dp"
-                android:text="Session"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/session_20_21"
-                android:layout_width="170dp"
-                android:layout_height="35dp"
-                android:layout_below="@id/txt_session"
-                android:layout_centerHorizontal="true"
-                android:background="@drawable/button_default"
-                android:text="2020-2021"
-                android:singleLine="true"
-                android:textAllCaps="false" />
-        </RelativeLayout>
-
-    </RelativeLayout>
     <RelativeLayout
         android:layout_below="@id/board"
         android:id="@+id/courses"
@@ -114,7 +112,8 @@
             android:id="@+id/ku_courses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:visibility="gone">
         <TextView
             android:layout_alignParentTop="true"
             android:id="@+id/txt_branch"
@@ -321,6 +320,37 @@
                 android:textAllCaps="false" />
 
         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/gju_courses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            >
+            <TextView
+                android:layout_alignParentTop="true"
+                android:id="@+id/txt_branch3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"
+                android:layout_centerInParent="true"
+                android:textColor="#000"/>
+            <Button
+                android:id="@+id/gju_cse"
+                android:layout_width="170dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/txt_branch3"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/button_default"
+                android:text="Computer Science"
+                android:singleLine="true"
+                android:textAllCaps="false" />
+
+
+        </RelativeLayout>
 
     </RelativeLayout>
     <RelativeLayout
@@ -509,6 +539,90 @@
                 android:layout_marginLeft="4dp"
                 android:text="Sixth"
                 android:background="@drawable/button_default"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/gju_semesters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            >
+            <TextView
+                android:id="@+id/txt_semester3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semester"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentTop="true"/>
+            <Button
+                android:layout_below="@id/txt_semester3"
+                android:id="@+id/gju_first"
+                android:layout_width="76dp"
+                android:layout_height="32dp"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/button_default"
+                android:text="First"
+                android:textAllCaps="false" />
+            <Button
+                android:layout_below="@id/txt_semester3"
+                android:id="@+id/gju_second"
+                android:layout_width="76dp"
+                android:layout_height="32dp"
+                android:text="Second"
+                android:layout_toEndOf="@id/gju_first"
+                android:layout_marginStart="4dp"
+                android:textAllCaps="false"
+                android:background="@drawable/button_default"
+                android:enabled="false"/>
+            <Button
+                android:layout_below="@id/txt_semester3"
+                android:id="@+id/gju_third"
+                android:layout_width="76dp"
+                android:layout_height="32dp"
+                android:text="Third"
+                android:textAllCaps="false"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/gju_second"
+                android:background="@drawable/button_default"
+                android:enabled="false"/>
+            <Button
+                android:layout_below="@+id/txt_semester3"
+                android:id="@+id/gju_fourth"
+                android:layout_width="76dp"
+                android:layout_height="32dp"
+                android:textAllCaps="false"
+                android:layout_toEndOf="@id/gju_third"
+                android:layout_marginStart="4dp"
+                android:text="Fourth"
+                android:background="@drawable/button_default"
+                android:enabled="false"/>
+            <Button
+                android:id="@+id/gju_fifth"
+                android:layout_width="76dp"
+                android:layout_height="32dp"
+                android:textAllCaps="false"
+                android:layout_below="@id/gju_first"
+                android:layout_marginTop="4dp"
+                android:text="Fifth"
+                android:background="@drawable/button_default"
+                android:enabled="false"/>
+            <Button
+                android:id="@+id/gju_sixth"
+                android:layout_width="76dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/gju_second"
+                android:layout_toEndOf="@id/gju_fifth"
+                android:textAllCaps="false"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="4dp"
+                android:text="Sixth"
+                android:background="@drawable/button_default"
+                android:enabled="false"/>
 
         </RelativeLayout>
 

@@ -142,6 +142,7 @@ public class VideosListActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Apimodel> call, Throwable t) {
+                checkConnection();
                 Log.e(TAG,"onFailure ",t);
             }
         });

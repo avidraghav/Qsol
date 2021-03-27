@@ -1499,6 +1499,19 @@ public class Subjectcode {
             }
 
         }
+        if(globalClass.getBoard().equals("GJ"))
+        {
+            if (subjectname.equals("Mathematics-1")) {
+            code = "X7";
+            }
+            if (subjectname.equals("Programming for problem solving")) {
+                code = "PP";
+            }
+            if (subjectname.equals("Chemistry")) {
+                code = "CH";
+            }
+
+        }
         return code;
     }
 
