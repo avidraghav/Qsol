@@ -15,71 +15,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:id="@+id/board"
-        android:layout_below="@id/session"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
-
         <RelativeLayout
+            android:layout_below="@id/session"
+            android:id="@+id/board"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            >
+            android:layout_centerInParent="true">
 
-            <TextView
-                android:id="@+id/txt_board"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginBottom="5dp"
-                android:text="Board/University"
-                android:layout_centerHorizontal="true"
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-            <LinearLayout
-                android:id="@+id/boards_linearlayout"
-                android:layout_below="@id/txt_board"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/sy_dp"
-                    android:layout_width="112dp"
-                    android:layout_height="48dp"
-                    android:background="@drawable/button_default"
-                    android:text="HSBTE"
-                    android:textAllCaps="false"
-                    android:layout_marginStart="8dp"/>
-                <Button
-                    android:id="@+id/sy_ku"
-                    android:layout_width="112dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/button_default"
-                    android:text="KUK University"
-                    android:textAllCaps="false" />
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
 
-                <Button
-                    android:id="@+id/gju"
-                    android:enabled="false"
-                    android:layout_width="112dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="10dp"
-                    android:background="@drawable/button_default"
-                    android:text="GJU Hisar"
-                    android:textAllCaps="false" />
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/txt_board"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
+                    android:text="Board/University"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/boards_linearlayout"
+                    android:layout_below="@id/txt_board"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true">
+                    <Button
+                        android:id="@+id/sy_dp"
+                        android:layout_width="96dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/button_default"
+                        android:text="HSBTE"
+                        android:textAllCaps="false"
+                        />
+                    <Button
+                        android:id="@+id/sy_ku"
+                        android:layout_width="96dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/button_default"
+                        android:text="KUK"
+                        android:textAllCaps="false" />
 
+                    <Button
+                        android:id="@+id/gju"
+                        android:enabled="false"
+                        android:layout_width="96dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/button_default"
+                        android:text="GJU"
+                        android:textAllCaps="false"
+                        />
+                </LinearLayout>
+
+            </RelativeLayout>
         </RelativeLayout>
-    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/session"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="56dp">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="2dp"
                 android:text="Session"
                 android:textColor="#000"
                 android:textSize="16sp"

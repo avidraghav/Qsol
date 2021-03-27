@@ -20,13 +20,13 @@
             android:id="@+id/board"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_centerInParent="true">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    >
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp">
 
                         <TextView
                             android:id="@+id/txt_board"
@@ -34,7 +34,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_marginBottom="5dp"
-                            android:text="@string/board_university"
+                            android:text="Board/University"
                             android:layout_centerHorizontal="true"
                             android:textColor="#000"
                             android:textSize="16sp"
@@ -42,35 +42,36 @@
                         <LinearLayout
                             android:id="@+id/boards_linearlayout"
                             android:layout_below="@id/txt_board"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:layout_centerInParent="true">
                                 <Button
                                     android:id="@+id/dp"
-                                    android:layout_width="112dp"
+                                    android:layout_width="96dp"
                                     android:layout_height="48dp"
                                     android:background="@drawable/button_default"
-                                    android:text="@string/hsbte"
-                                    android:textAllCaps="false"
+                                    android:text="HSBTE"
                                     android:enabled="false"
-                                    android:layout_marginStart="8dp"/>
+                                    android:textAllCaps="false"
+                                    />
                                 <Button
                                     android:id="@+id/ku"
-                                    android:layout_width="112dp"
+                                    android:layout_width="96dp"
                                     android:layout_height="48dp"
                                     android:layout_marginStart="10dp"
                                     android:background="@drawable/button_default"
-                                    android:text="@string/kuk_university"
+                                    android:text="KUK"
                                     android:textAllCaps="false" />
 
                                 <Button
                                     android:id="@+id/gju"
                                     android:enabled="false"
-                                    android:layout_width="112dp"
+                                    android:layout_width="96dp"
                                     android:layout_height="48dp"
                                     android:layout_marginStart="10dp"
                                     android:background="@drawable/button_default"
-                                    android:text="@string/gju_hisar"
+                                    android:text="GJU"
                                     android:textAllCaps="false" />
                         </LinearLayout>
 

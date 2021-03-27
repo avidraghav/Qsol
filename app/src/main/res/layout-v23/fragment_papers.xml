@@ -40,18 +40,19 @@
         </RelativeLayout>
 
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_below="@id/session"
         android:id="@+id/board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:layout_centerInParent="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            >
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp">
 
             <TextView
                 android:id="@+id/txt_board"
@@ -67,34 +68,35 @@
             <LinearLayout
                 android:id="@+id/boards_linearlayout"
                 android:layout_below="@id/txt_board"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_centerInParent="true">
                 <Button
                     android:id="@+id/dp"
-                    android:layout_width="112dp"
+                    android:layout_width="96dp"
                     android:layout_height="48dp"
                     android:background="@drawable/button_default"
                     android:text="HSBTE"
                     android:textAllCaps="false"
-                    android:layout_marginStart="8dp"/>
+                    />
                 <Button
                     android:id="@+id/ku"
-                    android:layout_width="112dp"
+                    android:layout_width="96dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="10dp"
                     android:background="@drawable/button_default"
-                    android:text="KUK University"
+                    android:text="KUK"
                     android:textAllCaps="false" />
 
                 <Button
                     android:id="@+id/gju"
                     android:enabled="true"
-                    android:layout_width="112dp"
+                    android:layout_width="96dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="10dp"
                     android:background="@drawable/button_default"
-                    android:text="GJU Hisar"
+                    android:text="GJU"
                     android:textAllCaps="false" />
             </LinearLayout>
 
@@ -113,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:visibility="gone">
+            android:visibility="visible">
         <TextView
             android:layout_alignParentTop="true"
             android:id="@+id/txt_branch"
@@ -172,7 +174,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/it"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:layout_toRightOf="@+id/me"
             android:singleLine="true"
             android:background="@drawable/button_default"
@@ -197,7 +199,7 @@
             android:layout_below="@+id/cv"
             android:layout_toRightOf="@+id/bb"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="MBA"
@@ -207,7 +209,7 @@
             android:layout_width="170dp"
             android:layout_height="35dp"
             android:layout_below="@+id/ee"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="BBA"
@@ -217,7 +219,7 @@
             android:layout_width="170dp"
             android:layout_height="35dp"
             android:layout_below="@+id/bb"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="BCA"
@@ -229,30 +231,33 @@
             android:layout_below="@+id/mb"
             android:layout_toRightOf="@+id/bc"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="MCA"
             android:textAllCaps="false" />
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/dp_courses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:visibility="gone"
-            >
+            android:layout_centerVertical="true"
+            android:visibility="gone">
+
             <TextView
-                android:layout_alignParentTop="true"
                 android:id="@+id/txt_branch2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Course"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_marginBottom="5dp"
+                android:layout_alignParentTop="true"
                 android:layout_centerInParent="true"
-                android:textColor="#000"/>
+                android:layout_marginBottom="5dp"
+                android:text="Course"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
             <Button
                 android:id="@+id/dp_cse"
                 android:layout_width="170dp"
@@ -260,9 +265,10 @@
                 android:layout_below="@id/txt_branch2"
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/button_default"
-                android:text="Computer Science"
                 android:singleLine="true"
+                android:text="Computer Science"
                 android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/dp_cv"
                 android:layout_width="170dp"
@@ -274,38 +280,42 @@
                 android:singleLine="true"
                 android:text="Civil Engg."
                 android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/dp_me"
                 android:layout_width="170dp"
                 android:layout_height="35dp"
-                android:text="Mechanical Engg."
                 android:layout_below="@id/dp_cse"
-                android:singleLine="true"
-                android:background="@drawable/button_default"
                 android:layout_marginTop="4dp"
+                android:background="@drawable/button_default"
+                android:singleLine="true"
+                android:text="Mechanical Engg."
                 android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/dp_ee"
                 android:layout_width="170dp"
                 android:layout_height="35dp"
                 android:layout_below="@id/dp_me"
                 android:layout_marginTop="4dp"
-                android:singleLine="true"
                 android:background="@drawable/button_default"
+                android:singleLine="true"
                 android:text="Electrical Engg."
                 android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/dp_dmlt"
                 android:layout_width="170dp"
                 android:layout_height="35dp"
                 android:layout_below="@id/dp_ec"
-                android:layout_toRightOf="@id/dp_ee"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="4dp"
-                android:singleLine="true"
+                android:layout_toRightOf="@id/dp_ee"
                 android:background="@drawable/button_default"
+                android:singleLine="true"
                 android:text="MLT"
                 android:textAllCaps="false" />
+
             <Button
                 android:id="@+id/dp_ec"
                 android:layout_width="170dp"
@@ -314,8 +324,8 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/dp_me"
-                android:singleLine="true"
                 android:background="@drawable/button_default"
+                android:singleLine="true"
                 android:text="Electro. and comm."
                 android:textAllCaps="false" />
 
@@ -325,7 +335,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:visibility="visible"
+            android:visibility="gone"
             >
             <TextView
                 android:layout_alignParentTop="true"
