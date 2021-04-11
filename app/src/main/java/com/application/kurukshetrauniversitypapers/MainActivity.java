@@ -160,37 +160,48 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     public void onItemClicked(View view) {
         Class<? extends AppCompatActivity> clazz = null;
+        Intent intent = new Intent(MainActivity.this, Filters.class);
         switch (view.getId()) {
-            case R.id.bt_quick_search:
-                Intent intent1 = new Intent(MainActivity.this, Filters.class);
-                intent1.putExtra("position", 0);
-                startActivity(intent1);
+            case R.id.bt_papers:
+                intent.putExtra("position", 0);
+                startActivity(intent);
                 break;
             case R.id.bt_beta_feature:
-                Intent intent2 = new Intent(MainActivity.this, Filters.class);
-                intent2.putExtra("position", 3);
-                startActivity(intent2);
+                intent.putExtra("position", 3);
+                startActivity(intent);
                 break;
-            case R.id.bt_diploma:
-                clazz = Diploma_expendable_list.class;
+            case R.id.bt_solutions:
+                intent.putExtra("position", 2);
+                startActivity(intent);
                 break;
-            case R.id.bt_btech:
-                clazz = Btech_expendable_list.class;
+            case R.id.bt_syllabus:
+                intent.putExtra("position", 1);
+                startActivity(intent);
                 break;
-            case R.id.bt_bba_mba:
-                clazz = Management_expendable_list.class;
-                break;
-            case R.id.bt_bca_mca:
-                clazz = ComputerApplications_expendable_list.class;
+            case R.id.bt_write_to_us:
+                Intent new_intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("mailto:" + "qsol.info@gmail.com"));
+                new_intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback/Query for Qsol");
+                startActivity(new_intent);
                 break;
             case R.id.bt_sign_up:
                 clazz = RegisterActivity2.class;
                 break;
-            case R.id.bt_solution:
-                Intent intent3 = new Intent(MainActivity.this, Filters.class);
-                intent3.putExtra("position", 2);
-                startActivity(intent3);
-
+            case R.id.bt_connect_on_linkedin:
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/company/qsoltech/"));
+                startActivity(Browserintent);
+                break;
+            case R.id.bt_rate_qsol:
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=" + getPackageName())));
+                    break;
+                }
+                catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+                    break;
+                }
         }
         if (clazz == null) return;
         startActivity(clazz);
@@ -271,17 +282,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.credits:
                 startActivity(new Intent(MainActivity.this, CreditActivity.class));
                 break;
-            case R.id.rate:
-                try {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("market://details?id=" + getPackageName())));
-                    break;
-                }
-                catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
-                    break;
-                }
 
             case R.id.write_feedback:
                 Intent intent = new Intent(Intent.ACTION_VIEW,

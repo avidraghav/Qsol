@@ -145,6 +145,16 @@
             android:textColor="@color/fontColor"
             android:layout_gravity="center_horizontal"/>
         <TextView
+            android:id="@+id/person38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nandini Sharma (12 papers)"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
             android:id="@+id/person27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -435,6 +445,26 @@
             android:layout_height="wrap_content"
             android:text="Vidit Choudhary (5 files)"
             android:drawableLeft="@drawable/linkedin"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deepanshu (Danny) (1 file)"
+            android:drawablePadding="2dp"
+            android:background="?attr/selectableItemBackground"
+            android:textSize="20sp"
+            android:textColor="@color/fontColor"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/person39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nandini Sharma (1 file)"
             android:drawablePadding="2dp"
             android:background="?attr/selectableItemBackground"
             android:textSize="20sp"

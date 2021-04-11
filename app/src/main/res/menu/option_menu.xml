@@ -25,10 +25,7 @@
                 android:id="@+id/write_feedback"
                 android:title="Contribute"
                 android:icon="@drawable/contribute"/>
-            <item
-                android:id="@+id/rate"
-                android:title="Rate the App"
-                android:icon="@drawable/ic_rate"/>
+
             <item
                 android:id="@+id/jmit_website"
                 android:title="Made in JMIT, Radaur"

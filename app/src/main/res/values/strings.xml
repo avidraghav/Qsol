@@ -31,13 +31,12 @@
 
     <!-- Unsorted Strings -->
     <string name="placeholder">Some placeholder string</string>
-    <string name="solutions">Solutions</string>
+
     <string name="qsol_solution_logo">Qsol Solution logo</string>
     <string name="video_name">Video name</string>
     <string name="video_tab_beta_feature">Video Tab (Beta Feature)</string>
     <string name="video_tab_beta">Video Tab (Beta)</string>
     <string name="qsol_logo">qsol logo</string>
-    <string name="rate_qsol">Rate Qsol</string>
     <string name="load_more">Load more</string>
     <string name="video_count">video count</string>
     <string name="beta_feature">Beta feature</string>
@@ -70,4 +69,13 @@
     <string name="fifth">Fifth</string>
     <string name="sixth">Sixth</string>
     <string name="search">Search</string>
+    <string name="solutions">Qsol Solutions</string>
+    <string name="syllabus">Syllabus</string>
+    <string name="rate_qsol">Rate Qsol</string>
+    <string name="solutions_icon">solutions_icon</string>
+    <string name="papers_icon">papers_icon</string>
+    <string name="icon_rate_qsol">icon_rate_qsol</string>
+    <string name="icon_video_tutorials">icon_video_tutorials</string>
+    <string name="icon_write_to_us">icon_write_to_us</string>
+    <string name="connect_on">Connect on</string>
 </resources>
