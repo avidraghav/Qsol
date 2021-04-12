@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:requestLegacyExternalStorage="true"
         android:name="utils.GlobalClass"
         android:allowBackup="true"
         android:icon="@drawable/newlogo2"
@@ -15,14 +16,13 @@
         android:roundIcon="@drawable/newlogo2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="GJ_CSE_subjectlists.Cse_firstsem_subjectlist"></activity>
+        <activity android:name="GJ_CSE_subjectlists.Cse_firstsem_subjectlist"/>
         <activity android:name=".PlaylistsAvailableActivity" />
         <activity android:name=".DatesheetsActivity" />
         <activity android:name="KU_CSE_solution_subjectlists.Cse_firstsem_subjectlist" />
         <activity android:name="KU_CSE_solution_subjectlists.Cse_fifthsem_subjectlist" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".LoginActivity2" />
-        <activity android:name=".VerifyPhoneActivity" />
         <activity android:name=".RegisterActivity2" />
         <activity android:name="KU_CSE_solution_subjectlists.Cse_thirdsem_subjectlist" />
         <activity android:name=".SolutionDisplayActivity" />
@@ -142,9 +142,6 @@
             android:name=".Management_expendable_list"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ResetPasswordActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="KU_ME_subjectlists.Me_eightsem_subjectlist"
             android:screenOrientation="portrait" />
         <activity
@@ -199,12 +196,7 @@
         <activity
             android:name=".FeedbackActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".RegisterActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".WelcomeScreen"
             android:screenOrientation="portrait">

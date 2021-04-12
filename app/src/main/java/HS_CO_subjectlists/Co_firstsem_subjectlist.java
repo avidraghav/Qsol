@@ -140,7 +140,7 @@ import Adapters.Listadapter;
                     intent.putExtra("subject","IN/HS/CO/01/P1");
                     startActivity(intent);
                 }
-                if(position==3) {
+                if(position==4) {
                     Intent intent=new Intent(Co_firstsem_subjectlist.this,Pdflist.class);
                     intent.putExtra("subject","IN/HS/CO/01/S1");
                     startActivity(intent);

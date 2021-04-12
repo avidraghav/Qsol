@@ -1,17 +1,23 @@
 package Adapters;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.webkit.CookieManager;
+import android.webkit.URLUtil;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,8 +25,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.application.kurukshetrauniversitypapers.LoginActivity2;
+import com.application.kurukshetrauniversitypapers.MainActivity;
+import com.application.kurukshetrauniversitypapers.Pdflist;
 import com.application.kurukshetrauniversitypapers.R;
 import utils.SingleDownloadClass;
 import utils.uploadPDF;
@@ -37,10 +47,11 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
 
+import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 
-public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
+public class Pdflistadapter extends ArrayAdapter<uploadPDF>  {
     private Activity context;
     List<uploadPDF> pdflist;
     FirebaseAuth mAuth;
@@ -51,7 +62,6 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
     private String branch;
     private String semester;
     private String code;
-
 
     public Pdflistadapter(Activity context, List<uploadPDF> pdflist) {
         super(context, R.layout.pdflist_row, pdflist);
@@ -70,6 +80,7 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
         uploadPDF uploadPDF = pdflist.get(position);
         textViewName.setText(uploadPDF.getName());
         mAuth=FirebaseAuth.getInstance();
+
 
         textViewName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,13 +103,10 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                     context.startActivity(Intent.createChooser(shareIntent, "Share Using"));
-
                 }
                 else {
                     checkAuthentication();
                 }
-
-
             }
 
             private void checkAuthentication() {
@@ -121,21 +129,15 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
             }
         });
 
-        btndownload.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(final View view) {
-
-                    SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
-                    board= singleDownloadClass.getBoard();
-                    branch = singleDownloadClass.getBranch();
-                    semester = singleDownloadClass.getSemester();
-                    code = singleDownloadClass.getCode();
-                    toast();
-                    download("IN/"+board+ "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
-                    Log.e("dir", "IN/"+board + "/" + branch + "/" + semester + "/" + code);
-                    Log.e("name",textViewName.getText().toString());
-
-            }
+        btndownload.setOnClickListener(view -> {
+                SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
+                board = singleDownloadClass.getBoard();
+                branch = singleDownloadClass.getBranch();
+                semester = singleDownloadClass.getSemester();
+                code = singleDownloadClass.getCode();
+                download("IN/" + board + "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
+                Log.e("dir", "IN/" + board + "/" + branch + "/" + semester + "/" + code);
+                Log.e("name", textViewName.getText().toString());
         });
         return listViewItem;
     }
@@ -155,53 +157,44 @@ public class Pdflistadapter extends ArrayAdapter<uploadPDF> {
         }
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
-
     }
 
     public void download(final String directory, final String filename) {
-
-
-        storageReference = firebaseStorage.getInstance().getReference(directory);
-        rootref= FirebaseDatabase.getInstance().getReference(directory);
-
-        rootref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                myref = storageReference.child(filename+".pdf");
-                Log.e(filename,filename+".pdf");
-                myref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
+            toast();
+            storageReference = firebaseStorage.getInstance().getReference(directory);
+            rootref= FirebaseDatabase.getInstance().getReference(directory);
+            rootref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    myref = storageReference.child(filename+".pdf");
+                    Log.e(filename,filename+".pdf");
+                    myref.getDownloadUrl().addOnSuccessListener(uri -> {
                         String url = uri.toString();
                         Log.e("url",url);
-                        downloadfiles(getContext(),filename, ".pdf", DIRECTORY_DOWNLOADS, url);
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                    }
-                });
-            }
+                        downloadfiles(getContext(),url);
+                    }).addOnFailureListener(e -> {
+                    });
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
+                }
+            });
     }
-    public void toast(){Toast.makeText(context, "downloading", Toast.LENGTH_LONG).show();}
 
-    public void downloadfiles(Context context, String file, String fileExtension, String destinationDirectory, String url)
+    public void downloadfiles(Context context,  String url)
     {
-        DownloadManager downloadmanager= (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
-        Uri uri=Uri.parse(url);
-        DownloadManager.Request request =new DownloadManager.Request(uri);
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+        String title = URLUtil.guessFileName(url,null,null);
+        request.setTitle(title);
+        String cookie = CookieManager.getInstance().getCookie(url);
+        request.addRequestHeader("cookie",cookie);
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalFilesDir(context, destinationDirectory, file+fileExtension);
-        downloadmanager.enqueue(request);
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,title);
+        DownloadManager downloadManager = (DownloadManager)context.getSystemService(DOWNLOAD_SERVICE);
+        downloadManager.enqueue(request);
     }
-
+    public void toast(){Toast.makeText(context, "Download Started, see notification panel.", Toast.LENGTH_LONG).show();}
 }
 
 
