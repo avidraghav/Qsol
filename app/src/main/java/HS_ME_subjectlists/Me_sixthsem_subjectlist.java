@@ -82,7 +82,7 @@ public class Me_sixthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Entrepreneurship development and management", me_fourpapercount3+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Me_sixthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

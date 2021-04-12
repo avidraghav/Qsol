@@ -81,7 +81,7 @@ public class Me_fifthsem_subjectlist extends AppCompatActivity {
                 }
 
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Me_fifthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

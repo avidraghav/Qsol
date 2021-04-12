@@ -87,7 +87,7 @@ public class It_thirdsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Object oriented programming", it_sixpapercount5+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(It_thirdsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

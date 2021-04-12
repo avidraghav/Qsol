@@ -89,7 +89,7 @@ import Adapters.Listadapter;
                     subjectlist.add(new Listdata("Engineering drawing-1", me_fourpapercount4+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Co_firstsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

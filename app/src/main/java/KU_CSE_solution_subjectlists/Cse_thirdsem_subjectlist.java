@@ -72,7 +72,7 @@ public class Cse_thirdsem_subjectlist extends AppCompatActivity {
                     Intent intent=new Intent(KU_CSE_solution_subjectlists.Cse_thirdsem_subjectlist.this, SolutionDisplayActivity.class);
                     intent.putExtra("subject","IN/KU/CS/03/PL");
                     startActivity(intent);
-                    Toast.makeText(KU_CSE_solution_subjectlists.Cse_thirdsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Cse_thirdsem_subjectlist.this, "loading", Toast.LENGTH_SHORT).show();
                 }
 
             }

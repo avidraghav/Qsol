@@ -1,9 +1,12 @@
 package Adapters;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
 
 
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
@@ -21,6 +24,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 
 import utils.GlobalClass;
@@ -46,16 +52,17 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 
-public class Listadapter extends ArrayAdapter<Listdata> {
+public class Listadapter extends ArrayAdapter<Listdata> implements ActivityCompat.OnRequestPermissionsResultCallback {
 
     List<Listdata> subjectlist;
-    Context context;
+    private Activity context;
     int resource;
     StorageReference storageReference,myref;
     FirebaseStorage firebaseStorage;
     DatabaseReference rootref;
     FirebaseAuth mAuth;
-    public Listadapter(Context context, int resource, List<Listdata> subjectlist)
+    private final int STORAGE_PERMISSION_CODE = 1;
+    public Listadapter(Activity context, int resource, List<Listdata> subjectlist)
     {
         super(context, resource, subjectlist);
         this.context = context;
@@ -79,25 +86,28 @@ public class Listadapter extends ArrayAdapter<Listdata> {
 
         mAuth=FirebaseAuth.getInstance();
         downloadall.setOnClickListener(v -> {
+            if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                GlobalClass globalClass = new GlobalClass();
+                Subjectcode subjectcode = new Subjectcode();
+                subjectcode.setSubjectname(subjectname.getText().toString());
+                Log.e(subjectname.getText().toString(), subjectname.getText().toString());
+                Log.e("Board", globalClass.getBoard());
+                Log.e("branch", globalClass.getBranch());
+                Log.e("semester", globalClass.getSemester() + "");
+                Log.e("code", subjectcode.getcode());
+                Log.e("path", "IN/" + globalClass.getBoard() + "/" + globalClass.getBranch() + "/" + globalClass.getSemester() + "/" + subjectcode.getcode());
 
-            GlobalClass globalClass=new GlobalClass();
-            Subjectcode subjectcode=new Subjectcode();
-            subjectcode.setSubjectname(subjectname.getText().toString());
-            Log.e(subjectname.getText().toString(),subjectname.getText().toString());
-            Log.e("Board",globalClass.getBoard());
-            Log.e("branch",globalClass.getBranch());
-            Log.e("semester",globalClass.getSemester()+"");
-            Log.e("code",subjectcode.getcode());
-            Log.e("path","IN/"+globalClass.getBoard()+"/"+globalClass.getBranch()+"/"+globalClass.getSemester()+"/"+subjectcode.getcode());
+                if (papercount.getText().toString().substring(1, 2).equals("1")) {
+                    Toast.makeText(context, papercount.getText().toString().substring(1, 2) + " file will be downloaded, see notification panel", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(context, papercount.getText().toString().substring(1, 2) + " files will be downloaded, see notification panel", Toast.LENGTH_LONG).show();
+                }
 
-            if(papercount.getText().toString().substring(1,2).equals("1")){
-                Toast.makeText(context, papercount.getText().toString().substring(1, 2) + " file will be downloaded, see notification panel", Toast.LENGTH_LONG).show();
+                download("IN/" + globalClass.getBoard() + "/" + globalClass.getBranch() + "/" + globalClass.getSemester() + "/" + subjectcode.getcode());
             }
-            else {
-                Toast.makeText(context, papercount.getText().toString().substring(1, 2) + " files will be downloaded, see notification panel", Toast.LENGTH_LONG).show();
+            else{
+                requestStoragePermission();
             }
-
-            download("IN/"+globalClass.getBoard()+"/"+globalClass.getBranch()+"/"+globalClass.getSemester()+"/"+subjectcode.getcode());
         });
         return view;
     }
@@ -138,6 +148,28 @@ public class Listadapter extends ArrayAdapter<Listdata> {
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,title);
         DownloadManager downloadManager = (DownloadManager)context.getSystemService(DOWNLOAD_SERVICE);
         downloadManager.enqueue(request);
+    }
+    private void requestStoragePermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            new AlertDialog.Builder(context)
+                    .setTitle("Permission needed")
+                    .setMessage("Kindly click OK and then allow Qsol to access your storage, such that required files can be downloaded.")
+                    .setPositiveButton("ok", (dialog, which) -> ActivityCompat.requestPermissions( context, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE))
+                    .setNegativeButton("cancel", (dialog, which) -> dialog.dismiss())
+                    .create().show();
+        } else {
+            ActivityCompat.requestPermissions(context, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == STORAGE_PERMISSION_CODE)  {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(context, "Permission GRANTED", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Permission DENIED", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
 

@@ -47,8 +47,7 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 
-public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF>  {
-    private static final int STORAGE_PERMISSION_CODE =23 ;
+public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF> implements ActivityCompat.OnRequestPermissionsResultCallback {
     private Activity context;
     List<uploadPDF> pdflist;
     FirebaseAuth mAuth;
@@ -59,6 +58,7 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF>  {
     private String branch;
     private String semester;
     private String code;
+    private final int STORAGE_PERMISSION_CODE = 1;
 
 
     public SolutionDisplayActivityAdapter(Activity context, List<uploadPDF> pdflist) {
@@ -120,6 +120,7 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF>  {
             @Override
             public void onClick(final View view) {
                 if((mAuth.getCurrentUser()!=null && mAuth.getCurrentUser().isEmailVerified())){
+                    if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                         SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
                         board = singleDownloadClass.getBoard();
                         branch = singleDownloadClass.getBranch();
@@ -127,6 +128,10 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF>  {
                         code = singleDownloadClass.getCode();
                         toast();
                         download("IN/" + board + "/" + branch + "/" + semester + "/" + code, textViewName.getText().toString());
+                    }
+                    else {
+                        requestStoragePermission();
+                    }
                 }
                 else {
                     checkAuthentication();
@@ -221,6 +226,28 @@ public class SolutionDisplayActivityAdapter extends ArrayAdapter<uploadPDF>  {
             }
         });
         dialog.create().show();
+    }
+    private void requestStoragePermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            new AlertDialog.Builder(context)
+                    .setTitle("Permission needed")
+                    .setMessage("Kindly click OK and then allow Qsol to access your storage, such that required files can be downloaded.")
+                    .setPositiveButton("ok", (dialog, which) -> ActivityCompat.requestPermissions(context, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE))
+                    .setNegativeButton("cancel", (dialog, which) -> dialog.dismiss())
+                    .create().show();
+        } else {
+            ActivityCompat.requestPermissions(context, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == STORAGE_PERMISSION_CODE)  {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(context, "Permission GRANTED", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Permission DENIED", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }

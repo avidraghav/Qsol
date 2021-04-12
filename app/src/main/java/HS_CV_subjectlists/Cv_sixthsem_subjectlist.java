@@ -94,7 +94,7 @@ public class Cv_sixthsem_subjectlist extends AppCompatActivity {
                 }
 
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cv_sixthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

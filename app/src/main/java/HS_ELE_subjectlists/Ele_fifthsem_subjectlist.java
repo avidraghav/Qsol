@@ -89,7 +89,7 @@ public class Ele_fifthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Estimating and costing in electrical engineering-2", me_fourpapercount4+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ele_fifthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

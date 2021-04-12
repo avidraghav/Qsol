@@ -90,7 +90,7 @@ public class Me_fifthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Industrial engineering-1", me_fourpapercount3+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Me_fifthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

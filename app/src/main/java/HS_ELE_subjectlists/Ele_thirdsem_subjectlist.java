@@ -94,7 +94,7 @@ public class Ele_thirdsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Fundamentals of electrical engineering", me_fourpapercount4+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ele_thirdsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

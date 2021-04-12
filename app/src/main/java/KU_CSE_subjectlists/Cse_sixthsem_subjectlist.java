@@ -81,7 +81,7 @@ public class Cse_sixthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Management information system", sixpapercount8+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_sixthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

@@ -80,7 +80,7 @@ public class Cse_firstsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Mathematics-1", papercount1+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_firstsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

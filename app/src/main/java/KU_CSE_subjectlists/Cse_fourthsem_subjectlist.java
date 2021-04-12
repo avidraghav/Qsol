@@ -87,7 +87,7 @@ public class Cse_fourthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Organisational behaviour", fourpapercount5+""));
                 }
 //
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_fourthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

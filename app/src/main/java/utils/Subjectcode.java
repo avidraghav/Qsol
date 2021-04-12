@@ -206,32 +206,24 @@ public class Subjectcode {
                 code = "CG";
             }
             if (subjectname.equals("Cryptography and information security")) {
-
                 code = "CI";
-
             }
             if (subjectname.equals("Expert systems")) {
-
                 code = "ES";
             }
             if (subjectname.equals("Object Oriented Software Engineering")) {
-
                 code = "WZ";
             }
             if (subjectname.equals("Security and cryptography")) {
-
                 code = "SC";
             }
             if (subjectname.equals("Software project management")) {
-
                 code = "SP";
             }
             if (subjectname.equals("Statistical models for computer science")) {
-
                 code = "SM";
             }
-            if (subjectname.equals("Unix and Linux prog")) {
-
+            if (subjectname.equals("Unix and Linux programming")) {
                 code = "UL";
             }
 
@@ -241,7 +233,6 @@ public class Subjectcode {
             }
             if (subjectname.equals("Data warehouse and data mining")) {
                 code = "DW";
-
 
             }
             if (subjectname.equals("Interactive computer graphics")) {

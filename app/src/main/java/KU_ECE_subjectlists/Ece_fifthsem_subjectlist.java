@@ -89,7 +89,7 @@ public class Ece_fifthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("VLSI design", el_eightpapercount1 + ""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ece_fifthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

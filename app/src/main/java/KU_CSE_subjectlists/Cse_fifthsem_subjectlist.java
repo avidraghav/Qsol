@@ -80,7 +80,7 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
                     fivepapercount6 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Parallel and distributed computing", fivepapercount6+""));
                 }
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_fifthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

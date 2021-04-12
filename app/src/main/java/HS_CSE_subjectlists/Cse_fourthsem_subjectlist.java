@@ -86,7 +86,7 @@ public class Cse_fourthsem_subjectlist extends AppCompatActivity {
                 }
 
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_fourthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

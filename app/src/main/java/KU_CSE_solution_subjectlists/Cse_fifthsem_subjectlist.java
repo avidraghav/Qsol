@@ -45,7 +45,7 @@ public class Cse_fifthsem_subjectlist extends AppCompatActivity {
         subjectlist.add(new Listdata("Essentials of information technology", "3"));
         subjectlist.add(new Listdata("Microprocessors and Interfacing", "2"));
         subjectlist.add(new Listdata("Database management system", "3"));
-        SolutionSubjectsAdapter adapter = new SolutionSubjectsAdapter(getBaseContext(), R.layout.solution_subjects_row, subjectlist);
+        SolutionSubjectsAdapter adapter = new SolutionSubjectsAdapter(Cse_fifthsem_subjectlist.this, R.layout.solution_subjects_row, subjectlist);
         listView.setAdapter(adapter);
 
 

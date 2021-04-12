@@ -86,7 +86,7 @@ public class Ml_firstsem_subjectlist extends AppCompatActivity {
                 }
 
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ml_firstsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

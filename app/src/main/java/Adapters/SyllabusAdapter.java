@@ -46,7 +46,7 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 
-public class SyllabusAdapter extends ArrayAdapter<uploadPDF>  {
+public class SyllabusAdapter extends ArrayAdapter<uploadPDF> implements ActivityCompat.OnRequestPermissionsResultCallback  {
     private Activity context;
     List<uploadPDF> pdflist;
     FirebaseAuth mAuth;
@@ -55,6 +55,7 @@ public class SyllabusAdapter extends ArrayAdapter<uploadPDF>  {
     DatabaseReference rootref;
     private String branch;
     private String semester;
+    private final int STORAGE_PERMISSION_CODE = 1;
 
     public SyllabusAdapter(Activity context, List<uploadPDF> pdflist) {
         super(context, R.layout.pdflist_row, pdflist);
@@ -122,11 +123,16 @@ public class SyllabusAdapter extends ArrayAdapter<uploadPDF>  {
         syllabus_download.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(final View view) {
+                if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     SingleDownloadClass singleDownloadClass = new SingleDownloadClass();
                     branch = singleDownloadClass.getBranch();
                     semester = singleDownloadClass.getSemester();
                     Log.e("dir", "IN/KU" + "/" + branch + "/" + semester + "/" + "Syllabus");
                     download("IN/KU" + "/" + branch + "/" + semester + "/" + "Syllabus", textViewName.getText().toString());
+                }
+                else {
+                    requestStoragePermission();
+                }
             }
         });
         return listViewItem;
@@ -154,7 +160,6 @@ public class SyllabusAdapter extends ArrayAdapter<uploadPDF>  {
         toast();
         storageReference = firebaseStorage.getInstance().getReference(directory);
         rootref= FirebaseDatabase.getInstance().getReference(directory);
-
         rootref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -190,6 +195,28 @@ public class SyllabusAdapter extends ArrayAdapter<uploadPDF>  {
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,title);
         DownloadManager downloadManager = (DownloadManager)context.getSystemService(DOWNLOAD_SERVICE);
         downloadManager.enqueue(request);
+    }
+    private void requestStoragePermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            new AlertDialog.Builder(context)
+                    .setTitle("Permission needed")
+                    .setMessage("Kindly click OK and then allow Qsol to access your storage, such that required files can be downloaded.")
+                    .setPositiveButton("ok", (dialog, which) -> ActivityCompat.requestPermissions(context, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE))
+                    .setNegativeButton("cancel", (dialog, which) -> dialog.dismiss())
+                    .create().show();
+        } else {
+            ActivityCompat.requestPermissions(context, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+        }
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == STORAGE_PERMISSION_CODE)  {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(context, "Permission GRANTED", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Permission DENIED", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }

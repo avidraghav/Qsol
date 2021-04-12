@@ -89,7 +89,7 @@ public class Bba_thirdsem_subjectlist extends AppCompatActivity {
                     bb_twopapercount =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Business communication", bb_twopapercount+""));
                 }
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Bba_thirdsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

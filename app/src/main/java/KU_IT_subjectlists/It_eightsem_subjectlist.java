@@ -83,7 +83,7 @@ public class It_eightsem_subjectlist extends AppCompatActivity {
                 }
 
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(It_eightsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

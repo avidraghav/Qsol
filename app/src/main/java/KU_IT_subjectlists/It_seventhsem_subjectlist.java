@@ -98,7 +98,7 @@ public class It_seventhsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Software project management", it_sevenpapercount6+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(It_seventhsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

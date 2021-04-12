@@ -89,7 +89,7 @@ public class It_fifthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Computer networks", it_sixpapercount8+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(It_fifthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

@@ -90,7 +90,7 @@ public class Cv_sixthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Geotechnology 2", bc_onepapercount5+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cv_sixthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

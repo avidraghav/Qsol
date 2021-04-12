@@ -103,7 +103,7 @@ public class Ece_fourthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Transducer and their applications", ece_fourpapercount9+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ece_fourthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

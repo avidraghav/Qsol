@@ -85,7 +85,7 @@ public class Cse_seventhsem_subjectlist extends AppCompatActivity {
                 sevenpapercount8 =(int)dataSnapshot.getChildrenCount();
                 subjectlist.add(new Listdata("Object Oriented Software Engineering", sevenpapercount8+""));
             }
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_seventhsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

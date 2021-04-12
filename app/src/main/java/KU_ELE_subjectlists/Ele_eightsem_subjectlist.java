@@ -86,7 +86,7 @@ public class Ele_eightsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Utilisation of electrical energy", el_eightpapercount5+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ele_eightsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

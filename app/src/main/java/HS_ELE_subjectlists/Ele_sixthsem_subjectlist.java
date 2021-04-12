@@ -89,7 +89,7 @@ public class Ele_sixthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Optical fibre communication", me_fourpapercount4+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ele_sixthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

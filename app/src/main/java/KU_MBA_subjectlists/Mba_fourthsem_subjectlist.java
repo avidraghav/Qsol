@@ -124,7 +124,7 @@ public class Mba_fourthsem_subjectlist extends AppCompatActivity {
                     mb_fourpapercount15 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Strategies and systems", mb_fourpapercount15+""));
                 }
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Mba_fourthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

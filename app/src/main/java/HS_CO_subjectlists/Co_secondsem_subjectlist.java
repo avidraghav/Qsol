@@ -100,7 +100,7 @@ public class Co_secondsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Applied mechanics", me_fourpapercount4+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Co_secondsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

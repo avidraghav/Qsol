@@ -103,7 +103,7 @@ public class Ece_seventhsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Digital image processing", ece_sevenpapercount7+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Ece_seventhsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

@@ -34,7 +34,7 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int twopapercount1,twopapercount2,twopapercount3,twopapercount4,twopapercount5,twopapercount6,twopapercount7,twopapercount8,twopapercount9,twopapercount10,twopapercount11,twopapercount12,twopapercount13,twopapercount14,twopapercount15,twopapercount16,twopapercount17;
+    static int twopapercount4,twopapercount7,twopapercount8,twopapercount9,twopapercount10,twopapercount11,twopapercount12,twopapercount13,twopapercount14,twopapercount15,twopapercount16,twopapercount17;
     DatabaseReference ref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +94,7 @@ public class Cse_secondsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Programming for problem solving", twopapercount17+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_secondsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

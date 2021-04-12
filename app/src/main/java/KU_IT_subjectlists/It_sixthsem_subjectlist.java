@@ -86,7 +86,7 @@ public class It_sixthsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Advance database system", it_sixpapercount6+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(It_sixthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

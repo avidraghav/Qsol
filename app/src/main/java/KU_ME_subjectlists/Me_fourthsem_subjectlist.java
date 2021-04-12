@@ -33,7 +33,7 @@ public class Me_fourthsem_subjectlist extends AppCompatActivity {
     TextView papercount;
     TextView textView;
     String key;
-    static int me_fourpapercount1, me_fourpapercount2, me_fourpapercount3, me_fourpapercount4, me_fourpapercount5, me_fourpapercount6, me_fourpapercount7;
+    static int me_fourpapercount2, me_fourpapercount3, me_fourpapercount4, me_fourpapercount6;
     DatabaseReference ref;
 
     @Override
@@ -83,7 +83,7 @@ public class Me_fourthsem_subjectlist extends AppCompatActivity {
 
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Me_fourthsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

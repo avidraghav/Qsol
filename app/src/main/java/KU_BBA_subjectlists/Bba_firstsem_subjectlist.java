@@ -87,7 +87,7 @@ public class Bba_firstsem_subjectlist extends AppCompatActivity {
                     subjectlist.add(new Listdata("Computer fundamentals", bb_onepapercount9+""));
                 }
 
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Bba_firstsem_subjectlist.this, R.layout.row, subjectlist);
                 listView.setAdapter(adapter);
 
             }

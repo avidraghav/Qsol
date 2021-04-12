@@ -100,7 +100,7 @@ String key;
                     onepapercount17 =(int)dataSnapshot.getChildrenCount();
                     subjectlist.add(new Listdata("Semiconductor physics", onepapercount17+""));
                 }
-                Listadapter adapter = new Listadapter(getBaseContext(), R.layout.row, subjectlist);
+                Listadapter adapter = new Listadapter(Cse_firstsem_subjectlist.this, R.layout.row, subjectlist);
                 listview.setAdapter(adapter);
 
             }
