@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,8 +69,8 @@ public class SolutionsFragment extends Fragment {
         ku_semesters=v.findViewById(R.id.ku_semesters);
         dp_courses=v.findViewById(R.id.dp_courses);
         dp_semesters=v.findViewById(R.id.dp_semesters);
-        ku=v.findViewById(R.id.ku);
-        dp=v.findViewById(R.id.dp);
+        ku=v.findViewById(R.id.sy_ku);
+        dp=v.findViewById(R.id.sy_dp);
         dp_cse=v.findViewById(R.id.dp_cse);
         dp_cv=v.findViewById(R.id.dp_cv);
         dp_me=v.findViewById(R.id.dp_me);

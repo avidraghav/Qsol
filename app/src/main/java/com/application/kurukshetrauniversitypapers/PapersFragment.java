@@ -23,22 +23,19 @@ public class PapersFragment extends Fragment {
     Button cse,it,me,ee,ec,mb,bb,bc,mc,cv,first,second,third,fourth,fifth,sixth,seventh,eight,session;
     Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
     Button gju_cse,gju_first;
-    Button ku,dp,gju;
+    Button ymca_cse,ymca_it,ymca_ee,ymca_ec,ymca_me,ymca_cv,ymca_first,ymca_second;
+    Button ku,dp,gju,ymca;
     String selected_branch = "null",selected_semester = "null",semester_number="null",branch_for_intent="null";
     String board="null";
-    RelativeLayout ku_courses,ku_semesters,dp_courses,dp_semesters,gju_courses,gju_semesters;
+    RelativeLayout ku_courses,ku_semesters,dp_courses,dp_semesters,gju_courses,gju_semesters,ymca_courses,ymca_semesters;
 
     ArrayList<String> subjects;
     List<uploadPDF> uploadPDFS;
-
     Button search;
-
 
     public PapersFragment() {
         // Required empty public constructor
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
@@ -73,11 +70,22 @@ public class PapersFragment extends Fragment {
         dp_semesters=v.findViewById(R.id.dp_semesters);
         gju_courses=v.findViewById(R.id.gju_courses);
         gju_semesters=v.findViewById(R.id.gju_semesters);
-        ku=v.findViewById(R.id.ku);
-        dp=v.findViewById(R.id.dp);
+        ymca_courses=v.findViewById(R.id.ymca_courses);
+        ymca_semesters=v.findViewById(R.id.ymca_semesters);
+        ku=v.findViewById(R.id.sy_ku);
+        dp=v.findViewById(R.id.sy_dp);
         gju=v.findViewById(R.id.gju);
+        ymca=v.findViewById(R.id.ymca);
         gju_cse=v.findViewById(R.id.gju_cse);
         gju_first=v.findViewById(R.id.gju_first);
+        ymca_cse=v.findViewById(R.id.ymca_cse);
+        ymca_cv=v.findViewById(R.id.ymca_cv);
+        ymca_me=v.findViewById(R.id.ymca_me);
+        ymca_ee=v.findViewById(R.id.ymca_ee);
+        ymca_ec=v.findViewById(R.id.ymca_ec);
+        ymca_it=v.findViewById(R.id.ymca_it);
+        ymca_first=v.findViewById(R.id.ymca_first);
+        ymca_second=v.findViewById(R.id.ymca_second);
         dp_cse=v.findViewById(R.id.dp_cse);
         dp_cv=v.findViewById(R.id.dp_cv);
         dp_me=v.findViewById(R.id.dp_me);
@@ -494,6 +502,84 @@ public class PapersFragment extends Fragment {
             seventh.setBackgroundResource(R.drawable.button_default);
             eight.setBackgroundResource(R.drawable.button_pressed);
         });
+        ymca_first.setOnClickListener(view -> {
+            selected_semester="first";
+            semester_number="1";
+            ymca_first.setBackgroundResource(R.drawable.button_pressed);
+            ymca_second.setBackgroundResource(R.drawable.button_default);
+        });
+        ymca_second.setOnClickListener(view -> {
+            selected_semester="second";
+            semester_number="2";
+            ymca_first.setBackgroundResource(R.drawable.button_default);
+            ymca_second.setBackgroundResource(R.drawable.button_pressed);
+        });
+        ymca_cse.setOnClickListener(view -> {
+            selected_branch="Cse";
+            branch_for_intent="Computer science";
+           ymca_cse.setBackgroundResource(R.drawable.button_pressed);
+           ymca_cv.setBackgroundResource(R.drawable.button_default);
+           ymca_it.setBackgroundResource(R.drawable.button_default);
+           ymca_me.setBackgroundResource(R.drawable.button_default);
+           ymca_ec.setBackgroundResource(R.drawable.button_default);
+           ymca_ee.setBackgroundResource(R.drawable.button_default);
+            Log.e("branch",selected_branch);
+        });
+        ymca_it.setOnClickListener(view -> {
+            selected_branch="It";
+            branch_for_intent="Information technology";
+            ymca_cse.setBackgroundResource(R.drawable.button_default);
+            ymca_cv.setBackgroundResource(R.drawable.button_default);
+            ymca_it.setBackgroundResource(R.drawable.button_pressed);
+            ymca_me.setBackgroundResource(R.drawable.button_default);
+            ymca_ec.setBackgroundResource(R.drawable.button_default);
+            ymca_ee.setBackgroundResource(R.drawable.button_default);
+            Log.e("branch",selected_branch);
+        });
+        ymca_cv.setOnClickListener(view -> {
+            selected_branch="Cv";
+            branch_for_intent="Civil";
+            ymca_cse.setBackgroundResource(R.drawable.button_default);
+            ymca_cv.setBackgroundResource(R.drawable.button_pressed);
+            ymca_it.setBackgroundResource(R.drawable.button_default);
+            ymca_me.setBackgroundResource(R.drawable.button_default);
+            ymca_ec.setBackgroundResource(R.drawable.button_default);
+            ymca_ee.setBackgroundResource(R.drawable.button_default);
+            Log.e("branch",selected_branch);
+        });
+        ymca_me.setOnClickListener(view -> {
+            selected_branch="Me";
+            branch_for_intent="Mechanical";
+            ymca_cse.setBackgroundResource(R.drawable.button_default);
+            ymca_cv.setBackgroundResource(R.drawable.button_default);
+            ymca_it.setBackgroundResource(R.drawable.button_default);
+            ymca_me.setBackgroundResource(R.drawable.button_pressed);
+            ymca_ec.setBackgroundResource(R.drawable.button_default);
+            ymca_ee.setBackgroundResource(R.drawable.button_default);
+            Log.e("branch",selected_branch);
+        });
+        ymca_ec.setOnClickListener(view -> {
+            selected_branch="Ece";
+            branch_for_intent="Electronics and communication";
+            ymca_cse.setBackgroundResource(R.drawable.button_default);
+            ymca_cv.setBackgroundResource(R.drawable.button_default);
+            ymca_it.setBackgroundResource(R.drawable.button_default);
+            ymca_me.setBackgroundResource(R.drawable.button_default);
+            ymca_ec.setBackgroundResource(R.drawable.button_pressed);
+            ymca_ee.setBackgroundResource(R.drawable.button_default);
+            Log.e("branch",selected_branch);
+        });
+        ymca_ee.setOnClickListener(view -> {
+            selected_branch="Ele";
+            branch_for_intent="Electrical";
+            ymca_cse.setBackgroundResource(R.drawable.button_default);
+            ymca_cv.setBackgroundResource(R.drawable.button_default);
+            ymca_it.setBackgroundResource(R.drawable.button_default);
+            ymca_me.setBackgroundResource(R.drawable.button_default);
+            ymca_ec.setBackgroundResource(R.drawable.button_default);
+            ymca_ee.setBackgroundResource(R.drawable.button_pressed);
+            Log.e("branch",selected_branch);
+        });
         dp_first.setOnClickListener(v16 -> {
             selected_semester="first";
             semester_number="1";
@@ -577,6 +663,8 @@ public class PapersFragment extends Fragment {
             dp_semesters.setVisibility(View.GONE);
             gju_courses.setVisibility(View.GONE);
             gju_semesters.setVisibility(View.GONE);
+            ymca_courses.setVisibility(View.GONE);
+            ymca_semesters.setVisibility(View.GONE);
             first.setBackgroundResource(R.drawable.button_default);
             second.setBackgroundResource(R.drawable.button_default);
             third.setBackgroundResource(R.drawable.button_default);
@@ -598,6 +686,33 @@ public class PapersFragment extends Fragment {
             ku.setBackgroundResource(R.drawable.button_pressed);
             dp.setBackgroundResource(R.drawable.button_default);
             gju.setBackgroundResource(R.drawable.button_default);
+            ymca.setBackgroundResource(R.drawable.button_default);
+
+        });
+        ymca.setOnClickListener(view -> {
+            board="YM_";
+            selected_semester="null";
+            selected_branch="null";
+            ymca_courses.setVisibility(View.VISIBLE);
+            ymca_semesters.setVisibility(View.VISIBLE);
+            dp_courses.setVisibility(View.GONE);
+            dp_semesters.setVisibility(View.GONE);
+            gju_courses.setVisibility(View.GONE);
+            gju_semesters.setVisibility(View.GONE);
+            ku_courses.setVisibility(View.GONE);
+            ku_semesters.setVisibility(View.GONE);
+            ymca_first.setBackgroundResource(R.drawable.button_default);
+            ymca_second.setBackgroundResource(R.drawable.button_default);
+            ymca_cse.setBackgroundResource(R.drawable.button_default);
+            ymca_it.setBackgroundResource(R.drawable.button_default);
+            ymca_me.setBackgroundResource(R.drawable.button_default);
+            ymca_ec.setBackgroundResource(R.drawable.button_default);
+            ymca_ee.setBackgroundResource(R.drawable.button_default);
+            ymca_cv.setBackgroundResource(R.drawable.button_default);
+            ymca.setBackgroundResource(R.drawable.button_pressed);
+            ku.setBackgroundResource(R.drawable.button_default);
+            dp.setBackgroundResource(R.drawable.button_default);
+            gju.setBackgroundResource(R.drawable.button_default);
 
         });
         dp.setOnClickListener(view -> {
@@ -610,6 +725,8 @@ public class PapersFragment extends Fragment {
             dp_semesters.setVisibility(View.VISIBLE);
             gju_courses.setVisibility(View.GONE);
             gju_semesters.setVisibility(View.GONE);
+            ymca_courses.setVisibility(View.GONE);
+            ymca_semesters.setVisibility(View.GONE);
             dp_first.setBackgroundResource(R.drawable.button_default);
             dp_second.setBackgroundResource(R.drawable.button_default);
             dp_third.setBackgroundResource(R.drawable.button_default);
@@ -625,6 +742,7 @@ public class PapersFragment extends Fragment {
             ku.setBackgroundResource(R.drawable.button_default);
             dp.setBackgroundResource(R.drawable.button_pressed);
             gju.setBackgroundResource(R.drawable.button_default);
+            ymca.setBackgroundResource(R.drawable.button_default);
 
         });
         gju.setOnClickListener(view -> {
@@ -637,11 +755,15 @@ public class PapersFragment extends Fragment {
             dp_semesters.setVisibility(View.GONE);
             gju_courses.setVisibility(View.VISIBLE);
             gju_semesters.setVisibility(View.VISIBLE);
+            ymca_courses.setVisibility(View.GONE);
+            ymca_semesters.setVisibility(View.GONE);
             gju_first.setBackgroundResource(R.drawable.button_default);
             gju_cse.setBackgroundResource(R.drawable.button_default);
             ku.setBackgroundResource(R.drawable.button_default);
             dp.setBackgroundResource(R.drawable.button_default);
+            ymca.setBackgroundResource(R.drawable.button_default);
             gju.setBackgroundResource(R.drawable.button_pressed);
+
         });
         search.setOnClickListener(view -> {
             if(selected_branch.equals("null") || selected_semester.equals("null") || board.equals("null"))
@@ -712,16 +834,41 @@ public class PapersFragment extends Fragment {
                         }
                     }
                 }
-                if(board.equals("GJ_"))
-                {
+                if(board.equals("GJ_")) {
                     Log.e("Selected branch", selected_branch);
                     Intent intent = new Intent();
                     intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
                     intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
                     startActivity(intent);
+                }
+                if(board.equals("YM_")){
+                    if (selected_branch.equals("Cse")|| selected_branch.equals("It") || selected_branch.equals("Me") || selected_branch.equals("Ece") || selected_branch.equals("Ele") || selected_branch.equals("Cv")) {
+                        if (selected_semester.equals("first") || selected_semester.equals("second")) {
+                            selected_branch = "Co";
+                            Log.e("Selected branch", selected_branch);
+                            Intent intent = new Intent();
+                            intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                            intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                            startActivity(intent);
+                        }
+                        else {
+                            Log.e("Selected branch", selected_branch);
+                            Intent intent = new Intent();
+                            intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                            intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                            startActivity(intent);
 
+                        }
+                    }
+                    else {
+                        Log.e("Selected branch", selected_branch);
+                        //classname = selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist";
+                        Intent intent = new Intent();
+                        intent.putExtra("key", branch_for_intent + " " + semester_number + "semester");
+                        intent.setClassName(getActivity(), board + selected_branch.toUpperCase() + "_subjectlists." + selected_branch + "_" + selected_semester + "sem_subjectlist");
+                        startActivity(intent);
 
-
+                    }
                 }
             }
 
@@ -737,6 +884,8 @@ public class PapersFragment extends Fragment {
         dp_semesters.setVisibility(View.GONE);
         gju_courses.setVisibility(View.GONE);
         gju_semesters.setVisibility(View.GONE);
+        ymca_courses.setVisibility(View.GONE);
+        ymca_semesters.setVisibility(View.GONE);
         session.setBackgroundResource(R.drawable.button_pressed);
 
     }

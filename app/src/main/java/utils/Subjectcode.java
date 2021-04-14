@@ -1503,6 +1503,32 @@ public class Subjectcode {
             }
 
         }
+        if(globalClass.getBoard().equals("YM"))
+        {
+            if (subjectname.equals("Basics electrical engineering"))
+            {
+                code = "B9";
+            }
+            if (subjectname.equals("English")) {
+                code = "EH";
+            }
+            if (subjectname.equals("Chemistry")) {
+                code = "CH";
+            }
+            if (subjectname.equals("Mathematics-2")) {
+                code = "X5";
+            }
+            if (subjectname.equals("Mathematics-1")) {
+                code = "X7";
+            }
+            if(subjectname.equals("Optics and waves")){
+                code="OW";
+            }
+            if(subjectname.equals("Programming for problem solving")){
+                code="PP";
+            }
+
+        }
         return code;
     }
 

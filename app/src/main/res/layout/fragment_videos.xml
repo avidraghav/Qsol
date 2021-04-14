@@ -19,12 +19,12 @@
             android:layout_below="@id/session"
             android:id="@+id/board"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
+            android:layout_height="wrap_content">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp">
 
@@ -39,41 +39,55 @@
                             android:textColor="#000"
                             android:textSize="16sp"
                             android:textStyle="bold" />
-                        <LinearLayout
+                        <RelativeLayout
                             android:id="@+id/boards_linearlayout"
                             android:layout_below="@id/txt_board"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:layout_centerInParent="true">
                                 <Button
-                                    android:id="@+id/dp"
-                                    android:layout_width="96dp"
-                                    android:layout_height="48dp"
+                                    android:id="@+id/sy_dp"
+                                    android:layout_width="170dp"
+                                    android:layout_height="35dp"
                                     android:background="@drawable/button_default"
-                                    android:text="HSBTE"
-                                    android:enabled="false"
+                                    android:layout_toEndOf="@id/sy_ku"
+                                    android:text="HSBTE/Diploma"
                                     android:textAllCaps="false"
+                                    android:singleLine="true"
+                                    android:enabled="false"
+                                    android:layout_marginStart="10dp"
                                     />
                                 <Button
-                                    android:id="@+id/ku"
-                                    android:layout_width="96dp"
-                                    android:layout_height="48dp"
-                                    android:layout_marginStart="10dp"
+                                    android:id="@+id/sy_ku"
+                                    android:layout_width="170dp"
+                                    android:layout_height="35dp"
                                     android:background="@drawable/button_default"
-                                    android:text="KUK"
+                                    android:text="Kurukshetra University"
+                                    android:textAllCaps="false" />
+                                <Button
+                                    android:id="@+id/ymca"
+                                    android:enabled="false"
+                                    android:layout_width="170dp"
+                                    android:layout_height="35dp"
+                                    android:layout_below="@id/sy_dp"
+                                    android:layout_marginTop="4dp"
+                                    android:background="@drawable/button_default"
+                                    android:text="YMCA Faridabad"
                                     android:textAllCaps="false" />
 
                                 <Button
                                     android:id="@+id/gju"
                                     android:enabled="false"
-                                    android:layout_width="96dp"
-                                    android:layout_height="48dp"
+                                    android:layout_width="170dp"
+                                    android:layout_height="35dp"
                                     android:layout_marginStart="10dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_below="@id/sy_ku"
+                                    android:layout_toEndOf="@id/ymca"
                                     android:background="@drawable/button_default"
-                                    android:text="GJU"
+                                    android:text="GJU Hisar"
                                     android:textAllCaps="false" />
-                        </LinearLayout>
+                        </RelativeLayout>
 
                 </RelativeLayout>
         </RelativeLayout>

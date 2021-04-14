@@ -16,8 +16,6 @@ ImageView imageView;
 TextView textView2;
 Animation top, bottom;
 
-    private  static  int SPLASH_SCREEN =2000;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,24 +26,18 @@ Animation top, bottom;
 
         textView2 = findViewById(R.id.textView2);
         imageView = findViewById(R.id.imageView);
-       // textView = findViewById(R.id.textView);
-
         top = AnimationUtils.loadAnimation(this, R.anim.top);
         bottom = AnimationUtils.loadAnimation(this, R.anim.bottom);
         imageView.setAnimation(top);
-      //  textView.setAnimation(bottom);
         textView2.setAnimation(bottom);
-        new Handler().postDelayed(new Runnable()
-        {
-            @Override
-            public void run() {
-                    Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
-                    intent.putExtra("run counter","yes");
-                    startActivity(intent);
-                    finish();
+        int SPLASH_SCREEN = 2000;
+        new Handler().postDelayed(() -> {
+                Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
+                intent.putExtra("run counter","yes");
+                startActivity(intent);
+                finish();
 
-            }
-        },SPLASH_SCREEN);
+        }, SPLASH_SCREEN);
 
     }
 

@@ -83,14 +83,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         FirebaseMessaging.getInstance().subscribeToTopic("general")
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        String msg = "Successful";
-                        if (!task.isSuccessful()) {
-                            msg = "Failed";
-                        }
-                        //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                .addOnCompleteListener(task -> {
+                    String msg = "Successful";
+                    if (!task.isSuccessful()) {
+                        msg = "Failed";
                     }
                 });
     }
@@ -138,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      * Starts animation that counts upwards in {@link #totalPapersTextView}.
      */
     private void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 1775);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 1797);
         animator.setDuration(2000);
         animator.addUpdateListener(animation -> totalPapersTextView.setText(animation.getAnimatedValue().toString()));
         animator.start();

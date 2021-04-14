@@ -1,6 +1,5 @@
 package com.application.kurukshetrauniversitypapers;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -15,8 +14,6 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 public class VideoFragment extends Fragment {
     Button cse,first,third,sixth,session;
@@ -46,7 +43,7 @@ public class VideoFragment extends Fragment {
         search=v.findViewById(R.id.search);
         ku_courses=v.findViewById(R.id.ku_courses);
         ku_semesters=v.findViewById(R.id.ku_semesters);
-        ku=v.findViewById(R.id.ku);
+        ku=v.findViewById(R.id.sy_ku);
         session=v.findViewById(R.id.session_20_21);
         betafetaure=v.findViewById(R.id.textview_betafeature);
 

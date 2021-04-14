@@ -7,13 +7,15 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
-    tools:context=".WelcomeScreen">
+    tools:context=".WelcomeScreen"
+    tools:ignore="UseCompoundDrawables">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/logowithoutback" />
+        android:src="@drawable/logowithoutback"
+        android:contentDescription="@string/qsol_logo_welcomescreen" />
 
 
     <TextView
@@ -22,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/bungee"
-        android:text="Exam Papers, Solution and Syllabuses on fingertips"
+        android:text="@string/exam_papers_solution_and_syllabuses_on_fingertips"
         android:textAlignment="center"
         android:textColor="@color/fontColor"
         android:textSize="20sp"
