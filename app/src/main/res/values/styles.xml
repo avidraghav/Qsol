@@ -25,10 +25,4 @@
         <item name="color">@color/fontColor</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="Widget.MaterialComponents.Button.Icon">
-        <item name="android:paddingLeft">@dimen/mtrl_btn_icon_btn_padding_left</item>
-    </style>
 </resources>

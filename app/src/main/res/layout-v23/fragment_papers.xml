@@ -87,7 +87,7 @@
                     android:layout_width="170dp"
                     android:layout_height="35dp"
                     android:background="@drawable/button_default"
-                    android:text="Kurukshetra Univ."
+                    android:text="Kurukshetra University"
                     android:textAllCaps="false" />
                 <Button
                     android:id="@+id/ymca"

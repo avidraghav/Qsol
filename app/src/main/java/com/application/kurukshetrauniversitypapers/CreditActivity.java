@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 
 public class CreditActivity extends AppCompatActivity {
- TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14,p16,p17,p18,p19,p20,p21,p22,p23,p25,p26,p27,p28,p29,p30,p31,p32,p33,p34,p35,p36;
+ TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14,p16,p17,p18,p19,p20,p21,p22,p23,p27,p28,p31,p32,p34,p35,p36,p40;
  Button contribute;
  LinearLayout linearLayout;
  AnimatorSet animatorSet;
@@ -56,6 +56,7 @@ public class CreditActivity extends AppCompatActivity {
         p34=findViewById(R.id.person34);
         p35=findViewById(R.id.person35);
         p36=findViewById(R.id.person36);
+        p40=findViewById(R.id.person40);
 
 
         contribute=findViewById(R.id.contribute);
@@ -218,6 +219,13 @@ public class CreditActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/sugandha-malhotra-a95685193/"));
+                startActivity(Browserintent);
+            }
+        });
+        p40.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/sachinadhwaria/"));
                 startActivity(Browserintent);
             }
         });

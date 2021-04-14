@@ -1,49 +1,24 @@
 <resources>
     <string name="app_name">Qsol</string>
-    <string name="forget_password">Reset password</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_filters">Filters</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="return_to_home">Return to Home</string>
     <string name="sign_up">Sign Up</string>
     <string name="papers_available">Papers Available</string>
-    <string name="quick_search">Quick Search</string>
-    <string name="university_websites">University Websites</string>
-    <string name="diploma">Diploma</string>
-    <string name="b_tech">B.Tech</string>
-    <string name="bba_mba">BBA/MBA</string>
-    <string name="bca_mca">BCA/MCA</string>
 
 
     <!-- Image descriptors -->
     <string name="id_qsol_logo">QSOL logo</string>
-    <string name="id_filter_icon">filter icon</string>
-    <string name="id_university_icon">university icon</string>
-    <string name="id_diploma_icon">diploma icon</string>
-    <string name="id_btech_icon">b.tech icon</string>
-    <string name="id_bba_mba_icon">BBA/MBA icon</string>
-    <string name="id_bca_mca_icon">BCA/MCA icon</string>
 
     <!-- Unsorted Strings -->
-    <string name="placeholder">Some placeholder string</string>
 
-    <string name="qsol_solution_logo">Qsol Solution logo</string>
     <string name="video_name">Video name</string>
-    <string name="video_tab_beta_feature">Video Tab (Beta Feature)</string>
     <string name="video_tab_beta">Video Tab (Beta)</string>
     <string name="qsol_logo">qsol logo</string>
     <string name="load_more">Load more</string>
     <string name="video_count">video count</string>
-    <string name="beta_feature">Beta feature</string>
-    <string name="board_university">Board/University</string>
-    <string name="hsbte">HSBTE</string>
-    <string name="kuk_university">KUK University</string>
-    <string name="gju_hisar">GJU Hisar</string>
     <string name="session">Session</string>
 
 

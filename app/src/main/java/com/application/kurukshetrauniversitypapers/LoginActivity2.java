@@ -44,26 +44,31 @@ public class LoginActivity2 extends AppCompatActivity {
         userLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                firebaseAuth.signInWithEmailAndPassword(userEmail.getText().toString(),
-                        userPass.getText().toString())
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if(task.isSuccessful()){
-                                    if(firebaseAuth.getCurrentUser().isEmailVerified()){
-                                        finish();
-                                    }else{
-                                        Toast.makeText(LoginActivity2.this, "Please verify your email address"
+                if(userEmail.getText().toString().isEmpty() || userPass.getText().toString().isEmpty()){
+                    Toast.makeText(LoginActivity2.this, "Enter required details!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    progressBar.setVisibility(View.VISIBLE);
+                    firebaseAuth.signInWithEmailAndPassword(userEmail.getText().toString(),
+                            userPass.getText().toString())
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressBar.setVisibility(View.GONE);
+                                    if (task.isSuccessful()) {
+                                        if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+                                            finish();
+                                        } else {
+                                            Toast.makeText(LoginActivity2.this, "Please verify your email address"
+                                                    , Toast.LENGTH_LONG).show();
+                                        }
+                                    } else {
+                                        Toast.makeText(LoginActivity2.this, task.getException().getMessage()
                                                 , Toast.LENGTH_LONG).show();
                                     }
-                                }else{
-                                    Toast.makeText(LoginActivity2.this, task.getException().getMessage()
-                                            , Toast.LENGTH_LONG).show();
                                 }
-                            }
-                        });
+                            });
+                }
             }
         });
         createAccount.setOnClickListener(new View.OnClickListener() {

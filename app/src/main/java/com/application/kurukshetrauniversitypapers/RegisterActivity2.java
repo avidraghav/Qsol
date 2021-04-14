@@ -43,37 +43,42 @@ public class RegisterActivity2 extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(),
-                        password.getText().toString())
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    firebaseAuth.getCurrentUser().sendEmailVerification()
-                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    if(task.isSuccessful()){
-                                                        Toast.makeText(RegisterActivity2.this, "Registered successfully. Please check your email for verification",
-                                                                Toast.LENGTH_LONG).show();
-                                                        email.setText("");
-                                                        password.setText("");
-                                                        startActivity(new Intent(RegisterActivity2.this,LoginActivity2.class));
-                                                    }else{
-                                                        Toast.makeText(RegisterActivity2.this,  task.getException().getMessage(),
-                                                                Toast.LENGTH_LONG).show();
-                                                    }
+                if(email.getText().toString().isEmpty() || password.getText().toString().isEmpty()){
+                    Toast.makeText(RegisterActivity2.this, "Enter required details!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    progressBar.setVisibility(View.VISIBLE);
+                    firebaseAuth.createUserWithEmailAndPassword(email.getText().toString(),
+                            password.getText().toString())
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressBar.setVisibility(View.GONE);
+                                    if (task.isSuccessful()) {
+                                        firebaseAuth.getCurrentUser().sendEmailVerification()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            Toast.makeText(RegisterActivity2.this, "Registered successfully. Please check your email for verification",
+                                                                    Toast.LENGTH_LONG).show();
+                                                            email.setText("");
+                                                            password.setText("");
+                                                            startActivity(new Intent(RegisterActivity2.this, LoginActivity2.class));
+                                                        } else {
+                                                            Toast.makeText(RegisterActivity2.this, task.getException().getMessage(),
+                                                                    Toast.LENGTH_LONG).show();
+                                                        }
 
-                                                }
-                                            });
-                                } else {
-                                    Toast.makeText(RegisterActivity2.this, task.getException().getMessage(),
-                                            Toast.LENGTH_LONG).show();
+                                                    }
+                                                });
+                                    } else {
+                                        Toast.makeText(RegisterActivity2.this, task.getException().getMessage(),
+                                                Toast.LENGTH_LONG).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+                }
             }
         });
 
