@@ -1527,7 +1527,21 @@ public class Subjectcode {
             if(subjectname.equals("Programming for problem solving")){
                 code="PP";
             }
-
+            if (subjectname.equals("Fluid mechanics")) {
+                code = "FM";
+            }
+            if (subjectname.equals("Mathematics 3")) {
+                code = "M3";
+            }
+            if (subjectname.equals("Strength of materials")) {
+                code = "SL";
+            }
+            if (subjectname.equals("Thermodynamics")) {
+                code = "TD";
+            }
+            if (subjectname.equals("Mechanics")) {
+                code = "M0";
+            }
         }
         return code;
     }

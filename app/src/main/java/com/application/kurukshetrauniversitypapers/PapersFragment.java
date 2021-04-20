@@ -23,7 +23,7 @@ public class PapersFragment extends Fragment {
     Button cse,it,me,ee,ec,mb,bb,bc,mc,cv,first,second,third,fourth,fifth,sixth,seventh,eight,session;
     Button dp_cse,dp_cv,dp_ee,dp_ec,dp_me,dp_dmlt,dp_first,dp_second,dp_third,dp_fourth,dp_fifth,dp_sixth;
     Button gju_cse,gju_first;
-    Button ymca_cse,ymca_it,ymca_ee,ymca_ec,ymca_me,ymca_cv,ymca_first,ymca_second;
+    Button ymca_cse,ymca_it,ymca_ee,ymca_ec,ymca_me,ymca_cv,ymca_first,ymca_second,ymca_third;
     Button ku,dp,gju,ymca;
     String selected_branch = "null",selected_semester = "null",semester_number="null",branch_for_intent="null";
     String board="null";
@@ -86,6 +86,7 @@ public class PapersFragment extends Fragment {
         ymca_it=v.findViewById(R.id.ymca_it);
         ymca_first=v.findViewById(R.id.ymca_first);
         ymca_second=v.findViewById(R.id.ymca_second);
+        ymca_third=v.findViewById(R.id.ymca_third);
         dp_cse=v.findViewById(R.id.dp_cse);
         dp_cv=v.findViewById(R.id.dp_cv);
         dp_me=v.findViewById(R.id.dp_me);
@@ -507,12 +508,21 @@ public class PapersFragment extends Fragment {
             semester_number="1";
             ymca_first.setBackgroundResource(R.drawable.button_pressed);
             ymca_second.setBackgroundResource(R.drawable.button_default);
+            ymca_third.setBackgroundResource(R.drawable.button_default);
         });
         ymca_second.setOnClickListener(view -> {
             selected_semester="second";
             semester_number="2";
             ymca_first.setBackgroundResource(R.drawable.button_default);
             ymca_second.setBackgroundResource(R.drawable.button_pressed);
+            ymca_third.setBackgroundResource(R.drawable.button_default);
+        });
+        ymca_third.setOnClickListener(view -> {
+            selected_semester="third";
+            semester_number="3";
+            ymca_first.setBackgroundResource(R.drawable.button_default);
+            ymca_second.setBackgroundResource(R.drawable.button_default);
+            ymca_third.setBackgroundResource(R.drawable.button_pressed);
         });
         ymca_cse.setOnClickListener(view -> {
             selected_branch="Cse";
@@ -523,6 +533,7 @@ public class PapersFragment extends Fragment {
            ymca_me.setBackgroundResource(R.drawable.button_default);
            ymca_ec.setBackgroundResource(R.drawable.button_default);
            ymca_ee.setBackgroundResource(R.drawable.button_default);
+            ymca_third.setEnabled(false);
             Log.e("branch",selected_branch);
         });
         ymca_it.setOnClickListener(view -> {
@@ -534,6 +545,7 @@ public class PapersFragment extends Fragment {
             ymca_me.setBackgroundResource(R.drawable.button_default);
             ymca_ec.setBackgroundResource(R.drawable.button_default);
             ymca_ee.setBackgroundResource(R.drawable.button_default);
+            ymca_third.setEnabled(false);
             Log.e("branch",selected_branch);
         });
         ymca_cv.setOnClickListener(view -> {
@@ -545,6 +557,7 @@ public class PapersFragment extends Fragment {
             ymca_me.setBackgroundResource(R.drawable.button_default);
             ymca_ec.setBackgroundResource(R.drawable.button_default);
             ymca_ee.setBackgroundResource(R.drawable.button_default);
+            ymca_third.setEnabled(false);
             Log.e("branch",selected_branch);
         });
         ymca_me.setOnClickListener(view -> {
@@ -556,6 +569,7 @@ public class PapersFragment extends Fragment {
             ymca_me.setBackgroundResource(R.drawable.button_pressed);
             ymca_ec.setBackgroundResource(R.drawable.button_default);
             ymca_ee.setBackgroundResource(R.drawable.button_default);
+            ymca_third.setEnabled(true);
             Log.e("branch",selected_branch);
         });
         ymca_ec.setOnClickListener(view -> {
@@ -567,6 +581,7 @@ public class PapersFragment extends Fragment {
             ymca_me.setBackgroundResource(R.drawable.button_default);
             ymca_ec.setBackgroundResource(R.drawable.button_pressed);
             ymca_ee.setBackgroundResource(R.drawable.button_default);
+            ymca_third.setEnabled(false);
             Log.e("branch",selected_branch);
         });
         ymca_ee.setOnClickListener(view -> {
@@ -578,6 +593,7 @@ public class PapersFragment extends Fragment {
             ymca_me.setBackgroundResource(R.drawable.button_default);
             ymca_ec.setBackgroundResource(R.drawable.button_default);
             ymca_ee.setBackgroundResource(R.drawable.button_pressed);
+            ymca_third.setEnabled(false);
             Log.e("branch",selected_branch);
         });
         dp_first.setOnClickListener(v16 -> {
