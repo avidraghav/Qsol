@@ -96,7 +96,7 @@
                     android:layout_below="@id/sy_dp"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/button_default"
-                    android:text="YMCA Faridabad"
+                    android:text="J.C. Bose University"
                     android:textAllCaps="false"/>
 
                 <Button
