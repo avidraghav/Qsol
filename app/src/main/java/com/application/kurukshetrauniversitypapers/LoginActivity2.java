@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,13 +30,12 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class LoginActivity2 extends AppCompatActivity {
 
     ProgressBar progressBar;
-    EditText userEmail;
-    EditText userPass;
-    Button userLogin;
-    Button google_signin;
-    TextView createAccount;
-    TextView forgetPassword;
+    EditText userEmail,userPass;
+    Button userLogin,google_signin;
+    TextView createAccount,forgetPassword,displaysiginoptions,contwithemail;
     FirebaseAuth firebaseAuth;
+    RelativeLayout contwithemaillayout, loginoptionslayout;
+
 
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
@@ -51,58 +51,53 @@ public class LoginActivity2 extends AppCompatActivity {
         createAccount=findViewById(R.id.text_view_register);
         forgetPassword=findViewById(R.id.text_view_forget_password);
         google_signin=findViewById(R.id.google_signIn);
+        contwithemail=findViewById(R.id.text_view_continue_with_email);
+        loginoptionslayout=findViewById(R.id.sigin_options_layout);
+        contwithemaillayout=findViewById(R.id.continue_with_email_layout);
+        displaysiginoptions=findViewById(R.id.display_signin_options);
 
         firebaseAuth = FirebaseAuth.getInstance();
         createRequest();
 
-        google_signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signIn();
-            }
+        google_signin.setOnClickListener(view -> signIn());
+
+        contwithemail.setOnClickListener(view -> {
+            loginoptionslayout.setVisibility(View.GONE);
+            contwithemaillayout.setVisibility(View.VISIBLE);
         });
-        userLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(userEmail.getText().toString().isEmpty() || userPass.getText().toString().isEmpty()){
-                    Toast.makeText(LoginActivity2.this, "Enter required details!", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    progressBar.setVisibility(View.VISIBLE);
-                    firebaseAuth.signInWithEmailAndPassword(userEmail.getText().toString(),
-                            userPass.getText().toString())
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    progressBar.setVisibility(View.GONE);
-                                    if (task.isSuccessful()) {
-                                        if (firebaseAuth.getCurrentUser().isEmailVerified()) {
-                                            finish();
-                                        } else {
-                                            Toast.makeText(LoginActivity2.this, "Please verify your email address"
-                                                    , Toast.LENGTH_LONG).show();
-                                        }
+        displaysiginoptions.setOnClickListener(view -> {
+            loginoptionslayout.setVisibility(View.VISIBLE);
+            contwithemaillayout.setVisibility(View.GONE);
+        });
+        userLogin.setOnClickListener(view -> {
+            if(userEmail.getText().toString().isEmpty() || userPass.getText().toString().isEmpty()){
+                Toast.makeText(LoginActivity2.this, "Enter required details!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                progressBar.setVisibility(View.VISIBLE);
+                firebaseAuth.signInWithEmailAndPassword(userEmail.getText().toString(),
+                        userPass.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                progressBar.setVisibility(View.GONE);
+                                if (task.isSuccessful()) {
+                                    if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+                                        finish();
                                     } else {
-                                        Toast.makeText(LoginActivity2.this, task.getException().getMessage()
+                                        Toast.makeText(LoginActivity2.this, "Please verify your email address"
                                                 , Toast.LENGTH_LONG).show();
                                     }
+                                } else {
+                                    Toast.makeText(LoginActivity2.this, task.getException().getMessage()
+                                            , Toast.LENGTH_LONG).show();
                                 }
-                            });
-                }
+                            }
+                        });
             }
         });
-        createAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity2.this, RegisterActivity2.class));
-            }
-        });
-        forgetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity2.this,ForgotPasswordActivity.class));
-            }
-        });
+        createAccount.setOnClickListener(view -> startActivity(new Intent(LoginActivity2.this, RegisterActivity2.class)));
+        forgetPassword.setOnClickListener(view -> startActivity(new Intent(LoginActivity2.this,ForgotPasswordActivity.class)));
     }
 
     private void createRequest() {

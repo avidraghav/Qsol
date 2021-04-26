@@ -17,6 +17,8 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/continue_with_email_layout"
+            android:visibility="gone"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/loginLayout"
@@ -96,6 +98,7 @@
                         android:textColor="#2b74cc"
                         android:paddingTop="5dp"
                         android:text="Create Account"/>
+
                 </RelativeLayout>
 
                 <Button
@@ -108,21 +111,51 @@
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:textSize="18sp"/>
-                <Button
-                    android:id="@+id/google_signIn"
-                    android:layout_width="fill_parent"
+
+                <TextView
+                    android:id="@+id/display_signin_options"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="22dp"
-                    android:background="@drawable/button_default"
-                    android:drawableStart="@drawable/ic_google"
-                    android:text="Sign In with Google"
-                    android:textAllCaps="false"
-                    android:textColor="#000"
-                    android:textSize="18sp"/>
+                    android:background="?android:selectableItemBackground"
+                    android:textColor="#2b74cc"
+                    android:drawableStart="@drawable/ic_arrow_back"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/back"/>
 
 
             </LinearLayout>
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/sigin_options_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:layout_centerHorizontal="true">
+            <Button
+                android:id="@+id/google_signIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:background="@drawable/button_default"
+                android:drawableStart="@drawable/ic_google"
+                android:drawablePadding="16dp"
+                android:padding="8dp"
+                android:text="Sign In with Google"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/text_view_continue_with_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:textColor="#2b74cc"
+                android:layout_below="@id/google_signIn"
+                android:layout_centerInParent="true"
+                android:text="@string/continue_with_email"/>
         </RelativeLayout>
 
         <ImageButton

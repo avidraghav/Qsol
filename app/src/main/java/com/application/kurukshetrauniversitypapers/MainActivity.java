@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         totalPapersTextView = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
-        signUpButton = findViewById(R.id.bt_sign_up);
         newNotificationsTextView=findViewById(R.id.notification_textview);
 
 
@@ -180,9 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 new_intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback/Query for Qsol");
                 startActivity(new_intent);
                 break;
-            case R.id.bt_sign_up:
-                clazz = RegisterActivity2.class;
-                break;
+
             case R.id.bt_connect_on_linkedin:
                 Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/company/qsoltech/"));
                 startActivity(Browserintent);
@@ -211,13 +208,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView navWelcome = headerView.findViewById(R.id.txt_welcome);
         if (mAuth.getCurrentUser() != null && mAuth.getCurrentUser().isEmailVerified()) {
             navWelcome.setVisibility(View.VISIBLE);
-            signUpButton.setVisibility(View.INVISIBLE);
             navUsername.setText(mAuth.getCurrentUser().getEmail());
             navigationView.getMenu().findItem(R.id.action_signin).setVisible(false);
             navigationView.getMenu().findItem(R.id.action_logout).setVisible(true);
         } else {
             navWelcome.setVisibility(View.INVISIBLE);
-            signUpButton.setVisibility(View.VISIBLE);
             navUsername.setText("Sign up to Download Solutions");
             navigationView.getMenu().findItem(R.id.action_signin).setVisible(true);
             navigationView.getMenu().findItem(R.id.action_logout).setVisible(false);
@@ -247,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
             case R.id.action_signin:
-                if (signUpButton.getVisibility()==View.VISIBLE) {
+                if ((mAuth.getCurrentUser() == null || !mAuth.getCurrentUser().isEmailVerified())) {
                     startActivity(new Intent(MainActivity.this, LoginActivity2.class));
                     break;
                 } else {

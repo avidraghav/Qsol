@@ -35,18 +35,6 @@
                         android:contentDescription="@string/id_qsol_logo"
                         android:src="@drawable/qslow" />
                     <Button
-                        android:id="@+id/bt_sign_up"
-                        android:layout_width="64dp"
-                        android:layout_height="32dp"
-                        android:layout_marginEnd="14dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_toStartOf="@id/bt_connect_on_linkedin"
-                        android:text="@string/sign_up"
-                        android:textAllCaps="false"
-                        android:onClick="onItemClicked"
-                        android:textColor="@color/fontColor"
-                        android:background="?attr/selectableItemBackground"/>
-                    <Button
                         android:id="@+id/bt_connect_on_linkedin"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
