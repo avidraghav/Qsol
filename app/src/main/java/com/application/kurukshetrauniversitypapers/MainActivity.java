@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String runCounter = intent.getStringExtra(KEY_RUN_COUNTER);
         if ("yes".equals(runCounter)) {
             startCountAnimation();
-        } else totalPapersTextView.setText("1775");
+        } else totalPapersTextView.setText("1797");
     }
 
     /**

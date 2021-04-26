@@ -47,7 +47,7 @@
                     android:id="@+id/text_email"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_email"
+                    android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="10dp"
                     android:singleLine="true"
                     android:textColor="#000"
@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:id="@+id/edit_text_password"
-                    android:drawableLeft="@drawable/ic_lock"
+                    android:drawableStart="@drawable/ic_lock"
                     android:hint="Password"
                     android:textColor="#000"
                     android:inputType="textPassword"/>
@@ -82,7 +82,7 @@
                         android:id="@+id/text_view_forget_password"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:paddingTop="5dp"
                         android:background="?android:selectableItemBackground"
                         android:textColor="#2b74cc"
@@ -98,9 +98,6 @@
                         android:text="Create Account"/>
                 </RelativeLayout>
 
-
-
-
                 <Button
                     android:id="@+id/button_sign_in"
                     android:layout_width="fill_parent"
@@ -110,6 +107,17 @@
                     android:text="Log in"
                     android:textAllCaps="false"
                     android:textColor="#fff"
+                    android:textSize="18sp"/>
+                <Button
+                    android:id="@+id/google_signIn"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="22dp"
+                    android:background="@drawable/button_default"
+                    android:drawableStart="@drawable/ic_google"
+                    android:text="Sign In with Google"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
                     android:textSize="18sp"/>
 
 

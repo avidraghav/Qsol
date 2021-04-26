@@ -63,5 +63,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.jsoup:jsoup:1.10.2'
-
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
 }
