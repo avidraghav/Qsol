@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -63,43 +64,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp">
-
-                    <TextView
-                        android:id="@+id/notification_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:onClick="notificationClicked"
-                        android:text=" "
-                        android:padding="2dp"
-                        android:textSize="18sp"
-                        android:textColor="@color/fontColor"
-                        app:layout_constraintBottom_toTopOf="@+id/tv_total_papers"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
                 <TextView
                     android:id="@+id/tv_total_papers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="32dp"
                     android:fontFamily="sans-serif-smallcaps"
                     android:textAlignment="center"
-                    android:textColor="#2b74cc"
-                    android:textSize="90sp"
-                    android:textStyle="bold"
+                    android:textColor="#202020"
+                    android:textSize="60sp"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="1234" />
 
                 <TextView
                     android:id="@+id/tv_total_papers_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/papers_available"
-                    android:textColor="@color/fontColor"
+                    android:textColor="#d9dedb"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    android:gravity="center_horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_total_papers" />
@@ -109,8 +94,8 @@
                     android:layout_width="0dp"
                     android:layout_height="128dp"
                     android:layout_marginTop="32dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
+                    app:cardBackgroundColor="#FFE0B1"
+                    app:cardCornerRadius="24dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toStartOf="@id/cv_beta_feature"
                     app:layout_constraintStart_toStartOf="parent"
@@ -140,9 +125,9 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="Papers"
-                            android:textColor="@color/fontColor"
+                            android:textColor="#202020"
                             android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
@@ -151,8 +136,8 @@
                     android:layout_height="128dp"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="32dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
+                    app:cardBackgroundColor="#FCF9C6"
+                    app:cardCornerRadius="24dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_papers"
@@ -175,9 +160,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/video_tab_beta"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textColor="#202020"
+                            android:textSize="16sp" />
                         <Button
                             android:id="@+id/bt_beta_feature"
                             android:layout_width="match_parent"
@@ -196,8 +180,8 @@
                     android:layout_height="128dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="4dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
+                    app:cardBackgroundColor="#DFBEDB"
+                    app:cardCornerRadius="24dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toStartOf="@id/cv_syllabus"
                     app:layout_constraintStart_toStartOf="parent"
@@ -222,9 +206,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/solutions"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textColor="#202020"
+                            android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/bt_solutions"
@@ -243,8 +226,8 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
+                    app:cardBackgroundColor="#B6E2ED"
+                    app:cardCornerRadius="24dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_solutions"
@@ -270,9 +253,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/syllabus"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textColor="#202020"
+                            android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/bt_syllabus"
@@ -293,7 +275,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
                     app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
+                    app:cardCornerRadius="24dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/cv_feedback"
@@ -317,9 +299,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="Write to us"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textColor="#202020"
+                            android:textSize="16sp" />
                         <Button
                             android:id="@+id/bt_write_to_us"
                             android:layout_width="match_parent"
@@ -335,8 +316,8 @@
                     android:layout_height="128dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="4dp"
-                    app:cardBackgroundColor="#dbf7ff"
-                    app:cardCornerRadius="40dp"
+                    app:cardBackgroundColor="#FACDD4"
+                    app:cardCornerRadius="24dp"
                     app:cardElevation="0dp"
                     app:layout_constraintEnd_toStartOf="@id/cv_write_to_us"
                     app:layout_constraintStart_toStartOf="parent"
@@ -362,9 +343,8 @@
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
                             android:text="@string/rate_qsol"
-                            android:textColor="@color/fontColor"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:textColor="#202020"
+                            android:textSize="16sp" />
 
                         <Button
                             android:id="@+id/bt_rate_qsol"

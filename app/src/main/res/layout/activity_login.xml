@@ -49,13 +49,13 @@
                     android:id="@+id/text_email"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:drawableStart="@drawable/ic_email"
                     android:drawablePadding="10dp"
-                    android:singleLine="true"
-                    android:textColor="#000"
-                    android:layout_marginBottom="10dp"
                     android:hint="john@gmail.com"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textColor="#000" />
 
                 <TextView
                     android:labelFor="@id/edit_text_password"
@@ -66,15 +66,17 @@
                     android:layout_height="wrap_content"/>
 
                 <EditText
-                    android:drawablePadding="10dp"
+                    android:id="@+id/edit_text_password"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
-                    android:id="@+id/edit_text_password"
                     android:drawableStart="@drawable/ic_lock"
+                    android:drawablePadding="10dp"
                     android:hint="Password"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
                     android:textColor="#000"
-                    android:inputType="textPassword"/>
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorLink="#FFFFFF" />
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -106,10 +108,9 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="22dp"
-                    android:background="@drawable/button_shape"
+                    android:background="@drawable/button_default"
                     android:text="Log in"
                     android:textAllCaps="false"
-                    android:textColor="#fff"
                     android:textSize="18sp"/>
 
                 <TextView

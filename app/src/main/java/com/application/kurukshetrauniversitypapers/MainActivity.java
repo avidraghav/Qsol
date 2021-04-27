@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FirebaseAuth mAuth;
     private Toolbar toolbar;
     private DrawerLayout drawer;
-    private TextView totalPapersTextView,newNotificationsTextView;
+    private TextView totalPapersTextView;
     public String notificationText;
 
     @Override
@@ -64,10 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         totalPapersTextView = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
-        newNotificationsTextView=findViewById(R.id.notification_textview);
 
-
-        handleNotification();
         handleAnimations();
         setupToolbar();
         setupDrawer();
@@ -308,42 +305,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onStart();
     }
 
-    /** Display Notification text received from Database and animate*/
-    public void handleNotification() {
-
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("IN/Notifications/");
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                NotificationGetter notificationGetter = dataSnapshot.getValue(NotificationGetter.class);
-                notificationText=notificationGetter.getText();
-                if(notificationText.equals(" ")){
-                    // do nothing
-                }
-                else{
-                    findViewById(R.id.notification_textview).setBackgroundResource(R.drawable.notification_textview_shape);
-                    Animation fadeIn = AnimationUtils.loadAnimation(getBaseContext(), R.anim.reveal_details);
-                    findViewById(R.id.notification_textview).setAnimation(fadeIn);
-                }
-                newNotificationsTextView.setText(notificationText);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(MainActivity.this, databaseError.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-    }
-
-    /**  Handle notification textview click event*/
-    public void notificationClicked(View view) {
-        if(newNotificationsTextView.getText().equals(" ")){
-            // do nothing
-        }
-        else {
-            startActivity(new Intent(MainActivity.this,DatesheetsActivity.class));
-        }
-    }
 
 }

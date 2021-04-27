@@ -95,6 +95,7 @@
                     android:layout_height="35dp"
                     android:layout_below="@id/sy_dp"
                     android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
                     android:background="@drawable/button_default"
                     android:text="J.C. Bose University"
                     android:textAllCaps="false"/>
@@ -105,6 +106,7 @@
                     android:layout_height="35dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
                     android:layout_below="@id/sy_ku"
                     android:layout_toEndOf="@id/ymca"
                     android:background="@drawable/button_default"
@@ -232,6 +234,7 @@
             android:layout_height="35dp"
             android:layout_below="@+id/bb"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:singleLine="true"
             android:background="@drawable/button_default"
             android:text="BCA"
@@ -241,8 +244,9 @@
             android:layout_width="170dp"
             android:layout_height="35dp"
             android:layout_below="@+id/mb"
-            android:layout_toRightOf="@+id/bc"
-            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/bc"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="4dp"
             android:layout_marginTop="4dp"
             android:singleLine="true"
             android:background="@drawable/button_default"
@@ -533,6 +537,7 @@
             android:textAllCaps="false"
             android:layout_below="@+id/first"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:text="Fifth"
             android:background="@drawable/button_default"/>
         <Button
@@ -543,7 +548,8 @@
             android:layout_toEndOf="@+id/fifth"
             android:textAllCaps="false"
             android:layout_marginTop="4dp"
-            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
             android:text="Sixth"
             android:background="@drawable/button_default"/>
         <Button
@@ -555,16 +561,18 @@
             android:background="@drawable/button_default"
             android:layout_marginTop="4dp"
             android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
             android:text="Seventh"
             android:textAllCaps="false" />
         <Button
             android:id="@+id/eight"
             android:layout_width="76dp"
             android:layout_height="32dp"
-            android:layout_toRightOf="@id/seventh"
+            android:layout_toEndOf="@id/seventh"
             android:layout_below="@+id/fourth"
             android:textAllCaps="false"
             android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
             android:text="Eighth"
             android:layout_marginStart="4dp"
             android:background="@drawable/button_default"
@@ -859,6 +867,7 @@
         android:textAllCaps="false"
         android:foreground="?attr/selectableItemBackground"
         android:textSize="18sp"
+        android:textColor="#404040"
         />
 
 </RelativeLayout>

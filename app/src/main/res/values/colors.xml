@@ -6,6 +6,4 @@
     <color name="white">#fff</color>
     <color name="fontColor">#2b74cc</color>
     <color name="gold">	#FFD700</color>
-    <!--custom color for pressed state -->
-    <!--transperent color for normal state -->
 </resources>
