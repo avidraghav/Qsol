@@ -108,7 +108,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="22dp"
-                    android:background="@drawable/button_default"
+                    android:background="@drawable/button_shape"
                     android:text="Log in"
                     android:textAllCaps="false"
                     android:textSize="18sp"/>

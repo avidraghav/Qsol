@@ -23,7 +23,6 @@ public class RegisterActivity2 extends AppCompatActivity {
     EditText password;
     Button signup;
     TextView login;
-   // Button forgotPass;
 
     FirebaseAuth firebaseAuth;
     @Override
@@ -35,9 +34,6 @@ public class RegisterActivity2 extends AppCompatActivity {
         password = findViewById(R.id.edit_text_password);
         signup = findViewById(R.id.button_register);
         login = findViewById(R.id.text_view_login);
-       // forgotPass = findViewById(R.id.btnUserForgottPass);
-
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         signup.setOnClickListener(new View.OnClickListener() {

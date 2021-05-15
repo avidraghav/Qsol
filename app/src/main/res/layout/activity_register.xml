@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegisterActivity"
+    tools:context=".RegisterActivity2"
     android:scrollbarAlwaysDrawVerticalTrack="true">
 
     <RelativeLayout
@@ -88,26 +88,8 @@
                     android:background="@drawable/button_shape"
                     android:text="Sign Up"
                     android:textAllCaps="false"
-                    android:textColor="#fff"
                     android:textSize="18sp"/>
 
-<!--                <TextView-->
-<!--                    android:id="@+id/text_view"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:text="Already have an account?"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/text_view_login"-->
-<!--                    android:layout_gravity="center_horizontal"-->
-<!--                    android:textColor="@color/colorPrimary"-->
-<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"-->
-<!--                    android:textAlignment="center"-->
-<!--                    android:text="@string/ask_login"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"/>-->
             </LinearLayout>
 
         </RelativeLayout>

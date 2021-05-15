@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -83,6 +84,7 @@ public class LoginActivity2 extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     if (firebaseAuth.getCurrentUser().isEmailVerified()) {
+                                        Toast.makeText(LoginActivity2.this, "Sign in Successful", Toast.LENGTH_SHORT).show();
                                         finish();
                                     } else {
                                         Toast.makeText(LoginActivity2.this, "Please verify your email address"
@@ -99,7 +101,6 @@ public class LoginActivity2 extends AppCompatActivity {
         createAccount.setOnClickListener(view -> startActivity(new Intent(LoginActivity2.this, RegisterActivity2.class)));
         forgetPassword.setOnClickListener(view -> startActivity(new Intent(LoginActivity2.this,ForgotPasswordActivity.class)));
     }
-
     private void createRequest() {
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -149,6 +150,7 @@ public class LoginActivity2 extends AppCompatActivity {
                     }
                 });
     }
+
     @Override
     public void onBackPressed() {
         Intent intent=new Intent(LoginActivity2.this,MainActivity.class);

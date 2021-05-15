@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/papers_available"
-                    android:textColor="#d9dedb"
+                    android:textColor="#aaadab"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:gravity="center_horizontal"

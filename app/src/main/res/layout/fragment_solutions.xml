@@ -122,7 +122,6 @@
         android:id="@+id/courses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         android:layout_marginTop="5dp"
         >
         <RelativeLayout
@@ -342,7 +341,6 @@
         android:id="@+id/semesters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
         >
         <RelativeLayout
             android:visibility="visible"
@@ -418,7 +416,7 @@
                 android:layout_width="76dp"
                 android:layout_height="32dp"
                 android:layout_below="@id/second"
-                android:layout_toRightOf="@+id/fifth"
+                android:layout_toEndOf="@+id/fifth"
                 android:textAllCaps="false"
                 android:layout_marginTop="4dp"
                 android:layout_marginLeft="4dp"

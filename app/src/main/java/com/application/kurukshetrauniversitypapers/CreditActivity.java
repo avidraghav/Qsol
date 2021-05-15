@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 
 public class CreditActivity extends AppCompatActivity {
- TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14,p16,p17,p18,p19,p20,p21,p22,p23,p27,p28,p31,p32,p34,p35,p36,p40,p41;
+ TextView p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p13,p14,p16,p17,p18,p19,p20,p21,p22,p23,p27,p28,p31,p32,p34,p35,p36,p40,p41,p42;
  Button contribute;
  LinearLayout linearLayout;
  AnimatorSet animatorSet;
@@ -58,6 +58,7 @@ public class CreditActivity extends AppCompatActivity {
         p36=findViewById(R.id.person36);
         p40=findViewById(R.id.person40);
         p41=findViewById(R.id.person41);
+        p42=findViewById(R.id.person42);
 
 
         contribute=findViewById(R.id.contribute);
@@ -205,6 +206,10 @@ public class CreditActivity extends AppCompatActivity {
         });
         p41.setOnClickListener(view -> {
             Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/gaurav-kumar-pandit-9319651b0/"));
+            startActivity(Browserintent);
+        });
+        p42.setOnClickListener(view ->{
+            Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/rohan-saini-22b461201/"));
             startActivity(Browserintent);
         });
         contribute.setOnClickListener(view -> {

@@ -27,6 +27,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -47,14 +51,12 @@ import utils.NotificationGetter;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String KEY_RUN_COUNTER = "run counter";
-
-
-    private Button signUpButton;
     private FirebaseAuth mAuth;
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private TextView totalPapersTextView;
-    public String notificationText;
+    GoogleSignInClient mGoogleSignInClient;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         totalPapersTextView = findViewById(R.id.tv_total_papers);
         mAuth = FirebaseAuth.getInstance();
 
+        createRequest();
         handleAnimations();
         setupToolbar();
         setupDrawer();
@@ -256,9 +259,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     dialog.setTitle("Are you sure to log out?");
                     dialog.setItems(items, (dialog1, which) -> {
                         if (which == 0) {
-                            FirebaseAuth.getInstance().signOut();
-                            updateNavHeader();
-                            Toast.makeText(MainActivity.this, "You have been logged out", Toast.LENGTH_SHORT).show();
+                            mGoogleSignInClient.signOut()
+                                    .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            FirebaseAuth.getInstance().signOut();
+                                            updateNavHeader();
+                                            Toast.makeText(MainActivity.this, "You have been logged out", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
                         }
                         if (which == 1) {
 
@@ -285,6 +295,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return true;
     }
+    private void createRequest() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("507188393173-2t0jaf0qv87if2ekr3i9e2jdsr3isvnk.apps.googleusercontent.com").requestEmail().build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
 
     @Override
     public void onBackPressed() {
@@ -302,6 +317,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         checkUpdate();
         updateNavHeader();
         checkConnection();
+        createRequest();
         super.onStart();
     }
 
