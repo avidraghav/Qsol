@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadResourcesActivity">
+
+
+    <TextView
+        android:id="@+id/info_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/info_textview"
+        android:text="@string/to_upload_any_resources_such_as"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:textSize="16sp"
+
+        />
+
+    <TextView
+        android:id="@+id/files_selected_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/info_textview"
+        android:textSize="16sp"
+        tools:text="Files Selected" />
+
+    <Button
+        android:id="@+id/add_attachments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/files_selected_textview"
+        android:background="@drawable/button_shape"
+        android:drawableStart="@drawable/ic_add"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="Add Attachment"
+        android:textAllCaps="false"
+        android:textColor="#404040"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>

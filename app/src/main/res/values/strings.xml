@@ -57,4 +57,7 @@
     <string name="qsol_logo_welcomescreen">Qsol Logo</string>
     <string name="continue_with_email"><u>Continue with Email</u></string>
     <string name="back"><u>back</u></string>
+    <string name="to_upload_any_resources_such_as">To upload any resources such as Previous year papers,
+        syllabuses or solutions of any papers kindly press the <b>Choose Files Button</b> and Select the files from Your device.
+    </string>
 </resources>
