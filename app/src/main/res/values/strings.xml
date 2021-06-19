@@ -58,6 +58,8 @@
     <string name="continue_with_email"><u>Continue with Email</u></string>
     <string name="back"><u>back</u></string>
     <string name="to_upload_any_resources_such_as">To upload any resources such as Previous year papers,
-        syllabuses or solutions of any papers kindly press the <b>Choose Files Button</b> and Select the files from Your device.
+        syllabuses or solutions of any papers kindly press the
+        <b>Choose Files Button</b> and Select the files from Your device.
     </string>
+    <string name="add_some_description_about_the_files_such_as_college_universit_or_anything_you_would_like_to_add">Add Some Description about the files such as College/Universit or anything you would like to add</string>
 </resources>

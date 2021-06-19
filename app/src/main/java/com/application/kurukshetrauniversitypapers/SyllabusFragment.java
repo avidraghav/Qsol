@@ -70,7 +70,6 @@ public class SyllabusFragment extends Fragment {
         seventh_syl=v.findViewById(R.id.seventh_syl);
         eight_syl=v.findViewById(R.id.eight_syl);
         uploadPDFS= new ArrayList<>();
-        subjects=new ArrayList<>();
         listView=v.findViewById(R.id.list_syllabus);
         search_syl=v.findViewById(R.id.sy_search);
         session=v.findViewById(R.id.session_20_21);

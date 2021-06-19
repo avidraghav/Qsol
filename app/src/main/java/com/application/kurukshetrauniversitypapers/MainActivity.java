@@ -289,6 +289,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 break;
             case R.id.upload_resources:
+                if ((mAuth.getCurrentUser() == null)) {
+                    Toast.makeText(this, "Log in first to upload any Resources", Toast.LENGTH_SHORT).show();
+                }
+                else
                 startActivity(new Intent(MainActivity.this, UploadResourcesActivity.class));
                 break;
             case R.id.jmit_website:

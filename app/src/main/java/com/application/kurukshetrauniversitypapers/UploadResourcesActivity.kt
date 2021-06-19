@@ -1,19 +1,22 @@
 package com.application.kurukshetrauniversitypapers
 
-import android.app.ProgressDialog
+
+import Adapters.SelectedAttachmentsAdapter
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.kurukshetrauniversitypapers.databinding.ActivityUploadResourcesBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import utils.PDFupload
+import utils.AttachedFile
 
 class UploadResourcesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUploadResourcesBinding
@@ -22,7 +25,10 @@ class UploadResourcesActivity : AppCompatActivity() {
     var databaseReference1: DatabaseReference? = null
     var db:DatabaseReference? = null
     private lateinit var name : String
-   // var mGoogleSignInClient: GoogleSignInClient? = null
+    //private var size : Long = 0
+    private var fileUrl : Uri? = null
+    private var attachmentList = ArrayList<AttachedFile>()
+    private val adapter = SelectedAttachmentsAdapter(attachmentList)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +39,14 @@ class UploadResourcesActivity : AppCompatActivity() {
         binding.addAttachments.setOnClickListener {
             addFile()
         }
+        binding.uploadAttachments.setOnClickListener {
+            if(binding.attachmentsDescription.text.isEmpty()){
+                Toast.makeText(this,"Kindly provide any description",Toast.LENGTH_SHORT).show()
+            }
+            val description = binding.attachmentsDescription.text.toString()
+            fileUrl?.let { uploadPDFFile(it,description) }
+        }
+        initRecyclerView()
     }
     fun addFile(){
             val intent = Intent()
@@ -45,48 +59,42 @@ class UploadResourcesActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.data != null) {
 
-            Log.e("info",data.data.toString())
-            //val myFile = File(data.data.toString())
-            data.data?.let { returnUri ->
+
+            fileUrl = data.data
+            Log.e("info",fileUrl.toString())
+            fileUrl?.let { returnUri ->
                 contentResolver.query(returnUri, null, null, null, null)
             }?.use { cursor ->
                 val nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-                val sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE)
+               // val sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE)
                 cursor.moveToFirst()
                 name = cursor.getString(nameIndex)
+               // size = cursor.getLong(sizeIndex)
                 Log.e("info",name)
-                binding.filesSelectedTextview.text = name
+                val aFile = AttachedFile(name,fileUrl!!)
+                attachmentList.add(aFile)
+                adapter.notifyDataSetChanged()
+               // binding.filesSelectedListview.text = ("$name  $size")
             }
-           uploadPDFFile1(data.data!!)
         }
     }
-    private fun uploadPDFFile1(data: Uri) {
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Uploading...")
-        progressDialog.show()
+    private fun uploadPDFFile(data: Uri, description : String) {
+        binding.progressbar.visibility = View.VISIBLE
         storageReference = FirebaseStorage.getInstance().reference
-//        databaseReference1 = FirebaseDatabase.getInstance()
-//            .getReference("IN/" + MainActivity.board + "/" + MainActivity.branch + "/" + MainActivity.semester + "/" + MainActivity.subject)
-        val reference: StorageReference = storageReference!!.child("IN/User/abc.pdf")
+        val reference: StorageReference = storageReference!!.child("IN/${mAuth?.currentUser?.email}/$name")
         reference.putFile(data)
-            .addOnSuccessListener { taskSnapshot ->
-                val uri = taskSnapshot.storage.downloadUrl
-               while (!uri.isComplete);
-                val url = uri.result
-                val upload_PDF = PDFupload(
-                    name,
-                    "",
-                    url.toString(),
-                    ""
-                )
-
-//                databaseReference1!!.child(databaseReference1.push().getKey()).setValue(upload_PDF)
-//                Toast.makeText(this@MainActivity, "File Uploaded", Toast.LENGTH_SHORT).show()
-                progressDialog.dismiss()
-            }.addOnProgressListener { taskSnapshot ->
-                val progress = 100.0 * taskSnapshot.bytesTransferred / taskSnapshot.totalByteCount
-                progressDialog.setMessage("uploaded: " + progress.toInt() + "%")
+            .addOnSuccessListener {
+                binding.progressbar.visibility =View.GONE
+                Toast.makeText(this,"Uploaded",Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener{
+                binding.progressbar.visibility =View.GONE
+                Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
             }
+    }
+    private fun initRecyclerView(){
+        binding.filesSelectedRecyclerView.adapter = adapter
+        binding.filesSelectedRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.filesSelectedRecyclerView.setHasFixedSize(true)
     }
     override fun onBackPressed() {
         val intent = Intent(this, MainActivity::class.java)
