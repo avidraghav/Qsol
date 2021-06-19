@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/button_default">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/button_default"
+   >
 
     <TextView
         android:id="@+id/attachment_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
+        android:drawablePadding="8dp"
         android:textColor="@android:color/black"
+        android:padding="4dp"
         android:text="Name of Attachment"
-        android:drawableStart="@drawable/ic_add"/>
+        android:drawableStart="@drawable/ic_pdf"/>
     <TextView
         android:id="@+id/attachment_uri"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/attachment_name"
-        android:textColor="#000"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_toRightOf="@id/attachment_name"
+       />
 
 </RelativeLayout>

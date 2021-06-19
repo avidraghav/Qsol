@@ -24,8 +24,7 @@ class UploadResourcesActivity : AppCompatActivity() {
     var storageReference: StorageReference? = null
     var databaseReference1: DatabaseReference? = null
     var db:DatabaseReference? = null
-    private lateinit var name : String
-    //private var size : Long = 0
+  //  private lateinit var name : String
     private var fileUrl : Uri? = null
     private var attachmentList = ArrayList<AttachedFile>()
     private val adapter = SelectedAttachmentsAdapter(attachmentList)
@@ -34,17 +33,21 @@ class UploadResourcesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUploadResourcesBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+         Log.e("info",attachmentList.size.toString())
         mAuth = FirebaseAuth.getInstance()
         binding.addAttachments.setOnClickListener {
             addFile()
         }
         binding.uploadAttachments.setOnClickListener {
-            if(binding.attachmentsDescription.text.isEmpty()){
-                Toast.makeText(this,"Kindly provide any description",Toast.LENGTH_SHORT).show()
+            if(attachmentList.size == 0){
+                Toast.makeText(this,"Kindly add some files",Toast.LENGTH_SHORT).show()
             }
-            val description = binding.attachmentsDescription.text.toString()
-            fileUrl?.let { uploadPDFFile(it,description) }
+            else{
+                val description = binding.attachmentsDescription.text.toString()
+                uploadPDFFile(attachmentList,description)
+            }
+
+            //fileUrl?.let { uploadPDFFile(it,description) }
         }
         initRecyclerView()
     }
@@ -59,7 +62,6 @@ class UploadResourcesActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.data != null) {
 
-
             fileUrl = data.data
             Log.e("info",fileUrl.toString())
             fileUrl?.let { returnUri ->
@@ -68,7 +70,7 @@ class UploadResourcesActivity : AppCompatActivity() {
                 val nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
                // val sizeIndex = cursor.getColumnIndex(OpenableColumns.SIZE)
                 cursor.moveToFirst()
-                name = cursor.getString(nameIndex)
+                val name = cursor.getString(nameIndex)
                // size = cursor.getLong(sizeIndex)
                 Log.e("info",name)
                 val aFile = AttachedFile(name,fileUrl!!)
@@ -78,18 +80,23 @@ class UploadResourcesActivity : AppCompatActivity() {
             }
         }
     }
-    private fun uploadPDFFile(data: Uri, description : String) {
+    private fun uploadPDFFile(files: ArrayList<AttachedFile>, description : String) {
         binding.progressbar.visibility = View.VISIBLE
         storageReference = FirebaseStorage.getInstance().reference
-        val reference: StorageReference = storageReference!!.child("IN/${mAuth?.currentUser?.email}/$name")
-        reference.putFile(data)
-            .addOnSuccessListener {
-                binding.progressbar.visibility =View.GONE
-                Toast.makeText(this,"Uploaded",Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener{
-                binding.progressbar.visibility =View.GONE
-                Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
-            }
+        for (i in files){
+            val reference: StorageReference = storageReference!!.child("IN/${mAuth?.currentUser?.email}/${i.name}")
+            reference.putFile(i.uri)
+                .addOnSuccessListener {
+                    binding.progressbar.visibility =View.GONE
+                    Toast.makeText(this,"Uploaded",Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener{
+                    binding.progressbar.visibility =View.GONE
+                    Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
+                }.addOnCompleteListener{
+                    files.clear()
+                }
+        }
+
     }
     private fun initRecyclerView(){
         binding.filesSelectedRecyclerView.adapter = adapter

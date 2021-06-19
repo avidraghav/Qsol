@@ -1,78 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UploadResourcesActivity"
-    android:padding="8dp">
+    android:scrollbars="vertical"
+    android:fillViewport="true"
+    tools:context=".UploadResourcesActivity">
 
-
-    <TextView
-        android:id="@+id/info_textview"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/info_textview"
-        android:layout_alignParentTop="true"
-        android:text="Your Attachments (Only PDF Files)"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp" />
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/info_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/info_textview"
+            android:layout_alignParentTop="true"
+            android:text="Your Attachments (Only PDF Files)"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/add_attachments"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/info_textview"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_default"
+            android:drawableStart="@drawable/ic_add"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Add Attachment"
+            android:textAllCaps="false"
+            android:textColor="#404040"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/upload_attachments"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_attachments"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_pressed"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="Upload Attachment"
+            android:textAllCaps="false"
+            android:layout_marginTop="8dp"
+            android:textColor="#404040"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/attachments_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/files_selected_recyclerView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_default"
+            android:gravity="top"
+            android:hint="@string/add_some_description_about_the_files_such_as_college_universit_or_anything_you_would_like_to_add"
+            android:inputType="textMultiLine"
+            android:textSize="16sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/files_selected_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upload_attachments"
+            android:layout_marginTop="8dp" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
 
 
-    <Button
-        android:id="@+id/add_attachments"
-        android:layout_width="340dp"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/info_textview"
-        android:background="@drawable/button_default"
-        android:drawableStart="@drawable/ic_add"
-        android:foreground="?attr/selectableItemBackground"
-        android:text="Add Attachment"
-        android:drawablePadding="8dp"
-        android:textAllCaps="false"
-        android:textColor="#404040"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp" />
-
-    <Button
-        android:id="@+id/upload_attachments"
-        android:layout_width="340dp"
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/add_attachments"
-        android:background="@drawable/button_pressed"
-        android:foreground="?attr/selectableItemBackground"
-        android:text="Upload Attachment"
-        android:textAllCaps="false"
-        android:textColor="#404040"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/attachments_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/upload_attachments"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp"
-        android:hint="@string/add_some_description_about_the_files_such_as_college_universit_or_anything_you_would_like_to_add"
-        android:inputType="textMultiLine"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/files_selected_recyclerView"
-        android:layout_below="@id/attachments_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ProgressBar
-        android:id="@+id/progressbar"
-        android:visibility="gone"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>
