@@ -27,7 +27,7 @@
             android:id="@+id/add_attachments"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/info_textview"
+            android:layout_below="@id/files_selected_recyclerView"
             android:layout_centerHorizontal="true"
             android:background="@drawable/button_default"
             android:drawableStart="@drawable/ic_add"
@@ -53,24 +53,12 @@
             android:textColor="#404040"
             android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/attachments_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/files_selected_recyclerView"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/button_default"
-            android:gravity="top"
-            android:hint="@string/add_some_description_about_the_files_such_as_college_universit_or_anything_you_would_like_to_add"
-            android:inputType="textMultiLine"
-            android:textSize="16sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/files_selected_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/upload_attachments"
+            android:layout_below="@id/info_textview"
             android:layout_marginTop="8dp" />
 
         <ProgressBar
