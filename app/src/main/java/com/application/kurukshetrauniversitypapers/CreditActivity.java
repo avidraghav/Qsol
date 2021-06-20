@@ -61,6 +61,7 @@ public class CreditActivity extends AppCompatActivity {
         p42=findViewById(R.id.person42);
 
 
+
         contribute=findViewById(R.id.contribute);
 
 

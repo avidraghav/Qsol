@@ -22,13 +22,10 @@
                 android:icon="@drawable/ic_star"
                 />
             <item
-                android:id="@+id/write_feedback"
-                android:title="Contribute"
+                android:id="@+id/write_to_us"
+                android:title="Write To Us"
                 android:icon="@drawable/contribute"/>
-            <item
-                android:id="@+id/upload_resources"
-                android:title="Upload Resources"
-                />
+
             <item
                 android:id="@+id/jmit_website"
                 android:title="Made in JMIT, Radaur"

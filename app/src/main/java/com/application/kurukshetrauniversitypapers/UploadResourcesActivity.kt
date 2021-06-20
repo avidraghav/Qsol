@@ -2,7 +2,6 @@ package com.application.kurukshetrauniversitypapers
 
 
 import Adapters.SelectedAttachmentsAdapter
-import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -19,17 +18,13 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
 import utils.AttachedFile
 
 class UploadResourcesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUploadResourcesBinding
     private var mAuth: FirebaseAuth? = null
     var storageReference: StorageReference? = null
-    var databaseReference1: DatabaseReference? = null
-    var db:DatabaseReference? = null
-    lateinit var pathForDatabase : String
-    private var fileUrl : Uri? = null
+    var databaseReference: DatabaseReference? = null
     private var attachmentList = ArrayList<AttachedFile>()
     private val adapter = SelectedAttachmentsAdapter(attachmentList)
 
@@ -39,6 +34,7 @@ class UploadResourcesActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         mAuth = FirebaseAuth.getInstance()
+        initRecyclerView()
 
         binding.addAttachments.setOnClickListener {
             addFile()
@@ -51,7 +47,7 @@ class UploadResourcesActivity : AppCompatActivity() {
                 uploadPDFFile(attachmentList)
             }
         }
-        initRecyclerView()
+
     }
     fun addFile(){
             val intent = Intent()
@@ -64,8 +60,7 @@ class UploadResourcesActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 1 && resultCode == RESULT_OK && data != null && data.data != null) {
 
-            fileUrl = data.data
-            Log.e("info",fileUrl.toString())
+            val fileUrl = data.data
             fileUrl?.let { returnUri ->
                 contentResolver.query(returnUri, null, null, null, null)
             }?.use { cursor ->
@@ -84,30 +79,32 @@ class UploadResourcesActivity : AppCompatActivity() {
     private fun uploadPDFFile(files: ArrayList<AttachedFile>) {
         binding.progressbar.visibility = View.VISIBLE
         storageReference = FirebaseStorage.getInstance().reference
-        databaseReference1 = FirebaseDatabase.getInstance()
+        databaseReference = FirebaseDatabase.getInstance()
             .getReference("IN/Uploaded-Resources/${mAuth?.uid}"+"-"+"${mAuth?.currentUser?.displayName}")
+
         for (i in files){
+            Toast.makeText(this,"Uploading ${i.name}",Toast.LENGTH_SHORT).show()
             val reference: StorageReference = storageReference!!.child("IN/Uploaded-Resources/${mAuth?.uid}"+"-"+"${mAuth?.currentUser?.displayName}/${i.name}")
             reference.putFile(Uri.parse(i.uri))
                 .addOnSuccessListener {
                     val uri: Task<Uri> = it.storage.downloadUrl
                     while (!uri.isComplete);  // to make sure that the task is completed, ';' represents {} (do nothing)
                     val url  = uri.result
-                    Log.e("name",i.name)
-                    Log.e("url",url.toString())
                     val upload_PDF = AttachedFile(i.name, url.toString())
-                    databaseReference1!!.child(databaseReference1!!.push().key!!).setValue(upload_PDF)
+                    databaseReference!!.child(databaseReference!!.push().key!!).setValue(upload_PDF)
                     binding.progressbar.visibility =View.GONE
-                    Toast.makeText(this,
-                        "Thanks for contributing to Qsol! Your Files have been Uploaded. " +
-                                "You will hear from us shortly regarding your details for Qsol's credit Board",Toast.LENGTH_LONG).show()
                 }.addOnFailureListener{
                     binding.progressbar.visibility =View.GONE
                     Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
                 }.addOnCompleteListener{
+                    binding.progressbar.visibility =View.GONE
                     files.clear()
+                    Toast.makeText(this,
+                        "Thanks for contributing to Qsol! Your Files have been Uploaded. " +
+                                "You will hear from us shortly regarding your details for Qsol's credit Board",Toast.LENGTH_LONG).show()
                 }
         }
+
     }
     private fun initRecyclerView(){
         binding.filesSelectedRecyclerView.adapter = adapter

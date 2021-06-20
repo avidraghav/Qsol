@@ -124,6 +124,7 @@
                             android:layout_below="@+id/iv_papers"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/acme"
                             android:text="Papers"
                             android:textColor="#202020"
                             android:textSize="16sp"
@@ -161,6 +162,7 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/video_tab_beta"
                             android:textColor="#202020"
+                            android:fontFamily="@font/acme"
                             android:textSize="16sp" />
                         <Button
                             android:id="@+id/bt_beta_feature"
@@ -207,6 +209,7 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/solutions"
                             android:textColor="#202020"
+                            android:fontFamily="@font/acme"
                             android:textSize="16sp" />
 
                         <Button
@@ -254,6 +257,7 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/syllabus"
                             android:textColor="#202020"
+                            android:fontFamily="@font/acme"
                             android:textSize="16sp" />
 
                         <Button
@@ -285,24 +289,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <ImageView
-                            android:id="@+id/iv_write_to_us"
+                            android:id="@+id/iv_upload_resources"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_height="90dp"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
                             android:contentDescription="@string/icon_write_to_us"
-                            android:src="@drawable/ic_feedback" />
+                            android:src="@drawable/ic_upload_files" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/iv_write_to_us"
+                            android:layout_below="@+id/iv_upload_resources"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="8dp"
-                            android:text="Write to us"
+                            android:layout_marginTop="4dp"
+                            android:text="Upload Resources"
                             android:textColor="#202020"
+                            android:fontFamily="@font/acme"
                             android:textSize="16sp" />
                         <Button
-                            android:id="@+id/bt_write_to_us"
+                            android:id="@+id/bt_upload_resources"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:onClick="onItemClicked"
@@ -344,6 +348,7 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/rate_qsol"
                             android:textColor="#202020"
+                            android:fontFamily="@font/acme"
                             android:textSize="16sp" />
 
                         <Button

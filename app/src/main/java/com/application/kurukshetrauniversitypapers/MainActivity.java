@@ -13,9 +13,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +25,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,17 +32,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 
 
 import utils.AppUpdateChecker;
-import utils.NotificationGetter;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -126,14 +116,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String runCounter = intent.getStringExtra(KEY_RUN_COUNTER);
         if ("yes".equals(runCounter)) {
             startCountAnimation();
-        } else totalPapersTextView.setText("1797");
+        } else totalPapersTextView.setText("1825");
     }
 
     /**
      * Starts animation that counts upwards in {@link #totalPapersTextView}.
      */
     private void startCountAnimation() {
-        ValueAnimator animator = ValueAnimator.ofInt(0, 1797);
+        ValueAnimator animator = ValueAnimator.ofInt(0, 1825);
         animator.setDuration(2000);
         animator.addUpdateListener(animation -> totalPapersTextView.setText(animation.getAnimatedValue().toString()));
         animator.start();
@@ -173,11 +163,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.putExtra("position", 1);
                 startActivity(intent);
                 break;
-            case R.id.bt_write_to_us:
-                Intent new_intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("mailto:" + "qsol.info@gmail.com"));
-                new_intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback/Query for Qsol");
-                startActivity(new_intent);
+            case R.id.bt_upload_resources:
+                if ((mAuth.getCurrentUser() == null)) {
+                    Toast.makeText(this, "Log in first to upload any Resources", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    startActivity(new Intent(MainActivity.this, UploadResourcesActivity.class));
                 break;
 
             case R.id.bt_connect_on_linkedin:
@@ -281,20 +272,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(MainActivity.this, CreditActivity.class));
                 break;
 
-            case R.id.write_feedback:
+            case R.id.write_to_us:
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("mailto:" + "qsol.info@gmail.com"));
                 intent.putExtra(Intent.EXTRA_SUBJECT, "My contribution to Qsol");
                 intent.putExtra(Intent.EXTRA_TEXT, "/* Contribute by\n 1. Attaching previous year exam papers\n 2. Reporting bugs, suggesting features\n 3. Collaborate for maintaining the application */");
                 startActivity(intent);
                 break;
-            case R.id.upload_resources:
-                if ((mAuth.getCurrentUser() == null)) {
-                    Toast.makeText(this, "Log in first to upload any Resources", Toast.LENGTH_SHORT).show();
-                }
-                else
-                startActivity(new Intent(MainActivity.this, UploadResourcesActivity.class));
-                break;
+
             case R.id.jmit_website:
                 Intent Browserintent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.jmit.ac.in/"));
                 startActivity(Browserintent);
